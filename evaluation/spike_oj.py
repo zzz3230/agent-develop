@@ -20,7 +20,7 @@ from runtime.budget import Budget, Journal  # noqa: E402
 from runtime.oj_agent import Connection, deep_agent, react_agent  # noqa: E402
 
 QUERY = "A warehouse starts with 1669 boxes. It ships 36 boxes per day for 3 days. How many boxes are left?"
-MODEL = "qwen3.8-27b-noreason"
+MODEL = os.environ.get("SPIKE_MODEL", "qwen3.8-27b-noreason")
 ALL = ("read", "write", "edit", "list", "grep", "bash")
 VARIANTS = {
     "react-all": (ALL, False), "react-all-compact": (ALL, True),
