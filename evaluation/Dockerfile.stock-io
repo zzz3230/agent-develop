@@ -1,0 +1,6 @@
+FROM agent-develop:stock-wide
+# OJ 0.1.19 declares this minimum version. Later filelock releases changed
+# async lock ownership; verify compatibility with the native I/O probe.
+ARG FILELOCK_VERSION=3.25.0
+RUN pip install --no-deps filelock==${FILELOCK_VERSION}
+COPY evaluation/check_stock_io.py /app/evaluation/check_stock_io.py

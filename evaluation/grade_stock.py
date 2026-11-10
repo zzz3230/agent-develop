@@ -9,9 +9,9 @@ import subprocess
 import tempfile
 
 
-def grade(root, variant, image):
+def grade(root, variant, image, run_directory=None):
     manifest = json.loads((root/'manifest.json').read_text())
-    run = root/variant
+    run = run_directory or root/variant
     rows = [json.loads(x) for x in (run/'results.jsonl').read_text().splitlines()]
     refs = {r['id']: r for r in manifest['tasks']}
     events = [json.loads(x) for x in (run/'usage.jsonl').read_text().splitlines()]
@@ -74,6 +74,9 @@ def grade(root, variant, image):
             break
         prefix.append(row)
     report = dict(variant=variant, input_sha256=manifest['input_sha256'], total=stats(graded),
+        configuration=json.loads((run/'config.json').read_text()) if (run/'config.json').exists() else None,
+        requested=len(refs), unattempted=sorted(set(refs)-{r['id'] for r in rows}),
+        finish=next((e for e in reversed(events) if e.get('event')=='benchmark_finish'),None),
         withdrawn_attempts=len(withdrawn), withdrawn_cost=round(sum(r['cost'] for r in withdrawn),1),
         withdrawn_seconds=round(sum(r['seconds'] for r in withdrawn),1),
         raw_measured_cost=round(sum(r['cost'] for r in rows+withdrawn),1),
@@ -92,5 +95,6 @@ if __name__ == '__main__':
     p.add_argument('--root',type=Path,required=True)
     p.add_argument('--variant',choices=['stock','ours'],required=True)
     p.add_argument('--image',default='agent-develop:stock-comparison')
+    p.add_argument('--run-dir',type=Path)
     args=p.parse_args()
-    grade(args.root,args.variant,args.image)
+    grade(args.root,args.variant,args.image,args.run_dir)
