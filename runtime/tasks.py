@@ -12,12 +12,13 @@ _TAIL = re.compile(r"\s*When you are done, write ONLY.*$", re.S)
 
 @dataclass(frozen=True)
 class Task:
-    """No `expected` or `check` here: the agent must not see them."""
+    """Reference answers are never loaded; check metadata remains in task.json."""
     id: str
     type: str
     instruction: str
     reward: float
     dir: Path
+    check: str = ''
 
     @property
     def cwd(self) -> Path:
@@ -35,6 +36,7 @@ def load_task(directory: Path) -> Task:
     return Task(
         id=str(raw.get("task_id") or directory.name), type=str(raw["task_type"]),
         instruction=str(raw["instruction"]), reward=float(raw.get("reward", 0)), dir=directory,
+        check=str(raw.get('check', '')),
     )
 
 

@@ -18,11 +18,9 @@ from openjiuwen.harness.tools import BashTool, EditFileTool, GrepTool, ListDirTo
 
 from runtime.budget import Budget
 from runtime.metered_model import MeteredModel
+from runtime.profiles import BASELINE_SYSTEM
 
-SYSTEM = (
-    "Solve the task with the tools in as few steps as possible. Your last message must be only the "
-    "final answer, or IMPOSSIBLE if the data cannot give an exact answer. Do not create answer.txt."
-)
+SYSTEM = BASELINE_SYSTEM
 SHELL_ALLOWLIST = ["python3", "python", "ls", "cat", "grep", "head", "tail", "wc", "sort", "cut", "find", "echo", "pwd"]
 STOCK_TOOLS = {
     "read": ReadFileTool, "write": WriteFileTool, "edit": EditFileTool,
@@ -59,7 +57,8 @@ def _compact(card: Any) -> None:
 
 
 def react_agent(budget: Budget, connection: Connection, model: str, cwd: str, tools: tuple[str, ...],
-                max_steps: int, max_output: int, compact: bool = True) -> ReActAgent:
+                max_steps: int, max_output: int, compact: bool = True,
+                system_prompt: str | None = None) -> ReActAgent:
     """Per task: its own sandbox rooted at the task's directory."""
     client = connection.client()
     request = ModelRequestConfig(model=model, temperature=0.0, max_tokens=max_output)
@@ -74,7 +73,7 @@ def react_agent(budget: Budget, connection: Connection, model: str, cwd: str, to
     agent = ReActAgent(AgentCard(name="solver", description="solver", id=f"solver-{uuid.uuid4().hex}"))
     agent.configure(ReActAgentConfig(
         model_name=model, model_provider="OpenAI", api_key=connection.api_key, api_base=connection.base_url,
-        max_iterations=max_steps, prompt_template=[{"role": "system", "content": SYSTEM}],
+        max_iterations=max_steps, prompt_template=[{"role": "system", "content": system_prompt if system_prompt is not None else SYSTEM}],
         model_client_config=client, model_config_obj=request,
     ))
     agent.set_llm(MeteredModel(client, request, budget))

@@ -1,0 +1,1 @@
+Personnel correction. Employee E12. Birth city corrected to Bergen. Work city stays Oslo.

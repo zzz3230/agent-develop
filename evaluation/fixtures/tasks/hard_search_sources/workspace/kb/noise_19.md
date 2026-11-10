@@ -1,0 +1,1 @@
+Project Tern19. Revision 100. Valid: yes. Lead E44. City Riga.

@@ -1,0 +1,1 @@
+Mira Sol, designer P71. Employer CN. Born Tallinn.
