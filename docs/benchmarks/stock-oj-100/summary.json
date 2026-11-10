@@ -1,0 +1,213 @@
+{
+  "stock": {
+    "variant": "stock",
+    "input_sha256": "fc09a24fabfe846c3b2bab888887cb6bc2026cc2720feec5304bcf5062c55163",
+    "total": {
+      "attempted": 100,
+      "solved": 12,
+      "points": 80.0,
+      "cost": 230660.0,
+      "input": 2010360,
+      "output": 29624,
+      "calls": 473,
+      "seconds": 1574.8,
+      "impossible_recognized": 0,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    },
+    "withdrawn_attempts": 5,
+    "withdrawn_cost": 10368.7,
+    "withdrawn_seconds": 41.9,
+    "raw_measured_cost": 241028.7,
+    "stop_reasons": {},
+    "possible_points": 421,
+    "by_type": {
+      "coding": {
+        "attempted": 25,
+        "solved": 0,
+        "points": 0,
+        "cost": 50451.5,
+        "input": 452745,
+        "output": 5177,
+        "calls": 125,
+        "seconds": 206.4,
+        "impossible_recognized": 0,
+        "impossible_false_claims": 0,
+        "infrastructure_retries": 0,
+        "estimated_calls": 0
+      },
+      "data_analysis": {
+        "attempted": 25,
+        "solved": 1,
+        "points": 6.0,
+        "cost": 62554.2,
+        "input": 522292,
+        "output": 10325,
+        "calls": 125,
+        "seconds": 320.1,
+        "impossible_recognized": 0,
+        "impossible_false_claims": 0,
+        "infrastructure_retries": 0,
+        "estimated_calls": 0
+      },
+      "math": {
+        "attempted": 25,
+        "solved": 11,
+        "points": 74.0,
+        "cost": 44846.9,
+        "input": 360189,
+        "output": 8828,
+        "calls": 98,
+        "seconds": 760.7,
+        "impossible_recognized": 0,
+        "impossible_false_claims": 0,
+        "infrastructure_retries": 0,
+        "estimated_calls": 0
+      },
+      "search": {
+        "attempted": 25,
+        "solved": 0,
+        "points": 0,
+        "cost": 72807.4,
+        "input": 675134,
+        "output": 5294,
+        "calls": 125,
+        "seconds": 287.5,
+        "impossible_recognized": 0,
+        "impossible_false_claims": 0,
+        "infrastructure_retries": 0,
+        "estimated_calls": 0
+      }
+    },
+    "prefix_100k": {
+      "attempted": 42,
+      "solved": 2,
+      "points": 6.0,
+      "cost": 99256.8,
+      "input": 851138,
+      "output": 14143,
+      "calls": 202,
+      "seconds": 944.1,
+      "impossible_recognized": 0,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    },
+    "meter_audit": {
+      "responses": 498,
+      "extra_cost": 0,
+      "nonzero_reasoning_calls": 0,
+      "production_meter_would_charge_identically": true
+    }
+  },
+  "ours": {
+    "variant": "ours",
+    "input_sha256": "fc09a24fabfe846c3b2bab888887cb6bc2026cc2720feec5304bcf5062c55163",
+    "total": {
+      "attempted": 100,
+      "solved": 58,
+      "points": 306.0,
+      "cost": 149627.3,
+      "input": 956133,
+      "output": 54014,
+      "calls": 494,
+      "seconds": 1421.1,
+      "impossible_recognized": 8,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    },
+    "withdrawn_attempts": 5,
+    "withdrawn_cost": 8934.7,
+    "withdrawn_seconds": 73.7,
+    "raw_measured_cost": 158562.0,
+    "stop_reasons": {
+      "no_progress_step_limit": 13,
+      "task_cost_limit": 23
+    },
+    "possible_points": 421,
+    "by_type": {
+      "coding": {
+        "attempted": 25,
+        "solved": 18,
+        "points": 84.0,
+        "cost": 48106.2,
+        "input": 251272,
+        "output": 22979,
+        "calls": 159,
+        "seconds": 513.5,
+        "impossible_recognized": 1,
+        "impossible_false_claims": 0,
+        "infrastructure_retries": 0,
+        "estimated_calls": 0
+      },
+      "data_analysis": {
+        "attempted": 25,
+        "solved": 15,
+        "points": 77.0,
+        "cost": 55079.5,
+        "input": 358265,
+        "output": 19253,
+        "calls": 159,
+        "seconds": 378.5,
+        "impossible_recognized": 0,
+        "impossible_false_claims": 0,
+        "infrastructure_retries": 0,
+        "estimated_calls": 0
+      },
+      "math": {
+        "attempted": 25,
+        "solved": 15,
+        "points": 87.0,
+        "cost": 9227.2,
+        "input": 49182,
+        "output": 4309,
+        "calls": 65,
+        "seconds": 117.9,
+        "impossible_recognized": 2,
+        "impossible_false_claims": 0,
+        "infrastructure_retries": 0,
+        "estimated_calls": 0
+      },
+      "search": {
+        "attempted": 25,
+        "solved": 10,
+        "points": 58.0,
+        "cost": 37214.4,
+        "input": 297414,
+        "output": 7473,
+        "calls": 111,
+        "seconds": 411.2,
+        "impossible_recognized": 5,
+        "impossible_false_claims": 0,
+        "infrastructure_retries": 0,
+        "estimated_calls": 0
+      }
+    },
+    "prefix_100k": {
+      "attempted": 72,
+      "solved": 43,
+      "points": 209.0,
+      "cost": 97161.3,
+      "input": 625263,
+      "output": 34635,
+      "calls": 340,
+      "seconds": 936.7,
+      "impossible_recognized": 7,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    },
+    "meter_audit": {
+      "responses": 525,
+      "extra_cost": 0,
+      "nonzero_reasoning_calls": 0,
+      "production_meter_would_charge_identically": true
+    }
+  },
+  "image": "sha256:e284ff7525aa9b9afbec020e14a508d03d33ed246a4a49515aa6b534cd54d081",
+  "candidate_commit": "26c9aa6",
+  "model": "qwen3.8-27b-noreason",
+  "note": "100 corrected tasks each; five withdrawn attempts excluded from primary metrics and retained as overhead. Budget prefix is a post-hoc estimate, not a proxy-capped run."
+}

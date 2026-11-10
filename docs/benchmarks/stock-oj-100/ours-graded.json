@@ -1,0 +1,2667 @@
+{
+  "variant": "ours",
+  "input_sha256": "fc09a24fabfe846c3b2bab888887cb6bc2026cc2720feec5304bcf5062c55163",
+  "total": {
+    "attempted": 100,
+    "solved": 58,
+    "points": 306.0,
+    "cost": 149627.3,
+    "input": 956133,
+    "output": 54014,
+    "calls": 494,
+    "seconds": 1421.1,
+    "impossible_recognized": 8,
+    "impossible_false_claims": 0,
+    "infrastructure_retries": 0,
+    "estimated_calls": 0
+  },
+  "withdrawn_attempts": 5,
+  "withdrawn_cost": 8934.7,
+  "withdrawn_seconds": 73.7,
+  "raw_measured_cost": 158562.0,
+  "stop_reasons": {
+    "no_progress_step_limit": 13,
+    "task_cost_limit": 23
+  },
+  "possible_points": 421,
+  "by_type": {
+    "coding": {
+      "attempted": 25,
+      "solved": 18,
+      "points": 84.0,
+      "cost": 48106.2,
+      "input": 251272,
+      "output": 22979,
+      "calls": 159,
+      "seconds": 513.5,
+      "impossible_recognized": 1,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    },
+    "data_analysis": {
+      "attempted": 25,
+      "solved": 15,
+      "points": 77.0,
+      "cost": 55079.5,
+      "input": 358265,
+      "output": 19253,
+      "calls": 159,
+      "seconds": 378.5,
+      "impossible_recognized": 0,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    },
+    "math": {
+      "attempted": 25,
+      "solved": 15,
+      "points": 87.0,
+      "cost": 9227.2,
+      "input": 49182,
+      "output": 4309,
+      "calls": 65,
+      "seconds": 117.9,
+      "impossible_recognized": 2,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    },
+    "search": {
+      "attempted": 25,
+      "solved": 10,
+      "points": 58.0,
+      "cost": 37214.4,
+      "input": 297414,
+      "output": 7473,
+      "calls": 111,
+      "seconds": 411.2,
+      "impossible_recognized": 5,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    }
+  },
+  "prefix_100k": {
+    "attempted": 72,
+    "solved": 43,
+    "points": 209.0,
+    "cost": 97161.3,
+    "input": 625263,
+    "output": 34635,
+    "calls": 340,
+    "seconds": 936.7,
+    "impossible_recognized": 7,
+    "impossible_false_claims": 0,
+    "infrastructure_retries": 0,
+    "estimated_calls": 0
+  },
+  "rows": [
+    {
+      "id": "t000",
+      "type": "math",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "976",
+      "error": null,
+      "cost": 290.4,
+      "seconds": 4.55,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 290.4
+        }
+      ],
+      "solvable": true,
+      "expected": "976",
+      "correct": true,
+      "input": 1464,
+      "output": 144,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t001",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 421.8,
+      "seconds": 5.01,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 421.8
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 2058,
+      "output": 216,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t002",
+      "type": "data_analysis",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "2988319",
+      "error": null,
+      "cost": 912.9,
+      "seconds": 7.26,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 912.9
+        }
+      ],
+      "solvable": true,
+      "expected": "2988319",
+      "correct": true,
+      "input": 4859,
+      "output": 427,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t003",
+      "type": "coding",
+      "reward": 1.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 1441.4,
+      "seconds": 22.52,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1441.4
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+      "input": 7374,
+      "output": 704,
+      "calls": 6,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t004",
+      "type": "math",
+      "reward": 5.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "932",
+      "error": null,
+      "cost": 271.2,
+      "seconds": 2.87,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 271.2
+        }
+      ],
+      "solvable": true,
+      "expected": "932",
+      "correct": true,
+      "input": 1432,
+      "output": 128,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t005",
+      "type": "data_analysis",
+      "reward": 6.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "184",
+      "error": null,
+      "cost": 796.4,
+      "seconds": 5.8,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 796.4
+        }
+      ],
+      "solvable": true,
+      "expected": "184",
+      "correct": true,
+      "input": 4204,
+      "output": 376,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t006",
+      "type": "coding",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 2010.0,
+      "seconds": 34.18,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 2010.0
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.007s\n\nOK\n",
+      "input": 9360,
+      "output": 1074,
+      "calls": 7,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t007",
+      "type": "search",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "Linz",
+      "error": null,
+      "cost": 275.4,
+      "seconds": 6.33,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 275.4
+        }
+      ],
+      "solvable": true,
+      "expected": "Linz",
+      "correct": true,
+      "input": 2314,
+      "output": 44,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t008",
+      "type": "search",
+      "reward": 1.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 2931.4,
+      "seconds": 28.94,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2931.4
+        }
+      ],
+      "solvable": true,
+      "expected": "Utrecht",
+      "correct": false,
+      "input": 23294,
+      "output": 602,
+      "calls": 8,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t009",
+      "type": "coding",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 1085.4,
+      "seconds": 17.4,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1085.4
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+      "input": 4844,
+      "output": 601,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t010",
+      "type": "math",
+      "reward": 7.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "467782",
+      "error": null,
+      "cost": 315.1,
+      "seconds": 4.89,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 315.1
+        }
+      ],
+      "solvable": true,
+      "expected": "467782",
+      "correct": true,
+      "input": 1531,
+      "output": 162,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t011",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "Utrecht",
+      "error": null,
+      "cost": 259.2,
+      "seconds": 6.53,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 259.2
+        }
+      ],
+      "solvable": true,
+      "expected": "Utrecht",
+      "correct": true,
+      "input": 2142,
+      "output": 45,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t012",
+      "type": "data_analysis",
+      "reward": 7.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 4265.3,
+      "seconds": 31.71,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 4265.3
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 33043,
+      "output": 961,
+      "calls": 12,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t013",
+      "type": "coding",
+      "reward": 2.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 970.5,
+      "seconds": 19.92,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 970.5
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+      "input": 5855,
+      "output": 385,
+      "calls": 6,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t015",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "impossible",
+      "answer": "",
+      "error": null,
+      "cost": 346.2,
+      "seconds": 4.38,
+      "attempts": [
+        {
+          "status": "impossible",
+          "error": null,
+          "cost": 346.2
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": true,
+      "input": 2322,
+      "output": 114,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t016",
+      "type": "search",
+      "reward": 5.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "Brno",
+      "error": null,
+      "cost": 957.7,
+      "seconds": 10.55,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 957.7
+        }
+      ],
+      "solvable": true,
+      "expected": "Brno",
+      "correct": true,
+      "input": 7377,
+      "output": 220,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t017",
+      "type": "math",
+      "reward": 10.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 339.9,
+      "seconds": 4.52,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 339.9
+        }
+      ],
+      "solvable": true,
+      "expected": "191",
+      "correct": false,
+      "input": 1969,
+      "output": 143,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t018",
+      "type": "search",
+      "reward": 8.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "Utrecht",
+      "error": null,
+      "cost": 259.2,
+      "seconds": 3.36,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 259.2
+        }
+      ],
+      "solvable": true,
+      "expected": "Utrecht",
+      "correct": true,
+      "input": 2142,
+      "output": 45,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t019",
+      "type": "coding",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 2554.6,
+      "seconds": 39.08,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 2554.6
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.009s\n\nOK\n",
+      "input": 12476,
+      "output": 1307,
+      "calls": 8,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t020",
+      "type": "data_analysis",
+      "reward": 2.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 4582.4,
+      "seconds": 29.82,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 4582.4
+        }
+      ],
+      "solvable": true,
+      "expected": "59243",
+      "correct": false,
+      "input": 26664,
+      "output": 1916,
+      "calls": 11,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t021",
+      "type": "coding",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 692.2,
+      "seconds": 12.51,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 692.2
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+      "input": 4212,
+      "output": 271,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t022",
+      "type": "search",
+      "reward": 6.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 2910.2,
+      "seconds": 37.86,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2910.2
+        }
+      ],
+      "solvable": true,
+      "expected": "Brno",
+      "correct": false,
+      "input": 22922,
+      "output": 618,
+      "calls": 8,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t023",
+      "type": "coding",
+      "reward": 7.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 1559.4,
+      "seconds": 25.5,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1559.4
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.008s\n\nOK\n",
+      "input": 4084,
+      "output": 1151,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t024",
+      "type": "math",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "impossible",
+      "answer": "",
+      "error": null,
+      "cost": 326.6,
+      "seconds": 3.1,
+      "attempts": [
+        {
+          "status": "impossible",
+          "error": null,
+          "cost": 326.6
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": true,
+      "input": 2066,
+      "output": 120,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t025",
+      "type": "search",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 3543.5,
+      "seconds": 35.86,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3543.5
+        }
+      ],
+      "solvable": true,
+      "expected": "Brno",
+      "correct": false,
+      "input": 27105,
+      "output": 833,
+      "calls": 10,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t026",
+      "type": "data_analysis",
+      "reward": 7.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 2139.0,
+      "seconds": 18.35,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2139.0
+        }
+      ],
+      "solvable": true,
+      "expected": "893023",
+      "correct": false,
+      "input": 9870,
+      "output": 1152,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t027",
+      "type": "data_analysis",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 2944.0,
+      "seconds": 20.14,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2944.0
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 22060,
+      "output": 738,
+      "calls": 9,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t028",
+      "type": "data_analysis",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "70771",
+      "error": null,
+      "cost": 672.9,
+      "seconds": 5.56,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 672.9
+        }
+      ],
+      "solvable": true,
+      "expected": "70771",
+      "correct": true,
+      "input": 3909,
+      "output": 282,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t029",
+      "type": "coding",
+      "reward": 7.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 962.0,
+      "seconds": 9.51,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 962.0
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+      "input": 4590,
+      "output": 503,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t030",
+      "type": "search",
+      "reward": 7.0,
+      "variant": "ours",
+      "status": "impossible",
+      "answer": "",
+      "error": null,
+      "cost": 360.2,
+      "seconds": 5.21,
+      "attempts": [
+        {
+          "status": "impossible",
+          "error": null,
+          "cost": 360.2
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": true,
+      "input": 2322,
+      "output": 128,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t031",
+      "type": "search",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "impossible",
+      "answer": "",
+      "error": null,
+      "cost": 324.4,
+      "seconds": 6.11,
+      "attempts": [
+        {
+          "status": "impossible",
+          "error": null,
+          "cost": 324.4
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": true,
+      "input": 2284,
+      "output": 96,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t032",
+      "type": "data_analysis",
+      "reward": 1.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "15",
+      "error": null,
+      "cost": 804.4,
+      "seconds": 14.75,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 804.4
+        }
+      ],
+      "solvable": true,
+      "expected": "15",
+      "correct": true,
+      "input": 4204,
+      "output": 384,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t033",
+      "type": "coding",
+      "reward": 7.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 2017.5,
+      "seconds": 27.29,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 2017.5
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.007s\n\nOK\n",
+      "input": 9275,
+      "output": 1090,
+      "calls": 7,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t034",
+      "type": "data_analysis",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 4513.9,
+      "seconds": 24.74,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 4513.9
+        }
+      ],
+      "solvable": true,
+      "expected": "28726",
+      "correct": false,
+      "input": 24659,
+      "output": 2048,
+      "calls": 10,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t035",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "impossible",
+      "answer": "",
+      "error": null,
+      "cost": 179.0,
+      "seconds": 1.68,
+      "attempts": [
+        {
+          "status": "impossible",
+          "error": null,
+          "cost": 179.0
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": true,
+      "input": 1290,
+      "output": 50,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t036",
+      "type": "data_analysis",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 3500.6,
+      "seconds": 16.27,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3500.6
+        }
+      ],
+      "solvable": true,
+      "expected": "91988",
+      "correct": false,
+      "input": 19406,
+      "output": 1560,
+      "calls": 9,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t037",
+      "type": "search",
+      "reward": 10.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "Graz",
+      "error": null,
+      "cost": 901.4,
+      "seconds": 9.46,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 901.4
+        }
+      ],
+      "solvable": true,
+      "expected": "Graz",
+      "correct": true,
+      "input": 7194,
+      "output": 182,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t038",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "549",
+      "error": null,
+      "cost": 275.0,
+      "seconds": 1.87,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 275.0
+        }
+      ],
+      "solvable": true,
+      "expected": "549",
+      "correct": true,
+      "input": 1440,
+      "output": 131,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t039",
+      "type": "math",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "308815",
+      "error": null,
+      "cost": 304.3,
+      "seconds": 2.24,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 304.3
+        }
+      ],
+      "solvable": true,
+      "expected": "308815",
+      "correct": true,
+      "input": 1513,
+      "output": 153,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t040",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "624",
+      "error": null,
+      "cost": 290.4,
+      "seconds": 3.41,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 290.4
+        }
+      ],
+      "solvable": true,
+      "expected": "624",
+      "correct": true,
+      "input": 1464,
+      "output": 144,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t041",
+      "type": "search",
+      "reward": 5.0,
+      "variant": "ours",
+      "status": "impossible",
+      "answer": "",
+      "error": null,
+      "cost": 179.0,
+      "seconds": 1.42,
+      "attempts": [
+        {
+          "status": "impossible",
+          "error": null,
+          "cost": 179.0
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": true,
+      "input": 1290,
+      "output": 50,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t042",
+      "type": "data_analysis",
+      "reward": 7.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "C00",
+      "error": null,
+      "cost": 1320.8,
+      "seconds": 7.25,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1320.8
+        }
+      ],
+      "solvable": true,
+      "expected": "C00",
+      "correct": true,
+      "input": 7398,
+      "output": 581,
+      "calls": 6,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t043",
+      "type": "math",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 346.9,
+      "seconds": 7.64,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 346.9
+        }
+      ],
+      "solvable": true,
+      "expected": "128",
+      "correct": false,
+      "input": 1979,
+      "output": 149,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t044",
+      "type": "coding",
+      "reward": 2.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 4502.1,
+      "seconds": 35.9,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 4502.1
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+      "input": 26941,
+      "output": 1808,
+      "calls": 11,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t045",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 339.9,
+      "seconds": 5.32,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 339.9
+        }
+      ],
+      "solvable": true,
+      "expected": "168",
+      "correct": false,
+      "input": 1969,
+      "output": 143,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t046",
+      "type": "search",
+      "reward": 7.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 1964.9,
+      "seconds": 13.72,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1964.9
+        }
+      ],
+      "solvable": true,
+      "expected": "Bergen",
+      "correct": false,
+      "input": 16199,
+      "output": 345,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t047",
+      "type": "coding",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 692.3,
+      "seconds": 6.01,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 692.3
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+      "input": 4203,
+      "output": 272,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t048",
+      "type": "math",
+      "reward": 10.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 387.6,
+      "seconds": 4.01,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 387.6
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 2076,
+      "output": 180,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t049",
+      "type": "search",
+      "reward": 7.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 3886.5,
+      "seconds": 38.88,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3886.5
+        }
+      ],
+      "solvable": true,
+      "expected": "Utrecht",
+      "correct": false,
+      "input": 30495,
+      "output": 837,
+      "calls": 8,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t050",
+      "type": "data_analysis",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "141",
+      "error": null,
+      "cost": 1975.8,
+      "seconds": 25.18,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1975.8
+        }
+      ],
+      "solvable": true,
+      "expected": "141",
+      "correct": true,
+      "input": 14678,
+      "output": 508,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t051",
+      "type": "coding",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 1064.9,
+      "seconds": 10.84,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1064.9
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+      "input": 6499,
+      "output": 415,
+      "calls": 6,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t052",
+      "type": "search",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 1961.9,
+      "seconds": 23.99,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1961.9
+        }
+      ],
+      "solvable": true,
+      "expected": "Bergen",
+      "correct": false,
+      "input": 14389,
+      "output": 523,
+      "calls": 6,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t053",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "905",
+      "error": null,
+      "cost": 519.6,
+      "seconds": 8.19,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 519.6
+        }
+      ],
+      "solvable": true,
+      "expected": "905",
+      "correct": true,
+      "input": 2446,
+      "output": 275,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t054",
+      "type": "math",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "441403",
+      "error": null,
+      "cost": 315.5,
+      "seconds": 3.12,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 315.5
+        }
+      ],
+      "solvable": true,
+      "expected": "441403",
+      "correct": true,
+      "input": 1535,
+      "output": 162,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t055",
+      "type": "data_analysis",
+      "reward": 8.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "2305318",
+      "error": null,
+      "cost": 907.6,
+      "seconds": 6.82,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 907.6
+        }
+      ],
+      "solvable": true,
+      "expected": "2305318",
+      "correct": true,
+      "input": 4836,
+      "output": 424,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t056",
+      "type": "math",
+      "reward": 5.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "772",
+      "error": null,
+      "cost": 506.8,
+      "seconds": 3.26,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 506.8
+        }
+      ],
+      "solvable": true,
+      "expected": "772",
+      "correct": true,
+      "input": 2798,
+      "output": 227,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t057",
+      "type": "math",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 325.9,
+      "seconds": 5.46,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 325.9
+        }
+      ],
+      "solvable": true,
+      "expected": "110",
+      "correct": false,
+      "input": 1969,
+      "output": 129,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t058",
+      "type": "data_analysis",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "C20",
+      "error": null,
+      "cost": 966.9,
+      "seconds": 7.14,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 966.9
+        }
+      ],
+      "solvable": true,
+      "expected": "C20",
+      "correct": true,
+      "input": 5059,
+      "output": 461,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t059",
+      "type": "data_analysis",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "C20",
+      "error": null,
+      "cost": 720.0,
+      "seconds": 5.62,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 720.0
+        }
+      ],
+      "solvable": true,
+      "expected": "C20",
+      "correct": true,
+      "input": 3750,
+      "output": 345,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t060",
+      "type": "search",
+      "reward": 1.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 4311.5,
+      "seconds": 21.07,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 4311.5
+        }
+      ],
+      "solvable": true,
+      "expected": "Ghent",
+      "correct": false,
+      "input": 37875,
+      "output": 524,
+      "calls": 6,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t061",
+      "type": "data_analysis",
+      "reward": 8.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 5477.8,
+      "seconds": 19.87,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 5477.8
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 46348,
+      "output": 843,
+      "calls": 11,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t062",
+      "type": "coding",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 1517.6,
+      "seconds": 13.19,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1517.6
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+      "input": 7986,
+      "output": 719,
+      "calls": 7,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t064",
+      "type": "math",
+      "reward": 10.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "811",
+      "error": null,
+      "cost": 271.2,
+      "seconds": 2.79,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 271.2
+        }
+      ],
+      "solvable": true,
+      "expected": "811",
+      "correct": true,
+      "input": 1432,
+      "output": 128,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t065",
+      "type": "data_analysis",
+      "reward": 1.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "208",
+      "error": null,
+      "cost": 819.0,
+      "seconds": 6.56,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 819.0
+        }
+      ],
+      "solvable": true,
+      "expected": "208",
+      "correct": true,
+      "input": 4240,
+      "output": 395,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t067",
+      "type": "search",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 2146.5,
+      "seconds": 29.66,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2146.5
+        }
+      ],
+      "solvable": true,
+      "expected": "Ghent",
+      "correct": false,
+      "input": 16775,
+      "output": 469,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t068",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "ours",
+      "status": "impossible",
+      "answer": "",
+      "error": null,
+      "cost": 319.6,
+      "seconds": 5.25,
+      "attempts": [
+        {
+          "status": "impossible",
+          "error": null,
+          "cost": 319.6
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": true,
+      "input": 2046,
+      "output": 115,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t069",
+      "type": "data_analysis",
+      "reward": 6.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "C18",
+      "error": null,
+      "cost": 1241.6,
+      "seconds": 12.27,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1241.6
+        }
+      ],
+      "solvable": true,
+      "expected": "C18",
+      "correct": true,
+      "input": 6536,
+      "output": 588,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t070",
+      "type": "math",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "957",
+      "error": null,
+      "cost": 591.7,
+      "seconds": 4.17,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 591.7
+        }
+      ],
+      "solvable": true,
+      "expected": "957",
+      "correct": true,
+      "input": 3177,
+      "output": 274,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t071",
+      "type": "math",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "677589",
+      "error": null,
+      "cost": 308.1,
+      "seconds": 1.83,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 308.1
+        }
+      ],
+      "solvable": true,
+      "expected": "677589",
+      "correct": true,
+      "input": 1521,
+      "output": 156,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t072",
+      "type": "coding",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 1347.9,
+      "seconds": 12.6,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1347.9
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+      "input": 6779,
+      "output": 670,
+      "calls": 6,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t073",
+      "type": "data_analysis",
+      "reward": 6.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "C00",
+      "error": null,
+      "cost": 1076.7,
+      "seconds": 12.39,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1076.7
+        }
+      ],
+      "solvable": true,
+      "expected": "C00",
+      "correct": true,
+      "input": 5477,
+      "output": 529,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t074",
+      "type": "math",
+      "reward": 1.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 339.9,
+      "seconds": 4.22,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 339.9
+        }
+      ],
+      "solvable": true,
+      "expected": "223",
+      "correct": false,
+      "input": 1969,
+      "output": 143,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t075",
+      "type": "coding",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 6547.3,
+      "seconds": 40.34,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 6547.3
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+      "input": 37483,
+      "output": 2799,
+      "calls": 12,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t076",
+      "type": "search",
+      "reward": 8.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "Porto",
+      "error": null,
+      "cost": 373.9,
+      "seconds": 5.42,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 373.9
+        }
+      ],
+      "solvable": true,
+      "expected": "Porto",
+      "correct": true,
+      "input": 3249,
+      "output": 49,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t077",
+      "type": "math",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "809",
+      "error": null,
+      "cost": 573.2,
+      "seconds": 9.45,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 573.2
+        }
+      ],
+      "solvable": true,
+      "expected": "809",
+      "correct": true,
+      "input": 2912,
+      "output": 282,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t078",
+      "type": "data_analysis",
+      "reward": 8.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "90",
+      "error": null,
+      "cost": 791.6,
+      "seconds": 5.48,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 791.6
+        }
+      ],
+      "solvable": true,
+      "expected": "90",
+      "correct": true,
+      "input": 4196,
+      "output": 372,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t079",
+      "type": "search",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "Turku",
+      "error": null,
+      "cost": 259.5,
+      "seconds": 4.65,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 259.5
+        }
+      ],
+      "solvable": true,
+      "expected": "Turku",
+      "correct": true,
+      "input": 2145,
+      "output": 45,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t080",
+      "type": "math",
+      "reward": 8.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "520898",
+      "error": null,
+      "cost": 316.7,
+      "seconds": 2.18,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 316.7
+        }
+      ],
+      "solvable": true,
+      "expected": "520898",
+      "correct": true,
+      "input": 1537,
+      "output": 163,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t081",
+      "type": "coding",
+      "reward": 6.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 2599.3,
+      "seconds": 17.64,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 2599.3
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.006s\n\nOK\n",
+      "input": 12373,
+      "output": 1362,
+      "calls": 7,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t082",
+      "type": "coding",
+      "reward": 5.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 3121.4,
+      "seconds": 26.8,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 3121.4
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+      "input": 14994,
+      "output": 1622,
+      "calls": 8,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t083",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 3525.4,
+      "seconds": 29.64,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3525.4
+        }
+      ],
+      "solvable": true,
+      "expected": "Brno",
+      "correct": false,
+      "input": 28834,
+      "output": 642,
+      "calls": 8,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t084",
+      "type": "data_analysis",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "3671771",
+      "error": null,
+      "cost": 763.9,
+      "seconds": 5.5,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 763.9
+        }
+      ],
+      "solvable": true,
+      "expected": "3671771",
+      "correct": true,
+      "input": 4029,
+      "output": 361,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t086",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "Ghent",
+      "error": null,
+      "cost": 259.5,
+      "seconds": 12.35,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 259.5
+        }
+      ],
+      "solvable": true,
+      "expected": "Ghent",
+      "correct": true,
+      "input": 2145,
+      "output": 45,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t087",
+      "type": "search",
+      "reward": 10.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "Turku",
+      "error": null,
+      "cost": 541.8,
+      "seconds": 4.48,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 541.8
+        }
+      ],
+      "solvable": true,
+      "expected": "Turku",
+      "correct": true,
+      "input": 4268,
+      "output": 115,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t088",
+      "type": "math",
+      "reward": 1.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 394.7,
+      "seconds": 6.84,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 394.7
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 2037,
+      "output": 191,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t089",
+      "type": "data_analysis",
+      "reward": 8.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 3563.8,
+      "seconds": 20.21,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3563.8
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 29548,
+      "output": 609,
+      "calls": 9,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t090",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "Linz",
+      "error": null,
+      "cost": 1017.7,
+      "seconds": 22.29,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1017.7
+        }
+      ],
+      "solvable": true,
+      "expected": "Linz",
+      "correct": true,
+      "input": 9097,
+      "output": 108,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t091",
+      "type": "coding",
+      "reward": 4.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 6794.9,
+      "seconds": 64.38,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 6794.9
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "t\\r\\nC2,\"other,ignored\",\"5,996\"\\r\\nC7,refund,\"6,834\"\\r\\nC6,sale,\"8,816\"\\r\\nC5,refund,\"1,71\"\\r\\nC2,sale,\"7,537\"\\r\\nC0,refund,\"3,129\"\\r\\nC7,refund,\"-0,205\"\\r\\nC1,sale,\"5,199\"\\r\\nC4,\"other\\nignored\",\"6,661\"\\r\\nC3,sale,\"2,131\"\\r\\nC7,sale,\"6,778\"\\r\\nC4,sale,\"5,282\"\\r\\nC2,refund,\"8,903\"\\r\\nC5,\"other,ignored\",\"3,464\"\\r\\nC6,\"other,ignored\",\"5,379\"\\r\\nC7,sale,\"-0,09\"\\r\\nC1,refund,\"7,813\"\\r\\nC1,sale,\"-0,779\"\\r\\nC1,refund,\"3,969\"\\r\\nC1,sale,\"2,421\"\\r\\nC0,sale,\"6,057\"\\r\\nC0,\"other,ignored\",\"3,37\"\\r\\nC2,refund,\"4,805\"\\r\\nC6,\"other\\nignored\",\"0,588\"\\r\\nC2,sale,\"7,711\"\\r\\nC7,\"other\\nignored\",\"-0,652\"\\r\\nC6,sale,\"8,274\"\\r\\nC3,refund,\"9,639\"\\r\\nC6,\"other,ignored\",\"6,082\"\\r\\nC2,sale,\"8,641\"\\r\\nC3,refund,\"1,642\"\\r\\nC4,\"other,ignored\",\"5,657\"\\r\\nC0,sale,\"3,551\"\\r\\nC4,refund,\"5,434\"\\r\\nC2,\"other,ignored\",\"8,586\"\\r\\nC3,\"other\\nignored\",\"3,295\"\\r\\nC6,refund,\"0,585\"\\r\\nC6,\"other,ignored\",\"1,277\"\\r\\nC1,\"other,ignored\",\"0,291\"\\r\\nC0,\"other\\nignored\",\"8,478\"\\r\\nC0,\"other\\nignored\",\"4,08\"\\r\\nC4,\"other\\nignored\",\"1,581\"\\r\\nC7,\"other\\nignored\",\"5,435\"\\r\\nC6,sale,\"1,626\"\\r\\nC2,sale,\"2,508\"\\r\\nC6,\"other\\nignored\",\"7,89\"\\r\\nC3,\"other,ignored\",\"0,596\"\\r\\nC2,\"other,ignored\",\"8,573\"\\r\\nC2,\"other,ignored\",\"9,159\"\\r\\nC2,\"other,ignored\",\"-0,944\"\\r\\nC7,\"other,ignored\",\"4,434\"\\r\\nC2,\"other\\nignored\",\"8,726\"\\r\\nC0,refund,\"-0,637\"\\r\\nC4,refund,\"9,909\"\\r\\nC5,sale,\"3,994\"\\r\\nC7,refund,\"5,503\"\\r\\nC2,\"other\\nignored\",\"4,003\"\\r\\nC0,refund,\"4,959\"\\r\\nC1,\"other,ignored\",\"7,29\"\\r\\nC4,sale,\"5,347\"\\r\\nC4,\"other\\nignored\",\"5,237\"\\r\\nC3,\"other,ignored\",\"9,311\"\\r\\nC1,\"other,ignored\",\"8,64\"\\r\\nC1,\"other\\nignored\",\"2,34\"\\r\\nC2,\"other\\nignored\",\"6,036\"\\r\\nC1,refund,\"9,151\"\\r\\nC5,\"other,ignored\",\"1,926\"\\r\\nC4,refund,\"4,483\"\\r\\nC4,\"other,ignored\",\"5,525\"\\r\\nC7,sale,\"3,829\"\\r\\nC6,\"other\\nignored\",\"8,956\"\\r\\nC1,\"other,ignored\",\"2,743\"\\r\\nC1,\"other\\nignored\",\"-0,973\"\\r\\nC0,sale,\"-0,502\"\\r\\nC3,\"other,ignored\",\"7,11\"\\r\\nC0,\"other\\nignored\",\"4,946\"\\r\\nC7,sale,\"6,523\"\\r\\nC7,\"other,ignored\",\"7,622\"\\r\\nC4,\"other\\nignored\",\"6,979\"\\r\\nC3,refund,\"4,374\"\\r\\nC4,sale,\"6,996\"\\r\\nC2,sale,\"8,322\"\\r\\nC0,\"other\\nignored\",\"0,799\"\\r\\nC3,refund,\"3,509\"\\r\\nC4,\"other\\nignored\",\"8,873\"\\r\\nC3,sale,\"5,385\"\\r\\nC7,sale,\"2,638\"\\r\\nC0,refund,\"2,112\"\\r\\nC6,sale,\"5,707\"\\r\\nC6,\"other\\nignored\",\"6,03\"\\r\\nC5,\"other\\nignored\",\"5,593\"\\r\\nC4,\"other\\nignored\",\"5,439\"\\r\\nC5,\"other,ignored\",\"4,746\"\\r\\nC0,\"other,ignored\",\"3,575\"\\r\\nC3,\"other,ignored\",\"9,346\"\\r\\nC6,\"other,ignored\",\"7,445\"\\r\\nC4,sale,\"1,665\"\\r\\nC0,refund,\"6,418\"\\r\\nC5,\"other,ignored\",\"2,628\"\\r\\nC3,\"other,ignored\",\"5,191\"\\r\\nC6,\"other,ignored\",\"5,71\"\\r\\nC2,refund,\"6,865\"\\r\\nC0,sale,\"9,925\"\\r\\nC1,sale,\"8,992\"\\r\\nC4,sale,\"7,089\"\\r\\nC1,sale,\"9,629\"\\r\\nC0,\"other,ignored\",\"2,648\"\\r\\nC1,sale,\"0,245\"\\r\\nC2,sale,\"2,08\"\\r\\nC3,\"other\\nignored\",\"0,197\"\\r\\nC4,\"other\\nignored\",\"0,918\"\\r\\nC3,sale,\"2,107\"\\r\\nC6,refund,\"5,769\"\\r\\nC5,refund,\"4,241\"\\r\\nC7,sale,\"4,738\"\\r\\nC7,sale,\"6,645\"\\r\\nC2,\"other,ignored\",\"-0,523\"\\r\\nC6,refund,\"2,46\"\\r\\nC6,\"other,ignored\",\"6,702\"\\r\\nC5,\"other\\nignored\",\"2,672\"\\r\\n'),{'C7': 1895, 'C6': 1561, 'C5': -196, 'C2': 1622, 'C0': 306, 'C1': 478, 'C3': -953, 'C4': 657})\nAssertionError: {'C5': -171, 'C7': -9, 'C2': 208, 'C6': -246} != {'C7': 1895, 'C6': 1561, 'C5': -196, 'C2': 1[44 chars] 657}\n- {'C2': 208, 'C5': -171, 'C6': -246, 'C7': -9}\n+ {'C0': 306,\n+  'C1': 478,\n+  'C2': 1622,\n+  'C3': -953,\n+  'C4': 657,\n+  'C5': -196,\n+  'C6': 1561,\n+  'C7': 1895}\n\n----------------------------------------------------------------------\nRan 2 tests in 0.003s\n\nFAILED (failures=1)\n",
+      "input": 33929,
+      "output": 3402,
+      "calls": 11,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t092",
+      "type": "math",
+      "reward": 8.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "895",
+      "error": null,
+      "cost": 535.2,
+      "seconds": 11.72,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 535.2
+        }
+      ],
+      "solvable": true,
+      "expected": "895",
+      "correct": true,
+      "input": 2842,
+      "output": 251,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t093",
+      "type": "coding",
+      "reward": 10.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "DONE",
+      "error": null,
+      "cost": 1331.9,
+      "seconds": 10.68,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1331.9
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": true,
+      "private_pass": true,
+      "private_detail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+      "input": 7189,
+      "output": 613,
+      "calls": 6,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t094",
+      "type": "data_analysis",
+      "reward": 6.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 4577.6,
+      "seconds": 40.44,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 4577.6
+        }
+      ],
+      "solvable": true,
+      "expected": "50782",
+      "correct": false,
+      "input": 24986,
+      "output": 2079,
+      "calls": 9,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t095",
+      "type": "coding",
+      "reward": 6.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 1010.2,
+      "seconds": 10.43,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1010.2
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "EE\n======================================================================\nERROR: test_private (unittest.loader._FailedTest.test_private)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_private\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/unittest/loader.py\", line 396, in _find_test_path\n    module = self._get_module_from_name(name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/unittest/loader.py\", line 339, in _get_module_from_name\n    __import__(name)\n  File \"/judge/test_private.py\", line 2, in <module>\n    import solution as m\n  File \"/judge/solution.py\", line 3\n    from decimal import Decimal, InvalidOperation, ROUND_HALF_UP, FRACTIAL if False else ROUND_HALF_UP\n                                                                           ^^\nSyntaxError: invalid syntax\n\n\n======================================================================\nERROR: test_solution (unittest.loader._FailedTest.test_solution)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_solution\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/unittest/loader.py\", line 396, in _find_test_path\n    module = self._get_module_from_name(name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/unittest/loader.py\", line 339, in _get_module_from_name\n    __import__(name)\n  File \"/judge/test_solution.py\", line 2, in <module>\n    import solution as m\n  File \"/judge/solution.py\", line 3\n    from decimal import Decimal, InvalidOperation, ROUND_HALF_UP, FRACTIAL if False else ROUND_HALF_UP\n                                                                           ^^\nSyntaxError: invalid syntax\n\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nFAILED (errors=2)\n",
+      "input": 4932,
+      "output": 517,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t096",
+      "type": "data_analysis",
+      "reward": 1.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 3752.3,
+      "seconds": 11.96,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3752.3
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 31203,
+      "output": 632,
+      "calls": 9,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t098",
+      "type": "search",
+      "reward": 5.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "task_cost_limit",
+      "error": null,
+      "cost": 3538.5,
+      "seconds": 47.36,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3538.5
+        }
+      ],
+      "solvable": true,
+      "expected": "Brno",
+      "correct": false,
+      "input": 27945,
+      "output": 744,
+      "calls": 9,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t099",
+      "type": "data_analysis",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "solved",
+      "answer": "1591672",
+      "error": null,
+      "cost": 1992.3,
+      "seconds": 17.46,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1992.3
+        }
+      ],
+      "solvable": true,
+      "expected": "1591672",
+      "correct": true,
+      "input": 13103,
+      "output": 682,
+      "calls": 6,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t100",
+      "type": "coding",
+      "reward": 3.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 757.1,
+      "seconds": 7.85,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 757.1
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 4681,
+      "output": 289,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t101",
+      "type": "coding",
+      "reward": 6.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 754.4,
+      "seconds": 8.24,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 754.4
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 4754,
+      "output": 279,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t102",
+      "type": "coding",
+      "reward": 2.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "repeated_tool_error",
+      "error": null,
+      "cost": 1172.6,
+      "seconds": 10.58,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1172.6
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 6246,
+      "output": 548,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t103",
+      "type": "coding",
+      "reward": 9.0,
+      "variant": "ours",
+      "status": "impossible",
+      "answer": "",
+      "error": null,
+      "cost": 801.6,
+      "seconds": 16.32,
+      "attempts": [
+        {
+          "status": "impossible",
+          "error": null,
+          "cost": 801.6
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": true,
+      "input": 5556,
+      "output": 246,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t104",
+      "type": "coding",
+      "reward": 1.0,
+      "variant": "ours",
+      "status": "failed",
+      "answer": "no_progress_step_limit",
+      "error": null,
+      "cost": 797.7,
+      "seconds": 13.78,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 797.7
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 4657,
+      "output": 332,
+      "calls": 5,
+      "estimated_calls": 0
+    }
+  ],
+  "meter_audit": {
+    "responses": 525,
+    "extra_cost": 0,
+    "nonzero_reasoning_calls": 0,
+    "production_meter_would_charge_identically": true
+  }
+}
