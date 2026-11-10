@@ -1,0 +1,1 @@
+Mira Volkov was born in Tallinn. Her mentor is Anton Vale.

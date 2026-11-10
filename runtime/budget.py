@@ -12,7 +12,7 @@ INPUT_PER_OUTPUT = 10
 
 
 class BudgetExhausted(RuntimeError):
-    """The whole run is out of tokens."""
+    """An explicitly bounded offline experiment reached its total cap."""
 
 
 class TaskLimitExceeded(RuntimeError):
@@ -42,34 +42,44 @@ class Journal:
 
 
 class Budget:
-    """Counts cost as input / 10 + output, reasoning included once, no cache discount."""
+    """Advisory global estimate and enforceable task caps; the proxy owns the total cutoff."""
 
-    def __init__(self, total: float, journal: Journal):
+    def __init__(self, total: float, journal: Journal, *, enforce_total: bool = False):
         self.total = float(total)
+        self.enforce_total = enforce_total  # opt-in for bounded offline experiments only
         self.spent = 0.0
         self.journal = journal
         self.task_id: Optional[str] = None
         self.task_spent = 0.0
         self.task_limit = float("inf")
+        self.task_hard_limit = float('inf')
         self._lock = threading.Lock()
 
     def remaining(self) -> float:
+        """Planning estimate only: zero must not stop the competition runner."""
         with self._lock:
             return max(0.0, self.total - self.spent)
 
-    def begin_task(self, task_id: str, limit: float) -> None:
+    def begin_task(self, task_id: str, limit: float, hard_limit: float | None = None) -> None:
         with self._lock:
             self.task_id, self.task_spent, self.task_limit = task_id, 0.0, float(limit)
+            self.task_hard_limit = float(limit if hard_limit is None else hard_limit)
+            self.task_limit = min(self.task_limit, self.task_hard_limit)
+
+    def extend_task_limit(self, limit: float) -> None:
+        with self._lock:
+            self.task_limit = min(self.task_hard_limit, max(self.task_limit, float(limit)))
 
     def end_task(self) -> float:
         with self._lock:
             spent, self.task_id, self.task_limit = self.task_spent, None, float("inf")
+            self.task_hard_limit = float('inf')
             return spent
 
     def check(self) -> None:
         """Called before every model request."""
         with self._lock:
-            if self.spent >= self.total:
+            if self.enforce_total and self.spent >= self.total:
                 raise BudgetExhausted(f"spent {self.spent:.0f} of {self.total:.0f}")
             if self.task_spent >= self.task_limit:
                 raise TaskLimitExceeded(f"{self.task_id}: {self.task_spent:.0f} >= {self.task_limit:.0f}")

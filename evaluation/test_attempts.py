@@ -90,6 +90,7 @@ class AttemptTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(await run_agent.attempt(task,self.budget,None,lambda *a,**k:Agent()),('solved','DONE'))
 
     async def test_task_limits_do_not_trigger_global_api_error_stop(self):
+        self.budget.spent=100001  # the proxy, not this estimate, owns the global cutoff
         tasks=[]
         for i in range(5):
             d=self.root/str(i); d.mkdir()
@@ -102,6 +103,48 @@ class AttemptTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(stop,'all tasks handled')
         self.assertEqual((tasks[-1].dir/'answer.txt').read_text().strip(),'42')
         self.assertIsNone(self.budget.task_id)
+
+    async def test_budget_total_is_advisory_but_task_cap_is_real(self):
+        budget=Budget(1,self.budget.journal)
+        budget.begin_task('task',10,hard_limit=30)
+        budget.charge('mock',100,0,False)
+        self.assertEqual(budget.remaining(),0)
+        with self.assertRaises(TaskLimitExceeded): budget.check()
+        budget.extend_task_limit(1000)
+        self.assertEqual(budget.task_limit,30)
+        budget.check()
+
+    async def test_extension_requires_new_evidence_and_respects_ceiling(self):
+        self.finished=[]
+        budget=Budget(1,self.budget.journal)
+        budget.begin_task('task',10,hard_limit=30)
+        budget.task_spent=11
+        limits=AttemptLimits(steps=4,cost=30,initial_steps=2,initial_cost=10,
+                             step_increment=2,cost_increment=20,max_extensions=1)
+        rail=AttemptRail(self.root,limits,budget=budget)
+        ctx=SimpleNamespace(extra={'_react_iteration':3},request_force_finish=self.finished.append)
+        await rail.before_model_call(ctx)
+        self.assertEqual(self.finished[0]['stop_reason'],'task_cost_limit')
+        self.finished.clear()
+        rail.observe_progress('Command: python\nStdout: 158\nStderr: (empty)',{'command':'python3 compute.py'},True)
+        await rail.before_model_call(ctx)
+        self.assertEqual(self.finished,[])
+        self.assertEqual((rail.allowed_steps,budget.task_limit),(4,30))
+        self.assertEqual(rail.extensions,1)
+        ctx.extra['_react_iteration']=5
+        await rail.before_model_call(ctx)
+        self.assertEqual(self.finished[0]['stop_reason'],'no_progress_step_limit')
+
+    async def test_coding_edit_alone_is_not_progress(self):
+        self.finished=[]
+        rail=AttemptRail(self.root,AttemptLimits(),task_type='coding')
+        (self.root/'solution.py').write_text('changed=1')
+        await rail.after_tool_call(self.context(True,{'command':'python3 edit.py'}))
+        self.assertEqual(rail.fresh_progress,set())
+        rail.observe_progress('Ran 8 tests in 0.01s\nFAILED (failures=5, errors=1)',{},False)
+        self.assertEqual(rail.fresh_progress,set())
+        rail.observe_progress('Ran 8 tests in 0.01s\nFAILED (failures=3)',{},False)
+        self.assertIn('fewer_failing_tests',rail.fresh_progress)
 
     async def test_search_context_excludes_references_and_is_bounded(self):
         (self.root/'task.json').write_text('{"expected":"secret"}')

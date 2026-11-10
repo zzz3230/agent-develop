@@ -16,6 +16,12 @@
 профиль и остаток общего времени. Причина локальной остановки попадает в
 outcome, лимиты — в attempt_start. Лимиты одной задачи не считаются отказом API.
 
+Обновление 11 ноября: см. `adaptive-limits.md`. Budget.total/remaining() —
+оценка, общий предел применяет прокси. begin_task принимает стартовый и
+жёсткий предел задачи; AttemptRail продлевает старт по наблюдаемому прогрессу.
+М3 может передавать initial_steps/initial_cost, потолки и max_extensions в
+AttemptLimits; очередь не должна завершаться только из-за remaining()==0.
+
 ## Куда подключаются М2 и М3
 
 - **М2:** в `run_agent.py` константы `TOOLS`, `MODEL` и разбор ответа в `attempt`; инструкции выбираются через `runtime/profiles.py: system_for_task`. Только coding получает economy; остальные типы — baseline. Фабрика `react_agent` принимает необязательный `system_prompt`; старые вызовы совместимы.

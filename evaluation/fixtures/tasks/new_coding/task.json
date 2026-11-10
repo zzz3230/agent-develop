@@ -1,0 +1,1 @@
+{"task_id": "new_coding", "task_type": "coding", "instruction": "Run `python3 test_stats.py`. Fix stats.py so all tests pass. Keep the original tests unchanged and preserve general behavior. Return DONE after verification. Work only inside the current directory.", "reward": 1, "expected": "tests_pass", "check": "unittest"}

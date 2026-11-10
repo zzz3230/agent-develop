@@ -26,8 +26,6 @@ from runtime.attempt_policy import AttemptLimits, limits_for_task  # noqa: E402
 
 DEFAULT_BUDGET = 100_000
 TIME_LIMIT_S = 3300.0
-TASK_TIME_LIMIT_S = 180.0
-TASK_COST_LIMIT = 2500.0
 MAX_CONSECUTIVE_ERRORS = 4
 MODEL = "qwen3.8-27b-noreason"
 TOOLS = {
@@ -98,7 +96,7 @@ async def attempt(task: Task, budget: Budget, connection, react_agent,
         max_output=limits.output_tokens, system_prompt=system_prompt,
     )
     from runtime.attempt_rail import AttemptRail
-    await agent.register_rail(AttemptRail(task.cwd, limits, budget.journal))
+    await agent.register_rail(AttemptRail(task.cwd, limits, budget.journal, budget, task.type))
     if use_sql:
         await agent.register_rail(SqlCompletionRail())
     invocation_error = None
@@ -143,7 +141,7 @@ async def run(tasks: list[Task], budget: Budget, journal: Journal, deadline: flo
         if time.monotonic() > deadline:
             return "time limit"
         limits = limits_for_task(task.type)
-        budget.begin_task(task.id, limits.cost)
+        budget.begin_task(task.id, min(limits.initial_cost, limits.cost), hard_limit=limits.cost)
         journal.write('attempt_start', task=task.id, limits=asdict(limits))
         stop = None
         try:
@@ -167,8 +165,6 @@ async def run(tasks: list[Task], budget: Budget, journal: Journal, deadline: flo
                       detail=detail, cost=round(budget.end_task(), 1))
         if stop:
             return stop
-        if budget.remaining() <= 0:
-            return "budget exhausted"
         if errors >= MAX_CONSECUTIVE_ERRORS:
             return "model API keeps failing"
     return "all tasks handled"
@@ -191,7 +187,7 @@ def main() -> int:
             tasks.append(load_task(directory))
         except (OSError, ValueError, KeyError) as exc:
             journal.write("bad_task", dir=directory.name, error=repr(exc))
-    journal.write("start", tasks=len(tasks), budget=budget.total)
+    journal.write("start", tasks=len(tasks), budget_estimate=budget.total, budget_authority='proxy')
     try:
         stop = asyncio.run(run(tasks, budget, journal, started + TIME_LIMIT_S))
     except Exception as exc:

@@ -1,0 +1,1 @@
+Anton Vale was born in Riga. He works in Oslo.

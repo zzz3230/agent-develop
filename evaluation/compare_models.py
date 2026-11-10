@@ -26,7 +26,7 @@ async def run(root: Path, output: Path, limit: float) -> None:
 
     connection = Connection(os.environ['LLM_BASE_URL'], os.environ.pop('LLM_API_KEY'))
     journal = Journal(output / 'usage.jsonl')
-    budget = Budget(limit, journal)
+    budget = Budget(limit, journal, enforce_total=True)  # bounded experiment, not competition runtime
     # Evaluation uses reported usage exactly when available; the production
     # meter currently takes max(reported, character estimate), biasing comparisons.
     def exact_charge(self, messages, tools, message):
