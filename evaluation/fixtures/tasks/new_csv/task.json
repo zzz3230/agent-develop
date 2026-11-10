@@ -1,0 +1,1 @@
+{"task_id": "new_csv", "task_type": "data_analysis", "instruction": "In sales.csv, find the total revenue (units times price) for widget orders in north or west during months 3 through 7 inclusive. Return an integer. Use Python through bash. Work only inside the current directory.", "reward": 1, "expected": "2401", "check": "exact_int"}

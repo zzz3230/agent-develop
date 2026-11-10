@@ -1,0 +1,2664 @@
+{
+  "variant": "stock",
+  "input_sha256": "fc09a24fabfe846c3b2bab888887cb6bc2026cc2720feec5304bcf5062c55163",
+  "total": {
+    "attempted": 100,
+    "solved": 12,
+    "points": 80.0,
+    "cost": 230660.0,
+    "input": 2010360,
+    "output": 29624,
+    "calls": 473,
+    "seconds": 1574.8,
+    "impossible_recognized": 0,
+    "impossible_false_claims": 0,
+    "infrastructure_retries": 0,
+    "estimated_calls": 0
+  },
+  "withdrawn_attempts": 5,
+  "withdrawn_cost": 10368.7,
+  "withdrawn_seconds": 41.9,
+  "raw_measured_cost": 241028.7,
+  "stop_reasons": {},
+  "possible_points": 421,
+  "by_type": {
+    "coding": {
+      "attempted": 25,
+      "solved": 0,
+      "points": 0,
+      "cost": 50451.5,
+      "input": 452745,
+      "output": 5177,
+      "calls": 125,
+      "seconds": 206.4,
+      "impossible_recognized": 0,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    },
+    "data_analysis": {
+      "attempted": 25,
+      "solved": 1,
+      "points": 6.0,
+      "cost": 62554.2,
+      "input": 522292,
+      "output": 10325,
+      "calls": 125,
+      "seconds": 320.1,
+      "impossible_recognized": 0,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    },
+    "math": {
+      "attempted": 25,
+      "solved": 11,
+      "points": 74.0,
+      "cost": 44846.9,
+      "input": 360189,
+      "output": 8828,
+      "calls": 98,
+      "seconds": 760.7,
+      "impossible_recognized": 0,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    },
+    "search": {
+      "attempted": 25,
+      "solved": 0,
+      "points": 0,
+      "cost": 72807.4,
+      "input": 675134,
+      "output": 5294,
+      "calls": 125,
+      "seconds": 287.5,
+      "impossible_recognized": 0,
+      "impossible_false_claims": 0,
+      "infrastructure_retries": 0,
+      "estimated_calls": 0
+    }
+  },
+  "prefix_100k": {
+    "attempted": 42,
+    "solved": 2,
+    "points": 6.0,
+    "cost": 99256.8,
+    "input": 851138,
+    "output": 14143,
+    "calls": 202,
+    "seconds": 944.1,
+    "impossible_recognized": 0,
+    "impossible_false_claims": 0,
+    "infrastructure_retries": 0,
+    "estimated_calls": 0
+  },
+  "rows": [
+    {
+      "id": "t000",
+      "type": "math",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2723.1,
+      "seconds": 37.6,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2723.1
+        }
+      ],
+      "solvable": true,
+      "expected": "976",
+      "correct": false,
+      "input": 18641,
+      "output": 859,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t001",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2003.5,
+      "seconds": 7.89,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2003.5
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17605,
+      "output": 243,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t002",
+      "type": "data_analysis",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2325.9,
+      "seconds": 13.49,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2325.9
+        }
+      ],
+      "solvable": true,
+      "expected": "2988319",
+      "correct": false,
+      "input": 19969,
+      "output": 329,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t003",
+      "type": "coding",
+      "reward": 1.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1898.8,
+      "seconds": 8.17,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1898.8
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {0: 0, 1: None, 2: 12, 3: -5, 4: 5, 5: 10, 6: None, 7: 10} != {0: 0, 1: None, 2: 12, 3: -5, 4: -4, 5: 4, 6: -6, 7: 9}\n- {0: 0, 1: None, 2: 12, 3: -5, 4: 5, 5: 10, 6: None, 7: 10}\n?                                  ^     ^^     ^^^^     ^^\n\n+ {0: 0, 1: None, 2: 12, 3: -5, 4: -4, 5: 4, 6: -6, 7: 9}\n?                                  ^^     ^     ^^     ^\n\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.distances(['a','b','c','z'],[('b','c',-2),('a','b',5),('a','c',9)],'a'),{'a':0,'b':5,'c':3,'z':None})\nAssertionError: {'a': 0, 'b': 5, 'c': 9, 'z': None} != {'a': 0, 'b': 5, 'c': 3, 'z': None}\n- {'a': 0, 'b': 5, 'c': 9, 'z': None}\n?                       ^\n\n+ {'a': 0, 'b': 5, 'c': 3, 'z': None}\n?                       ^\n\n\n----------------------------------------------------------------------\nRan 2 tests in 0.008s\n\nFAILED (failures=2)\n",
+      "input": 17648,
+      "output": 134,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t004",
+      "type": "math",
+      "reward": 5.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "",
+      "error": "TimeoutError: ",
+      "cost": 1818.2,
+      "seconds": 240.05,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": "TimeoutError: ",
+          "cost": 1818.2
+        }
+      ],
+      "solvable": true,
+      "expected": "932",
+      "correct": false,
+      "input": 14602,
+      "output": 358,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t005",
+      "type": "data_analysis",
+      "reward": 6.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2406.8,
+      "seconds": 10.05,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2406.8
+        }
+      ],
+      "solvable": true,
+      "expected": "184",
+      "correct": false,
+      "input": 19168,
+      "output": 490,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t006",
+      "type": "coding",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1952.7,
+      "seconds": 6.8,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1952.7
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "4)*(12-6)))', 2394), ('(((12+14)-(13+8))+((12-9)+(13+6)))', 27), ('(((11*8)*(4*1))*((5*8)-(7*1)))', 11616), ('(((11+12)*(7*14))+((1*7)+(10+7)))', 2278), ('(((6+11)*(12-8))+((9*3)+(1+12)))', 108), ('(((3+3)*(11+4))-((10*3)+(7+7)))', 46), ('(((2*1)*(1+14))*((6+11)+(8+2)))', 810), ('(((4*13)+(4+11))*((11+11)+(10+3)))', 2345), ('(((4+3)+(1+8))+((3-9)-(7*13)))', -81), ('(((2*9)+(12*5))*((3*1)-(2-7)))', 624), ('(((1-7)-(12+6))*((3-2)+(4+8)))', -312), ('(((1+2)*(1*10))-((9+12)+(7-10)))', 12), ('(((5*12)+(8-13))*((11*14)+(12-9)))', 8635), ('(((5*11)-(2+11))-((5-11)+(6+9)))', 33), ('(((7-12)+(2-4))+((12-7)-(7*7)))', -51)]: self.assertEqual(m.calculate(text),expected)\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in calculate\n    return sum(int(x.strip()) for x in text.split('+'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in <genexpr>\n    return sum(int(x.strip()) for x in text.split('+'))\n               ^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 10: '(((3'\n\n======================================================================\nERROR: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.calculate('2*(3+4)-5'),9); self.assertEqual(m.calculate('--3 + -2*4'),-5)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in calculate\n    return sum(int(x.strip()) for x in text.split('+'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in <genexpr>\n    return sum(int(x.strip()) for x in text.split('+'))\n               ^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 10: '2*(3'\n\n----------------------------------------------------------------------\nRan 2 tests in 0.014s\n\nFAILED (errors=2)\n",
+      "input": 17657,
+      "output": 187,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t007",
+      "type": "search",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 4262.1,
+      "seconds": 12.54,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 4262.1
+        }
+      ],
+      "solvable": true,
+      "expected": "Linz",
+      "correct": false,
+      "input": 40071,
+      "output": 255,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t008",
+      "type": "search",
+      "reward": 1.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2329.8,
+      "seconds": 9.82,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2329.8
+        }
+      ],
+      "solvable": true,
+      "expected": "Utrecht",
+      "correct": false,
+      "input": 21708,
+      "output": 159,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t009",
+      "type": "coding",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1966.4,
+      "seconds": 12.45,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1966.4
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {0: 0, 1: None, 2: -2, 3: None, 4: -4, 5: 4, 6: 5, 7: 12} != {0: 0, 1: None, 2: -2, 3: None, 4: -4, 5: -3, 6: 5, 7: 5}\n- {0: 0, 1: None, 2: -2, 3: None, 4: -4, 5: 4, 6: 5, 7: 12}\n?                                           ^           ^^\n\n+ {0: 0, 1: None, 2: -2, 3: None, 4: -4, 5: -3, 6: 5, 7: 5}\n?                                           ^^           ^\n\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.distances(['a','b','c','z'],[('b','c',-2),('a','b',5),('a','c',9)],'a'),{'a':0,'b':5,'c':3,'z':None})\nAssertionError: {'a': 0, 'b': 5, 'c': 9, 'z': None} != {'a': 0, 'b': 5, 'c': 3, 'z': None}\n- {'a': 0, 'b': 5, 'c': 9, 'z': None}\n?                       ^\n\n+ {'a': 0, 'b': 5, 'c': 3, 'z': None}\n?                       ^\n\n\n----------------------------------------------------------------------\nRan 2 tests in 0.007s\n\nFAILED (failures=2)\n",
+      "input": 18134,
+      "output": 153,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t010",
+      "type": "math",
+      "reward": 7.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3599.2,
+      "seconds": 21.28,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3599.2
+        }
+      ],
+      "solvable": true,
+      "expected": "467782",
+      "correct": false,
+      "input": 21662,
+      "output": 1433,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t011",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 5067.8,
+      "seconds": 10.46,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 5067.8
+        }
+      ],
+      "solvable": true,
+      "expected": "Utrecht",
+      "correct": false,
+      "input": 47678,
+      "output": 300,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t012",
+      "type": "data_analysis",
+      "reward": 7.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1993.2,
+      "seconds": 10.17,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1993.2
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17672,
+      "output": 226,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t013",
+      "type": "coding",
+      "reward": 2.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2022.2,
+      "seconds": 9.45,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2022.2
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "FF\n======================================================================\nFAIL: test_more (test_private.Hidden.test_more)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_private.py\", line 8, in test_more\n    else: self.assertEqual(c.get(key),expected)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 17\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    c=m.LRU(2); c.put('a',1); c.put('b',2); self.assertEqual(c.get('a'),1); c.put('c',3); self.assertIsNone(c.get('b')); self.assertEqual(c.get('c'),3)\n                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 2 is not None\n\n----------------------------------------------------------------------\nRan 2 tests in 0.005s\n\nFAILED (failures=2)\n",
+      "input": 18302,
+      "output": 192,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t015",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1898.2,
+      "seconds": 5.64,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1898.2
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17272,
+      "output": 171,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t016",
+      "type": "search",
+      "reward": 5.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3431.1,
+      "seconds": 9.31,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3431.1
+        }
+      ],
+      "solvable": true,
+      "expected": "Brno",
+      "correct": false,
+      "input": 32301,
+      "output": 201,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t017",
+      "type": "math",
+      "reward": 10.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2170.4,
+      "seconds": 8.77,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2170.4
+        }
+      ],
+      "solvable": true,
+      "expected": "191",
+      "correct": false,
+      "input": 18274,
+      "output": 343,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t018",
+      "type": "search",
+      "reward": 8.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2690.8,
+      "seconds": 7.33,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2690.8
+        }
+      ],
+      "solvable": true,
+      "expected": "Utrecht",
+      "correct": false,
+      "input": 24128,
+      "output": 278,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t019",
+      "type": "coding",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2096.8,
+      "seconds": 10.11,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2096.8
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "7))+((10*14)+(3*9)))', 192), ('(((2*3)-(5-6))+((8+4)*(4+11)))', 187), ('(((13-13)-(11+7))-((8*9)*(9-7)))', -162), ('(((9+9)+(13*4))*((5+8)*(13+12)))', 22750), ('(((8+13)+(3+11))-((6-1)+(12+1)))', 17), ('(((8+12)*(5*4))+((2-5)-(6*8)))', 349), ('(((10-14)+(11*9))*((13*6)*(4-11)))', -51870), ('(((3*2)+(4-14))*((7+10)-(3*13)))', 88), ('(((13*1)+(11+5))+((1*4)*(7-9)))', 21), ('(((9+1)*(5*3))*((8+14)-(4-1)))', 2850), ('(((11+13)-(13-8))+((14*13)+(3+1)))', 205), ('(((10-13)-(11-4))+((10-3)-(4-6)))', -1), ('(((11*6)-(9*12))-((14+3)+(3+1)))', -63), ('(((9*12)*(4+2))+((1-11)+(4+5)))', 647), ('(((3*13)+(5-11))+((13*10)-(14*9)))', 37)]: self.assertEqual(m.calculate(text),expected)\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in calculate\n    return sum(int(x.strip()) for x in text.split('+'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in <genexpr>\n    return sum(int(x.strip()) for x in text.split('+'))\n               ^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 10: '(((7*5)'\n\n======================================================================\nERROR: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.calculate('2*(3+4)-5'),9); self.assertEqual(m.calculate('--3 + -2*4'),-5)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in calculate\n    return sum(int(x.strip()) for x in text.split('+'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in <genexpr>\n    return sum(int(x.strip()) for x in text.split('+'))\n               ^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 10: '2*(3'\n\n----------------------------------------------------------------------\nRan 2 tests in 0.010s\n\nFAILED (errors=2)\n",
+      "input": 18278,
+      "output": 269,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t020",
+      "type": "data_analysis",
+      "reward": 2.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2050.2,
+      "seconds": 14.24,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2050.2
+        }
+      ],
+      "solvable": true,
+      "expected": "59243",
+      "correct": false,
+      "input": 18032,
+      "output": 247,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t021",
+      "type": "coding",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2046.8,
+      "seconds": 9.21,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2046.8
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "FF\n======================================================================\nFAIL: test_more (test_private.Hidden.test_more)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_private.py\", line 8, in test_more\n    else: self.assertEqual(c.get(key),expected)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 26 != None\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    c=m.LRU(2); c.put('a',1); c.put('b',2); self.assertEqual(c.get('a'),1); c.put('c',3); self.assertIsNone(c.get('b')); self.assertEqual(c.get('c'),3)\n                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 2 is not None\n\n----------------------------------------------------------------------\nRan 2 tests in 0.008s\n\nFAILED (failures=2)\n",
+      "input": 18218,
+      "output": 225,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t022",
+      "type": "search",
+      "reward": 6.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2886.7,
+      "seconds": 12.86,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2886.7
+        }
+      ],
+      "solvable": true,
+      "expected": "Brno",
+      "correct": false,
+      "input": 26077,
+      "output": 279,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t023",
+      "type": "coding",
+      "reward": 7.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2097.9,
+      "seconds": 7.51,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2097.9
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "13))-((3*12)*(13*4)))', -2040), ('(((1*1)*(2*1))-((2*7)*(7+4)))', -152), ('(((10*2)+(8*3))*((1*1)+(1*14)))', 660), ('(((9+14)*(1*13))*((13-4)+(2+5)))', 4784), ('(((8*1)+(11-13))*((12-13)+(14*2)))', 162), ('(((11+11)*(5-6))+((9+1)*(14-1)))', 108), ('(((11+5)*(14-5))-((7-14)*(8+13)))', 291), ('(((3+5)+(1*4))*((8*12)-(11+6)))', 948), ('(((3-7)+(9-4))*((1+3)+(12+13)))', 29), ('(((13+11)*(10-1))-((5*4)+(4-9)))', 201), ('(((12+3)*(3+10))*((12-3)-(9-9)))', 1755), ('(((1+7)*(7-12))-((8*10)+(2-8)))', -114), ('(((2*10)+(10+2))*((9+7)-(5-4)))', 480), ('(((8-14)+(2-4))+((11-3)+(6+9)))', 15), ('(((6-3)+(5-11))*((1-2)-(12-8)))', 15)]: self.assertEqual(m.calculate(text),expected)\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in calculate\n    return sum(int(x.strip()) for x in text.split('+'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in <genexpr>\n    return sum(int(x.strip()) for x in text.split('+'))\n               ^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 10: '(((11'\n\n======================================================================\nERROR: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.calculate('2*(3+4)-5'),9); self.assertEqual(m.calculate('--3 + -2*4'),-5)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in calculate\n    return sum(int(x.strip()) for x in text.split('+'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in <genexpr>\n    return sum(int(x.strip()) for x in text.split('+'))\n               ^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 10: '2*(3'\n\n----------------------------------------------------------------------\nRan 2 tests in 0.016s\n\nFAILED (errors=2)\n",
+      "input": 18279,
+      "output": 270,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t024",
+      "type": "math",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2011.3,
+      "seconds": 6.26,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2011.3
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17783,
+      "output": 233,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t025",
+      "type": "search",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2359.5,
+      "seconds": 35.32,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2359.5
+        }
+      ],
+      "solvable": true,
+      "expected": "Brno",
+      "correct": false,
+      "input": 21665,
+      "output": 193,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t026",
+      "type": "data_analysis",
+      "reward": 7.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3118.9,
+      "seconds": 10.08,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3118.9
+        }
+      ],
+      "solvable": true,
+      "expected": "893023",
+      "correct": false,
+      "input": 28429,
+      "output": 276,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t027",
+      "type": "data_analysis",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1914.7,
+      "seconds": 16.57,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1914.7
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17547,
+      "output": 160,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t028",
+      "type": "data_analysis",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2426.3,
+      "seconds": 12.14,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2426.3
+        }
+      ],
+      "solvable": true,
+      "expected": "70771",
+      "correct": false,
+      "input": 19803,
+      "output": 446,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t029",
+      "type": "coding",
+      "reward": 7.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1897.3,
+      "seconds": 5.73,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1897.3
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {0: 0, 1: 12, 2: None, 3: None, 4: None, 5: None, 6: None, 7: None} != {0: 0, 1: 12, 2: None, 3: 17, 4: None, 5: 16, 6: 15, 7: 13}\n- {0: 0, 1: 12, 2: None, 3: None, 4: None, 5: None, 6: None, 7: None}\n+ {0: 0, 1: 12, 2: None, 3: 17, 4: None, 5: 16, 6: 15, 7: 13}\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.distances(['a','b','c','z'],[('b','c',-2),('a','b',5),('a','c',9)],'a'),{'a':0,'b':5,'c':3,'z':None})\nAssertionError: {'a': 0, 'b': 5, 'c': 9, 'z': None} != {'a': 0, 'b': 5, 'c': 3, 'z': None}\n- {'a': 0, 'b': 5, 'c': 9, 'z': None}\n?                       ^\n\n+ {'a': 0, 'b': 5, 'c': 3, 'z': None}\n?                       ^\n\n\n----------------------------------------------------------------------\nRan 2 tests in 0.009s\n\nFAILED (failures=2)\n",
+      "input": 17633,
+      "output": 134,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t030",
+      "type": "search",
+      "reward": 7.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1919.0,
+      "seconds": 7.28,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1919.0
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17340,
+      "output": 185,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t031",
+      "type": "search",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1897.0,
+      "seconds": 8.1,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1897.0
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17270,
+      "output": 170,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t032",
+      "type": "data_analysis",
+      "reward": 1.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3996.1,
+      "seconds": 18.59,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3996.1
+        }
+      ],
+      "solvable": true,
+      "expected": "15",
+      "correct": false,
+      "input": 22641,
+      "output": 1732,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t033",
+      "type": "coding",
+      "reward": 7.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2059.8,
+      "seconds": 12.31,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2059.8
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "+((1*1)+(8+8)))', 17), ('(((9+1)-(13+9))+((7-12)+(9+12)))', 4), ('(((11-4)+(3-14))*((12+8)+(4-11)))', -52), ('(((14*9)-(7+7))+((13+8)+(12+12)))', 157), ('(((6*9)*(4+6))+((4+11)-(11*7)))', 478), ('(((1-4)+(1+7))*((2*3)-(10+10)))', -70), ('(((1*1)+(7-8))+((6*9)*(7*8)))', 3024), ('(((14*4)+(8-1))*((3-13)*(4+14)))', -11340), ('(((8-11)+(2*9))*((10+1)+(12+1)))', 360), ('(((12+2)+(9+14))-((5*12)+(10*3)))', -53), ('(((1-7)*(2+2))*((9*7)+(6-4)))', -1560), ('(((1*12)+(6-7))-((14*12)+(2+8)))', -167), ('(((8-11)-(3-10))*((3-8)*(12-11)))', -20), ('(((4+10)-(5-1))+((14*14)-(7+6)))', 193), ('(((2-3)-(7+2))+((3-10)*(11+7)))', -136)]: self.assertEqual(m.calculate(text),expected)\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in calculate\n    return sum(int(x.strip()) for x in text.split('+'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in <genexpr>\n    return sum(int(x.strip()) for x in text.split('+'))\n               ^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 10: '(((11-7)-(11'\n\n======================================================================\nERROR: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.calculate('2*(3+4)-5'),9); self.assertEqual(m.calculate('--3 + -2*4'),-5)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in calculate\n    return sum(int(x.strip()) for x in text.split('+'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in <genexpr>\n    return sum(int(x.strip()) for x in text.split('+'))\n               ^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 10: '2*(3'\n\n----------------------------------------------------------------------\nRan 2 tests in 0.014s\n\nFAILED (errors=2)\n",
+      "input": 18248,
+      "output": 235,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t034",
+      "type": "data_analysis",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3833.4,
+      "seconds": 9.68,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3833.4
+        }
+      ],
+      "solvable": true,
+      "expected": "28726",
+      "correct": false,
+      "input": 33214,
+      "output": 512,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t035",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1875.7,
+      "seconds": 7.91,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1875.7
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17197,
+      "output": 156,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t036",
+      "type": "data_analysis",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2119.5,
+      "seconds": 9.08,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2119.5
+        }
+      ],
+      "solvable": true,
+      "expected": "91988",
+      "correct": false,
+      "input": 18285,
+      "output": 291,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t037",
+      "type": "search",
+      "reward": 10.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2052.9,
+      "seconds": 8.29,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2052.9
+        }
+      ],
+      "solvable": true,
+      "expected": "Graz",
+      "correct": false,
+      "input": 18409,
+      "output": 212,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t038",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "",
+      "error": "TimeoutError: ",
+      "cost": 1955.0,
+      "seconds": 240.05,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": "TimeoutError: ",
+          "cost": 1955.0
+        }
+      ],
+      "solvable": true,
+      "expected": "549",
+      "correct": false,
+      "input": 14840,
+      "output": 471,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t039",
+      "type": "math",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "308815",
+      "error": null,
+      "cost": 912.2,
+      "seconds": 3.64,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 912.2
+        }
+      ],
+      "solvable": true,
+      "expected": "308815",
+      "correct": true,
+      "input": 7152,
+      "output": 197,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t040",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "624",
+      "error": null,
+      "cost": 872.1,
+      "seconds": 2.28,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 872.1
+        }
+      ],
+      "solvable": true,
+      "expected": "624",
+      "correct": true,
+      "input": 7061,
+      "output": 166,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t041",
+      "type": "search",
+      "reward": 5.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1923.7,
+      "seconds": 6.64,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1923.7
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17387,
+      "output": 185,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t042",
+      "type": "data_analysis",
+      "reward": 7.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2373.8,
+      "seconds": 28.92,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2373.8
+        }
+      ],
+      "solvable": true,
+      "expected": "C00",
+      "correct": false,
+      "input": 17858,
+      "output": 588,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t043",
+      "type": "math",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "128",
+      "error": null,
+      "cost": 2238.1,
+      "seconds": 11.43,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 2238.1
+        }
+      ],
+      "solvable": true,
+      "expected": "128",
+      "correct": true,
+      "input": 19241,
+      "output": 314,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t044",
+      "type": "coding",
+      "reward": 2.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2036.0,
+      "seconds": 6.73,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2036.0
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 4, in totals\n    customer,kind,amount=line.split(','); out[customer]=out.get(customer,0)+int(float(amount)*100)\n    ^^^^^^^^^^^^^^^^^^^^\nValueError: not enough values to unpack (expected 3, got 2)\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.totals('customer,kind,amount\\n A ,sale,1.005\\nA,refund,0.005\\nB,other,99\\n'),{'A':100})\nAssertionError: {' A ': 100, 'A': 0, 'B': 9900} != {'A': 100}\n- {' A ': 100, 'A': 0, 'B': 9900}\n+ {'A': 100}\n\n----------------------------------------------------------------------\nRan 2 tests in 0.011s\n\nFAILED (failures=1, errors=1)\n",
+      "input": 18320,
+      "output": 204,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t045",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "168",
+      "error": null,
+      "cost": 1368.1,
+      "seconds": 5.69,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1368.1
+        }
+      ],
+      "solvable": true,
+      "expected": "168",
+      "correct": true,
+      "input": 11561,
+      "output": 212,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t046",
+      "type": "search",
+      "reward": 7.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2275.2,
+      "seconds": 11.35,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2275.2
+        }
+      ],
+      "solvable": true,
+      "expected": "Bergen",
+      "correct": false,
+      "input": 20722,
+      "output": 203,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t047",
+      "type": "coding",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2088.1,
+      "seconds": 7.45,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2088.1
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "FF\n======================================================================\nFAIL: test_more (test_private.Hidden.test_more)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_private.py\", line 8, in test_more\n    else: self.assertEqual(c.get(key),expected)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 11 != None\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    c=m.LRU(2); c.put('a',1); c.put('b',2); self.assertEqual(c.get('a'),1); c.put('c',3); self.assertIsNone(c.get('b')); self.assertEqual(c.get('c'),3)\n                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 2 is not None\n\n----------------------------------------------------------------------\nRan 2 tests in 0.010s\n\nFAILED (failures=2)\n",
+      "input": 18341,
+      "output": 254,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t048",
+      "type": "math",
+      "reward": 10.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1997.8,
+      "seconds": 9.01,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1997.8
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17608,
+      "output": 237,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t049",
+      "type": "search",
+      "reward": 7.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2855.5,
+      "seconds": 14.37,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2855.5
+        }
+      ],
+      "solvable": true,
+      "expected": "Utrecht",
+      "correct": false,
+      "input": 26635,
+      "output": 192,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t050",
+      "type": "data_analysis",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2618.9,
+      "seconds": 6.85,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2618.9
+        }
+      ],
+      "solvable": true,
+      "expected": "141",
+      "correct": false,
+      "input": 22219,
+      "output": 397,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t051",
+      "type": "coding",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2060.0,
+      "seconds": 5.99,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2060.0
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "FF\n======================================================================\nFAIL: test_more (test_private.Hidden.test_more)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_private.py\", line 8, in test_more\n    else: self.assertEqual(c.get(key),expected)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 25\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    c=m.LRU(2); c.put('a',1); c.put('b',2); self.assertEqual(c.get('a'),1); c.put('c',3); self.assertIsNone(c.get('b')); self.assertEqual(c.get('c'),3)\n                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 2 is not None\n\n----------------------------------------------------------------------\nRan 2 tests in 0.007s\n\nFAILED (failures=2)\n",
+      "input": 18270,
+      "output": 233,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t052",
+      "type": "search",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2798.8,
+      "seconds": 9.66,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2798.8
+        }
+      ],
+      "solvable": true,
+      "expected": "Bergen",
+      "correct": false,
+      "input": 25168,
+      "output": 282,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t053",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1901.4,
+      "seconds": 6.3,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1901.4
+        }
+      ],
+      "solvable": true,
+      "expected": "905",
+      "correct": false,
+      "input": 17424,
+      "output": 159,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t054",
+      "type": "math",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "441403",
+      "error": null,
+      "cost": 892.7,
+      "seconds": 4.34,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 892.7
+        }
+      ],
+      "solvable": true,
+      "expected": "441403",
+      "correct": true,
+      "input": 7127,
+      "output": 180,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t055",
+      "type": "data_analysis",
+      "reward": 8.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2342.4,
+      "seconds": 6.52,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2342.4
+        }
+      ],
+      "solvable": true,
+      "expected": "2305318",
+      "correct": false,
+      "input": 19994,
+      "output": 343,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t056",
+      "type": "math",
+      "reward": 5.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2093.7,
+      "seconds": 7.51,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2093.7
+        }
+      ],
+      "solvable": true,
+      "expected": "772",
+      "correct": false,
+      "input": 17717,
+      "output": 322,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t057",
+      "type": "math",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "110",
+      "error": null,
+      "cost": 1398.9,
+      "seconds": 15.62,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1398.9
+        }
+      ],
+      "solvable": true,
+      "expected": "110",
+      "correct": true,
+      "input": 11739,
+      "output": 225,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t058",
+      "type": "data_analysis",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2309.9,
+      "seconds": 12.61,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2309.9
+        }
+      ],
+      "solvable": true,
+      "expected": "C20",
+      "correct": false,
+      "input": 18759,
+      "output": 434,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t059",
+      "type": "data_analysis",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2319.4,
+      "seconds": 24.07,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2319.4
+        }
+      ],
+      "solvable": true,
+      "expected": "C20",
+      "correct": false,
+      "input": 18844,
+      "output": 435,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t060",
+      "type": "search",
+      "reward": 1.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3432.2,
+      "seconds": 11.31,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3432.2
+        }
+      ],
+      "solvable": true,
+      "expected": "Ghent",
+      "correct": false,
+      "input": 32602,
+      "output": 172,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t061",
+      "type": "data_analysis",
+      "reward": 8.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1915.7,
+      "seconds": 6.49,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1915.7
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17357,
+      "output": 180,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t062",
+      "type": "coding",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1944.4,
+      "seconds": 4.63,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1944.4
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {0: 0, 1: None, 2: 4, 3: 0, 4: None, 5: None, 6: None, 7: 3} != {0: 0, 1: None, 2: 4, 3: 0, 4: 8, 5: 7, 6: 0, 7: -3}\n- {0: 0, 1: None, 2: 4, 3: 0, 4: None, 5: None, 6: None, 7: 3}\n?                                ^^^^     ^^^^     ^^^^\n\n+ {0: 0, 1: None, 2: 4, 3: 0, 4: 8, 5: 7, 6: 0, 7: -3}\n?                                ^     ^     ^     +\n\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.distances(['a','b','c','z'],[('b','c',-2),('a','b',5),('a','c',9)],'a'),{'a':0,'b':5,'c':3,'z':None})\nAssertionError: {'a': 0, 'b': 5, 'c': 9, 'z': None} != {'a': 0, 'b': 5, 'c': 3, 'z': None}\n- {'a': 0, 'b': 5, 'c': 9, 'z': None}\n?                       ^\n\n+ {'a': 0, 'b': 5, 'c': 3, 'z': None}\n?                       ^\n\n\n----------------------------------------------------------------------\nRan 2 tests in 0.011s\n\nFAILED (failures=2)\n",
+      "input": 17834,
+      "output": 161,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t064",
+      "type": "math",
+      "reward": 10.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "811",
+      "error": null,
+      "cost": 867.3,
+      "seconds": 1.97,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 867.3
+        }
+      ],
+      "solvable": true,
+      "expected": "811",
+      "correct": true,
+      "input": 7053,
+      "output": 162,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t065",
+      "type": "data_analysis",
+      "reward": 1.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3326.0,
+      "seconds": 10.78,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3326.0
+        }
+      ],
+      "solvable": true,
+      "expected": "208",
+      "correct": false,
+      "input": 28790,
+      "output": 447,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t067",
+      "type": "search",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3838.1,
+      "seconds": 6.72,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3838.1
+        }
+      ],
+      "solvable": true,
+      "expected": "Ghent",
+      "correct": false,
+      "input": 36681,
+      "output": 170,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t068",
+      "type": "math",
+      "reward": 2.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2029.0,
+      "seconds": 39.39,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2029.0
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17610,
+      "output": 268,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t069",
+      "type": "data_analysis",
+      "reward": 6.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "C18",
+      "error": null,
+      "cost": 2665.6,
+      "seconds": 18.95,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 2665.6
+        }
+      ],
+      "solvable": true,
+      "expected": "C18",
+      "correct": true,
+      "input": 19806,
+      "output": 685,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t070",
+      "type": "math",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2218.1,
+      "seconds": 16.66,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2218.1
+        }
+      ],
+      "solvable": true,
+      "expected": "957",
+      "correct": false,
+      "input": 17861,
+      "output": 432,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t071",
+      "type": "math",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "677589",
+      "error": null,
+      "cost": 909.1,
+      "seconds": 4.96,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 909.1
+        }
+      ],
+      "solvable": true,
+      "expected": "677589",
+      "correct": true,
+      "input": 7151,
+      "output": 194,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t072",
+      "type": "coding",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1936.6,
+      "seconds": 6.27,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1936.6
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {0: 0, 1: None, 2: None, 3: None, 4: None, 5: 2, 6: 5, 7: None} != {0: 0, 1: None, 2: None, 3: None, 4: None, 5: 2, 6: 5, 7: 13}\n- {0: 0, 1: None, 2: None, 3: None, 4: None, 5: 2, 6: 5, 7: None}\n?                                                           ^^^^\n\n+ {0: 0, 1: None, 2: None, 3: None, 4: None, 5: 2, 6: 5, 7: 13}\n?                                                           ^^\n\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.distances(['a','b','c','z'],[('b','c',-2),('a','b',5),('a','c',9)],'a'),{'a':0,'b':5,'c':3,'z':None})\nAssertionError: {'a': 0, 'b': 5, 'c': 9, 'z': None} != {'a': 0, 'b': 5, 'c': 3, 'z': None}\n- {'a': 0, 'b': 5, 'c': 9, 'z': None}\n?                       ^\n\n+ {'a': 0, 'b': 5, 'c': 3, 'z': None}\n?                       ^\n\n\n----------------------------------------------------------------------\nRan 2 tests in 0.008s\n\nFAILED (failures=2)\n",
+      "input": 17756,
+      "output": 161,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t073",
+      "type": "data_analysis",
+      "reward": 6.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2267.0,
+      "seconds": 11.68,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2267.0
+        }
+      ],
+      "solvable": true,
+      "expected": "C00",
+      "correct": false,
+      "input": 18130,
+      "output": 454,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t074",
+      "type": "math",
+      "reward": 1.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2496.6,
+      "seconds": 17.72,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2496.6
+        }
+      ],
+      "solvable": true,
+      "expected": "223",
+      "correct": false,
+      "input": 19086,
+      "output": 588,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t075",
+      "type": "coding",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2003.6,
+      "seconds": 11.0,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2003.6
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 4, in totals\n    customer,kind,amount=line.split(','); out[customer]=out.get(customer,0)+int(float(amount)*100)\n    ^^^^^^^^^^^^^^^^^^^^\nValueError: too many values to unpack (expected 3)\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.totals('customer,kind,amount\\n A ,sale,1.005\\nA,refund,0.005\\nB,other,99\\n'),{'A':100})\nAssertionError: {' A ': 100, 'A': 0, 'B': 9900} != {'A': 100}\n- {' A ': 100, 'A': 0, 'B': 9900}\n+ {'A': 100}\n\n----------------------------------------------------------------------\nRan 2 tests in 0.008s\n\nFAILED (failures=1, errors=1)\n",
+      "input": 18176,
+      "output": 186,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t076",
+      "type": "search",
+      "reward": 8.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3838.7,
+      "seconds": 11.38,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3838.7
+        }
+      ],
+      "solvable": true,
+      "expected": "Porto",
+      "correct": false,
+      "input": 36667,
+      "output": 172,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t077",
+      "type": "math",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "809",
+      "error": null,
+      "cost": 1388.6,
+      "seconds": 9.21,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 1388.6
+        }
+      ],
+      "solvable": true,
+      "expected": "809",
+      "correct": true,
+      "input": 10826,
+      "output": 306,
+      "calls": 3,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t078",
+      "type": "data_analysis",
+      "reward": 8.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2306.2,
+      "seconds": 18.39,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2306.2
+        }
+      ],
+      "solvable": true,
+      "expected": "90",
+      "correct": false,
+      "input": 18932,
+      "output": 413,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t079",
+      "type": "search",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3390.2,
+      "seconds": 10.32,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3390.2
+        }
+      ],
+      "solvable": true,
+      "expected": "Turku",
+      "correct": false,
+      "input": 32182,
+      "output": 172,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t080",
+      "type": "math",
+      "reward": 8.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "520898",
+      "error": null,
+      "cost": 910.5,
+      "seconds": 5.22,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 910.5
+        }
+      ],
+      "solvable": true,
+      "expected": "520898",
+      "correct": true,
+      "input": 7155,
+      "output": 195,
+      "calls": 2,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t081",
+      "type": "coding",
+      "reward": 6.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1894.6,
+      "seconds": 6.55,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1894.6
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "6*4))+((13+1)+(8+3)))', 63), ('(((7-13)*(12+3))-((1*8)-(10+6)))', -82), ('(((3*10)*(14+2))-((9+13)*(8*8)))', -928), ('(((12+2)*(11*5))+((14+13)*(2*8)))', 1202), ('(((2-4)+(14*10))-((8+11)+(8-11)))', 122), ('(((9*2)*(14-8))-((8+2)+(3*3)))', 89), ('(((9+1)+(13-8))+((14+3)-(6-11)))', 37), ('(((8-9)+(4+11))*((7-1)-(10+13)))', -238), ('(((13-11)-(1+4))+((12+13)+(4+4)))', 30), ('(((11*12)+(2-8))*((9*10)-(1*8)))', 10332), ('(((5+14)+(8*13))*((8+4)-(13+6)))', -861), ('(((11-6)+(2+7))-((6*6)-(4+3)))', -15), ('(((13+11)-(1*5))+((13*10)*(5-9)))', -501), ('(((10-14)-(4-5))+((13+10)-(12+1)))', 7)]: self.assertEqual(m.calculate(text),expected)\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in calculate\n    return sum(int(x.strip()) for x in text.split('+'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in <genexpr>\n    return sum(int(x.strip()) for x in text.split('+'))\n               ^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 10: '(((2-11)-(6-6))*((8*11)'\n\n======================================================================\nERROR: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.calculate('2*(3+4)-5'),9); self.assertEqual(m.calculate('--3 + -2*4'),-5)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in calculate\n    return sum(int(x.strip()) for x in text.split('+'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 2, in <genexpr>\n    return sum(int(x.strip()) for x in text.split('+'))\n               ^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 10: '2*(3'\n\n----------------------------------------------------------------------\nRan 2 tests in 0.012s\n\nFAILED (errors=2)\n",
+      "input": 17606,
+      "output": 134,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t082",
+      "type": "coding",
+      "reward": 5.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2025.8,
+      "seconds": 8.54,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2025.8
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 4, in totals\n    customer,kind,amount=line.split(','); out[customer]=out.get(customer,0)+int(float(amount)*100)\n    ^^^^^^^^^^^^^^^^^^^^\nValueError: too many values to unpack (expected 3)\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.totals('customer,kind,amount\\n A ,sale,1.005\\nA,refund,0.005\\nB,other,99\\n'),{'A':100})\nAssertionError: {' A ': 100, 'A': 0, 'B': 9900} != {'A': 100}\n- {' A ': 100, 'A': 0, 'B': 9900}\n+ {'A': 100}\n\n----------------------------------------------------------------------\nRan 2 tests in 0.007s\n\nFAILED (failures=1, errors=1)\n",
+      "input": 18048,
+      "output": 221,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t083",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2359.2,
+      "seconds": 20.51,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2359.2
+        }
+      ],
+      "solvable": true,
+      "expected": "Brno",
+      "correct": false,
+      "input": 21752,
+      "output": 184,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t084",
+      "type": "data_analysis",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2408.6,
+      "seconds": 19.32,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2408.6
+        }
+      ],
+      "solvable": true,
+      "expected": "3671771",
+      "correct": false,
+      "input": 20006,
+      "output": 408,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t086",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 5212.8,
+      "seconds": 17.34,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 5212.8
+        }
+      ],
+      "solvable": true,
+      "expected": "Ghent",
+      "correct": false,
+      "input": 49218,
+      "output": 291,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t087",
+      "type": "search",
+      "reward": 10.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2676.9,
+      "seconds": 9.9,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2676.9
+        }
+      ],
+      "solvable": true,
+      "expected": "Turku",
+      "correct": false,
+      "input": 24089,
+      "output": 268,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t088",
+      "type": "math",
+      "reward": 1.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2006.8,
+      "seconds": 13.23,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2006.8
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17588,
+      "output": 248,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t089",
+      "type": "data_analysis",
+      "reward": 8.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1912.2,
+      "seconds": 7.69,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1912.2
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17422,
+      "output": 170,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t090",
+      "type": "search",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3027.2,
+      "seconds": 7.38,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3027.2
+        }
+      ],
+      "solvable": true,
+      "expected": "Linz",
+      "correct": false,
+      "input": 28012,
+      "output": 226,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t091",
+      "type": "coding",
+      "reward": 4.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1978.4,
+      "seconds": 9.83,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1978.4
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 4, in totals\n    customer,kind,amount=line.split(','); out[customer]=out.get(customer,0)+int(float(amount)*100)\n    ^^^^^^^^^^^^^^^^^^^^\nValueError: too many values to unpack (expected 3)\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.totals('customer,kind,amount\\n A ,sale,1.005\\nA,refund,0.005\\nB,other,99\\n'),{'A':100})\nAssertionError: {' A ': 100, 'A': 0, 'B': 9900} != {'A': 100}\n- {' A ': 100, 'A': 0, 'B': 9900}\n+ {'A': 100}\n\n----------------------------------------------------------------------\nRan 2 tests in 0.011s\n\nFAILED (failures=1, errors=1)\n",
+      "input": 18254,
+      "output": 153,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t092",
+      "type": "math",
+      "reward": 8.0,
+      "variant": "stock",
+      "status": "solved",
+      "answer": "895",
+      "error": null,
+      "cost": 2065.2,
+      "seconds": 24.66,
+      "attempts": [
+        {
+          "status": "solved",
+          "error": null,
+          "cost": 2065.2
+        }
+      ],
+      "solvable": true,
+      "expected": "895",
+      "correct": true,
+      "input": 15822,
+      "output": 483,
+      "calls": 4,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t093",
+      "type": "coding",
+      "reward": 10.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2068.0,
+      "seconds": 10.42,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2068.0
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "FF\n======================================================================\nFAIL: test_more (test_private.Hidden.test_more)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_private.py\", line 8, in test_more\n    else: self.assertEqual(c.get(key),expected)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 16 != None\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    c=m.LRU(2); c.put('a',1); c.put('b',2); self.assertEqual(c.get('a'),1); c.put('c',3); self.assertIsNone(c.get('b')); self.assertEqual(c.get('c'),3)\n                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 2 is not None\n\n----------------------------------------------------------------------\nRan 2 tests in 0.007s\n\nFAILED (failures=2)\n",
+      "input": 18350,
+      "output": 233,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t094",
+      "type": "data_analysis",
+      "reward": 6.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 3394.3,
+      "seconds": 7.07,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 3394.3
+        }
+      ],
+      "solvable": true,
+      "expected": "50782",
+      "correct": false,
+      "input": 31793,
+      "output": 215,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t095",
+      "type": "coding",
+      "reward": 6.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1982.4,
+      "seconds": 9.54,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1982.4
+        }
+      ],
+      "solvable": true,
+      "expected": "tests_pass",
+      "correct": false,
+      "private_pass": false,
+      "private_detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/judge/solution.py\", line 4, in totals\n    customer,kind,amount=line.split(','); out[customer]=out.get(customer,0)+int(float(amount)*100)\n    ^^^^^^^^^^^^^^^^^^^^\nValueError: too many values to unpack (expected 3)\n\n======================================================================\nFAIL: test_behavior (test_solution.T.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/judge/test_solution.py\", line 5, in test_behavior\n    self.assertEqual(m.totals('customer,kind,amount\\n A ,sale,1.005\\nA,refund,0.005\\nB,other,99\\n'),{'A':100})\nAssertionError: {' A ': 100, 'A': 0, 'B': 9900} != {'A': 100}\n- {' A ': 100, 'A': 0, 'B': 9900}\n+ {'A': 100}\n\n----------------------------------------------------------------------\nRan 2 tests in 0.007s\n\nFAILED (failures=1, errors=1)\n",
+      "input": 18094,
+      "output": 173,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t096",
+      "type": "data_analysis",
+      "reward": 1.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 1915.6,
+      "seconds": 7.17,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 1915.6
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 17656,
+      "output": 150,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t098",
+      "type": "search",
+      "reward": 5.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2508.3,
+      "seconds": 15.76,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2508.3
+        }
+      ],
+      "solvable": true,
+      "expected": "Brno",
+      "correct": false,
+      "input": 22903,
+      "output": 218,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t099",
+      "type": "data_analysis",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2293.6,
+      "seconds": 9.54,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2293.6
+        }
+      ],
+      "solvable": true,
+      "expected": "1591672",
+      "correct": false,
+      "input": 19966,
+      "output": 297,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t100",
+      "type": "coding",
+      "reward": 3.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2069.5,
+      "seconds": 8.29,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2069.5
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 18175,
+      "output": 252,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t101",
+      "type": "coding",
+      "reward": 6.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2023.5,
+      "seconds": 8.97,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2023.5
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 18005,
+      "output": 223,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t102",
+      "type": "coding",
+      "reward": 2.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2105.7,
+      "seconds": 7.33,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2105.7
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 18377,
+      "output": 268,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t103",
+      "type": "coding",
+      "reward": 9.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2098.7,
+      "seconds": 6.72,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2098.7
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 18377,
+      "output": 261,
+      "calls": 5,
+      "estimated_calls": 0
+    },
+    {
+      "id": "t104",
+      "type": "coding",
+      "reward": 1.0,
+      "variant": "stock",
+      "status": "failed",
+      "answer": "step limit",
+      "error": null,
+      "cost": 2097.5,
+      "seconds": 6.38,
+      "attempts": [
+        {
+          "status": "failed",
+          "error": null,
+          "cost": 2097.5
+        }
+      ],
+      "solvable": false,
+      "expected": null,
+      "correct": false,
+      "recognized_impossible": false,
+      "input": 18365,
+      "output": 261,
+      "calls": 5,
+      "estimated_calls": 0
+    }
+  ],
+  "meter_audit": {
+    "responses": 498,
+    "extra_cost": 0,
+    "nonzero_reasoning_calls": 0,
+    "production_meter_would_charge_identically": true
+  }
+}

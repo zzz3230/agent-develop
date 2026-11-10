@@ -1,0 +1,127 @@
+product,region,units,price_local
+" Widget, Pro ", NORTH , -01 ,"2,01"
+"other
+product", NORTH , +00 ,"3,02"
+" Widget, Pro ",south, +01 ,"4,03"
+"other
+product", NORTH , +02 ,"5,04"
+" Widget, Pro ", NORTH , +03 ,"6,05"
+"other
+product",south, +04 ,"7,06"
+" Widget, Pro ", NORTH , +05 ,"8,07"
+"other
+product", NORTH , +06 ,"9,08"
+" Widget, Pro ",south, +07 ,"10,09"
+"other
+product", NORTH , +08 ,"11,1"
+" Widget, Pro ", NORTH , -02 ,"12,11"
+"other
+product",south, -01 ,"13,12"
+" Widget, Pro ", NORTH , +00 ,"14,13"
+"other
+product", NORTH , +01 ,"15,14"
+" Widget, Pro ",south, +02 ,"16,15"
+"other
+product", NORTH , +03 ,"17,16"
+" Widget, Pro ", NORTH , +04 ,"18,17"
+"other
+product",south, +05 ,"19,18"
+" Widget, Pro ", NORTH , +06 ,"1,19"
+"other
+product", NORTH , +07 ,"2,2"
+" Widget, Pro ",south, +08 ,"3,21"
+"other
+product", NORTH , -02 ,"4,22"
+" Widget, Pro ", NORTH , -01 ,"5,23"
+"other
+product",south, +00 ,"6,24"
+" Widget, Pro ", NORTH , +01 ,"7,25"
+"other
+product", NORTH , +02 ,"8,26"
+" Widget, Pro ",south, +03 ,"9,27"
+"other
+product", NORTH , +04 ,"10,28"
+" Widget, Pro ", NORTH , +05 ,"11,29"
+"other
+product",south, +06 ,"12,3"
+" Widget, Pro ", NORTH , +07 ,"13,31"
+"other
+product", NORTH , +08 ,"14,32"
+" Widget, Pro ",south, -02 ,"15,33"
+"other
+product", NORTH , -01 ,"16,34"
+" Widget, Pro ", NORTH , +00 ,"17,35"
+"other
+product",south, +01 ,"18,36"
+" Widget, Pro ", NORTH , +02 ,"19,37"
+"other
+product", NORTH , +03 ,"1,38"
+" Widget, Pro ",south, +04 ,"2,39"
+"other
+product", NORTH , +05 ,"3,4"
+" Widget, Pro ", NORTH , +06 ,"4,41"
+"other
+product",south, +07 ,"5,42"
+" Widget, Pro ", NORTH , +08 ,"6,43"
+"other
+product", NORTH , -02 ,"7,44"
+" Widget, Pro ",south, -01 ,"8,45"
+"other
+product", NORTH , +00 ,"9,46"
+" Widget, Pro ", NORTH , +01 ,"10,47"
+"other
+product",south, +02 ,"11,48"
+" Widget, Pro ", NORTH , +03 ,"12,49"
+"other
+product", NORTH , +04 ,"13,5"
+" Widget, Pro ",south, +05 ,"14,51"
+"other
+product", NORTH , +06 ,"15,52"
+" Widget, Pro ", NORTH , +07 ,"16,53"
+"other
+product",south, +08 ,"17,54"
+" Widget, Pro ", NORTH , -02 ,"18,55"
+"other
+product", NORTH , -01 ,"19,56"
+" Widget, Pro ",south, +00 ,"1,57"
+"other
+product", NORTH , +01 ,"2,58"
+" Widget, Pro ", NORTH , +02 ,"3,59"
+"other
+product",south, +03 ,"4,6"
+" Widget, Pro ", NORTH , +04 ,"5,61"
+"other
+product", NORTH , +05 ,"6,62"
+" Widget, Pro ",south, +06 ,"7,63"
+"other
+product", NORTH , +07 ,"8,64"
+" Widget, Pro ", NORTH , +08 ,"9,65"
+"other
+product",south, -02 ,"10,66"
+" Widget, Pro ", NORTH , -01 ,"11,67"
+"other
+product", NORTH , +00 ,"12,68"
+" Widget, Pro ",south, +01 ,"13,69"
+"other
+product", NORTH , +02 ,"14,7"
+" Widget, Pro ", NORTH , +03 ,"15,71"
+"other
+product",south, +04 ,"16,72"
+" Widget, Pro ", NORTH , +05 ,"17,73"
+"other
+product", NORTH , +06 ,"18,74"
+" Widget, Pro ",south, +07 ,"19,75"
+"other
+product", NORTH , +08 ,"1,76"
+" Widget, Pro ", NORTH , -02 ,"2,77"
+"other
+product",south, -01 ,"3,78"
+" Widget, Pro ", NORTH , +00 ,"4,79"
+"other
+product", NORTH , +01 ,"5,8"
+" Widget, Pro ",south, +02 ,"6,81"
+"other
+product", NORTH , +03 ,"7,82"
+" Widget, Pro ", NORTH , +04 ,"8,83"
+"other
+product",south, +05 ,"9,84"

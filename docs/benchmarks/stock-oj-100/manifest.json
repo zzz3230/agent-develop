@@ -1,0 +1,1006 @@
+{
+  "seed": 20261111,
+  "input_sha256": "fc09a24fabfe846c3b2bab888887cb6bc2026cc2720feec5304bcf5062c55163",
+  "tasks": [
+    {
+      "id": "t000",
+      "type": "math",
+      "family": 1,
+      "variant": 0,
+      "solvable": true,
+      "reward": 4,
+      "expected": "976",
+      "check": "exact_int"
+    },
+    {
+      "id": "t001",
+      "type": "math",
+      "family": 0,
+      "variant": 3,
+      "solvable": false,
+      "reward": 2,
+      "expected": null,
+      "check": "exact_int"
+    },
+    {
+      "id": "t002",
+      "type": "data_analysis",
+      "family": 0,
+      "variant": 3,
+      "solvable": true,
+      "reward": 4,
+      "expected": "2988319",
+      "check": "exact_int"
+    },
+    {
+      "id": "t003",
+      "type": "coding",
+      "family": 2,
+      "variant": 4,
+      "solvable": true,
+      "reward": 1,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t004",
+      "type": "math",
+      "family": 1,
+      "variant": 4,
+      "solvable": true,
+      "reward": 5,
+      "expected": "932",
+      "check": "exact_int"
+    },
+    {
+      "id": "t005",
+      "type": "data_analysis",
+      "family": 2,
+      "variant": 4,
+      "solvable": true,
+      "reward": 6,
+      "expected": "184",
+      "check": "exact_int"
+    },
+    {
+      "id": "t006",
+      "type": "coding",
+      "family": 1,
+      "variant": 3,
+      "solvable": true,
+      "reward": 9,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t007",
+      "type": "search",
+      "family": 0,
+      "variant": 1,
+      "solvable": true,
+      "reward": 4,
+      "expected": "Linz",
+      "check": "exact_str"
+    },
+    {
+      "id": "t008",
+      "type": "search",
+      "family": 0,
+      "variant": 3,
+      "solvable": true,
+      "reward": 1,
+      "expected": "Utrecht",
+      "check": "exact_str"
+    },
+    {
+      "id": "t009",
+      "type": "coding",
+      "family": 2,
+      "variant": 2,
+      "solvable": true,
+      "reward": 4,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t010",
+      "type": "math",
+      "family": 0,
+      "variant": 1,
+      "solvable": true,
+      "reward": 7,
+      "expected": "467782",
+      "check": "exact_int"
+    },
+    {
+      "id": "t011",
+      "type": "search",
+      "family": 3,
+      "variant": 3,
+      "solvable": true,
+      "reward": 3,
+      "expected": "Utrecht",
+      "check": "exact_str"
+    },
+    {
+      "id": "t012",
+      "type": "data_analysis",
+      "family": 0,
+      "variant": 1,
+      "solvable": false,
+      "reward": 7,
+      "expected": null,
+      "check": "exact_int"
+    },
+    {
+      "id": "t013",
+      "type": "coding",
+      "family": 0,
+      "variant": 4,
+      "solvable": true,
+      "reward": 2,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t100",
+      "type": "coding",
+      "family": 0,
+      "variant": 0,
+      "solvable": false,
+      "reward": 3,
+      "expected": null,
+      "check": "unittest"
+    },
+    {
+      "id": "t015",
+      "type": "search",
+      "family": 0,
+      "variant": 3,
+      "solvable": false,
+      "reward": 3,
+      "expected": null,
+      "check": "exact_str"
+    },
+    {
+      "id": "t016",
+      "type": "search",
+      "family": 2,
+      "variant": 1,
+      "solvable": true,
+      "reward": 5,
+      "expected": "Brno",
+      "check": "exact_str"
+    },
+    {
+      "id": "t017",
+      "type": "math",
+      "family": 3,
+      "variant": 4,
+      "solvable": true,
+      "reward": 10,
+      "expected": "191",
+      "check": "exact_int"
+    },
+    {
+      "id": "t018",
+      "type": "search",
+      "family": 3,
+      "variant": 0,
+      "solvable": true,
+      "reward": 8,
+      "expected": "Utrecht",
+      "check": "exact_str"
+    },
+    {
+      "id": "t019",
+      "type": "coding",
+      "family": 1,
+      "variant": 1,
+      "solvable": true,
+      "reward": 4,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t020",
+      "type": "data_analysis",
+      "family": 1,
+      "variant": 2,
+      "solvable": true,
+      "reward": 2,
+      "expected": "59243",
+      "check": "exact_int"
+    },
+    {
+      "id": "t021",
+      "type": "coding",
+      "family": 0,
+      "variant": 0,
+      "solvable": true,
+      "reward": 4,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t022",
+      "type": "search",
+      "family": 1,
+      "variant": 2,
+      "solvable": true,
+      "reward": 6,
+      "expected": "Brno",
+      "check": "exact_str"
+    },
+    {
+      "id": "t023",
+      "type": "coding",
+      "family": 1,
+      "variant": 0,
+      "solvable": true,
+      "reward": 7,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t024",
+      "type": "math",
+      "family": 0,
+      "variant": 0,
+      "solvable": false,
+      "reward": 4,
+      "expected": null,
+      "check": "exact_int"
+    },
+    {
+      "id": "t025",
+      "type": "search",
+      "family": 1,
+      "variant": 4,
+      "solvable": true,
+      "reward": 9,
+      "expected": "Brno",
+      "check": "exact_str"
+    },
+    {
+      "id": "t026",
+      "type": "data_analysis",
+      "family": 0,
+      "variant": 0,
+      "solvable": true,
+      "reward": 7,
+      "expected": "893023",
+      "check": "exact_int"
+    },
+    {
+      "id": "t027",
+      "type": "data_analysis",
+      "family": 0,
+      "variant": 4,
+      "solvable": false,
+      "reward": 4,
+      "expected": null,
+      "check": "exact_int"
+    },
+    {
+      "id": "t028",
+      "type": "data_analysis",
+      "family": 1,
+      "variant": 3,
+      "solvable": true,
+      "reward": 9,
+      "expected": "70771",
+      "check": "exact_int"
+    },
+    {
+      "id": "t029",
+      "type": "coding",
+      "family": 2,
+      "variant": 3,
+      "solvable": true,
+      "reward": 7,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t030",
+      "type": "search",
+      "family": 0,
+      "variant": 0,
+      "solvable": false,
+      "reward": 7,
+      "expected": null,
+      "check": "exact_str"
+    },
+    {
+      "id": "t031",
+      "type": "search",
+      "family": 0,
+      "variant": 1,
+      "solvable": false,
+      "reward": 9,
+      "expected": null,
+      "check": "exact_str"
+    },
+    {
+      "id": "t032",
+      "type": "data_analysis",
+      "family": 2,
+      "variant": 1,
+      "solvable": true,
+      "reward": 1,
+      "expected": "15",
+      "check": "exact_int"
+    },
+    {
+      "id": "t033",
+      "type": "coding",
+      "family": 1,
+      "variant": 4,
+      "solvable": true,
+      "reward": 7,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t034",
+      "type": "data_analysis",
+      "family": 1,
+      "variant": 0,
+      "solvable": true,
+      "reward": 3,
+      "expected": "28726",
+      "check": "exact_int"
+    },
+    {
+      "id": "t035",
+      "type": "search",
+      "family": 0,
+      "variant": 4,
+      "solvable": false,
+      "reward": 3,
+      "expected": null,
+      "check": "exact_str"
+    },
+    {
+      "id": "t036",
+      "type": "data_analysis",
+      "family": 1,
+      "variant": 4,
+      "solvable": true,
+      "reward": 9,
+      "expected": "91988",
+      "check": "exact_int"
+    },
+    {
+      "id": "t037",
+      "type": "search",
+      "family": 0,
+      "variant": 0,
+      "solvable": true,
+      "reward": 10,
+      "expected": "Graz",
+      "check": "exact_str"
+    },
+    {
+      "id": "t038",
+      "type": "math",
+      "family": 1,
+      "variant": 2,
+      "solvable": true,
+      "reward": 2,
+      "expected": "549",
+      "check": "exact_int"
+    },
+    {
+      "id": "t039",
+      "type": "math",
+      "family": 0,
+      "variant": 0,
+      "solvable": true,
+      "reward": 4,
+      "expected": "308815",
+      "check": "exact_int"
+    },
+    {
+      "id": "t040",
+      "type": "math",
+      "family": 1,
+      "variant": 3,
+      "solvable": true,
+      "reward": 2,
+      "expected": "624",
+      "check": "exact_int"
+    },
+    {
+      "id": "t041",
+      "type": "search",
+      "family": 0,
+      "variant": 2,
+      "solvable": false,
+      "reward": 5,
+      "expected": null,
+      "check": "exact_str"
+    },
+    {
+      "id": "t042",
+      "type": "data_analysis",
+      "family": 3,
+      "variant": 4,
+      "solvable": true,
+      "reward": 7,
+      "expected": "C00",
+      "check": "exact_str"
+    },
+    {
+      "id": "t043",
+      "type": "math",
+      "family": 3,
+      "variant": 3,
+      "solvable": true,
+      "reward": 4,
+      "expected": "128",
+      "check": "exact_int"
+    },
+    {
+      "id": "t044",
+      "type": "coding",
+      "family": 3,
+      "variant": 2,
+      "solvable": true,
+      "reward": 2,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t045",
+      "type": "math",
+      "family": 3,
+      "variant": 1,
+      "solvable": true,
+      "reward": 2,
+      "expected": "168",
+      "check": "exact_int"
+    },
+    {
+      "id": "t046",
+      "type": "search",
+      "family": 2,
+      "variant": 2,
+      "solvable": true,
+      "reward": 7,
+      "expected": "Bergen",
+      "check": "exact_str"
+    },
+    {
+      "id": "t047",
+      "type": "coding",
+      "family": 0,
+      "variant": 3,
+      "solvable": true,
+      "reward": 3,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t048",
+      "type": "math",
+      "family": 0,
+      "variant": 1,
+      "solvable": false,
+      "reward": 10,
+      "expected": null,
+      "check": "exact_int"
+    },
+    {
+      "id": "t049",
+      "type": "search",
+      "family": 0,
+      "variant": 4,
+      "solvable": true,
+      "reward": 7,
+      "expected": "Utrecht",
+      "check": "exact_str"
+    },
+    {
+      "id": "t050",
+      "type": "data_analysis",
+      "family": 2,
+      "variant": 0,
+      "solvable": true,
+      "reward": 3,
+      "expected": "141",
+      "check": "exact_int"
+    },
+    {
+      "id": "t051",
+      "type": "coding",
+      "family": 0,
+      "variant": 1,
+      "solvable": true,
+      "reward": 3,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t052",
+      "type": "search",
+      "family": 1,
+      "variant": 3,
+      "solvable": true,
+      "reward": 9,
+      "expected": "Bergen",
+      "check": "exact_str"
+    },
+    {
+      "id": "t053",
+      "type": "math",
+      "family": 2,
+      "variant": 2,
+      "solvable": true,
+      "reward": 2,
+      "expected": "905",
+      "check": "exact_int"
+    },
+    {
+      "id": "t054",
+      "type": "math",
+      "family": 0,
+      "variant": 4,
+      "solvable": true,
+      "reward": 9,
+      "expected": "441403",
+      "check": "exact_int"
+    },
+    {
+      "id": "t055",
+      "type": "data_analysis",
+      "family": 0,
+      "variant": 2,
+      "solvable": true,
+      "reward": 8,
+      "expected": "2305318",
+      "check": "exact_int"
+    },
+    {
+      "id": "t056",
+      "type": "math",
+      "family": 2,
+      "variant": 0,
+      "solvable": true,
+      "reward": 5,
+      "expected": "772",
+      "check": "exact_int"
+    },
+    {
+      "id": "t057",
+      "type": "math",
+      "family": 3,
+      "variant": 2,
+      "solvable": true,
+      "reward": 9,
+      "expected": "110",
+      "check": "exact_int"
+    },
+    {
+      "id": "t058",
+      "type": "data_analysis",
+      "family": 3,
+      "variant": 2,
+      "solvable": true,
+      "reward": 3,
+      "expected": "C20",
+      "check": "exact_str"
+    },
+    {
+      "id": "t059",
+      "type": "data_analysis",
+      "family": 3,
+      "variant": 0,
+      "solvable": true,
+      "reward": 3,
+      "expected": "C20",
+      "check": "exact_str"
+    },
+    {
+      "id": "t060",
+      "type": "search",
+      "family": 1,
+      "variant": 1,
+      "solvable": true,
+      "reward": 1,
+      "expected": "Ghent",
+      "check": "exact_str"
+    },
+    {
+      "id": "t061",
+      "type": "data_analysis",
+      "family": 0,
+      "variant": 2,
+      "solvable": false,
+      "reward": 8,
+      "expected": null,
+      "check": "exact_int"
+    },
+    {
+      "id": "t062",
+      "type": "coding",
+      "family": 2,
+      "variant": 0,
+      "solvable": true,
+      "reward": 3,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t103",
+      "type": "coding",
+      "family": 0,
+      "variant": 3,
+      "solvable": false,
+      "reward": 9,
+      "expected": null,
+      "check": "unittest"
+    },
+    {
+      "id": "t064",
+      "type": "math",
+      "family": 1,
+      "variant": 1,
+      "solvable": true,
+      "reward": 10,
+      "expected": "811",
+      "check": "exact_int"
+    },
+    {
+      "id": "t065",
+      "type": "data_analysis",
+      "family": 2,
+      "variant": 2,
+      "solvable": true,
+      "reward": 1,
+      "expected": "208",
+      "check": "exact_int"
+    },
+    {
+      "id": "t101",
+      "type": "coding",
+      "family": 0,
+      "variant": 1,
+      "solvable": false,
+      "reward": 6,
+      "expected": null,
+      "check": "unittest"
+    },
+    {
+      "id": "t067",
+      "type": "search",
+      "family": 0,
+      "variant": 2,
+      "solvable": true,
+      "reward": 4,
+      "expected": "Ghent",
+      "check": "exact_str"
+    },
+    {
+      "id": "t068",
+      "type": "math",
+      "family": 0,
+      "variant": 4,
+      "solvable": false,
+      "reward": 2,
+      "expected": null,
+      "check": "exact_int"
+    },
+    {
+      "id": "t069",
+      "type": "data_analysis",
+      "family": 3,
+      "variant": 1,
+      "solvable": true,
+      "reward": 6,
+      "expected": "C18",
+      "check": "exact_str"
+    },
+    {
+      "id": "t070",
+      "type": "math",
+      "family": 2,
+      "variant": 3,
+      "solvable": true,
+      "reward": 3,
+      "expected": "957",
+      "check": "exact_int"
+    },
+    {
+      "id": "t071",
+      "type": "math",
+      "family": 0,
+      "variant": 2,
+      "solvable": true,
+      "reward": 9,
+      "expected": "677589",
+      "check": "exact_int"
+    },
+    {
+      "id": "t072",
+      "type": "coding",
+      "family": 2,
+      "variant": 1,
+      "solvable": true,
+      "reward": 4,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t073",
+      "type": "data_analysis",
+      "family": 3,
+      "variant": 3,
+      "solvable": true,
+      "reward": 6,
+      "expected": "C00",
+      "check": "exact_str"
+    },
+    {
+      "id": "t074",
+      "type": "math",
+      "family": 3,
+      "variant": 0,
+      "solvable": true,
+      "reward": 1,
+      "expected": "223",
+      "check": "exact_int"
+    },
+    {
+      "id": "t075",
+      "type": "coding",
+      "family": 3,
+      "variant": 1,
+      "solvable": true,
+      "reward": 3,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t076",
+      "type": "search",
+      "family": 3,
+      "variant": 2,
+      "solvable": true,
+      "reward": 8,
+      "expected": "Porto",
+      "check": "exact_str"
+    },
+    {
+      "id": "t077",
+      "type": "math",
+      "family": 2,
+      "variant": 1,
+      "solvable": true,
+      "reward": 9,
+      "expected": "809",
+      "check": "exact_int"
+    },
+    {
+      "id": "t078",
+      "type": "data_analysis",
+      "family": 2,
+      "variant": 3,
+      "solvable": true,
+      "reward": 8,
+      "expected": "90",
+      "check": "exact_int"
+    },
+    {
+      "id": "t079",
+      "type": "search",
+      "family": 3,
+      "variant": 1,
+      "solvable": true,
+      "reward": 4,
+      "expected": "Turku",
+      "check": "exact_str"
+    },
+    {
+      "id": "t080",
+      "type": "math",
+      "family": 0,
+      "variant": 3,
+      "solvable": true,
+      "reward": 8,
+      "expected": "520898",
+      "check": "exact_int"
+    },
+    {
+      "id": "t081",
+      "type": "coding",
+      "family": 1,
+      "variant": 2,
+      "solvable": true,
+      "reward": 6,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t082",
+      "type": "coding",
+      "family": 3,
+      "variant": 0,
+      "solvable": true,
+      "reward": 5,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t083",
+      "type": "search",
+      "family": 2,
+      "variant": 3,
+      "solvable": true,
+      "reward": 3,
+      "expected": "Brno",
+      "check": "exact_str"
+    },
+    {
+      "id": "t084",
+      "type": "data_analysis",
+      "family": 0,
+      "variant": 4,
+      "solvable": true,
+      "reward": 9,
+      "expected": "3671771",
+      "check": "exact_int"
+    },
+    {
+      "id": "t102",
+      "type": "coding",
+      "family": 0,
+      "variant": 2,
+      "solvable": false,
+      "reward": 2,
+      "expected": null,
+      "check": "unittest"
+    },
+    {
+      "id": "t086",
+      "type": "search",
+      "family": 3,
+      "variant": 4,
+      "solvable": true,
+      "reward": 3,
+      "expected": "Ghent",
+      "check": "exact_str"
+    },
+    {
+      "id": "t087",
+      "type": "search",
+      "family": 2,
+      "variant": 0,
+      "solvable": true,
+      "reward": 10,
+      "expected": "Turku",
+      "check": "exact_str"
+    },
+    {
+      "id": "t088",
+      "type": "math",
+      "family": 0,
+      "variant": 2,
+      "solvable": false,
+      "reward": 1,
+      "expected": null,
+      "check": "exact_int"
+    },
+    {
+      "id": "t089",
+      "type": "data_analysis",
+      "family": 0,
+      "variant": 0,
+      "solvable": false,
+      "reward": 8,
+      "expected": null,
+      "check": "exact_int"
+    },
+    {
+      "id": "t090",
+      "type": "search",
+      "family": 1,
+      "variant": 0,
+      "solvable": true,
+      "reward": 3,
+      "expected": "Linz",
+      "check": "exact_str"
+    },
+    {
+      "id": "t091",
+      "type": "coding",
+      "family": 3,
+      "variant": 4,
+      "solvable": true,
+      "reward": 4,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t092",
+      "type": "math",
+      "family": 2,
+      "variant": 4,
+      "solvable": true,
+      "reward": 8,
+      "expected": "895",
+      "check": "exact_int"
+    },
+    {
+      "id": "t093",
+      "type": "coding",
+      "family": 0,
+      "variant": 2,
+      "solvable": true,
+      "reward": 10,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t094",
+      "type": "data_analysis",
+      "family": 1,
+      "variant": 1,
+      "solvable": true,
+      "reward": 6,
+      "expected": "50782",
+      "check": "exact_int"
+    },
+    {
+      "id": "t095",
+      "type": "coding",
+      "family": 3,
+      "variant": 3,
+      "solvable": true,
+      "reward": 6,
+      "expected": "tests_pass",
+      "check": "unittest"
+    },
+    {
+      "id": "t096",
+      "type": "data_analysis",
+      "family": 0,
+      "variant": 3,
+      "solvable": false,
+      "reward": 1,
+      "expected": null,
+      "check": "exact_int"
+    },
+    {
+      "id": "t104",
+      "type": "coding",
+      "family": 0,
+      "variant": 4,
+      "solvable": false,
+      "reward": 1,
+      "expected": null,
+      "check": "unittest"
+    },
+    {
+      "id": "t098",
+      "type": "search",
+      "family": 2,
+      "variant": 4,
+      "solvable": true,
+      "reward": 5,
+      "expected": "Brno",
+      "check": "exact_str"
+    },
+    {
+      "id": "t099",
+      "type": "data_analysis",
+      "family": 0,
+      "variant": 1,
+      "solvable": true,
+      "reward": 3,
+      "expected": "1591672",
+      "check": "exact_int"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"task_id": "new_search", "task_type": "search", "instruction": "Using the files in kb/, in which city was the mentor of Mira Volkov born? Work only inside the current directory.", "reward": 1, "expected": "Riga", "check": "exact_str"}

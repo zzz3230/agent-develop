@@ -24,7 +24,7 @@ def validate(run: Path, references: Path, private: Path, image: str) -> dict:
         row = dict(task=spec['task_id'], type=spec['task_type'], check=spec['check'],
                    answer=answer, correct=False, reward=spec['reward'], outcome=outcome,
                    infrastructure_failure='model call failed' in detail and any(code in detail for code in ('429','500','502','503','504')),
-                   group='control' if directory.name.startswith('control_') else 'development' if directory.name.startswith('hard_') else 'official')
+                   group='control' if directory.name.startswith('control_') else 'development' if directory.name.startswith('hard_') else 'experimental' if directory.name.startswith(('new_','sql_')) else 'official')
         if spec['check'] == 'unavailable':
             row['correct'] = answer is None
         elif spec['check'] == 'unittest':
@@ -66,7 +66,7 @@ def main() -> int:
     args = parser.parse_args()
     report = validate(args.run, args.references, args.private_tests, args.image)
     (args.run/'issue-graded.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
-    for group in ('official', 'development', 'control'):
+    for group in ('official', 'development', 'control', 'experimental'):
         selected = [r for r in report['rows'] if r['group'] == group and r['check'] != 'unavailable']
         print(group, f"{sum(r['correct'] for r in selected)}/{len(selected)}")
     for row in report['rows']:

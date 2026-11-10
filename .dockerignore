@@ -4,3 +4,4 @@ __pycache__
 .env
 docs/
 evaluation/fixtures/
+evaluation/generate_suite.py
