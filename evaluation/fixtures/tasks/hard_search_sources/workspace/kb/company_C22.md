@@ -1,0 +1,1 @@
+Blue Lake C22 HQ effective 2025-01-01: Oslo. HQ effective 2026-03-01: Porto. HQ effective 2026-06-01: Zurich.
