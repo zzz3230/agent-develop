@@ -52,6 +52,7 @@ def main():
             budget_overrun=round(r['spent']-12000,1),stopped_by=info['stopped_by'],
             api_retries=sum(e['event']=='llm_retry' for e in events),usage_audit=usage_audit,
             incorrect=[dict(id=x['id'],note=x['note']) for x in grade['rows'] if x['solvable'] and not x['correct'] and x['journal_status']!='not_run'])
+        row['proxy_reported_weighted_tokens']=round(r['spent']-usage_audit['extra_cost'],1) if len(calls)==usage_audit['responses'] and not row['estimated_calls'] else None
         assert r['seconds']<3600 and row['sampled_peak_memory_bytes']<16*1024**3
         result['runs'].append(row)
     images=json.loads(subprocess.check_output(['docker','image','inspect','agent-develop:predictors','agent-develop:predictor-source-base'],text=True))
@@ -71,6 +72,8 @@ def main():
     result['models_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'predictors').glob('*.json')}
     training_cost=sum(json.loads((OUT/n/'graded.json').read_text(encoding='utf-8'))['spent'] for n in ('train-old','train-dev'))
     result['total_experiment_weighted_tokens']=round(training_cost+sum(r['spent'] for r in comparisons),1)
+    result['training_usage_audits']={n:audit(OUT/n/'console.log') for n in ('train-old','train-dev')}
+    result['total_character_floor_overestimate']=sum(r['usage_audit']['extra_cost'] for r in result['runs'])+sum(a['extra_cost'] for a in result['training_usage_audits'].values())
     result['summary']={}
     lines=['# Сравнение предварительно обученных планировщиков','',
         '34 контрольные задачи, 119 возможных баллов, три повтора. Бюджет каждого прогона — 12000 взвешенных токенов, с возможным превышением одним вызовом. Все ответы повторно оценены общим проверяющим; код без DONE в answer.txt не засчитывается.','',
