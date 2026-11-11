@@ -56,7 +56,7 @@ class TaskQueue:
         self.predictor = None
         mode=os.environ.get('PREDICTOR','baseline')
         if enabled and mode != 'baseline':
-            if mode not in ('numeric','embedding','structural','strong_embedding'): raise ValueError('Unknown predictor: '+mode)
+            if mode not in ('numeric','embedding','structural','strong_embedding','bge_structural'): raise ValueError('Unknown predictor: '+mode)
             from runtime.predictor import Predictor
             self.predictor=Predictor(self.fresh,mode,os.environ.get('PREDICTOR_DIR','/app/predictors'),journal)
 

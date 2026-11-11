@@ -1,0 +1,4 @@
+FROM agent-develop:predictor-extensions
+COPY runtime/ /app/runtime/
+COPY predictors/*.json /app/predictors/
+RUN python -c "import json;from pathlib import Path;m=json.loads(Path('/app/predictors/bge_structural.json').read_text());assert m['mode']=='bge_structural' and len(m['mean'])==786"

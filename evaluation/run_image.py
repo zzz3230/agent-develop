@@ -177,6 +177,7 @@ def run(image: str, tasks: Path, out: Path, env: dict[str, str] | None = None, *
                *bind(out / 'harness', '/data/harness'), image, '/app/run_agent.py', '--tasks-dir', '/data/tasks']
     started, stopped_by = time.monotonic(), None
     resource_samples=[]
+    resource_errors=[]
     last_resource=started
     with (out / 'console.log').open('w', encoding='utf-8') as log:
         process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT)
@@ -184,9 +185,12 @@ def run(image: str, tasks: Path, out: Path, env: dict[str, str] | None = None, *
             time.sleep(1)
             elapsed = time.monotonic() - started
             if time.monotonic()-last_resource>=10:
-                measured=docker('stats','--no-stream','--format','{{json .}}',name,check=False,timeout=15)
-                if measured.returncode==0 and measured.stdout.strip():
-                    resource_samples.append(json.loads(measured.stdout.strip()))
+                try:
+                    measured=docker('stats','--no-stream','--format','{{json .}}',name,check=False,timeout=15)
+                    if measured.returncode==0 and measured.stdout.strip():
+                        resource_samples.append(json.loads(measured.stdout.strip()))
+                except (OSError,subprocess.TimeoutExpired,ValueError) as exc:
+                    resource_errors.append(str(exc)[:250])
                 last_resource=time.monotonic()
             reason = ('wall_limit' if elapsed >= wall_limit else
                       'kill_after' if kill_after and elapsed >= kill_after else
@@ -197,6 +201,7 @@ def run(image: str, tasks: Path, out: Path, env: dict[str, str] | None = None, *
                 process.wait(timeout=60)
     info.update(wall_seconds=round(time.monotonic() - started, 1), exit_code=process.returncode, stopped_by=stopped_by)
     info['resource_samples']=resource_samples
+    info['resource_sampling_errors']=resource_errors
     if mock:
         info['mock_stats'] = mock.stats()
     answers = list((out / 'tasks').glob('*/answer.txt'))

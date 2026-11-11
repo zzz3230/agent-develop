@@ -35,7 +35,8 @@ def dataset():
     return rows
 
 
-def train(extensions=False):
+def train(extensions=False,combined=False):
+    if combined: extensions=True
     started=time.monotonic();rows=dataset()
     if len(rows)<100: raise ValueError('Collection incomplete; need at least 100 charged completed tasks')
     numeric=np.asarray([features(r['task'],keywords=not extensions) for r in rows])
@@ -55,6 +56,7 @@ def train(extensions=False):
     report['offline_type_only_reference']=dict(brier=float(brier_score_loss(y,baseline_p)),
         log_loss=float(log_loss(y,baseline_p)),cost_mae=float(mean_absolute_error(cost,baseline_c)))
     variants=[('structural',numeric),('strong_embedding',embeddings)] if extensions else [('numeric',numeric),('embedding',np.hstack([numeric,embeddings]))]
+    if combined: variants=[('bge_structural',np.hstack([numeric,embeddings]))]
     for mode,x in variants:
         cached=[]
         for a,b in GroupKFold(n_splits=5).split(x,y,groups):
@@ -86,11 +88,12 @@ def train(extensions=False):
                    cost_transform='identity',log_bias=0,training_sha256=digest,validation=metrics)
         dump(ROOT/'predictors'/(mode+'.json'),model);report['models'][mode]=metrics
     report['seconds']=time.monotonic()-started
-    dump(OUT/('training_report_extensions.json' if extensions else 'training_report.json'),report)
+    dump(OUT/('training_report_combined.json' if combined else 'training_report_extensions.json' if extensions else 'training_report.json'),report)
     print(json.dumps(report,indent=2))
 
 
 if __name__=='__main__':
     import argparse
     parser=argparse.ArgumentParser();parser.add_argument('--extensions',action='store_true')
-    train(parser.parse_args().extensions)
+    parser.add_argument('--bge-structural',action='store_true');args=parser.parse_args()
+    train(args.extensions,args.bge_structural)
