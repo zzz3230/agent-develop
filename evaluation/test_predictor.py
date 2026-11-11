@@ -11,6 +11,14 @@ from runtime.task_queue import TaskQueue
 
 
 class Predictors(unittest.TestCase):
+    def test_exported_direct_cost_and_feature_schema(self):
+        p=Predictor.__new__(Predictor)
+        p.model=dict(mean=[0,0],scale=[1,2],success=dict(coef=[1,-1],intercept=0),
+                     cost=dict(coef=[100,200],intercept=500),cost_transform='identity')
+        probability,cost=p.predict([1,2])
+        self.assertAlmostEqual(probability,.5);self.assertAlmostEqual(cost,800)
+        with self.assertRaises(ValueError):p.predict([1])
+
     def test_no_reference_or_outcome_features(self):
         with tempfile.TemporaryDirectory() as tmp:
             p=Path(tmp);(p/'task.json').write_text(json.dumps(dict(task_id='a',task_type='math',instruction='Find the minimum.',reward=1)))
