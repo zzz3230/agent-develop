@@ -4,3 +4,4 @@ __pycache__/
 logs/
 benchmark-runs/
 predictors/encoder/model.onnx
+predictors/encoder-strong/*.onnx

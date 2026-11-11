@@ -1,0 +1,8 @@
+{
+  "pooling": "cls",
+  "max_length": 512,
+  "padding_length": null,
+  "chunk_words": 300,
+  "chunk_step": 256,
+  "max_words": 1536
+}

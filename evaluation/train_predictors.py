@@ -35,11 +35,11 @@ def dataset():
     return rows
 
 
-def train():
+def train(extensions=False):
     started=time.monotonic();rows=dataset()
     if len(rows)<100: raise ValueError('Collection incomplete; need at least 100 charged completed tasks')
-    numeric=np.asarray([features(r['task']) for r in rows])
-    embeddings=Encoder(ROOT/'predictors/encoder').encode([r['task'].instruction for r in rows])
+    numeric=np.asarray([features(r['task'],keywords=not extensions) for r in rows])
+    embeddings=Encoder(ROOT/'predictors'/('encoder-strong' if extensions else 'encoder')).encode([r['task'].instruction for r in rows])
     y=np.array([r['correct'] for r in rows]);cost=np.array([r['cost'] for r in rows]);groups=[r['group'] for r in rows]
     provenance=[dict(id=r['task'].id,group=r['group'],correct=r['correct'],cost=r['cost']) for r in rows]
     digest=hashlib.sha256(json.dumps(provenance,sort_keys=True).encode()).hexdigest()
@@ -54,7 +54,8 @@ def train():
             baseline_c[j]=np.mean(cost[relevant]) if relevant else np.mean(cost[a])
     report['offline_type_only_reference']=dict(brier=float(brier_score_loss(y,baseline_p)),
         log_loss=float(log_loss(y,baseline_p)),cost_mae=float(mean_absolute_error(cost,baseline_c)))
-    for mode,x in [('numeric',numeric),('embedding',np.hstack([numeric,embeddings]))]:
+    variants=[('structural',numeric),('strong_embedding',embeddings)] if extensions else [('numeric',numeric),('embedding',np.hstack([numeric,embeddings]))]
+    for mode,x in variants:
         cached=[]
         for a,b in GroupKFold(n_splits=5).split(x,y,groups):
             scaler=StandardScaler().fit(x[a]);cached.append((a,b,scaler.transform(x[a]),scaler.transform(x[b])))
@@ -85,8 +86,11 @@ def train():
                    cost_transform='identity',log_bias=0,training_sha256=digest,validation=metrics)
         dump(ROOT/'predictors'/(mode+'.json'),model);report['models'][mode]=metrics
     report['seconds']=time.monotonic()-started
-    dump(OUT/'training_report.json',report)
+    dump(OUT/('training_report_extensions.json' if extensions else 'training_report.json'),report)
     print(json.dumps(report,indent=2))
 
 
-if __name__=='__main__': train()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument('--extensions',action='store_true')
+    train(parser.parse_args().extensions)

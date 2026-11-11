@@ -11,6 +11,28 @@ from runtime.task_queue import TaskQueue
 
 
 class Predictors(unittest.TestCase):
+    def test_structural_features_ignore_keywords(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp);raw=dict(task_id='a',task_type='math',instruction='round',reward=1)
+            (p/'task.json').write_text(json.dumps(raw));t=load_task(p)
+            before=features(t,keywords=False);original=features(t)
+            raw['instruction']='abcde';(p/'task.json').write_text(json.dumps(raw));t=load_task(p)
+            self.assertEqual(before,features(t,keywords=False));self.assertNotEqual(original,features(t))
+
+    def test_embedding_only_never_reads_structural_features(self):
+        class Vectors:
+            def tolist(self):return [[1,2]]
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp);raw=dict(task_id='a',task_type='math',instruction='round',reward=1)
+            (p/'task.json').write_text(json.dumps(raw))
+            model=dict(mean=[0,0],scale=[1,1],success=dict(coef=[0,0],intercept=0),
+                cost=dict(coef=[0,0],intercept=100),cost_transform='identity')
+            (p/'strong_embedding.json').write_text(json.dumps(model))
+            with patch('runtime.predictor.features',side_effect=AssertionError('No structural features permitted')),patch('runtime.predictor.Encoder') as encoder:
+                encoder.return_value.encode.return_value=Vectors()
+                pred=Predictor([load_task(p)],'strong_embedding',p)
+                self.assertEqual(pred.predictions['a'],(.5,100))
+
     def test_exported_direct_cost_and_feature_schema(self):
         p=Predictor.__new__(Predictor)
         p.model=dict(mean=[0,0],scale=[1,2],success=dict(coef=[1,-1],intercept=0),
