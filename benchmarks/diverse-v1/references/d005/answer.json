@@ -1,0 +1,5 @@
+{
+  "expected": "6017",
+  "solvable": true,
+  "explanation": "Tax applies after the fixed charge; the untaxed bill is 5597 cents."
+}

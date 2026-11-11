@@ -1,4 +1,5 @@
 """Measured prompt profiles; shared final-answer format across task types."""
+import os
 
 ANSWER_RULES = (
     "Your last message must be only the final answer on one line, without explanation, labels, Markdown, or code fences. "
@@ -16,4 +17,5 @@ ECONOMY_SYSTEM = (
 
 
 def system_for_task(task_type: str) -> str:
-    return ECONOMY_SYSTEM if task_type == "coding" else BASELINE_SYSTEM
+    economy = os.environ.get("PROMPT_ECONOMY", "1") == "1"  # 0: baseline everywhere, for A/B
+    return ECONOMY_SYSTEM if economy and task_type == "coding" else BASELINE_SYSTEM

@@ -1,0 +1,5 @@
+{
+  "expected": "9",
+  "solvable": true,
+  "explanation": "Balances are mutated after accepted transfers; final a=9,b=5,c=3 and total stays 17."
+}

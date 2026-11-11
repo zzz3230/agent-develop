@@ -1,0 +1,5 @@
+{
+  "expected": "10395",
+  "solvable": true,
+  "explanation": "Nested sum over paid orders, not a flat CSV schema."
+}

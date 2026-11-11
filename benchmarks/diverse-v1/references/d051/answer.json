@@ -1,0 +1,5 @@
+{
+  "expected": "44915",
+  "solvable": true,
+  "explanation": "17 explicitly ordered Decimal updates, rounding once per month."
+}

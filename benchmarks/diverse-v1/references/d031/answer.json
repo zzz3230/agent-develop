@@ -1,0 +1,5 @@
+{
+  "expected": "44",
+  "solvable": true,
+  "explanation": "Exhaustive verification over all 512 subsets."
+}

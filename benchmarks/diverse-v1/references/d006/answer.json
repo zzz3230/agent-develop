@@ -1,0 +1,5 @@
+{
+  "expected": "7",
+  "solvable": true,
+  "explanation": "Latest values are A=4, B=3, C=0; sum=7."
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "coding_0000",
+  "task_type": "coding",
+  "instruction": "Fix solution.py: order(tasks) takes a dict name -> list of dependency names and returns all names in a dependency-respecting order; among valid orders return the lexicographically smallest (always pick the smallest available name). Duplicate dependencies are allowed. Raise ValueError for an unknown dependency or a cycle. Run `python3 test_solution.py`. Work only inside the current directory. Do not edit the tests. If the requirements are contradictory, write IMPOSSIBLE instead. When you are done, write ONLY the word DONE to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 10,
+  "check": "unittest"
+}

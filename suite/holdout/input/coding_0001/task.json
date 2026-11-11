@@ -1,0 +1,7 @@
+{
+  "task_id": "coding_0001",
+  "task_type": "coding",
+  "instruction": "Fix solution.py: to_roman(n) converts an int 1..3999 to canonical Roman numerals (subtractive forms IV, IX, XL, XC, CD, CM); other values, including bool and float, raise ValueError. from_roman(text) accepts only canonical uppercase numerals for 1..3999 and returns the int; anything else (e.g. IIII, IC, lowercase, empty) raises ValueError. Run `python3 test_solution.py`. Work only inside the current directory. Do not edit the tests. If the requirements are contradictory, write IMPOSSIBLE instead. When you are done, write ONLY the word DONE to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 8,
+  "check": "unittest"
+}

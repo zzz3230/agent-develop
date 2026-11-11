@@ -1,0 +1,5 @@
+{
+  "expected": "24",
+  "solvable": true,
+  "explanation": "Enumerated all feasible triples; each variable is below 20 by the budget constraint."
+}

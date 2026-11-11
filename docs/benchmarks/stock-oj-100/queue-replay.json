@@ -1,0 +1,406 @@
+{
+ "ours-graded.json": [
+  {
+   "budget": 30000,
+   "known_budget": true,
+   "orders": 201,
+   "recorded_order": {
+    "base": 70.0,
+    "queue": 132.0,
+    "base_solved": 15,
+    "queue_solved": 20,
+    "base_seconds": 340.0,
+    "queue_seconds": 313.0
+   },
+   "mean_points": {
+    "base": 60.1,
+    "queue": 131.7
+   },
+   "min_points": {
+    "base": 4.0,
+    "queue": 123.0
+   },
+   "mean_solved": {
+    "base": 11.6,
+    "queue": 20.0
+   },
+   "mean_attempted": {
+    "base": 19.6,
+    "queue": 36.4
+   },
+   "mean_spent": {
+    "base": 30000,
+    "queue": 30000
+   },
+   "mean_seconds": {
+    "base": 271.2,
+    "queue": 311.4
+   },
+   "queue_wins": 201,
+   "ties": 0,
+   "queue_losses": 0
+  },
+  {
+   "budget": 50000,
+   "known_budget": true,
+   "orders": 201,
+   "recorded_order": {
+    "base": 101.0,
+    "queue": 162.0,
+    "base_solved": 20,
+    "queue_solved": 24,
+    "base_seconds": 537.8,
+    "queue_seconds": 444.0
+   },
+   "mean_points": {
+    "base": 100.0,
+    "queue": 172.0
+   },
+   "min_points": {
+    "base": 35.0,
+    "queue": 157.0
+   },
+   "mean_solved": {
+    "base": 19.1,
+    "queue": 25.5
+   },
+   "mean_attempted": {
+    "base": 32.8,
+    "queue": 47.2
+   },
+   "mean_spent": {
+    "base": 50000,
+    "queue": 50000
+   },
+   "mean_seconds": {
+    "base": 460.3,
+    "queue": 484.0
+   },
+   "queue_wins": 200,
+   "ties": 0,
+   "queue_losses": 1
+  },
+  {
+   "budget": 100000,
+   "known_budget": true,
+   "orders": 201,
+   "recorded_order": {
+    "base": 209.0,
+    "queue": 263.0,
+    "base_solved": 43,
+    "queue_solved": 42,
+    "base_seconds": 936.7,
+    "queue_seconds": 932.1
+   },
+   "mean_points": {
+    "base": 202.4,
+    "queue": 259.3
+   },
+   "min_points": {
+    "base": 126.0,
+    "queue": 248.0
+   },
+   "mean_solved": {
+    "base": 38.5,
+    "queue": 41.6
+   },
+   "mean_attempted": {
+    "base": 66.0,
+    "queue": 71.2
+   },
+   "mean_spent": {
+    "base": 100000,
+    "queue": 100000
+   },
+   "mean_seconds": {
+    "base": 933.7,
+    "queue": 953.3
+   },
+   "queue_wins": 198,
+   "ties": 1,
+   "queue_losses": 2
+  },
+  {
+   "budget": 150000,
+   "known_budget": true,
+   "orders": 201,
+   "recorded_order": {
+    "base": 306.0,
+    "queue": 306.0,
+    "base_solved": 58,
+    "queue_solved": 58,
+    "base_seconds": 1421.1,
+    "queue_seconds": 1421.2
+   },
+   "mean_points": {
+    "base": 306.0,
+    "queue": 306.0
+   },
+   "min_points": {
+    "base": 306.0,
+    "queue": 306.0
+   },
+   "mean_solved": {
+    "base": 58,
+    "queue": 58
+   },
+   "mean_attempted": {
+    "base": 100,
+    "queue": 100
+   },
+   "mean_spent": {
+    "base": 149627.3,
+    "queue": 149627.3
+   },
+   "mean_seconds": {
+    "base": 1421.1,
+    "queue": 1421.2
+   },
+   "queue_wins": 0,
+   "ties": 201,
+   "queue_losses": 0
+  },
+  {
+   "budget": 100000,
+   "known_budget": false,
+   "orders": 201,
+   "recorded_order": {
+    "base": 209.0,
+    "queue": 263.0,
+    "base_solved": 43,
+    "queue_solved": 42,
+    "base_seconds": 936.7,
+    "queue_seconds": 932.1
+   },
+   "mean_points": {
+    "base": 202.4,
+    "queue": 259.0
+   },
+   "min_points": {
+    "base": 126.0,
+    "queue": 254.0
+   },
+   "mean_solved": {
+    "base": 38.5,
+    "queue": 41.5
+   },
+   "mean_attempted": {
+    "base": 66.0,
+    "queue": 71.0
+   },
+   "mean_spent": {
+    "base": 100000,
+    "queue": 100000
+   },
+   "mean_seconds": {
+    "base": 933.7,
+    "queue": 954.3
+   },
+   "queue_wins": 199,
+   "ties": 1,
+   "queue_losses": 1
+  }
+ ],
+ "stock-graded.json": [
+  {
+   "budget": 30000,
+   "known_budget": true,
+   "orders": 201,
+   "recorded_order": {
+    "base": 0.0,
+    "queue": 62.0,
+    "base_solved": 0,
+    "queue_solved": 7,
+    "base_seconds": 380.1,
+    "queue_seconds": 393.4
+   },
+   "mean_points": {
+    "base": 9.7,
+    "queue": 63.7
+   },
+   "min_points": {
+    "base": 0.0,
+    "queue": 62.0
+   },
+   "mean_solved": {
+    "base": 1.5,
+    "queue": 7.4
+   },
+   "mean_attempted": {
+    "base": 12.6,
+    "queue": 16.1
+   },
+   "mean_spent": {
+    "base": 30000,
+    "queue": 30000
+   },
+   "mean_seconds": {
+    "base": 205.8,
+    "queue": 398.3
+   },
+   "queue_wins": 201,
+   "ties": 0,
+   "queue_losses": 0
+  },
+  {
+   "budget": 50000,
+   "known_budget": true,
+   "orders": 201,
+   "recorded_order": {
+    "base": 0.0,
+    "queue": 70.0,
+    "base_solved": 0,
+    "queue_solved": 9,
+    "base_seconds": 451.4,
+    "queue_seconds": 539.5
+   },
+   "mean_points": {
+    "base": 16.0,
+    "queue": 70.2
+   },
+   "min_points": {
+    "base": 0.0,
+    "queue": 70.0
+   },
+   "mean_solved": {
+    "base": 2.5,
+    "queue": 9.1
+   },
+   "mean_attempted": {
+    "base": 21.2,
+    "queue": 25.3
+   },
+   "mean_spent": {
+    "base": 50000,
+    "queue": 50000
+   },
+   "mean_seconds": {
+    "base": 344.9,
+    "queue": 542.4
+   },
+   "queue_wins": 201,
+   "ties": 0,
+   "queue_losses": 0
+  },
+  {
+   "budget": 100000,
+   "known_budget": true,
+   "orders": 201,
+   "recorded_order": {
+    "base": 6.0,
+    "queue": 74.0,
+    "base_solved": 2,
+    "queue_solved": 11,
+    "base_seconds": 944.1,
+    "queue_seconds": 1003.9
+   },
+   "mean_points": {
+    "base": 33.7,
+    "queue": 74.0
+   },
+   "min_points": {
+    "base": 2.0,
+    "queue": 74.0
+   },
+   "mean_solved": {
+    "base": 5.2,
+    "queue": 11
+   },
+   "mean_attempted": {
+    "base": 43.0,
+    "queue": 48.4
+   },
+   "mean_spent": {
+    "base": 100000,
+    "queue": 100000
+   },
+   "mean_seconds": {
+    "base": 676.1,
+    "queue": 1013.5
+   },
+   "queue_wins": 201,
+   "ties": 0,
+   "queue_losses": 0
+  },
+  {
+   "budget": 150000,
+   "known_budget": true,
+   "orders": 201,
+   "recorded_order": {
+    "base": 40.0,
+    "queue": 80.0,
+    "base_solved": 7,
+    "queue_solved": 12,
+    "base_seconds": 1144.7,
+    "queue_seconds": 1259.4
+   },
+   "mean_points": {
+    "base": 51.3,
+    "queue": 80.0
+   },
+   "min_points": {
+    "base": 10.0,
+    "queue": 80.0
+   },
+   "mean_solved": {
+    "base": 7.8,
+    "queue": 12
+   },
+   "mean_attempted": {
+    "base": 64.7,
+    "queue": 69.6
+   },
+   "mean_spent": {
+    "base": 150000,
+    "queue": 150000
+   },
+   "mean_seconds": {
+    "base": 1025.6,
+    "queue": 1266.9
+   },
+   "queue_wins": 200,
+   "ties": 1,
+   "queue_losses": 0
+  },
+  {
+   "budget": 100000,
+   "known_budget": false,
+   "orders": 201,
+   "recorded_order": {
+    "base": 6.0,
+    "queue": 74.0,
+    "base_solved": 2,
+    "queue_solved": 11,
+    "base_seconds": 944.1,
+    "queue_seconds": 1003.9
+   },
+   "mean_points": {
+    "base": 33.7,
+    "queue": 74.0
+   },
+   "min_points": {
+    "base": 2.0,
+    "queue": 74.0
+   },
+   "mean_solved": {
+    "base": 5.2,
+    "queue": 11
+   },
+   "mean_attempted": {
+    "base": 43.0,
+    "queue": 48.5
+   },
+   "mean_spent": {
+    "base": 100000,
+    "queue": 100000
+   },
+   "mean_seconds": {
+    "base": 676.1,
+    "queue": 1013.1
+   },
+   "queue_wins": 201,
+   "ties": 0,
+   "queue_losses": 0
+  }
+ ]
+}

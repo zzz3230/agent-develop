@@ -1,6 +1,6 @@
 """M1 entry point: runs tasks through the configured stock OJ agent within one shared budget.
 
-Tasks run in directory order for now; task choice (M3) and agent tuning (M2) plug in here.
+Task order: runtime/task_queue.py (QUEUE=0 keeps directory order); agent tuning (M2) plugs in here.
 """
 from __future__ import annotations
 
@@ -23,6 +23,7 @@ from runtime.budget import Budget, BudgetExhausted, Journal, TaskLimitExceeded  
 from runtime.tasks import Task, load_task, save_answer  # noqa: E402
 from runtime.profiles import system_for_task  # noqa: E402
 from runtime.attempt_policy import AttemptLimits, limits_for_task  # noqa: E402
+from runtime.task_queue import TaskQueue, queue_enabled, retries_enabled, retry_limits  # noqa: E402
 
 DEFAULT_BUDGET = 100_000
 TIME_LIMIT_S = 3300.0
@@ -137,10 +138,18 @@ async def run(tasks: list[Task], budget: Budget, journal: Journal, deadline: flo
 
     connection = Connection(os.environ["LLM_BASE_URL"], os.environ.pop("LLM_API_KEY"))  # out of reach of agent shells
     errors = 0
-    for task in tasks:
+    queue = TaskQueue(tasks, enabled=queue_enabled(), retries=retries_enabled(), journal=journal)
+    journal.write('queue', enabled=queue.enabled, retries=queue.retries)
+    while True:
         if time.monotonic() > deadline:
             return "time limit"
+        pick = queue.next(budget.remaining())
+        if pick is None:
+            break
+        task, retry = pick
         limits = limits_for_task(task.type)
+        if retry:
+            limits = retry_limits(limits)
         budget.begin_task(task.id, min(limits.initial_cost, limits.cost), hard_limit=limits.cost)
         journal.write('attempt_start', task=task.id, limits=asdict(limits))
         stop = None
@@ -161,8 +170,10 @@ async def run(tasks: list[Task], budget: Budget, journal: Journal, deadline: flo
             status, detail = "failed", f"{type(exc).__name__}: {exc}"[:300]
         if status == "solved":
             save_answer(task, detail)
+        cost = budget.end_task()
+        queue.record(task, status, cost, detail, retry)
         journal.write("outcome", task=task.id, type=task.type, reward=task.reward, status=status,
-                      detail=detail, cost=round(budget.end_task(), 1))
+                      detail=detail, cost=round(cost, 1), retry=retry)
         if stop:
             return stop
         if errors >= MAX_CONSECUTIVE_ERRORS:

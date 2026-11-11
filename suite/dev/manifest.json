@@ -1,0 +1,129 @@
+{
+  "kind": "base",
+  "split": "dev",
+  "seed": 20261111,
+  "input_sha256": "61a553e4c4a49f5ca877c79bc7a49e47d92934079ec3b2c4f184505737003b27",
+  "tasks": [
+    {
+      "id": "math_0000",
+      "type": "math",
+      "template": "math_loan",
+      "split": "dev",
+      "solvable": true,
+      "reward": 4,
+      "seed": 2322487299,
+      "expected": "126506",
+      "check": "exact_int",
+      "reason": null
+    },
+    {
+      "id": "math_0001",
+      "type": "math",
+      "template": "math_divisible",
+      "split": "dev",
+      "solvable": true,
+      "reward": 2,
+      "seed": 172491784,
+      "expected": "22017679383",
+      "check": "exact_int",
+      "reason": null
+    },
+    {
+      "id": "math_0002",
+      "type": "math",
+      "template": "math_underdetermined",
+      "split": "dev",
+      "solvable": false,
+      "reward": 4,
+      "seed": 3703110867,
+      "expected": null,
+      "check": "exact_int",
+      "reason": "underdetermined: one equation, two unknowns"
+    },
+    {
+      "id": "data_analysis_0000",
+      "type": "data_analysis",
+      "template": "data_latency",
+      "split": "dev",
+      "solvable": true,
+      "reward": 1,
+      "seed": 3441240496,
+      "expected": "2392",
+      "check": "exact_int",
+      "reason": null
+    },
+    {
+      "id": "data_analysis_0001",
+      "type": "data_analysis",
+      "template": "data_transfers",
+      "split": "dev",
+      "solvable": true,
+      "reward": 5,
+      "seed": 4225974845,
+      "expected": "39",
+      "check": "exact_int",
+      "reason": null
+    },
+    {
+      "id": "search_0000",
+      "type": "search",
+      "template": "search_changelog",
+      "split": "dev",
+      "solvable": true,
+      "reward": 6,
+      "seed": 2665879028,
+      "expected": "3.0.0",
+      "check": "exact_str",
+      "reason": null
+    },
+    {
+      "id": "search_0001",
+      "type": "search",
+      "template": "search_actions",
+      "split": "dev",
+      "solvable": true,
+      "reward": 9,
+      "seed": 1449286573,
+      "expected": "Hana Ivanova",
+      "check": "exact_str",
+      "reason": null
+    },
+    {
+      "id": "search_0002",
+      "type": "search",
+      "template": "search_not_recorded",
+      "split": "dev",
+      "solvable": false,
+      "reward": 4,
+      "seed": 381354401,
+      "expected": null,
+      "check": "exact_str",
+      "reason": "birth city explicitly not recorded"
+    },
+    {
+      "id": "coding_0000",
+      "type": "coding",
+      "template": "coding_semver",
+      "split": "dev",
+      "solvable": true,
+      "reward": 1,
+      "seed": 1924913287,
+      "expected": "tests_pass",
+      "check": "unittest",
+      "reason": null
+    },
+    {
+      "id": "coding_0001",
+      "type": "coding",
+      "template": "coding_duration",
+      "split": "dev",
+      "solvable": true,
+      "reward": 4,
+      "seed": 1510816281,
+      "expected": "tests_pass",
+      "check": "unittest",
+      "reason": null
+    }
+  ],
+  "impossible_share": 0.2
+}

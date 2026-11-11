@@ -1,0 +1,7 @@
+{
+  "task_id": "math_0001",
+  "task_type": "math",
+  "instruction": "How many integers k with 1 <= k <= 164598185675 are divisible by 11 or by 14, but not divisible by 10? Return the integer. Work only inside the current directory. If the provided information cannot determine the answer, write IMPOSSIBLE instead. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 2,
+  "check": "exact_int"
+}

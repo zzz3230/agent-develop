@@ -1,0 +1,7 @@
+{
+  "task_id": "coding_0001",
+  "task_type": "coding",
+  "instruction": "Fix solution.py: parse_duration(text) converts strings like \"2d4h30m15s\" to integer seconds. Units d, h, m, s each appear at most once, in exactly that order, each with a non-negative integer; at least one unit is required. Anything else (empty string, spaces, wrong order, repeats, fractions, signs, unknown units) raises ValueError. Run `python3 test_solution.py`. Work only inside the current directory. Do not edit the tests. If the requirements are contradictory, write IMPOSSIBLE instead. When you are done, write ONLY the word DONE to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 4,
+  "check": "unittest"
+}

@@ -1,0 +1,5 @@
+{
+  "expected": "26",
+  "solvable": true,
+  "explanation": "Set intersection of January signup IDs and March active IDs, not event count."
+}

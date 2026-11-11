@@ -1,0 +1,5 @@
+{
+  "expected": "P14",
+  "solvable": true,
+  "explanation": "Only P14 satisfies all three predicates."
+}

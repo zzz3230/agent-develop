@@ -1,0 +1,5 @@
+{
+  "expected": "IMPOSSIBLE",
+  "solvable": false,
+  "explanation": "The order has no ID to distinguish two same-name customers in different cities."
+}

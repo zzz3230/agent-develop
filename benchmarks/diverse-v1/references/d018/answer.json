@@ -1,0 +1,5 @@
+{
+  "expected": "21/44",
+  "solvable": true,
+  "explanation": "C(7,2)*C(5,1)/C(12,3) = 21/44."
+}

@@ -1,5 +1,6 @@
 """Task-attempt limits, separate from the global budget and M3 scheduling."""
-from dataclasses import dataclass
+import os
+from dataclasses import dataclass, replace
 
 
 @dataclass(frozen=True)
@@ -31,5 +32,12 @@ DEFAULTS = {
 }
 
 
+def fixed(limits: AttemptLimits) -> AttemptLimits:
+    """Whole ceiling from the first step, no progress-based extensions."""
+    return replace(limits, initial_steps=limits.steps, initial_cost=limits.cost,
+                   initial_seconds=limits.seconds, max_extensions=0)
+
+
 def limits_for_task(task_type: str) -> AttemptLimits:
-    return DEFAULTS.get(task_type, AttemptLimits())
+    limits = DEFAULTS.get(task_type, AttemptLimits())
+    return limits if os.environ.get('ADAPTIVE_LIMITS', '1') == '1' else fixed(limits)

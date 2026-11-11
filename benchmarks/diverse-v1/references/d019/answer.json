@@ -1,0 +1,5 @@
+{
+  "expected": "1025",
+  "solvable": true,
+  "explanation": "1250+200-325-100=1025; embedded newline is inside one quoted field."
+}
