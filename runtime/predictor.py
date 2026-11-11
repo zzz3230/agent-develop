@@ -91,5 +91,5 @@ class Predictor:
         x=[(v-a)/s for v,a,s in zip(features,m['mean'],m['scale'])]
         def linear(key): return m[key]['intercept']+sum(a*b for a,b in zip(m[key]['coef'],x))
         p=1/(1+math.exp(-max(-30,min(30,linear('success')))))
-        c=math.exp(max(0,min(12,linear('cost')+m['log_bias'])))-1
+        c=linear('cost') if m.get('cost_transform')=='identity' else math.exp(max(0,min(12,linear('cost')+m['log_bias'])))-1
         return max(.02,min(.98,p)),max(50,min(20000,c))

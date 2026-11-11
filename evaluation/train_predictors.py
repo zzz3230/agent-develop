@@ -55,22 +55,34 @@ def train():
     report['offline_type_only_reference']=dict(brier=float(brier_score_loss(y,baseline_p)),
         log_loss=float(log_loss(y,baseline_p)),cost_mae=float(mean_absolute_error(cost,baseline_c)))
     for mode,x in [('numeric',numeric),('embedding',np.hstack([numeric,embeddings]))]:
-        probabilities=np.zeros(len(y));predicted_log=np.zeros(len(y))
+        cached=[]
         for a,b in GroupKFold(n_splits=5).split(x,y,groups):
-            scaler=StandardScaler().fit(x[a]);xa=scaler.transform(x[a]);xb=scaler.transform(x[b])
-            cls=LogisticRegression(C=.1,max_iter=2000,random_state=71).fit(xa,y[a])
-            reg=Ridge(alpha=100).fit(xa,np.log1p(cost[a]))
-            probabilities[b]=cls.predict_proba(xb)[:,1];predicted_log[b]=reg.predict(xb)
-        bias=float(np.clip(np.log(np.mean(np.exp(np.clip(np.log1p(cost)-predicted_log,-4,4)))),0,1.5))
+            scaler=StandardScaler().fit(x[a]);cached.append((a,b,scaler.transform(x[a]),scaler.transform(x[b])))
+        classifiers=[];regressors=[]
+        for strength in [.0001,.001,.01,.1,1]:
+            pred=np.zeros(len(y))
+            for a,b,xa,xb in cached:
+                cls=LogisticRegression(C=strength,max_iter=2000,random_state=71).fit(xa,y[a])
+                pred[b]=cls.predict_proba(xb)[:,1]
+            classifiers.append((float(brier_score_loss(y,pred)),strength,pred))
+        for strength in [10,100,1000,10000]:
+            pred=np.zeros(len(y))
+            for a,b,xa,xb in cached:
+                reg=Ridge(alpha=strength).fit(xa,cost[a]);pred[b]=np.clip(reg.predict(xb),50,20000)
+            regressors.append((float(np.mean((cost-pred)**2)),strength,pred))
+        _,best_c,probabilities=min(classifiers,key=lambda row:row[0])
+        _,best_alpha,predicted=min(regressors,key=lambda row:row[0])
         scaler=StandardScaler().fit(x);xx=scaler.transform(x)
-        cls=LogisticRegression(C=.1,max_iter=2000,random_state=71).fit(xx,y)
-        reg=Ridge(alpha=100).fit(xx,np.log1p(cost))
+        cls=LogisticRegression(C=best_c,max_iter=2000,random_state=71).fit(xx,y)
+        reg=Ridge(alpha=best_alpha).fit(xx,cost)
         metrics=dict(brier=float(brier_score_loss(y,probabilities)),log_loss=float(log_loss(y,probabilities)),
-                     cost_mae=float(mean_absolute_error(cost,np.expm1(predicted_log+bias))))
+                     cost_mae=float(mean_absolute_error(cost,predicted)),C=best_c,alpha=best_alpha,
+                     selection_brier={str(c):loss for loss,c,_ in classifiers},
+                     selection_cost_mse={str(a):loss for loss,a,_ in regressors})
         model=dict(mode=mode,mean=scaler.mean_.tolist(),scale=scaler.scale_.tolist(),
                    success=dict(coef=cls.coef_[0].tolist(),intercept=float(cls.intercept_[0])),
                    cost=dict(coef=reg.coef_.tolist(),intercept=float(reg.intercept_)),
-                   log_bias=bias,training_sha256=digest,validation=metrics)
+                   cost_transform='identity',log_bias=0,training_sha256=digest,validation=metrics)
         dump(ROOT/'predictors'/(mode+'.json'),model);report['models'][mode]=metrics
     report['seconds']=time.monotonic()-started
     dump(OUT/'training_report.json',report)
