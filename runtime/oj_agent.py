@@ -21,6 +21,33 @@ from runtime.metered_model import MeteredModel
 from runtime.profiles import BASELINE_SYSTEM
 
 SYSTEM = BASELINE_SYSTEM
+
+
+def _real_paths_only() -> None:
+    """The stock sandbox check treats any '/word' in a command as a path, so data values
+    like '/api/search' inside python -c get "Access denied". Keep the check for paths that
+    exist (or whose parent exists, i.e. could be created); skip strings that cannot name a file."""
+    import pathlib
+    from openjiuwen.core.sys_operation.local import shell_operation
+
+    cls = shell_operation.ShellOperation
+    if getattr(cls, '_real_paths_only', False):
+        return
+    stock = cls._extract_abs_paths
+
+    def extract(self, command):
+        found = []
+        for path in stock(self, command):
+            real = pathlib.Path(str(path))
+            if real.exists() or real.parent.exists() and real.parent != pathlib.Path(real.anchor):
+                found.append(path)
+        return found
+
+    cls._extract_abs_paths = extract
+    cls._real_paths_only = True
+
+
+_real_paths_only()
 SHELL_ALLOWLIST = ["python3", "python", "ls", "cat", "grep", "head", "tail", "wc", "sort", "cut", "find", "echo", "pwd"]
 STOCK_TOOLS = {
     "read": ReadFileTool, "write": WriteFileTool, "edit": EditFileTool,

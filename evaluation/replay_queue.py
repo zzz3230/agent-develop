@@ -37,11 +37,11 @@ def simulate(rows, budget, enabled, known_budget=True, time_limit=3300.0):
             break
         task, _ = pick
         row = by_id[task.id]
-        if spent + row['cost'] > budget or seconds + row['seconds'] > time_limit:
+        if spent + row['cost'] > budget or seconds + row.get('seconds', 0) > time_limit:
             spent = min(budget, spent + row['cost'])  # proxy stops answering mid-task
             break
         spent += row['cost']
-        seconds += row['seconds']
+        seconds += row.get('seconds', 0)
         attempted += 1
         order.append(task.id)
         if row['correct']:

@@ -1,0 +1,62 @@
+[
+  {
+    "variant": "base",
+    "points": 12.0,
+    "possible": 32.0,
+    "solved": 4,
+    "false_claims": 0,
+    "spent": 6263.7,
+    "seconds": 102.6,
+    "stop": "budget exhausted"
+  },
+  {
+    "variant": "+instructions",
+    "points": 17.0,
+    "possible": 32.0,
+    "solved": 6,
+    "false_claims": 0,
+    "spent": 6235.1,
+    "seconds": 152.0,
+    "stop": "budget exhausted"
+  },
+  {
+    "variant": "+adaptive_stops",
+    "points": 12.0,
+    "possible": 32.0,
+    "solved": 4,
+    "false_claims": 0,
+    "spent": 6119.1,
+    "seconds": 108.5,
+    "stop": "budget exhausted"
+  },
+  {
+    "variant": "+csv_search_prep",
+    "points": 15.0,
+    "possible": 32.0,
+    "solved": 5,
+    "false_claims": 0,
+    "spent": 6342.5,
+    "seconds": 64.0,
+    "stop": "budget exhausted"
+  },
+  {
+    "variant": "+queue",
+    "points": 15.0,
+    "possible": 32.0,
+    "solved": 3,
+    "false_claims": 0,
+    "spent": 6002.9,
+    "seconds": 70.9,
+    "stop": "budget exhausted"
+  },
+  {
+    "variant": "all_on",
+    "points": 6.0,
+    "possible": 32.0,
+    "solved": 2,
+    "false_claims": 0,
+    "spent": 6286.6,
+    "seconds": 59.3,
+    "stop": "budget exhausted"
+  }
+]

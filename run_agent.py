@@ -26,7 +26,9 @@ from runtime.attempt_policy import AttemptLimits, limits_for_task  # noqa: E402
 from runtime.task_queue import TaskQueue, queue_enabled, retries_enabled, retry_limits  # noqa: E402
 
 DEFAULT_BUDGET = 100_000
-TIME_LIMIT_S = 3300.0
+# The contest kills the container at one hour; stop earlier so answers are flushed.
+# RUN_TIME_LIMIT may only lower it, for quick time-limit checks with the mock.
+TIME_LIMIT_S = min(3300.0, float(os.environ.get("RUN_TIME_LIMIT") or 3300.0))
 MAX_CONSECUTIVE_ERRORS = 4
 MODEL = "qwen3.8-27b-noreason"
 TOOLS = {
@@ -62,6 +64,42 @@ def restore_tests(snapshot: dict[Path, bytes]) -> bool:
             path.write_bytes(content)
             changed = True
     return changed
+
+
+def clean_answer(text: str) -> str:
+    """One line without markdown wrapping: '**3.0.0**' or '`42`' -> the value."""
+    text = text.strip()
+    while len(text) > 1 and (text[:2] == text[-2:] == '**' or text[0] == text[-1] and text[0] in '`"\''):
+        text = text[2:-2].strip() if text.startswith('**') else text[1:-1].strip()
+    return text
+
+
+def final_line(final: str) -> str:
+    """Last line of the final message; a sentence with exactly one bold value gives that value."""
+    line = final.splitlines()[-1].strip() if final else ''
+    bold = re.findall(r'\*\*([^*\n]+)\*\*', line)
+    if len(bold) == 1 and len(line) > len(bold[0]) + 4:
+        line = bold[0]
+    return clean_answer(line)
+
+
+def written_answer(path: Path, started: float) -> str:
+    """What the agent itself wrote to answer.txt during this attempt, as the task asks."""
+    try:
+        if path.stat().st_mtime < started - 1:
+            return ''
+        lines = [l for l in path.read_text(encoding='utf-8', errors='replace').splitlines() if l.strip()]
+    except OSError:
+        return ''
+    return clean_answer(lines[0]) if len(lines) == 1 else ''
+
+
+def valid(task: Task, answer: str) -> bool:
+    if not answer:
+        return False
+    if answer == 'IMPOSSIBLE':
+        return True
+    return re.fullmatch(r'[+-]?\d+', answer) is not None if task.check == 'exact_int' else len(answer) <= 200
 
 
 async def attempt(task: Task, budget: Budget, connection, react_agent,
@@ -102,6 +140,8 @@ async def attempt(task: Task, budget: Budget, connection, react_agent,
         await agent.register_rail(SqlCompletionRail())
     invocation_error = None
     result = {}
+    started = time.time()
+    written = ''
     try:
         result = await asyncio.wait_for(
             agent.invoke({"query": query, "conversation_id": uuid.uuid4().hex}),
@@ -111,12 +151,16 @@ async def attempt(task: Task, budget: Budget, connection, react_agent,
         invocation_error = exc
     finally:
         edited_tests = restore_tests(tests)
+        written = written_answer(task.cwd / 'answer.txt', started)
         (task.cwd / 'answer.txt').unlink(missing_ok=True)
     final = str(result.get("output", "") if isinstance(result, dict) else result).strip()
     if edited_tests:
         return "failed", "agent edited the tests"
     if task.type == 'coding' and tests_pass(task):
         return 'solved', 'DONE'
+    if task.type != 'coding' and valid(task, written):
+        # The agent finished the task as instructed; a later limit stop must not discard it.
+        return ('impossible', '') if written == 'IMPOSSIBLE' else ('solved', written)
     if invocation_error is not None:
         raise invocation_error
     if isinstance(result, dict) and result.get('stop_reason'):
@@ -127,7 +171,7 @@ async def attempt(task: Task, budget: Budget, connection, react_agent,
         return "impossible", ""
     if task.type == "coding":
         return 'failed', 'tests still fail'
-    answer = final.splitlines()[-1].strip() if final else ""
+    answer = final_line(final)
     if task.check == 'exact_int' and not re.fullmatch(r'[+-]?\d+', answer):
         return 'failed', 'invalid integer answer'
     return ("solved", answer) if answer else ("failed", "empty answer")
@@ -138,6 +182,7 @@ async def run(tasks: list[Task], budget: Budget, journal: Journal, deadline: flo
 
     connection = Connection(os.environ["LLM_BASE_URL"], os.environ.pop("LLM_API_KEY"))  # out of reach of agent shells
     errors = 0
+    deferred: set[str] = set()
     queue = TaskQueue(tasks, enabled=queue_enabled(), retries=retries_enabled(), journal=journal)
     journal.write('queue', enabled=queue.enabled, retries=queue.retries)
     while True:
@@ -168,6 +213,15 @@ async def run(tasks: list[Task], budget: Budget, journal: Journal, deadline: flo
         except Exception as exc:  # one failed task must not end the run
             errors += 1
             status, detail = "failed", f"{type(exc).__name__}: {exc}"[:300]
+            if budget.task_spent == 0 and task.id not in deferred and not retry:
+                # The proxy failed before the task got any answer: try it again later, once.
+                deferred.add(task.id)
+                budget.end_task()
+                queue.fresh.append(task)
+                journal.write('deferred', task=task.id, detail=detail)
+                if errors >= MAX_CONSECUTIVE_ERRORS:
+                    return "model API keeps failing"
+                continue
         if status == "solved":
             save_answer(task, detail)
         cost = budget.end_task()
@@ -190,7 +244,9 @@ def main() -> int:
     root = Path(args.tasks_dir).resolve()
     os.chdir(tempfile.mkdtemp(prefix="agent-"))  # OJ creates logs/ here; the image root is read-only
     journal = Journal(Path(os.environ.get("TRAJECTORY", "/tmp/harness/trajectory.jsonl")))
-    budget = Budget(float(os.environ.get("BUDGET") or DEFAULT_BUDGET), journal)
+    # ENFORCE_BUDGET=1 only for offline comparisons: stop at BUDGET like the proxy cutting the key.
+    budget = Budget(float(os.environ.get("BUDGET") or DEFAULT_BUDGET), journal,
+                    enforce_total=os.environ.get("ENFORCE_BUDGET") == "1")
 
     tasks: list[Task] = []
     for directory in sorted(p for p in root.iterdir() if (p / "task.json").is_file()):

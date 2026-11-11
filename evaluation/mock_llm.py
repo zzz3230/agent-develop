@@ -14,6 +14,8 @@ STATE = {"requests": 0, "spent": 0.0, "rows": [], "first": None, "rejected": 0}
 BUDGET = float("inf")
 DELAY = 0.0
 NO_USAGE = False
+FAIL_EVERY = 0  # --fail-every N: every Nth POST answers 502, like a proxy hiccup
+POSTS = [0]
 ANSWER = "389"
 OUTPUT_TOKENS = 12
 
@@ -48,6 +50,11 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         time.sleep(DELAY)
         raw = self.rfile.read(int(self.headers.get("Content-Length", 0)))
+        POSTS[0] += 1
+        if FAIL_EVERY and POSTS[0] % FAIL_EVERY == 0:
+            STATE["failed"] = STATE.get("failed", 0) + 1
+            self._send(502, b'{"error":{"message":"bad gateway"}}')
+            return
         if STATE["spent"] >= BUDGET:
             STATE["rejected"] += 1
             self._send(429, b'{"error":{"message":"budget exhausted"}}')
@@ -96,6 +103,7 @@ if __name__ == "__main__":
     parser.add_argument("--budget", type=float, default=float("inf"))
     parser.add_argument("--delay", type=float, default=0.0)
     parser.add_argument("--no-usage", action="store_true")
+    parser.add_argument("--fail-every", type=int, default=0)
     options = parser.parse_args()
-    BUDGET, DELAY, NO_USAGE = options.budget, options.delay, options.no_usage
+    BUDGET, DELAY, NO_USAGE, FAIL_EVERY = options.budget, options.delay, options.no_usage, options.fail_every
     ThreadingHTTPServer(("0.0.0.0", options.port), Handler).serve_forever()
