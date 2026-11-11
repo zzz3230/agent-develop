@@ -1,0 +1,5 @@
+{
+  "expected": "10",
+  "solvable": true,
+  "explanation": "Only rows 2 and 4 fall on March 1 in UTC."
+}

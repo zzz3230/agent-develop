@@ -1,0 +1,7 @@
+group,value,weight
+A,10,1
+A,,9
+A,20,3
+B,30,2
+B,50,0
+B,40,2

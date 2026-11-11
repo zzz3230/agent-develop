@@ -1,0 +1,7 @@
+{
+  "task_id": "d004",
+  "task_type": "search",
+  "instruction": "Using kb/, find the birth year of engineer Mara Vale with employee ID E41. Return only the year. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 3,
+  "check": "exact_str"
+}

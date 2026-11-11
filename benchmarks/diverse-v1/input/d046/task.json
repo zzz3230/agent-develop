@@ -1,0 +1,7 @@
+{
+  "task_id": "d046",
+  "task_type": "data_analysis",
+  "instruction": "purchases.csv lists product and customer ID, with possible duplicates. Count distinct customers who bought A and B but never C. Return an integer. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 3,
+  "check": "exact_int"
+}

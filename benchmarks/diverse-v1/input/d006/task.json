@@ -1,0 +1,7 @@
+{
+  "task_id": "d006",
+  "task_type": "data_analysis",
+  "instruction": "stock.csv contains complete stock snapshots, not changes. Keep the latest date for each product. Return the sum of those latest stocks. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 1,
+  "check": "exact_int"
+}

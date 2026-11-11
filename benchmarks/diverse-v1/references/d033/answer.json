@@ -1,0 +1,5 @@
+{
+  "expected": "5",
+  "solvable": true,
+  "explanation": "a has 2 sessions, b has 2, c has 1; exactly 30 stays in the same session."
+}

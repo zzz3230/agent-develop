@@ -1,0 +1,7 @@
+{
+  "task_id": "d012",
+  "task_type": "math",
+  "instruction": "A request arrives on 2024-02-23. Its deadline is the 12th business day strictly after arrival. Business days are Monday through Friday except 2024-02-26 and 2024-03-08. Return the date as YYYY-MM-DD. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 5,
+  "check": "exact_str"
+}

@@ -1,0 +1,5 @@
+{
+  "expected": "271",
+  "solvable": true,
+  "explanation": "94 complete windows checked against original chronological values."
+}

@@ -1,0 +1,5 @@
+{
+  "expected": "1020",
+  "solvable": true,
+  "explanation": "300+280+350+90=1020."
+}
