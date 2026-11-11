@@ -102,9 +102,27 @@ def summarize():
     print(json.dumps(result,indent=2))
 
 
+def regrade():
+    # Re-evaluate every variant by identical final rules, including interrupted code.
+    from evaluation.grade import grade
+    summary=[]
+    for seed in (101,102,103):
+        for mode in ('baseline','numeric','embedding'):
+            out=OUT/f'{mode}-{seed}'
+            old=json.loads((out/'graded.json').read_text(encoding='utf-8'))
+            report=grade(OUT/'control',out/'tasks',out/'harness/trajectory.jsonl',docker_image='agent-develop:predictors')
+            report['run']=old['run'];dump(out/'graded.json',report)
+            info=json.loads((out/'run.json').read_text(encoding='utf-8'))
+            info.update(total=report['total'],spent=report['spent']);dump(out/'run.json',info)
+            summary.append(dict(mode=mode,seed=seed,points=report['total']['points'],correct=report['total']['correct'],
+                spent=report['spent'],seconds=info['wall_seconds'],run=str(out)))
+    dump(OUT/'comparison.json',summary);summarize()
+
+
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('command',choices=['collect','compare','summarize'])
+    p=argparse.ArgumentParser();p.add_argument('command',choices=['collect','compare','summarize','regrade'])
     args=p.parse_args()
     if args.command=='collect': collect()
     elif args.command=='compare': compare()
+    elif args.command=='regrade': regrade()
     else: summarize()

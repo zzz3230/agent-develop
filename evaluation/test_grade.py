@@ -58,6 +58,10 @@ class DiverseLayout(unittest.TestCase):
             self.assertEqual(report['points'], report['possible'])
 
             code = next(i for i, r in rows.items() if r['check'] == 'unittest')
+            (folders[code] / 'answer.txt').unlink()
+            missing = grade(DIVERSE, run / 'tasks')
+            self.assertEqual(missing['total']['correct'],solvable-1)
+            (folders[code] / 'answer.txt').write_text('DONE\n',encoding='utf-8')
             (folders[code] / 'test_solution.py').write_text('print("OK")\n', encoding='utf-8')
             number = next(i for i, r in rows.items() if r['check'] == 'exact_int' and r['solvable'])
             (folders[number] / 'answer.txt').write_text('The answer is 5', encoding='utf-8')
