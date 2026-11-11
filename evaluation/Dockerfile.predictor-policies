@@ -1,0 +1,4 @@
+FROM agent-develop:predictor-combined
+COPY runtime/ /app/runtime/
+COPY predictors/*.json /app/predictors/
+RUN python -c "import json;from pathlib import Path;m=json.loads(Path('/app/predictors/bge_keywords.json').read_text());assert m['mode']=='bge_keywords' and len(m['mean'])==813"

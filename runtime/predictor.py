@@ -84,8 +84,8 @@ class Predictor:
             vectors=Encoder(directory/'encoder-strong').encode([t.instruction for t in tasks]).tolist()
         else:
             vectors=[features(t,keywords=mode not in ('structural','bge_structural')) for t in tasks]
-        if mode in ('embedding','bge_structural'):
-            embeddings=Encoder(directory/('encoder-strong' if mode=='bge_structural' else 'encoder')).encode([t.instruction for t in tasks])
+        if mode in ('embedding','bge_structural','bge_keywords'):
+            embeddings=Encoder(directory/('encoder' if mode=='embedding' else 'encoder-strong')).encode([t.instruction for t in tasks])
             vectors=[x+e.tolist() for x,e in zip(vectors,embeddings)]
         self.predictions={t.id:self.predict(x) for t,x in zip(tasks,vectors)}
         if journal:

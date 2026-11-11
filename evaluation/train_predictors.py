@@ -35,12 +35,13 @@ def dataset():
     return rows
 
 
-def train(extensions=False,combined=False):
-    if combined: extensions=True
+def train(extensions=False,combined=False,full_keywords=False):
+    if combined or full_keywords: extensions=True
     started=time.monotonic();rows=dataset()
     if len(rows)<100: raise ValueError('Collection incomplete; need at least 100 charged completed tasks')
-    numeric=np.asarray([features(r['task'],keywords=not extensions) for r in rows])
-    embeddings=Encoder(ROOT/'predictors'/('encoder-strong' if extensions else 'encoder')).encode([r['task'].instruction for r in rows])
+    numeric=np.asarray([features(r['task'],keywords=not extensions or full_keywords) for r in rows])
+    from evaluation.predictor_data import embedded
+    embeddings=embedded(rows,extensions)
     y=np.array([r['correct'] for r in rows]);cost=np.array([r['cost'] for r in rows]);groups=[r['group'] for r in rows]
     provenance=[dict(id=r['task'].id,group=r['group'],correct=r['correct'],cost=r['cost']) for r in rows]
     digest=hashlib.sha256(json.dumps(provenance,sort_keys=True).encode()).hexdigest()
@@ -57,6 +58,7 @@ def train(extensions=False,combined=False):
         log_loss=float(log_loss(y,baseline_p)),cost_mae=float(mean_absolute_error(cost,baseline_c)))
     variants=[('structural',numeric),('strong_embedding',embeddings)] if extensions else [('numeric',numeric),('embedding',np.hstack([numeric,embeddings]))]
     if combined: variants=[('bge_structural',np.hstack([numeric,embeddings]))]
+    if full_keywords: variants=[('bge_keywords',np.hstack([numeric,embeddings]))]
     for mode,x in variants:
         cached=[]
         for a,b in GroupKFold(n_splits=5).split(x,y,groups):
@@ -88,12 +90,12 @@ def train(extensions=False,combined=False):
                    cost_transform='identity',log_bias=0,training_sha256=digest,validation=metrics)
         dump(ROOT/'predictors'/(mode+'.json'),model);report['models'][mode]=metrics
     report['seconds']=time.monotonic()-started
-    dump(OUT/('training_report_combined.json' if combined else 'training_report_extensions.json' if extensions else 'training_report.json'),report)
+    dump(OUT/('training_report_keywords.json' if full_keywords else 'training_report_combined.json' if combined else 'training_report_extensions.json' if extensions else 'training_report.json'),report)
     print(json.dumps(report,indent=2))
 
 
 if __name__=='__main__':
     import argparse
     parser=argparse.ArgumentParser();parser.add_argument('--extensions',action='store_true')
-    parser.add_argument('--bge-structural',action='store_true');args=parser.parse_args()
-    train(args.extensions,args.bge_structural)
+    parser.add_argument('--bge-structural',action='store_true');parser.add_argument('--bge-keywords',action='store_true');args=parser.parse_args()
+    train(args.extensions,args.bge_structural,args.bge_keywords)
