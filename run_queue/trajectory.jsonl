@@ -1,0 +1,79 @@
+{"t": 1794400482.676, "event": "start", "tasks": 10, "budget_estimate": 30000.0, "budget_authority": "proxy"}
+{"t": 1794400489.743, "event": "queue", "enabled": true, "retries": false}
+{"t": 1794400489.748, "event": "queue_pick", "task": "search_0001", "retry": false, "score": 0.002093, "p": 0.5, "c": 2150.0}
+{"t": 1794400489.76, "event": "attempt_start", "task": "search_0001", "limits": {"steps": 13, "output_tokens": 900, "cost": 3500, "seconds": 150, "command_seconds": 30, "repeated_errors": 3, "initial_steps": 4, "initial_cost": 800, "initial_seconds": 45, "step_increment": 3, "cost_increment": 900, "time_increment": 45, "max_extensions": 3}}
+{"t": 1794400492.173, "event": "llm_call", "task": "search_0001", "model": "qwen3.8-27b-noreason", "input": 1120, "output": 40, "cost": 152.0, "spent": 152.0, "estimated": false}
+{"t": 1794400492.978, "event": "llm_call", "task": "search_0001", "model": "qwen3.8-27b-noreason", "input": 1438, "output": 5, "cost": 148.8, "spent": 300.8, "estimated": false}
+{"t": 1794400493.004, "event": "outcome", "task": "search_0001", "type": "search", "reward": 9.0, "status": "solved", "detail": "Hana Ivanova", "cost": 300.8, "retry": false}
+{"t": 1794400493.007, "event": "queue_pick", "task": "search_0000", "retry": false, "score": 0.003264, "p": 0.667, "c": 1225.4}
+{"t": 1794400493.021, "event": "attempt_start", "task": "search_0000", "limits": {"steps": 13, "output_tokens": 900, "cost": 3500, "seconds": 150, "command_seconds": 30, "repeated_errors": 3, "initial_steps": 4, "initial_cost": 800, "initial_seconds": 45, "step_increment": 3, "cost_increment": 900, "time_increment": 45, "max_extensions": 3}}
+{"t": 1794400494.539, "event": "llm_call", "task": "search_0000", "model": "qwen3.8-27b-noreason", "input": 1136, "output": 38, "cost": 151.6, "spent": 452.4, "estimated": false}
+{"t": 1794400495.974, "event": "llm_call", "task": "search_0000", "model": "qwen3.8-27b-noreason", "input": 1524, "output": 57, "cost": 209.4, "spent": 661.8, "estimated": false}
+{"t": 1794400497.888, "event": "llm_call", "task": "search_0000", "model": "qwen3.8-27b-noreason", "input": 1707, "output": 79, "cost": 249.7, "spent": 911.5, "estimated": false}
+{"t": 1794400499.407, "event": "llm_call", "task": "search_0000", "model": "qwen3.8-27b-noreason", "input": 1884, "output": 71, "cost": 259.4, "spent": 1170.9, "estimated": false}
+{"t": 1794400499.533, "event": "attempt_extended", "task": "search_0000", "evidence": ["new_source_excerpt"], "steps": 7, "cost": 1700, "seconds": 90, "extensions": 1}
+{"t": 1794400500.956, "event": "llm_call", "task": "search_0000", "model": "qwen3.8-27b-noreason", "input": 2259, "output": 70, "cost": 295.9, "spent": 1466.8, "estimated": false}
+{"t": 1794400507.366, "event": "llm_call", "task": "search_0000", "model": "qwen3.8-27b-noreason", "input": 2364, "output": 190, "cost": 426.4, "spent": 1893.2, "estimated": false}
+{"t": 1794400511.283, "event": "llm_call", "task": "search_0000", "model": "qwen3.8-27b-noreason", "input": 3357, "output": 97, "cost": 432.7, "spent": 2325.9, "estimated": false}
+{"t": 1794400511.437, "event": "attempt_extended", "task": "search_0000", "evidence": ["new_source_excerpt"], "steps": 10, "cost": 2600, "seconds": 135, "extensions": 2}
+{"t": 1794400516.994, "event": "llm_call", "task": "search_0000", "model": "qwen3.8-27b-noreason", "input": 3536, "output": 89, "cost": 442.6, "spent": 2768.5, "estimated": false}
+{"t": 1794400519.288, "event": "llm_call", "task": "search_0000", "model": "qwen3.8-27b-noreason", "input": 3891, "output": 94, "cost": 483.1, "spent": 3251.6, "estimated": false}
+{"t": 1794400519.541, "event": "attempt_extended", "task": "search_0000", "evidence": ["new_source_excerpt"], "steps": 13, "cost": 3500, "seconds": 150, "extensions": 3}
+{"t": 1794400522.4, "event": "llm_call", "task": "search_0000", "model": "qwen3.8-27b-noreason", "input": 4448, "output": 87, "cost": 531.8, "spent": 3783.4, "estimated": false}
+{"t": 1794400524.702, "event": "llm_call", "task": "search_0000", "model": "qwen3.8-27b-noreason", "input": 4781, "output": 84, "cost": 562.1, "spent": 4345.5, "estimated": false}
+{"t": 1794400524.898, "event": "attempt_stop", "task": "search_0000", "reason": "task_cost_limit"}
+{"t": 1794400524.908, "event": "outcome", "task": "search_0000", "type": "search", "reward": 6.0, "status": "failed", "detail": "task_cost_limit", "cost": 4044.7, "retry": false}
+{"t": 1794400524.915, "event": "queue_pick", "task": "math_0000", "retry": false, "score": 0.00125, "p": 0.5, "c": 1600.0}
+{"t": 1794400524.93, "event": "attempt_start", "task": "math_0000", "limits": {"steps": 6, "output_tokens": 1200, "cost": 2500, "seconds": 120, "command_seconds": 30, "repeated_errors": 3, "initial_steps": 3, "initial_cost": 700, "initial_seconds": 45, "step_increment": 2, "cost_increment": 900, "time_increment": 45, "max_extensions": 2}}
+{"t": 1794400528.51, "event": "llm_call", "task": "math_0000", "model": "qwen3.8-27b-noreason", "input": 545, "output": 133, "cost": 187.5, "spent": 4533.0, "estimated": false}
+{"t": 1794400530.664, "event": "llm_call", "task": "math_0000", "model": "qwen3.8-27b-noreason", "input": 856, "output": 7, "cost": 92.6, "spent": 4625.6, "estimated": false}
+{"t": 1794400530.689, "event": "outcome", "task": "math_0000", "type": "math", "reward": 4.0, "status": "solved", "detail": "126506", "cost": 280.1, "retry": false}
+{"t": 1794400530.694, "event": "queue_pick", "task": "math_0002", "retry": false, "score": 0.002837, "p": 0.667, "c": 940.0}
+{"t": 1794400530.707, "event": "attempt_start", "task": "math_0002", "limits": {"steps": 6, "output_tokens": 1200, "cost": 2500, "seconds": 120, "command_seconds": 30, "repeated_errors": 3, "initial_steps": 3, "initial_cost": 700, "initial_seconds": 45, "step_increment": 2, "cost_increment": 900, "time_increment": 45, "max_extensions": 2}}
+{"t": 1794400531.415, "event": "llm_call", "task": "math_0002", "model": "qwen3.8-27b-noreason", "input": 484, "output": 5, "cost": 53.4, "spent": 4679.0, "estimated": false}
+{"t": 1794400531.425, "event": "outcome", "task": "math_0002", "type": "math", "reward": 4.0, "status": "impossible", "detail": "", "cost": 53.4, "retry": false}
+{"t": 1794400531.433, "event": "queue_pick", "task": "math_0001", "retry": false, "score": 0.001552, "p": 0.5, "c": 644.5}
+{"t": 1794400531.448, "event": "attempt_start", "task": "math_0001", "limits": {"steps": 6, "output_tokens": 1200, "cost": 2500, "seconds": 120, "command_seconds": 30, "repeated_errors": 3, "initial_steps": 3, "initial_cost": 700, "initial_seconds": 45, "step_increment": 2, "cost_increment": 900, "time_increment": 45, "max_extensions": 2}}
+{"t": 1794400533.45, "event": "llm_call", "task": "math_0001", "model": "qwen3.8-27b-noreason", "input": 496, "output": 102, "cost": 151.6, "spent": 4830.6, "estimated": false}
+{"t": 1794400540.951, "event": "llm_call", "task": "math_0001", "model": "qwen3.8-27b-noreason", "input": 750, "output": 329, "cost": 404.0, "spent": 5234.6, "estimated": false}
+{"t": 1794400542.549, "event": "llm_call", "task": "math_0001", "model": "qwen3.8-27b-noreason", "input": 1497, "output": 12, "cost": 161.7, "spent": 5396.3, "estimated": false}
+{"t": 1794400542.573, "event": "outcome", "task": "math_0001", "type": "math", "reward": 2.0, "status": "solved", "detail": "22017679383", "cost": 717.3, "retry": false}
+{"t": 1794400542.576, "event": "queue_pick", "task": "data_analysis_0001", "retry": false, "score": 0.000926, "p": 0.5, "c": 2700.0}
+{"t": 1794400542.589, "event": "attempt_start", "task": "data_analysis_0001", "limits": {"steps": 12, "output_tokens": 1200, "cost": 4500, "seconds": 180, "command_seconds": 30, "repeated_errors": 3, "initial_steps": 3, "initial_cost": 900, "initial_seconds": 45, "step_increment": 3, "cost_increment": 1200, "time_increment": 45, "max_extensions": 3}}
+{"t": 1794400544.953, "event": "llm_call", "task": "data_analysis_0001", "model": "qwen3.8-27b-noreason", "input": 769, "output": 37, "cost": 113.9, "spent": 5510.2, "estimated": false}
+{"t": 1794400548.744, "event": "llm_call", "task": "data_analysis_0001", "model": "qwen3.8-27b-noreason", "input": 1044, "output": 243, "cost": 347.4, "spent": 5857.6, "estimated": false}
+{"t": 1794400549.622, "event": "llm_call", "task": "data_analysis_0001", "model": "qwen3.8-27b-noreason", "input": 1545, "output": 3, "cost": 157.5, "spent": 6015.1, "estimated": false}
+{"t": 1794400549.643, "event": "outcome", "task": "data_analysis_0001", "type": "data_analysis", "reward": 5.0, "status": "solved", "detail": "39", "cost": 618.8, "retry": false}
+{"t": 1794400549.646, "event": "queue_pick", "task": "search_0002", "retry": false, "score": 0.000924, "p": 0.5, "c": 2165.2}
+{"t": 1794400549.658, "event": "attempt_start", "task": "search_0002", "limits": {"steps": 13, "output_tokens": 900, "cost": 3500, "seconds": 150, "command_seconds": 30, "repeated_errors": 3, "initial_steps": 4, "initial_cost": 800, "initial_seconds": 45, "step_increment": 3, "cost_increment": 900, "time_increment": 45, "max_extensions": 3}}
+{"t": 1794400571.275, "event": "llm_call", "task": "search_0002", "model": "qwen3.8-27b-noreason", "input": 618, "output": 46, "cost": 107.8, "spent": 6122.9, "estimated": false}
+{"t": 1794400573.145, "event": "llm_call", "task": "search_0002", "model": "qwen3.8-27b-noreason", "input": 781, "output": 42, "cost": 120.1, "spent": 6243.0, "estimated": false}
+{"t": 1794400575.144, "event": "llm_call", "task": "search_0002", "model": "qwen3.8-27b-noreason", "input": 946, "output": 41, "cost": 135.6, "spent": 6378.6, "estimated": false}
+{"t": 1794400575.154, "event": "outcome", "task": "search_0002", "type": "search", "reward": 4.0, "status": "impossible", "detail": "", "cost": 363.5, "retry": false}
+{"t": 1794400575.161, "event": "queue_pick", "task": "coding_0001", "retry": false, "score": 0.000533, "p": 0.5, "c": 3750.0}
+{"t": 1794400575.175, "event": "attempt_start", "task": "coding_0001", "limits": {"steps": 14, "output_tokens": 1600, "cost": 6000, "seconds": 240, "command_seconds": 30, "repeated_errors": 3, "initial_steps": 5, "initial_cost": 1500, "initial_seconds": 60, "step_increment": 3, "cost_increment": 1500, "time_increment": 60, "max_extensions": 3}}
+{"t": 1794400577.26, "event": "llm_call", "task": "coding_0001", "model": "qwen3.8-27b-noreason", "input": 574, "output": 36, "cost": 93.4, "spent": 6472.0, "estimated": false}
+{"t": 1794400583.056, "event": "llm_call", "task": "coding_0001", "model": "qwen3.8-27b-noreason", "input": 846, "output": 238, "cost": 322.6, "spent": 6794.6, "estimated": false}
+{"t": 1794400590.47, "event": "llm_call", "task": "coding_0001", "model": "qwen3.8-27b-noreason", "input": 1353, "output": 292, "cost": 427.3, "spent": 7221.9, "estimated": false}
+{"t": 1794400594.215, "event": "llm_call", "task": "coding_0001", "model": "qwen3.8-27b-noreason", "input": 1938, "output": 57, "cost": 250.8, "spent": 7472.7, "estimated": false}
+{"t": 1794400597.03, "event": "llm_call", "task": "coding_0001", "model": "qwen3.8-27b-noreason", "input": 2055, "output": 2, "cost": 207.5, "spent": 7680.2, "estimated": false}
+{"t": 1794400597.43, "event": "outcome", "task": "coding_0001", "type": "coding", "reward": 4.0, "status": "solved", "detail": "DONE", "cost": 1301.6, "retry": false}
+{"t": 1794400597.433, "event": "queue_pick", "task": "data_analysis_0000", "retry": false, "score": 0.000402, "p": 0.667, "c": 1659.4}
+{"t": 1794400597.447, "event": "attempt_start", "task": "data_analysis_0000", "limits": {"steps": 12, "output_tokens": 1200, "cost": 4500, "seconds": 180, "command_seconds": 30, "repeated_errors": 3, "initial_steps": 3, "initial_cost": 900, "initial_seconds": 45, "step_increment": 3, "cost_increment": 1200, "time_increment": 45, "max_extensions": 3}}
+{"t": 1794400597.476, "event": "sql_schema_fallback", "task": "data_analysis_0000", "error": "No CSV files; use the regular agent"}
+{"t": 1794400598.986, "event": "llm_call", "task": "data_analysis_0000", "model": "qwen3.8-27b-noreason", "input": 529, "output": 38, "cost": 90.9, "spent": 7771.1, "estimated": false}
+{"t": 1794400604.093, "event": "llm_call", "task": "data_analysis_0000", "model": "qwen3.8-27b-noreason", "input": 768, "output": 163, "cost": 239.8, "spent": 8010.9, "estimated": false}
+{"t": 1794400609.053, "event": "llm_call", "task": "data_analysis_0000", "model": "qwen3.8-27b-noreason", "input": 997, "output": 190, "cost": 289.7, "spent": 8300.6, "estimated": false}
+{"t": 1794400609.217, "event": "attempt_stop", "task": "data_analysis_0000", "reason": "no_progress_step_limit"}
+{"t": 1794400609.225, "event": "outcome", "task": "data_analysis_0000", "type": "data_analysis", "reward": 1.0, "status": "failed", "detail": "no_progress_step_limit", "cost": 620.4, "retry": false}
+{"t": 1794400609.235, "event": "queue_pick", "task": "coding_0000", "retry": false, "score": 0.000264, "p": 0.667, "c": 2525.8}
+{"t": 1794400609.25, "event": "attempt_start", "task": "coding_0000", "limits": {"steps": 14, "output_tokens": 1600, "cost": 6000, "seconds": 240, "command_seconds": 30, "repeated_errors": 3, "initial_steps": 5, "initial_cost": 1500, "initial_seconds": 60, "step_increment": 3, "cost_increment": 1500, "time_increment": 60, "max_extensions": 3}}
+{"t": 1794400610.977, "event": "llm_call", "task": "coding_0000", "model": "qwen3.8-27b-noreason", "input": 581, "output": 35, "cost": 93.1, "spent": 8393.7, "estimated": false}
+{"t": 1794400612.716, "event": "llm_call", "task": "coding_0000", "model": "qwen3.8-27b-noreason", "input": 678, "output": 48, "cost": 115.8, "spent": 8509.5, "estimated": false}
+{"t": 1794400625.841, "event": "llm_call", "task": "coding_0000", "model": "qwen3.8-27b-noreason", "input": 924, "output": 587, "cost": 679.4, "spent": 9188.9, "estimated": false}
+{"t": 1794400635.537, "event": "llm_call", "task": "coding_0000", "model": "qwen3.8-27b-noreason", "input": 2101, "output": 438, "cost": 648.1, "spent": 9837.0, "estimated": false}
+{"t": 1794400635.686, "event": "attempt_extended", "task": "coding_0000", "evidence": ["tests_passed"], "steps": 8, "cost": 3000, "seconds": 120, "extensions": 1}
+{"t": 1794400638.814, "event": "llm_call", "task": "coding_0000", "model": "qwen3.8-27b-noreason", "input": 3014, "output": 115, "cost": 416.4, "spent": 10253.4, "estimated": false}
+{"t": 1794400642.181, "event": "llm_call", "task": "coding_0000", "model": "qwen3.8-27b-noreason", "input": 3189, "output": 2, "cost": 320.9, "spent": 10574.3, "estimated": false}
+{"t": 1794400642.6, "event": "outcome", "task": "coding_0000", "type": "coding", "reward": 1.0, "status": "solved", "detail": "DONE", "cost": 2273.7, "retry": false}
+{"t": 1794400642.605, "event": "finish", "spent": 10574.3, "seconds": 160.0, "stop": "all tasks handled"}

@@ -1,0 +1,8 @@
+{
+  "task_id": "search_0000",
+  "task_type": "search",
+  "instruction": "kb/people/ has one file per employee with dated manager records. As of 2026-07-20, who is the skip-level manager (the manager's manager) of Alice Novak? The latest record dated on or before that day applies at each level. Return only the full name. Work only inside the current directory. If the provided information cannot determine the answer, write IMPOSSIBLE instead. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 3,
+  "check": "exact_str",
+  "expected": "Chen Sato"
+}

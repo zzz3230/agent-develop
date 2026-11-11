@@ -1,11 +1,18 @@
 """openJiuwen Model with the contest's cost accounting on every request."""
 from __future__ import annotations
 
+import asyncio
+import re
 from typing import Any, AsyncIterator
 
 from openjiuwen.core.foundation.llm import Model, ModelClientConfig, ModelRequestConfig
 
 from runtime.budget import Budget
+
+
+TRANSIENT = re.compile(r'\b50[0234]\b|InternalServerError|ServiceUnavailable|Bad Gateway|Timeout|timed out|'
+                       r'Connection(Error| reset| refused)|APIConnectionError', re.I)
+RETRY_DELAYS = (2.0, 5.0, 10.0)  # proxy hiccups; a failed request is not billed, so retrying is free
 
 
 def _estimate_tokens(value: Any) -> int:
@@ -39,8 +46,16 @@ class MeteredModel(Model):
         self._budget.charge(self._name, input_tokens, max(reported_out, produced), estimated)
 
     async def invoke(self, messages: Any, *, tools: Any = None, **kwargs: Any) -> Any:
-        self._budget.check()
-        message = await super().invoke(messages, tools=tools, **kwargs)
+        for delay in (*RETRY_DELAYS, None):
+            self._budget.check()
+            try:
+                message = await super().invoke(messages, tools=tools, **kwargs)
+                break
+            except Exception as exc:
+                if delay is None or not TRANSIENT.search(f'{type(exc).__name__}: {exc}'):
+                    raise
+                self._budget.journal.write('llm_retry', task=self._budget.task_id, error=str(exc)[:200], delay=delay)
+                await asyncio.sleep(delay)
         self._charge(messages, tools, message)
         return message
 

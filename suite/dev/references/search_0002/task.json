@@ -1,0 +1,8 @@
+{
+  "task_id": "search_0002",
+  "task_type": "search",
+  "instruction": "Using only kb/, what is the birth city of Jana Smith? Return only the city name. Work only inside the current directory. If the provided information cannot determine the answer, write IMPOSSIBLE instead. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 4,
+  "check": "exact_str",
+  "expected": null
+}

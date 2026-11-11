@@ -1,0 +1,7 @@
+{
+  "task_id": "search_0001",
+  "task_type": "search",
+  "instruction": "kb/ holds the initial stock list, transfer notes and cancellations. Where was SKU-663 stored on 2026-09-01? Cancelled transfers never happened; transfers dated after that day do not count. Return only the warehouse code. Work only inside the current directory. If the provided information cannot determine the answer, write IMPOSSIBLE instead. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 5,
+  "check": "exact_str"
+}

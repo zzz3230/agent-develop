@@ -1,0 +1,8 @@
+{
+  "task_id": "data_analysis_0001",
+  "task_type": "data_analysis",
+  "instruction": "How many employees were in department ops on 2026-06-15? employees.csv gives the initial department and hire date (employees hired after that date do not count). transfers.csv moves an employee to new_dept from its effective date inclusive; the latest effective transfer on or before the date wins. An employee terminated on or before the date does not count. Return the integer. Work only inside the current directory. If the provided information cannot determine the answer, write IMPOSSIBLE instead. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 5,
+  "check": "exact_int",
+  "expected": "39"
+}

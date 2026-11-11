@@ -1,0 +1,7 @@
+{
+  "task_id": "search_0000",
+  "task_type": "search",
+  "instruction": "kb/ contains release notes. In which shipped version was audit-log most recently added or restored? Withdrawn releases never shipped. Return only the version, e.g. 3.1.0. Work only inside the current directory. If the provided information cannot determine the answer, write IMPOSSIBLE instead. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 6,
+  "check": "exact_str"
+}

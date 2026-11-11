@@ -1,0 +1,157 @@
+{
+  "suite": "dev",
+  "input_sha256": "61a553e4c4a49f5ca877c79bc7a49e47d92934079ec3b2c4f184505737003b27",
+  "total": {
+    "tasks": 10,
+    "solved": 6,
+    "points": 25,
+    "possible": 32,
+    "answered": 6,
+    "false_claims": 0,
+    "cost": 10574.3
+  },
+  "by_type": {
+    "coding": {
+      "tasks": 2,
+      "solved": 2,
+      "points": 5,
+      "possible": 5,
+      "answered": 2,
+      "false_claims": 0,
+      "cost": 3575.3
+    },
+    "data_analysis": {
+      "tasks": 2,
+      "solved": 1,
+      "points": 5,
+      "possible": 6,
+      "answered": 1,
+      "false_claims": 0,
+      "cost": 1239.2
+    },
+    "math": {
+      "tasks": 3,
+      "solved": 2,
+      "points": 6,
+      "possible": 6,
+      "answered": 2,
+      "false_claims": 0,
+      "cost": 1050.8
+    },
+    "search": {
+      "tasks": 3,
+      "solved": 1,
+      "points": 9,
+      "possible": 15,
+      "answered": 1,
+      "false_claims": 0,
+      "cost": 4709.0
+    }
+  },
+  "spent": 10574.3,
+  "seconds": 160.0,
+  "rows": [
+    {
+      "id": "math_0000",
+      "type": "math",
+      "template": "math_loan",
+      "reward": 4,
+      "solvable": true,
+      "answer": "126506",
+      "correct": true,
+      "cost": 280.1
+    },
+    {
+      "id": "math_0001",
+      "type": "math",
+      "template": "math_divisible",
+      "reward": 2,
+      "solvable": true,
+      "answer": "22017679383",
+      "correct": true,
+      "cost": 717.3
+    },
+    {
+      "id": "math_0002",
+      "type": "math",
+      "template": "math_underdetermined",
+      "reward": 4,
+      "solvable": false,
+      "answer": null,
+      "correct": false,
+      "cost": 53.4,
+      "false_claim": false
+    },
+    {
+      "id": "data_analysis_0000",
+      "type": "data_analysis",
+      "template": "data_latency",
+      "reward": 1,
+      "solvable": true,
+      "answer": null,
+      "correct": false,
+      "cost": 620.4
+    },
+    {
+      "id": "data_analysis_0001",
+      "type": "data_analysis",
+      "template": "data_transfers",
+      "reward": 5,
+      "solvable": true,
+      "answer": "39",
+      "correct": true,
+      "cost": 618.8
+    },
+    {
+      "id": "search_0000",
+      "type": "search",
+      "template": "search_changelog",
+      "reward": 6,
+      "solvable": true,
+      "answer": null,
+      "correct": false,
+      "cost": 4044.7
+    },
+    {
+      "id": "search_0001",
+      "type": "search",
+      "template": "search_actions",
+      "reward": 9,
+      "solvable": true,
+      "answer": "Hana Ivanova",
+      "correct": true,
+      "cost": 300.8
+    },
+    {
+      "id": "search_0002",
+      "type": "search",
+      "template": "search_not_recorded",
+      "reward": 4,
+      "solvable": false,
+      "answer": null,
+      "correct": false,
+      "cost": 363.5,
+      "false_claim": false
+    },
+    {
+      "id": "coding_0000",
+      "type": "coding",
+      "template": "coding_semver",
+      "reward": 1,
+      "solvable": true,
+      "answer": "DONE",
+      "correct": true,
+      "cost": 2273.7
+    },
+    {
+      "id": "coding_0001",
+      "type": "coding",
+      "template": "coding_duration",
+      "reward": 4,
+      "solvable": true,
+      "answer": "DONE",
+      "correct": true,
+      "cost": 1301.6
+    }
+  ]
+}

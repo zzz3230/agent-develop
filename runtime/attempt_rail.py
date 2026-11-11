@@ -42,6 +42,7 @@ class AttemptRail(AgentRail):
         self.extensions = 0
         self.fresh_progress = set()
         self.seen_outputs = set()
+        self.seen_lines = set()  # search: re-grepping the same lines is not progress
         self.test_failures = None
 
     async def before_model_call(self, ctx):
@@ -94,9 +95,14 @@ class AttemptRail(AgentRail):
         if key in self.seen_outputs:
             return
         self.seen_outputs.add(key)
+        lines = {l.strip() for l in payload.splitlines() if l.strip()}
+        new_lines = lines - self.seen_lines
+        self.seen_lines |= lines
         if re.fullmatch(r'[+-]?\d+(?:\.\d+)?', payload):
             self.fresh_progress.add('computed_scalar')
-        elif self.task_type == 'search' and len(payload) >= 40 and re.search(r'\b(cat|grep|head|tail|read_text)\b', args.get('command','')):
+        elif self.task_type in ('math', 'data_analysis') and re.search(r'(?<![\w.])[+-]?\d+(?:\.\d+)?\s*$', payload):
+            self.fresh_progress.add('computed_result')  # e.g. "57 412": count and value on the last line
+        elif self.task_type == 'search' and len(new_lines) >= 3 and len(payload) >= 40 and re.search(r'\b(cat|grep|head|tail|read_text)\b', args.get('command','')):
             self.fresh_progress.add('new_source_excerpt')
         elif self.task_type == 'data_analysis' and re.search(r'\b(rows|matched|total|sum|count|result|revenue)\b[^\n]*\d', payload, re.I):
             self.fresh_progress.add('intermediate_computation')
@@ -128,6 +134,10 @@ class AttemptRail(AgentRail):
         if isinstance(args, str):
             args = json.loads(args)
         self.observe_progress(text, args or {}, getattr(result, 'success', None) is True)
+        if self.journal:
+            self.journal.write('tool', task=self.budget.task_id if self.budget else None,
+                               command=str((args or {}).get('command', ''))[:400],
+                               ok=getattr(result, 'success', None), output=text[-400:])
         if getattr(result, 'success', None) is not False:
             return
         text = re.sub(r'(Ran \d+ tests? in )[\d.]+s', r'\1<TIME>s', text)

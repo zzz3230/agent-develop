@@ -1,0 +1,7 @@
+{
+  "task_id": "math_0000",
+  "task_type": "math",
+  "instruction": "grid.txt is a maze: S start, E exit, # wall, . open cell. Moves go up, down, left or right by one cell, never through walls or outside the grid. Return the minimum number of moves from S to E as an integer. Work only inside the current directory. If the provided information cannot determine the answer, write IMPOSSIBLE instead. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 7,
+  "check": "exact_int"
+}

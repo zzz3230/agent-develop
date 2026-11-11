@@ -1,0 +1,129 @@
+{
+  "kind": "base",
+  "split": "holdout",
+  "seed": 20261111,
+  "input_sha256": "24b3fbd35a6a56f15076777bb92d00d653b7de5fc5edb471ab5f194b97f4e8f5",
+  "tasks": [
+    {
+      "id": "math_0000",
+      "type": "math",
+      "template": "math_grid",
+      "split": "holdout",
+      "solvable": true,
+      "reward": 7,
+      "seed": 3447224993,
+      "expected": "24",
+      "check": "exact_int",
+      "reason": null
+    },
+    {
+      "id": "math_0001",
+      "type": "math",
+      "template": "math_business_days",
+      "split": "holdout",
+      "solvable": true,
+      "reward": 3,
+      "seed": 944322931,
+      "expected": "52",
+      "check": "exact_int",
+      "reason": null
+    },
+    {
+      "id": "data_analysis_0000",
+      "type": "data_analysis",
+      "template": "data_dedupe",
+      "split": "holdout",
+      "solvable": true,
+      "reward": 7,
+      "seed": 2466170473,
+      "expected": "181",
+      "check": "exact_int",
+      "reason": null
+    },
+    {
+      "id": "data_analysis_0001",
+      "type": "data_analysis",
+      "template": "data_growth",
+      "split": "holdout",
+      "solvable": true,
+      "reward": 2,
+      "seed": 1813744998,
+      "expected": "2025-12",
+      "check": "exact_str",
+      "reason": null
+    },
+    {
+      "id": "data_analysis_0002",
+      "type": "data_analysis",
+      "template": "data_missing_rate",
+      "split": "holdout",
+      "solvable": false,
+      "reward": 3,
+      "seed": 603006525,
+      "expected": null,
+      "check": "exact_int",
+      "reason": "GBP rate is missing and required"
+    },
+    {
+      "id": "search_0000",
+      "type": "search",
+      "template": "search_org",
+      "split": "holdout",
+      "solvable": true,
+      "reward": 3,
+      "seed": 2687007626,
+      "expected": "Chen Sato",
+      "check": "exact_str",
+      "reason": null
+    },
+    {
+      "id": "search_0001",
+      "type": "search",
+      "template": "search_sku",
+      "split": "holdout",
+      "solvable": true,
+      "reward": 5,
+      "seed": 2854148742,
+      "expected": "W2",
+      "check": "exact_str",
+      "reason": null
+    },
+    {
+      "id": "coding_0000",
+      "type": "coding",
+      "template": "coding_topo",
+      "split": "holdout",
+      "solvable": true,
+      "reward": 10,
+      "seed": 3647170963,
+      "expected": "tests_pass",
+      "check": "unittest",
+      "reason": null
+    },
+    {
+      "id": "coding_0001",
+      "type": "coding",
+      "template": "coding_roman",
+      "split": "holdout",
+      "solvable": true,
+      "reward": 8,
+      "seed": 1615447211,
+      "expected": "tests_pass",
+      "check": "unittest",
+      "reason": null
+    },
+    {
+      "id": "coding_0002",
+      "type": "coding",
+      "template": "coding_contradiction",
+      "split": "holdout",
+      "solvable": false,
+      "reward": 4,
+      "seed": 4060786266,
+      "expected": null,
+      "check": "unittest",
+      "reason": "no integer squares to 8"
+    }
+  ],
+  "impossible_share": 0.2
+}

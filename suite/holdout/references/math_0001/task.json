@@ -1,0 +1,8 @@
+{
+  "task_id": "math_0001",
+  "task_type": "math",
+  "instruction": "Count business days from 2026-05-23 to 2026-08-14, both inclusive. A business day is Monday-Friday and not listed in holidays.txt (one ISO date per line; a holiday on a weekend changes nothing). Return the integer. Work only inside the current directory. If the provided information cannot determine the answer, write IMPOSSIBLE instead. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 3,
+  "check": "exact_int",
+  "expected": "52"
+}

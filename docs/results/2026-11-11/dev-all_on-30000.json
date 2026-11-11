@@ -1,0 +1,12 @@
+[
+  {
+    "variant": "all_on",
+    "points": 26.0,
+    "possible": 32.0,
+    "solved": 7,
+    "false_claims": 0,
+    "spent": 9890.3,
+    "seconds": 123.6,
+    "stop": "all tasks handled"
+  }
+]
