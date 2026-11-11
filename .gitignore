@@ -3,3 +3,4 @@ __pycache__/
 .env
 logs/
 benchmark-runs/
+predictors/encoder/model.onnx
