@@ -45,6 +45,15 @@ def train():
     digest=hashlib.sha256(json.dumps(provenance,sort_keys=True).encode()).hexdigest()
     dump(OUT/'training_rows.json',provenance)
     report=dict(training_rows=len(rows),successes=int(y.sum()),groups=len(set(groups)),training_sha256=digest,models={})
+    baseline_p=np.zeros(len(y));baseline_c=np.zeros(len(y))
+    for a,b in GroupKFold(n_splits=5).split(numeric,y,groups):
+        for j in b:
+            kind=rows[j]['task'].type
+            relevant=[i for i in a if rows[i]['task'].type==kind]
+            baseline_p[j]=(sum(y[i] for i in relevant)+1)/(len(relevant)+2)
+            baseline_c[j]=np.mean(cost[relevant]) if relevant else np.mean(cost[a])
+    report['offline_type_only_reference']=dict(brier=float(brier_score_loss(y,baseline_p)),
+        log_loss=float(log_loss(y,baseline_p)),cost_mae=float(mean_absolute_error(cost,baseline_c)))
     for mode,x in [('numeric',numeric),('embedding',np.hstack([numeric,embeddings]))]:
         probabilities=np.zeros(len(y));predicted_log=np.zeros(len(y))
         for a,b in GroupKFold(n_splits=5).split(x,y,groups):
