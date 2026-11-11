@@ -1,0 +1,5 @@
+{
+  "expected": "West",
+  "solvable": true,
+  "explanation": "08:40 West directly precedes the first North event at 09:00."
+}

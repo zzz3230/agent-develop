@@ -1,0 +1,5 @@
+{
+  "expected": "IMPOSSIBLE",
+  "solvable": false,
+  "explanation": "At zero interest the deposit is 400; at positive interest it is lower. Both fit the stated totals."
+}

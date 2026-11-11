@@ -1,0 +1,5 @@
+{
+  "expected": "9",
+  "solvable": true,
+  "explanation": "All simple paths and all possible coupon positions enumerated; positive tolls make cycles unnecessary."
+}

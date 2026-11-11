@@ -1,0 +1,5 @@
+{
+  "expected": "38",
+  "solvable": true,
+  "explanation": "A,C,D,F have values 3+7+11+17=38."
+}

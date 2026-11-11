@@ -1,0 +1,5 @@
+{
+  "expected": "4200",
+  "solvable": true,
+  "explanation": "Independent inclusion-exclusion and dynamic programming agree."
+}

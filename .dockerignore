@@ -5,3 +5,5 @@ __pycache__
 docs/
 evaluation/fixtures/
 evaluation/generate_suite.py
+benchmarks/
+benchmark-runs/

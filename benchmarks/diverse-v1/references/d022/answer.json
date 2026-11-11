@@ -1,0 +1,5 @@
+{
+  "expected": "2",
+  "solvable": true,
+  "explanation": "Exhaustively counted the 4*3*3*2 possible count-vectors."
+}

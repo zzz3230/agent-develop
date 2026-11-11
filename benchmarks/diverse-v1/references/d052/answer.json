@@ -1,0 +1,5 @@
+{
+  "expected": "2",
+  "solvable": true,
+  "explanation": "Intersection is {R1,R4}; duplicates and pending/inactive records excluded."
+}

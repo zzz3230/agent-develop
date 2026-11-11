@@ -1,0 +1,10 @@
+from,to,toll
+S,A,7
+S,B,4
+B,A,2
+A,C,3
+B,C,8
+B,D,5
+C,T,6
+D,T,3
+C,D,1

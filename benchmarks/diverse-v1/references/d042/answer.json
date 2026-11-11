@@ -1,0 +1,5 @@
+{
+  "expected": "77",
+  "solvable": true,
+  "explanation": "43+37+29-17-11-13+9=77."
+}

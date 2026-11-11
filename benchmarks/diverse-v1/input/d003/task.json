@@ -1,0 +1,7 @@
+{
+  "task_id": "d003",
+  "task_type": "data_analysis",
+  "instruction": "In sales.csv, sum units for region west and month 4 through 9 inclusive. Negative units are returns and must be included as written. Return an integer. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 3,
+  "check": "exact_int"
+}

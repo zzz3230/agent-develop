@@ -1,0 +1,7 @@
+{
+  "task_id": "d018",
+  "task_type": "math",
+  "instruction": "A bag has 7 red and 5 blue tokens. Three distinct tokens are drawn uniformly without replacement. What is the probability of exactly two red tokens? Return a reduced fraction numerator/denominator. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 4,
+  "check": "exact_str"
+}

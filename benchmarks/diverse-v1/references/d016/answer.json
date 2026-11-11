@@ -1,0 +1,5 @@
+{
+  "expected": "668",
+  "solvable": true,
+  "explanation": "Enumerated one complete period of 1001 integers."
+}
