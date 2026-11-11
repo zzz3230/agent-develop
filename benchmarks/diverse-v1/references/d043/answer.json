@@ -1,0 +1,5 @@
+{
+  "expected": "R-72",
+  "solvable": true,
+  "explanation": "Both row keys are needed; staging/mail selects R-72."
+}

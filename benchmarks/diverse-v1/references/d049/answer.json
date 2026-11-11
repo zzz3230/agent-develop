@@ -1,0 +1,5 @@
+{
+  "expected": "17",
+  "solvable": true,
+  "explanation": "a revision 2 -> 8; b revision 2 -> 0; c -> 9."
+}

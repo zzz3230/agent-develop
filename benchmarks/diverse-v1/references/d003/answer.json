@@ -1,0 +1,5 @@
+{
+  "expected": "1300",
+  "solvable": true,
+  "explanation": "Direct row filter and signed sum."
+}

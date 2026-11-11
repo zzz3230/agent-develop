@@ -1,0 +1,7 @@
+{
+  "task_id": "d017",
+  "task_type": "search",
+  "instruction": "Using kb/, which project is BOTH funded by Helios AND based in Bergen AND active? Return only its project ID. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 4,
+  "check": "exact_str"
+}

@@ -1,0 +1,5 @@
+{
+  "expected": "tests_pass",
+  "solvable": true,
+  "explanation": "Reference implementation passes public and private tests; supplied implementation must fail public tests."
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "d037",
+  "task_type": "search",
+  "instruction": "Using kb/, find the serial number of certificate K-204 issued to Aster Instruments. Return only the serial. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 4,
+  "check": "exact_str"
+}

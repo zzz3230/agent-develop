@@ -1,0 +1,5 @@
+{
+  "expected": "88",
+  "solvable": true,
+  "explanation": "An 8*7 rectangle minus a 3*4 notch has area 44."
+}

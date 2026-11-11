@@ -1,0 +1,5 @@
+{
+  "expected": "ZX-7319",
+  "solvable": true,
+  "explanation": "archives/box_7/record_193.md is the exact certificate; other certificate IDs differ."
+}
