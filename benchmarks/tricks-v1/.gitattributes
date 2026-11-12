@@ -1,0 +1,3 @@
+# Task files are stored byte for byte: some tasks need CRLF or a BOM,
+# and the input hash in manifest.json must match on every OS.
+* -text
