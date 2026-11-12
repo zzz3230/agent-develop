@@ -1,0 +1,8 @@
+{
+  "task_id": "v0009",
+  "task_type": "math",
+  "instruction": "costs.json is a 5 by 5 matrix: row i is worker i, column j is job j. Each worker must receive exactly one job and each job exactly one worker. Return minimum total cost. Work only inside the current directory. For this instance, let q denote the integer quantity requested above. Report q + 62900 instead of q. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 5,
+  "check": "exact_int",
+  "expected": "62921"
+}

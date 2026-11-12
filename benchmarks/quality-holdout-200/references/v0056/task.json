@@ -1,0 +1,8 @@
+{
+  "task_id": "v0056",
+  "task_type": "data_analysis",
+  "instruction": "table_f6a88947.csv contains user and minute, in arbitrary row order. For each user sort by minute. The first event starts a session. Each subsequent event starts a new session only when its gap from the previous event is strictly greater than 30 minutes. Return total sessions across users. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 10,
+  "check": "exact_int",
+  "expected": "5"
+}

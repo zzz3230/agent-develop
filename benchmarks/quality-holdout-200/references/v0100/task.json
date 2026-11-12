@@ -1,0 +1,8 @@
+{
+  "task_id": "v0100",
+  "task_type": "data_analysis",
+  "instruction": "table_5f6890c8.csv lists order ID and customer name. customers.csv lists customer ID, name and city. What is the city of the customer who placed order O7? Return only the city name. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 2,
+  "check": "exact_str",
+  "expected": "IMPOSSIBLE"
+}

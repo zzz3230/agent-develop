@@ -1,0 +1,41 @@
+﻿order_id,region,product,month,units,price
+1,south,"gizmo, deluxe",8,9,18
+2,north,gizmo,8,16,97
+3,north,"gizmo, deluxe",8,40,66
+4,west,gizmo,1,37,75
+5,east,gizmo,11,26,43
+6,south,"gizmo, deluxe",8,9,11
+7,south,gizmo,4,30,22
+8,north,gizmo,2,38,6
+9,east,widget,5,34,53
+10,south,"gizmo, deluxe",4,33,6
+11,south,"gizmo, deluxe",8,16,34
+12,north,widget,6,17,33
+13,north,widget,2,32,67
+14,south,"gizmo, deluxe",12,31,11
+15,east,gizmo,9,31,73
+16,north,widget,6,15,48
+17,south,gizmo,9,20,13
+18,north,widget,10,8,36
+19,south,"gizmo, deluxe",9,38,15
+20,north,gizmo,10,15,86
+21,east,widget,4,30,66
+22,east,widget,8,29,29
+23,north,gizmo,2,19,29
+24,south,"gizmo, deluxe",6,21,89
+25,north,"gizmo, deluxe",11,14,73
+26,south,widget,2,17,34
+27,south,"gizmo, deluxe",7,23,20
+28,east,widget,11,14,56
+29,east,"gizmo, deluxe",6,18,33
+30,north,gizmo,9,16,43
+31,west,"gizmo, deluxe",10,39,94
+32,west,widget,7,11,26
+33,south,gizmo,6,3,81
+34,north,gizmo,3,2,76
+35,south,widget,12,29,53
+36,north,"gizmo, deluxe",11,23,41
+37,north,gizmo,9,14,42
+38,east,widget,10,23,40
+39,east,"gizmo, deluxe",7,8,12
+40,west,widget,11,36,46

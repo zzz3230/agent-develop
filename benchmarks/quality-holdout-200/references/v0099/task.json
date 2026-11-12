@@ -1,0 +1,8 @@
+{
+  "task_id": "v0099",
+  "task_type": "data_analysis",
+  "instruction": "The file table_87333dae.csv has columns order_id,region,product,month,units,price (31 rows). Each order_id identifies exactly one order. How many units were sold in order 17? Use bash with python3 to compute it. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 5,
+  "check": "exact_int",
+  "expected": null
+}

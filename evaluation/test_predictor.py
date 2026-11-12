@@ -11,6 +11,29 @@ from runtime.task_queue import TaskQueue
 
 
 class Predictors(unittest.TestCase):
+    def test_quality_minilm_keyword_ablation(self):
+        class Vector:
+            def tolist(self):return [0.0]*384
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp);d=p/'task';d.mkdir()
+            raw=dict(task_id='a',task_type='math',instruction='round',reward=1)
+            (d/'task.json').write_text(json.dumps(raw));a=load_task(d)
+            raw['instruction']='abcde';(d/'task.json').write_text(json.dumps(raw));b=load_task(d)
+            for mode,n in [('quality_minilm_keywords',429),('quality_minilm_structural',402)]:
+                coef=[0.0]*n
+                if mode.endswith('keywords'):coef[6]=1
+                model=dict(mean=[0.0]*n,scale=[1.0]*n,success=dict(coef=coef,intercept=0),
+                    cost=dict(coef=[0.0]*n,intercept=100),cost_transform='identity')
+                (p/(mode+'.json')).write_text(json.dumps(model))
+                with patch('runtime.predictor.Encoder') as encoder:
+                    encoder.return_value.encode.return_value=[Vector(),Vector()]
+                    pred=Predictor([a,b],mode,p)
+                    encoder.assert_called_with(p/'encoder')
+                    pa=pred.predict(features(a,keywords=mode.endswith('keywords'))+[0.0]*384)[0]
+                    pb=pred.predict(features(b,keywords=mode.endswith('keywords'))+[0.0]*384)[0]
+                    if mode.endswith('keywords'):self.assertNotEqual(pa,pb)
+                    else:self.assertEqual(pa,pb)
+
     def test_structural_features_ignore_keywords(self):
         with tempfile.TemporaryDirectory() as tmp:
             p=Path(tmp);raw=dict(task_id='a',task_type='math',instruction='round',reward=1)

@@ -1,0 +1,8 @@
+{
+  "task_id": "v0172",
+  "task_type": "coding",
+  "instruction": "Fix lib_bf5a5a71.py. compare(a,b) accepts nonempty version strings of dot-separated nonnegative integer components. Components may have leading zeros. Compare numerically, treating missing trailing components as zero. Return exactly -1, 0 or 1. Inputs are valid; no prerelease suffixes are used. Keep the implementation in lib_bf5a5a71.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 1,
+  "check": "unittest",
+  "expected": "tests_pass"
+}

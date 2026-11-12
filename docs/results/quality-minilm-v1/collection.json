@@ -1,0 +1,18 @@
+{
+  "total": {
+    "tasks": 24,
+    "solvable": 21,
+    "correct": 18,
+    "points": 65.0,
+    "possible": 74.0,
+    "false_claims": 0,
+    "cost": 14841.3,
+    "journal_solved_but_wrong": 1
+  },
+  "spent": 14841.3,
+  "source_agent_commit": "f8e23ac",
+  "model_hashes": {
+    "quality_minilm_keywords": "51e896ebb58ce7f4c5f654c34228b4b54407dbd5d6c88a45f8d31c50eeb1e45e",
+    "quality_minilm_structural": "eab317a88440ca7c4b34dd421c8c6ce3256f66ddda2c76dd4a651bd95b2e4115"
+  }
+}
