@@ -34,5 +34,22 @@ class Planning(unittest.TestCase):
         with patch.dict('os.environ',{'SCORE_ALPHA':'2','QUEUE_POLICY':'greedy'}):q=TaskQueue(ts)
         q.predictor=fake;self.assertEqual(q.next(50)[0].id,'1')
 
+    def test_fast_replay_matches_live_order(self):
+        # Independently implemented replay must agree with the live greedy queue.
+        from evaluation.tune_planning import replay
+        rng=random.Random(911)
+        for alpha in (0,.5,1,2,4):
+            for policy in ('greedy','knapsack'):
+                records=[dict(reward=rng.randint(1,10),p=rng.uniform(.1,.9),
+                    predicted_cost=rng.randint(2,20),actual_cost=rng.randint(2,20),correct=rng.randrange(2)) for _ in range(12)]
+                tasks=[SimpleNamespace(id=str(i),type='math',reward=r['reward']) for i,r in enumerate(records)]
+                with patch.dict('os.environ',{'SCORE_ALPHA':str(alpha),'QUEUE_POLICY':policy}):q=TaskQueue(tasks)
+                q.predictor=SimpleNamespace(predictions={str(i):(r['p'],r['predicted_cost']) for i,r in enumerate(records)})
+                spent=0;completed=[]
+                while spent<80 and (picked:=q.next(80-spent)):
+                    i=int(picked[0].id);spent+=records[i]['actual_cost']
+                    if spent<=80:completed.append(i)
+                self.assertEqual(replay(records,80,alpha,policy)['completed'],completed)
+
 
 if __name__=='__main__':unittest.main()
