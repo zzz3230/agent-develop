@@ -1,0 +1,7 @@
+{
+  "task_id": "p0308",
+  "task_type": "math",
+  "instruction": "A warehouse starts with one thousand two hundred boxes. It ships forty-five boxes per day for three days. Then it receives two deliveries of sixty boxes each. How many boxes does it have at the end? Work only inside the current directory. For this instance, let q denote the integer quantity requested above. Report q + 70601 instead of q.",
+  "reward": 3,
+  "check": "exact_int"
+}

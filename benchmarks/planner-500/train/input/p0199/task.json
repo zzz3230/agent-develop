@@ -1,0 +1,7 @@
+{
+  "task_id": "p0199",
+  "task_type": "search",
+  "instruction": "kb/people/ has one file per employee with dated manager records. As of 2026-06-16, who is the skip-level manager (the manager's manager) of Chen Sato? The latest record dated on or before that day applies at each level. Return only the full name. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 1,
+  "check": "exact_str"
+}

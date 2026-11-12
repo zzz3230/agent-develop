@@ -11,6 +11,8 @@ than the best fresh task, and only if the estimated remaining budget covers it.
 from __future__ import annotations
 
 import os
+import math
+import time
 from dataclasses import dataclass
 from typing import Callable, Iterable, Optional
 
@@ -53,6 +55,16 @@ class TaskQueue:
         self.stats: dict[str, TypeStats] = {}
         self.retry_pool: list = []
         self.retried: set[str] = set()
+        self.predictor = None
+        self.alpha=float(os.environ.get('SCORE_ALPHA','1'))
+        if not math.isfinite(self.alpha) or not 0<=self.alpha<=4:raise ValueError('SCORE_ALPHA must be between 0 and 4')
+        self.policy=os.environ.get('QUEUE_POLICY','greedy')
+        if self.policy not in ('greedy','knapsack'):raise ValueError('Unknown queue policy')
+        mode=os.environ.get('PREDICTOR','baseline')
+        if enabled and mode != 'baseline':
+            if mode not in ('numeric','embedding','structural','strong_embedding','bge_structural','bge_keywords'): raise ValueError('Unknown predictor: '+mode)
+            from runtime.predictor import Predictor
+            self.predictor=Predictor(self.fresh,mode,os.environ.get('PREDICTOR_DIR','/app/predictors'),journal)
 
     # --- estimates -------------------------------------------------------
     def _prior_cost(self, kind: str) -> float:
@@ -68,9 +80,12 @@ class TaskQueue:
         return (s.cost + self._prior_cost(kind) * COST_WEIGHT) / (s.attempts + COST_WEIGHT)
 
     def score(self, task, retry: bool = False) -> float:
+        if self.predictor and not retry:
+            p,c=self.predictor.predictions[task.id]
+            return (task.reward**self.alpha if task.reward>0 else 0)*p/c
         p = self.success(task.type) * (RETRY_DISCOUNT if retry else 1.0)
         c = self.limits(task.type).cost if retry else self.cost(task.type)
-        return task.reward * p / max(c, 1.0)
+        return (task.reward**self.alpha if task.reward>0 else 0) * p / max(c, 1.0)
 
     # --- queue -----------------------------------------------------------
     def _best_fresh(self, remaining: Optional[float]):
@@ -78,12 +93,20 @@ class TaskQueue:
             return None
         if not self.enabled:
             return self.fresh[0]
+        if self.policy=='knapsack' and remaining is not None and remaining>0:
+            from runtime.planning import knapsack
+            started=time.monotonic()
+            estimates=[self.predictor.predictions[t.id] if self.predictor else (self.success(t.type),self.cost(t.type)) for t in self.fresh]
+            indices=knapsack([(t.reward*p,c) for t,(p,c) in zip(self.fresh,estimates)],remaining)
+            self._log('knapsack_plan',remaining=remaining,selected=[self.fresh[i].id for i in indices],
+                seconds=round(time.monotonic()-started,6))
+            if indices:return max((self.fresh[i] for i in indices),key=self.score)
         candidates = self.fresh
         if remaining is not None:
-            fitting = [t for t in self.fresh if self.cost(t.type) <= remaining]
+            fitting = [t for t in self.fresh if (self.predictor.predictions[t.id][1] if self.predictor else self.cost(t.type)) <= remaining]
             candidates = fitting or self.fresh
         # Stable: ties keep directory order.
-        return max(candidates, key=lambda t: (self.score(t), -self.fresh.index(t)))
+        return max(candidates, key=self.score) # max keeps the first equal-score candidate
 
     def next(self, remaining: Optional[float] = None):
         """Returns (task, is_retry) or None when nothing is worth running."""
@@ -103,8 +126,9 @@ class TaskQueue:
             return None
         self.fresh.remove(fresh)
         if self.enabled:
+            p,c=self.predictor.predictions[fresh.id] if self.predictor else (self.success(fresh.type),self.cost(fresh.type))
             self._log('queue_pick', task=fresh.id, retry=False, score=round(self.score(fresh), 6),
-                      p=round(self.success(fresh.type), 3), c=round(self.cost(fresh.type), 1))
+                      p=round(p, 3), c=round(c, 1))
         return fresh, False
 
     def record(self, task, status: str, cost: float, detail: str = '', retry: bool = False) -> None:

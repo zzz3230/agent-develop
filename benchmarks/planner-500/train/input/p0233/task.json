@@ -1,0 +1,7 @@
+{
+  "task_id": "p0233",
+  "task_type": "coding",
+  "instruction": "Fix lib_7c5b134c.py. lower_bound(values,target) returns the first index i with values[i]>=target, or len(values) if there is no such index. values is a sorted list of integers, possibly empty or containing duplicates. Do not mutate values. Keep the implementation in lib_7c5b134c.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 10,
+  "check": "unittest"
+}

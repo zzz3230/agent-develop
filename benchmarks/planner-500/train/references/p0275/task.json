@@ -1,0 +1,8 @@
+{
+  "task_id": "p0275",
+  "task_type": "coding",
+  "instruction": "Fix lib_4292b1c7.py: to_roman(n) converts an int 1..3999 to canonical Roman numerals (subtractive forms IV, IX, XL, XC, CD, CM); other values, including bool and float, raise ValueError. from_roman(text) accepts only canonical uppercase numerals for 1..3999 and returns the int; anything else (e.g. IIII, IC, lowercase, empty) raises ValueError. Run `python3 test_solution.py`. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 4,
+  "check": "unittest",
+  "expected": "tests_pass"
+}

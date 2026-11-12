@@ -1,0 +1,7 @@
+{
+  "task_id": "p0369",
+  "task_type": "data_analysis",
+  "instruction": "The file table_58c59679.csv has columns order_id,region,item,period,qty,price (60 rows). How many units of product 'widget' were sold in months 2 through 5 inclusive? Use bash with python3 to compute it. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 6,
+  "check": "exact_int"
+}

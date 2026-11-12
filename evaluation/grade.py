@@ -240,8 +240,11 @@ def grade(references: Path, run: Path, trajectory: Optional[Path] = None, privat
             row['false_claim'] = row['answer'] not in (None, '') and row['answer'].upper() != 'IMPOSSIBLE'
             row['note'] = 'answered on unavailable data' if row['false_claim'] else 'no answer, correct abstention'
         elif ref.check == 'unittest':
-            row['correct'], detail = judge_code(ref, workdir, docker_image)
-            row['note'] = 'tests pass' if row['correct'] else detail.strip().splitlines()[-1][:160] if detail.strip() else 'tests fail'
+            if row['answer'] != 'DONE':
+                row['note'] = 'missing DONE answer.txt'
+            else:
+                row['correct'], detail = judge_code(ref, workdir, docker_image)
+                row['note'] = 'tests pass' if row['correct'] else detail.strip().splitlines()[-1][:160] if detail.strip() else 'tests fail'
         elif ref.check in METRICS:
             if row['answer'] is None:
                 row['note'] = 'no answer.txt'

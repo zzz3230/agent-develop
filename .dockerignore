@@ -6,5 +6,8 @@ docs/
 evaluation/fixtures/
 evaluation/generate_suite.py
 evaluation/build_suite.py
+evaluation/build_planner_pool.py
+evaluation/validate_planner_pool.py
+evaluation/prepare_planner_pool.py
 benchmarks/
 benchmark-runs/

@@ -1,0 +1,8 @@
+{
+  "task_id": "p0080",
+  "task_type": "data_analysis",
+  "instruction": "table_5a5695ad.csv has group, value, weight. Empty value means missing: exclude both its value and its weight. Compute the weighted mean for group A. Return exactly two decimal places, rounding nearest with ties away from zero. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 10,
+  "check": "exact_str",
+  "expected": "17.50"
+}

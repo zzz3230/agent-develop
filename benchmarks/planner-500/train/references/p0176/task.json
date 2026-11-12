@@ -1,0 +1,8 @@
+{
+  "task_id": "p0176",
+  "task_type": "search",
+  "instruction": "kb/ contains release notes. In which shipped version was webhooks most recently added or restored? Withdrawn releases never shipped. Return only the version, e.g. 3.1.0. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 8,
+  "check": "exact_str",
+  "expected": "3.4.0"
+}

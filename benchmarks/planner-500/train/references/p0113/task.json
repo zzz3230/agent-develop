@@ -1,0 +1,8 @@
+{
+  "task_id": "p0113",
+  "task_type": "data_analysis",
+  "instruction": "table_a5ad0854.csv gives signup month. events.csv gives activity months and may contain duplicates. How many distinct users who signed up in 2026-01 were active in 2026-03? Return an integer. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 6,
+  "check": "exact_int",
+  "expected": "26"
+}

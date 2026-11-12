@@ -1,0 +1,8 @@
+{
+  "task_id": "p0037",
+  "task_type": "math",
+  "instruction": "jobs.csv lists jobs with start, end and profit. Select any subset with no overlap on one machine. Intervals are half-open [start,end), so touching endpoints are allowed. Return the maximum total profit. Work only inside the current directory. For this instance, let q denote the integer quantity requested above. Report q + 30407 instead of q. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 7,
+  "check": "exact_int",
+  "expected": "30451"
+}

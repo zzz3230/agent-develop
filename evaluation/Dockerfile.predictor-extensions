@@ -1,0 +1,6 @@
+FROM agent-develop:predictors-checked
+COPY predictors/encoder-strong/ /app/predictors/encoder-strong/
+RUN python -c "import hashlib,json;from pathlib import Path;e=Path('/app/predictors/encoder-strong');m=json.loads((e/'provenance.json').read_text());assert all((e/n).is_file() and hashlib.sha256((e/n).read_bytes()).hexdigest()==h for n,h in m['files'].items()), 'Run evaluation.download_encoder --strong before building'"
+COPY runtime/ /app/runtime/
+COPY predictors/*.json /app/predictors/
+RUN python -c "import json;from pathlib import Path;p=Path('/app/predictors');assert all(json.loads((p/(n+'.json')).read_text())['mode']==n for n in ('structural','strong_embedding'))"

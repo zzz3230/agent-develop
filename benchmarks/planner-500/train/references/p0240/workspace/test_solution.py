@@ -1,0 +1,9 @@
+import unittest
+import lib_d3dc7be3 as m
+
+class Cases(unittest.TestCase):
+    def test_000(self):
+        self.assertEqual(m.expand([('ab',2),('x',0)]),'abab')
+
+if __name__ == '__main__':
+    unittest.main()

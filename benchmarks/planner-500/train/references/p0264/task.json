@@ -1,0 +1,8 @@
+{
+  "task_id": "p0264",
+  "task_type": "coding",
+  "instruction": "Fix lib_651d439c.py. Store() supports put(key,value,now,ttl) and get(key,now). Times are integer ticks and callers use nondecreasing now. put replaces any previous value and expires at now+ttl; at that exact time it is already absent. A nonpositive ttl removes the key immediately. get returns None when absent or expired. Keys are strings. Values can be any object. Keep the implementation in lib_651d439c.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 2,
+  "check": "unittest",
+  "expected": "tests_pass"
+}

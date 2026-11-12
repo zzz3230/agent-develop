@@ -1,0 +1,8 @@
+{
+  "task_id": "p0210",
+  "task_type": "search",
+  "instruction": "According to kb/, who held the role of director of Atlas on 2026-04-15? Appointments take effect on the stated effective date, not publication date. Return only the full name. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 4,
+  "check": "exact_str",
+  "expected": "Ivo Reed"
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "p0109",
+  "task_type": "data_analysis",
+  "instruction": "How many employees were in department sales on 2026-09-16? table_734c8edb.csv gives the initial department and hire date (employees hired after that date do not count). transfers.csv moves an employee to new_dept from its effective date inclusive; the latest effective transfer on or before the date wins. An employee terminated on or before the date does not count. Return the integer. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 3,
+  "check": "exact_int"
+}

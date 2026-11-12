@@ -1,0 +1,5 @@
+# Farid Petrov
+
+Born: 1996
+Employer: Arktika Labs
+Mentor: Jonas Muller

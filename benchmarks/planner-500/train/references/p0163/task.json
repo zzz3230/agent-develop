@@ -1,0 +1,8 @@
+{
+  "task_id": "p0163",
+  "task_type": "search",
+  "instruction": "kb/people/ has one file per employee with dated manager records. As of 2026-05-31, who is the skip-level manager (the manager's manager) of Karl Garcia? The latest record dated on or before that day applies at each level. Return only the full name. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 8,
+  "check": "exact_str",
+  "expected": "Farah Kim"
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "p0123",
+  "task_type": "data_analysis",
+  "instruction": "table_36c7c41a.jsonl has one JSON object per line with ts, endpoint, status, ms (ms may be null). For endpoint /api/orders and statuses 200..299 only, ignoring null ms, return the nearest-rank 95th percentile of ms: sort ascending and take the element at 1-based rank ceil(0.95*n). Return the integer. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 6,
+  "check": "exact_int"
+}

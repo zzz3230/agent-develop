@@ -1,0 +1,7 @@
+{
+  "task_id": "p0179",
+  "task_type": "search",
+  "instruction": "Using kb/, in which city was the 2025 Orion workshop actually held? Return only the city. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 10,
+  "check": "exact_str"
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": "p0353",
+  "task_type": "data_analysis",
+  "instruction": "The file table_047a09f5.csv has columns order_id,region,product,month,units,price (40 rows). What is the sum of units times price over all rows of product 'gadget'? Give the integer part. Use bash with python3 to compute it. Work only inside the current directory. Put just the answer, nothing else, into answer.txt next to task.json.",
+  "reward": 4,
+  "check": "exact_int",
+  "expected": "12060"
+}

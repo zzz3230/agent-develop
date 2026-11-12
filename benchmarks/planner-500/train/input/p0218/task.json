@@ -1,0 +1,7 @@
+{
+  "task_id": "p0218",
+  "task_type": "search",
+  "instruction": "Using only kb/, what is the exact opening year of the Vale archive? Return only the year. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 7,
+  "check": "exact_str"
+}

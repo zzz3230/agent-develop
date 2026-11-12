@@ -1,0 +1,8 @@
+{
+  "task_id": "p0242",
+  "task_type": "coding",
+  "instruction": "Fix lib_f20cd912.py. lookup(data,path,default=None) follows a sequence of keys: dictionaries use matching keys, lists use nonnegative ordinary integer indices (bool is invalid). Missing keys, out-of-range indices or incompatible node types return default. An empty path returns data. A stored None is a real value, not a missing value. Keep the implementation in lib_f20cd912.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 6,
+  "check": "unittest",
+  "expected": "tests_pass"
+}

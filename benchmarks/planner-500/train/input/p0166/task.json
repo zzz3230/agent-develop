@@ -1,0 +1,7 @@
+{
+  "task_id": "p0166",
+  "task_type": "search",
+  "instruction": "kb/ holds weekly meeting minutes (file names carry dates). Who owned action item AI-30 when it was closed? Follow reassignments in date order. Return only the full name. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 1,
+  "check": "exact_str"
+}

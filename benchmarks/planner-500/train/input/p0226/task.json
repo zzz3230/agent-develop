@@ -1,0 +1,7 @@
+{
+  "task_id": "p0226",
+  "task_type": "coding",
+  "instruction": "Fix lib_605ad7aa.py. distance(a,b) returns the minimum number of single-character insertions, deletions and substitutions to turn string a into b, each cost 1. Support empty strings and arbitrary Unicode code points. A transposition is not a special operation. Keep the implementation in lib_605ad7aa.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 4,
+  "check": "unittest"
+}

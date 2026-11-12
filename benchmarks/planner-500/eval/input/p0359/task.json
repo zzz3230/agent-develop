@@ -1,0 +1,7 @@
+{
+  "task_id": "p0359",
+  "task_type": "data_analysis",
+  "instruction": "The file table_85bd0b27.csv has columns order_id,region,product,month,units,price (60 rows). Which region sold the most units of product 'widget' in total? Answer with the region name only. Use bash with python3 to compute it. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 10,
+  "check": "exact_str"
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "p0313",
+  "task_type": "math",
+  "instruction": "Let F(0) = 0, F(1) = 1 and F(n) = F(n-1) + F(n-2). What is F(10^18) modulo 1000000007? Compute it with the bash tool (python3 -c). Work only inside the current directory. For this instance, let q denote the integer quantity requested above. Report q + 80319 instead of q. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 8,
+  "check": "exact_int"
+}

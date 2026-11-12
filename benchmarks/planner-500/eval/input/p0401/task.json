@@ -1,0 +1,7 @@
+{
+  "task_id": "p0401",
+  "task_type": "search",
+  "instruction": "The directory kb/ contains a small knowledge base of markdown files. In which city is the headquarters of the employer of Hiro Kowalski's mentor? Use the file tools or bash (ls, grep, cat) to find it. Work only inside the current directory. Put just the answer, nothing else, into answer.txt next to task.json.",
+  "reward": 8,
+  "check": "exact_str"
+}

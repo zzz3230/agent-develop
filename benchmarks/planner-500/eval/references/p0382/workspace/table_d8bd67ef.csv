@@ -1,0 +1,51 @@
+order_id,region,product,month,units,price
+1,west,sprocket,11,29,23
+2,north,Widget,1,14,76
+3,east, widget ,3,39,43
+4,north,gadget,6,11,28
+5,east, widget ,9,6,75
+6,east,sprocket,3,3,95
+7,east,Widget,6,33,53
+8,north,WIDGET,3,25,48
+9,east,gadget,2,27,25
+10,south,sprocket,5,20,74
+11,west,widget,4,28,39
+12,north,sprocket,12,3,53
+13,east,gadget,8,35,80
+14,north,sprocket,10,28,59
+15,south,Widget,5,12,35
+16,west,sprocket,9,12,95
+17,east,sprocket,10,27,36
+18,south,widget,5,28,80
+19,west,gadget,1,33,6
+20,north, widget ,11,18,60
+21,west,sprocket,4,8,61
+22,south,Widget,1,30,5
+23,north,sprocket,3,19,81
+24,south,gadget,1,4,68
+25,east,widget,8,17,10
+26,north,gadget,2,17,98
+27,north,sprocket,9,37,29
+28,south,sprocket,8,6,5
+29,south,gadget,10,24,14
+30,south,Widget,3,21,43
+31,south,gadget,8,9,95
+32,west,gadget,9,23,98
+33,east,gadget,6,33,23
+34,east,widget ,1,39,17
+35,south,Widget,10,16,62
+36,east,gadget,10,36,65
+37,north,widget,9,20,48
+38,north,gadget,9,40,22
+39,south,gadget,6,24,6
+40,south,sprocket,10,13,53
+41,west,sprocket,7,22,94
+42,east,Widget,9,32,53
+43,west,sprocket,1,25,31
+44,north,sprocket,1,15,37
+45,east,gadget,5,16,40
+46,south, widget ,1,1,25
+47,north, widget ,8,23,73
+48,east,gadget,3,29,73
+49,north,widget,9,11,37
+50,east,gadget,4,29,63

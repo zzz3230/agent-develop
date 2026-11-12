@@ -1,0 +1,8 @@
+{
+  "task_id": "p0153",
+  "task_type": "search",
+  "instruction": "Using kb/, how many distinct researchers have an approved safety certificate AND an active lab membership? Person IDs identify researchers; duplicate mentions count once. Return only an integer. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 3,
+  "check": "exact_str",
+  "expected": "2"
+}

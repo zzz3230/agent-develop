@@ -1,0 +1,4 @@
+# Fixtures intentionally include CRLF, trailing spaces and blank final lines.
+* -text -whitespace
+*.py text eol=lf
+*.md text eol=lf

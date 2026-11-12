@@ -1,0 +1,7 @@
+{
+  "task_id": "p0186",
+  "task_type": "search",
+  "instruction": "Using kb/, what is the present legal name of the company formerly called North Kite? Return only its name. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 8,
+  "check": "exact_str"
+}

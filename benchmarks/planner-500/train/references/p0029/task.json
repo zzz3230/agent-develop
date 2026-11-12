@@ -1,0 +1,8 @@
+{
+  "task_id": "p0029",
+  "task_type": "math",
+  "instruction": "A fair coin is tossed repeatedly. Starting with no previous toss, how many tosses are expected until two consecutive heads first occur? Return an integer. Work only inside the current directory. For this instance, let q denote the integer quantity requested above. Report q + 27583 instead of q. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 5,
+  "check": "exact_int",
+  "expected": "27589"
+}

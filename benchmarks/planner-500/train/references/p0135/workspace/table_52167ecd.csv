@@ -1,0 +1,7 @@
+account,kind,amount
+one,SALE,"12,50"
+two, sale ,"2,00"
+one,refund,"3,25"
+two,"note
+ignored","900,00"
+one,sale,"-1,00"

@@ -1,0 +1,8 @@
+{
+  "task_id": "p0249",
+  "task_type": "coding",
+  "instruction": "Fix lib_3b102eb4.py. apply(balances,transfers) returns a new balance dict after processing (sender,recipient,amount) transfers in order. Both accounts must exist. Amount must be an ordinary nonnegative int (not bool), and the sender must currently have enough funds. Any invalid transfer raises ValueError. Never mutate the original balances, including on failure. A self-transfer still requires enough funds and has no net effect. Keep the implementation in lib_3b102eb4.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 6,
+  "check": "unittest",
+  "expected": "tests_pass"
+}

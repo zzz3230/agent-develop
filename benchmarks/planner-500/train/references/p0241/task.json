@@ -1,0 +1,8 @@
+{
+  "task_id": "p0241",
+  "task_type": "coding",
+  "instruction": "Fix lib_30335fc8.py: order(tasks) takes a dict name -> list of dependency names and returns all names in a dependency-respecting order; among valid orders return the lexicographically smallest (always pick the smallest available name). Duplicate dependencies are allowed. Raise ValueError for an unknown dependency or a cycle. Run `python3 test_solution.py`. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 1,
+  "check": "unittest",
+  "expected": "tests_pass"
+}

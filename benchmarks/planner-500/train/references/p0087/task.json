@@ -1,0 +1,8 @@
+{
+  "task_id": "p0087",
+  "task_type": "data_analysis",
+  "instruction": "table_e0f0935a.csv covers 2025-01..2026-06. For region north, compute monthly totals (a month without rows is 0). For every month from 2025-02 to 2026-06, the increase is its total minus the previous calendar month total. Return the month with the largest increase as YYYY-MM; on ties return the earliest. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 5,
+  "check": "exact_str",
+  "expected": "2025-09"
+}
