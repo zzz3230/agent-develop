@@ -144,7 +144,7 @@ def build(output,seed=20261112):
     summary=dict(count=500,seed=seed,families=len({r['family'] for r in rows}),by_type=dict(Counter(r['type'] for r in rows)),
         by_split=dict(Counter(r['split'] for r in rows)),unavailable=sum(not r['solvable'] for r in rows),unique_inputs=len(signatures))
     write(output/'summary.json',json.dumps(summary,indent=2)+'\n');print(json.dumps(summary),flush=True)
-    write(output/'.gitattributes','* -text whitespace=cr-at-eol\n*.py text eol=lf\n*.md text eol=lf\n')
+    write(output/'.gitattributes','# Fixtures intentionally include CRLF, trailing spaces and blank final lines.\n* -text -whitespace\n*.py text eol=lf\n*.md text eol=lf\n')
 
 
 if __name__=='__main__':
