@@ -132,7 +132,7 @@ def publish(source,out):
         f"{breakdown['greedy']['exclusive_points']:g} и {breakdown['knapsack']['exclusive_points']:g}. "
         "Поэтому разницу одного прогона нельзя полностью приписать политике: ответы модели и фактическая "
         "стоимость попыток также различаются.\n")
-    (out/'README.md').write_text('\n'.join(lines),encoding='utf-8')
+    (out/'README.md').write_text('\n'.join(lines).rstrip()+'\n',encoding='utf-8')
     print(json.dumps(dict(best=best['mode'],greedy=best['strict_points'],knapsack=knapsack['strict_points'],delta=delta)))
 
 
