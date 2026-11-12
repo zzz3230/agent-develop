@@ -1,0 +1,7 @@
+{
+  "task_id": "p0144",
+  "task_type": "data_analysis",
+  "instruction": "Return the exact total of table_86f130eb.csv in USD cents, converting each order with rates.csv. rates.csv is the only allowed rate source; do not assume or look up any other rate. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 6,
+  "check": "exact_int"
+}

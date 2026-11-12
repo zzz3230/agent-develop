@@ -1,0 +1,8 @@
+{
+  "task_id": "p0380",
+  "task_type": "data_analysis",
+  "instruction": "The file table_5fd77636.csv has columns order_id,region,product,month,units,price (50 rows). Rows with an empty units value were cancelled; ignore them. How many units of product 'gadget' were sold in months 1 through 6 inclusive? Use bash with python3 to compute it. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 1,
+  "check": "exact_int",
+  "expected": "101"
+}

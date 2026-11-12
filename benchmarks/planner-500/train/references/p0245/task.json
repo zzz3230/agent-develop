@@ -1,0 +1,8 @@
+{
+  "task_id": "p0245",
+  "task_type": "coding",
+  "instruction": "Fix lib_e4037293.py: compare(a, b) returns -1, 0 or 1 by Semantic Versioning 2.0.0 precedence: numeric MAJOR.MINOR.PATCH, a pre-release is lower than the release, pre-release identifiers compare numerically if digits-only, otherwise ASCII, numeric lower than alphanumeric, a longer list wins when all previous are equal; build metadata is ignored. Invalid versions (including leading zeros) raise ValueError. Run `python3 test_solution.py`. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 10,
+  "check": "unittest",
+  "expected": "tests_pass"
+}

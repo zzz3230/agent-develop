@@ -1,0 +1,7 @@
+{
+  "task_id": "p0252",
+  "task_type": "coding",
+  "instruction": "Fix lib_f0dd7dfa.py. distances(edges,start) accepts a list of directed (source,target,weight) edges, string nodes, and nonnegative integer weights. Return a dict of shortest distances for exactly the nodes reachable from start, including start at zero. Parallel edges and zero-cost cycles are allowed. Keep the implementation in lib_f0dd7dfa.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 7,
+  "check": "unittest"
+}

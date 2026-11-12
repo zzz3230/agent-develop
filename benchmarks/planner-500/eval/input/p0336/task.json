@@ -1,0 +1,7 @@
+{
+  "task_id": "p0336",
+  "task_type": "math",
+  "instruction": "Two numbers x and y satisfy x + y = 253 and x - y = 47. What is the value of x? Compute it with the bash tool (python3 -c). Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt). For this instance, let q denote the integer quantity requested above. Report q + 81387 instead of q.",
+  "reward": 6,
+  "check": "exact_int"
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": "p0228",
+  "task_type": "coding",
+  "instruction": "Fix lib_9f2fa560.py. split_fields(text) splits on unescaped |. A backslash escapes the next character, whether it is |, a backslash or any other character. Remove the escaping backslash. Preserve empty fields, including trailing ones. A final unmatched backslash is a literal backslash. Empty text produces ['']. Keep the implementation in lib_9f2fa560.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 2,
+  "check": "unittest",
+  "expected": "tests_pass"
+}

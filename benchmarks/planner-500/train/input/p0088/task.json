@@ -1,0 +1,7 @@
+{
+  "task_id": "p0088",
+  "task_type": "data_analysis",
+  "instruction": "table_3ba3783d.csv gives initial integer balances. Process transfers.csv by ascending sequence. Apply a transfer only if the sender currently has at least amount; otherwise ignore it entirely. Return account a final balance. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 8,
+  "check": "exact_int"
+}

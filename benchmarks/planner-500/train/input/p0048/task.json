@@ -1,0 +1,7 @@
+{
+  "task_id": "p0048",
+  "task_type": "math",
+  "instruction": "On the integer grid, move from (0,0) to (9,7), each step either (1,0) or (0,1). Never visit (3,2) or (6,5). Return the number of distinct paths. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory. For this instance, let q denote the integer quantity requested above. Report q + 87666 instead of q.",
+  "reward": 7,
+  "check": "exact_int"
+}

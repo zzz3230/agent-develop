@@ -1,0 +1,17 @@
+{
+  "count": 500,
+  "seed": 20261112,
+  "families": 152,
+  "by_type": {
+    "math": 125,
+    "data_analysis": 125,
+    "search": 125,
+    "coding": 125
+  },
+  "by_split": {
+    "train": 300,
+    "eval": 200
+  },
+  "unavailable": 100,
+  "unique_inputs": 500
+}

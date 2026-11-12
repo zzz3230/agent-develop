@@ -1,0 +1,7 @@
+{
+  "task_id": "p0309",
+  "task_type": "math",
+  "instruction": "A culture starts with 7 cells. Every hour each cell splits into 3 cells. How many cells are there after 45 hours? Compute it with the bash tool (python3 -c). Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt). For this instance, let q denote the integer quantity requested above. Report q + 22494 instead of q.",
+  "reward": 1,
+  "check": "exact_int"
+}

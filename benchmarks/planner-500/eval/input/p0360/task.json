@@ -1,0 +1,7 @@
+{
+  "task_id": "p0360",
+  "task_type": "data_analysis",
+  "instruction": "The file table_a226183a.csv has columns order_id,region,product,month,units,price (60 rows). How many units of product 'sprocket' were sold in region 'east' in months 4 through 9 inclusive? Use bash with python3 to compute it. Work only inside the current directory.",
+  "reward": 8,
+  "check": "exact_int"
+}

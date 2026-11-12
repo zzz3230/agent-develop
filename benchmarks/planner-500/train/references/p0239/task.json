@@ -1,0 +1,8 @@
+{
+  "task_id": "p0239",
+  "task_type": "coding",
+  "instruction": "Fix lib_b52fb11b.py. transpose(rows,fill=None) takes a list of lists and returns columns as lists. Output width equals the longest input row length; missing cells use fill. Empty input or all empty rows returns an empty list. Do not change input rows. Keep the implementation in lib_b52fb11b.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 4,
+  "check": "unittest",
+  "expected": "tests_pass"
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "p0086",
+  "task_type": "data_analysis",
+  "instruction": "table_fb681b85.tsv is tab-separated. Compute the 80th percentile of milliseconds using nearest rank: sort ascending and choose the element at one-based rank ceil(0.8*N). Return an integer. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 9,
+  "check": "exact_int"
+}

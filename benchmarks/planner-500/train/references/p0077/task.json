@@ -1,0 +1,8 @@
+{
+  "task_id": "p0077",
+  "task_type": "data_analysis",
+  "instruction": "table_c1e9cd46.csv has one observation for each day 0 through 99. Find the largest sum in any seven consecutive days. Use only complete seven-day windows; negative values are valid. Return an integer. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 7,
+  "check": "exact_int",
+  "expected": "254"
+}

@@ -1,0 +1,6 @@
+sequence,sender,recipient,amount
+5,a,c,10
+4,b,a,3
+3,c,a,4
+2,b,c,9
+1,a,b,8

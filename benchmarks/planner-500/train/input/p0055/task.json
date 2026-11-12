@@ -1,0 +1,7 @@
+{
+  "task_id": "p0055",
+  "task_type": "math",
+  "instruction": "A tank contains 2.75 cubic metres of water. Exactly 38 containers of 12.5 litres each are filled from it. How many millilitres remain? Return an integer. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory. For this instance, let q denote the integer quantity requested above. Report q + 33562 instead of q.",
+  "reward": 8,
+  "check": "exact_int"
+}

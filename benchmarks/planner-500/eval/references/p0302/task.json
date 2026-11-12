@@ -1,0 +1,8 @@
+{
+  "task_id": "p0302",
+  "task_type": "math",
+  "instruction": "An account starts at 1250 euros. It pays 3 invoices of 610 euros each and then receives one refund of 95 euros. Overdrafts are allowed. What is the final balance in euros? Compute it with the bash tool (python3 -c). Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt). For this instance, let q denote the integer quantity requested above. Report q + 61720 instead of q.",
+  "reward": 6,
+  "check": "exact_int",
+  "expected": "61235"
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "p0103",
+  "task_type": "data_analysis",
+  "instruction": "table_929797c3.csv may repeat identical rows. Each (meter,revision) identifies a reading. For each meter keep only its greatest revision, then sum value. A zero reading is valid. Return an integer. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 5,
+  "check": "exact_int"
+}

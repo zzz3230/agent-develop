@@ -1,0 +1,7 @@
+{
+  "task_id": "p0371",
+  "task_type": "data_analysis",
+  "instruction": "The file table_759a3717.csv has columns order_id,region,product,month,units,price (60 rows). Do not count anything from region 'north'. How many units of product 'gadget' were sold in months 1 through 6 inclusive in the remaining regions? Use bash with python3 to compute it. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 10,
+  "check": "exact_int"
+}

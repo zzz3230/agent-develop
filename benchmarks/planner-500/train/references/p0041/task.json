@@ -1,0 +1,8 @@
+{
+  "task_id": "p0041",
+  "task_type": "math",
+  "instruction": "In a survey, 43 people use A, 37 use B and 29 use C. Intersections including triple users are |A and B|=17, |A and C|=11, |B and C|=13. Nine use all three. How many people use at least one? Return an integer. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory. For this instance, let q denote the integer quantity requested above. Report q + 48457 instead of q.",
+  "reward": 6,
+  "check": "exact_int",
+  "expected": "48534"
+}

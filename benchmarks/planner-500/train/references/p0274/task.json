@@ -1,0 +1,8 @@
+{
+  "task_id": "p0274",
+  "task_type": "coding",
+  "instruction": "Fix lib_d3e7bbd1.py. read_rows(text) parses comma-delimited CSV with standard double-quote escaping. Return a list of lists of strings, including the header as an ordinary row. Preserve spaces and quoted embedded newlines. Empty text yields an empty list. Keep the implementation in lib_d3e7bbd1.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 7,
+  "check": "unittest",
+  "expected": "tests_pass"
+}

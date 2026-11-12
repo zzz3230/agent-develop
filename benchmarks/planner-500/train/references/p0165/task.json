@@ -1,0 +1,8 @@
+{
+  "task_id": "p0165",
+  "task_type": "search",
+  "instruction": "Using kb/, what is the full name of the custodian of the asset whose public label is Blue Lantern? Return only the full name. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 5,
+  "check": "exact_str",
+  "expected": "Ada Finch"
+}

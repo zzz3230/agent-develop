@@ -1,0 +1,7 @@
+{
+  "task_id": "p0191",
+  "task_type": "search",
+  "instruction": "Using kb/, return the recovery code for environment staging and service mail. Return only the code. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 8,
+  "check": "exact_str"
+}

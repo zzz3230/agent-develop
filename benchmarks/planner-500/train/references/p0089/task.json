@@ -1,0 +1,8 @@
+{
+  "task_id": "p0089",
+  "task_type": "data_analysis",
+  "instruction": "table_f500cde4.jsonl has one JSON order per line. For orders with state paid, sum qty*cents across all their lines. Ignore void orders entirely. Return integer cents. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 6,
+  "check": "exact_int",
+  "expected": "10395"
+}

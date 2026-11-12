@@ -1,0 +1,7 @@
+{
+  "task_id": "p0152",
+  "task_type": "search",
+  "instruction": "kb/ holds the initial stock list, transfer notes and cancellations. Where was SKU-975 stored on 2026-09-01? Cancelled transfers never happened; transfers dated after that day do not count. Return only the warehouse code. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory.",
+  "reward": 3,
+  "check": "exact_str"
+}

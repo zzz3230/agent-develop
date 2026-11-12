@@ -1,0 +1,8 @@
+{
+  "task_id": "p0009",
+  "task_type": "math",
+  "instruction": "grid.txt is a maze: S start, E exit, # wall, . open cell. Moves go up, down, left or right by one cell, never through walls or outside the grid. Return the minimum number of moves from S to E as an integer. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory. For this instance, let q denote the integer quantity requested above. Report q + 7217 instead of q.",
+  "reward": 3,
+  "check": "exact_int",
+  "expected": "7233"
+}

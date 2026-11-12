@@ -1,0 +1,8 @@
+node,parent,value
+root,,2
+A,root,3
+B,root,5
+C,A,7
+D,A,11
+E,B,13
+F,C,17

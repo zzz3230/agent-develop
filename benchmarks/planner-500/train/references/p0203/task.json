@@ -1,0 +1,8 @@
+{
+  "task_id": "p0203",
+  "task_type": "search",
+  "instruction": "Using kb/, give the registered seat of Meridian Trust. The registry is authoritative; directory and news pages may be stale. Return only the city. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 1,
+  "check": "exact_str",
+  "expected": "Ghent"
+}

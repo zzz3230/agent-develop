@@ -1,0 +1,8 @@
+{
+  "task_id": "p0180",
+  "task_type": "search",
+  "instruction": "Using only kb/, how many days of notice must a contractor in grade G2 give when leaving during their first 60 days? Return only the integer number of days. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 2,
+  "check": "exact_str",
+  "expected": "7"
+}

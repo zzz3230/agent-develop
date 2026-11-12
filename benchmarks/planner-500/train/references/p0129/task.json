@@ -1,0 +1,8 @@
+{
+  "task_id": "p0129",
+  "task_type": "data_analysis",
+  "instruction": "table_5b95e9e5.csv describes a rooted tree with each node appearing once. Return the sum of value for A and ALL of its descendants at any depth. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 3,
+  "check": "exact_int",
+  "expected": "38"
+}

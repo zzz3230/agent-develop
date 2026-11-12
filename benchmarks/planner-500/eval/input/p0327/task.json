@@ -1,0 +1,7 @@
+{
+  "task_id": "p0327",
+  "task_type": "math",
+  "instruction": "A warehouse starts with 1942 boxes. It ships 17 boxes per day for 2 days. Then the stock is split equally into 2 warehouses and it keeps one share (rounded down). Then the stock is doubled by merging with a sister warehouse. It receives 3 deliveries of 58 boxes each. Then the stock is split equally into 2 warehouses and it keeps one share (rounded down). It ships 28 boxes per day for 3 days. Then the stock is doubled by merging with a sister warehouse. Then the stock is doubled by merging with a sister warehouse. It receives 3 deliveries of 29 boxes each. It ships 7 boxes per day for 2 days. Then the stock is split equally into 3 warehouses and it keeps one share (rounded down). It ships 26 boxes per day for 4 days. How many boxes does it have at the end? Compute it with the bash tool (python3 -c). Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt). For this instance, let q denote the integer quantity requested above. Report q + 56594 instead of q.",
+  "reward": 7,
+  "check": "exact_int"
+}

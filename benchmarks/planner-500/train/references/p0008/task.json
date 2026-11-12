@@ -1,0 +1,8 @@
+{
+  "task_id": "p0008",
+  "task_type": "math",
+  "instruction": "Available coins: three of value 2, two of value 5, two of value 9, and one of value 12. How many distinct count-vectors give total 26? Coins of the same value are indistinguishable; order does not matter. Return an integer. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory. For this instance, let q denote the integer quantity requested above. Report q + 9918 instead of q.",
+  "reward": 8,
+  "check": "exact_int",
+  "expected": "9920"
+}

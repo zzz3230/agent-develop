@@ -1,0 +1,7 @@
+{
+  "task_id": "p0237",
+  "task_type": "coding",
+  "instruction": "Fix lib_36f4385b.py. covered(intervals) accepts pairs (start,end) of integers with start<=end. Return total length covered by their half-open union. Ignore zero-length intervals, support negatives and unsorted input, and do not mutate the input. Keep the implementation in lib_36f4385b.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 1,
+  "check": "unittest"
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": "p0101",
+  "task_type": "data_analysis",
+  "instruction": "table_6bafe98c.csv timestamps include their UTC offsets. Sum amount for events whose UTC calendar date is 2026-03-01. Return an integer. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 10,
+  "check": "exact_int",
+  "expected": "10"
+}

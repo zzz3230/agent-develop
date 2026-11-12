@@ -1,0 +1,8 @@
+{
+  "task_id": "p0135",
+  "task_type": "data_analysis",
+  "instruction": "table_52167ecd.csv is comma-delimited CSV with standard quoting. Amounts use comma decimals. Trim and lowercase kind: sale adds amount, refund subtracts amount; ignore other kinds. Return total net integer cents across all accounts. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 5,
+  "check": "exact_int",
+  "expected": "1025"
+}

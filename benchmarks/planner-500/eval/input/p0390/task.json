@@ -1,0 +1,7 @@
+{
+  "task_id": "p0390",
+  "task_type": "data_analysis",
+  "instruction": "The file table_c90e06bb.csv has columns order_id,region,product,month,units,price_cents (60 rows). What was the total revenue in euros of product 'widget' in month 5? Give the integer part. Use bash with python3 to compute it. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 3,
+  "check": "exact_int"
+}

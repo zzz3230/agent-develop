@@ -1,0 +1,5 @@
+# Jonas Kowalski
+
+Born: 1993
+Employer: Granite AI
+Mentor: Yara Garcia

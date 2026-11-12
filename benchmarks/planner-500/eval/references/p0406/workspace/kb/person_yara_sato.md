@@ -1,0 +1,5 @@
+# Yara Sato
+
+Born: 1989
+Employer: Cobalt Works
+Mentor: Tanya Lund

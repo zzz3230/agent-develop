@@ -1,0 +1,8 @@
+{
+  "task_id": "p0044",
+  "task_type": "math",
+  "instruction": "A loan of 1636168 cents has a nominal annual rate of 13.8% charged monthly. Each month first add interest equal to balance*13.8/1200 rounded HALF_UP to whole cents, then pay 134896 cents, or the whole remaining balance if it is smaller. Repeat until the balance is zero. Return the total interest charged in cents as an integer. Compute it exactly with Python (decimal). Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory. For this instance, let q denote the integer quantity requested above. Report q + 35506 instead of q.",
+  "reward": 5,
+  "check": "exact_int",
+  "expected": "171684"
+}

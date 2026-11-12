@@ -1,0 +1,7 @@
+{
+  "task_id": "p0348",
+  "task_type": "math",
+  "instruction": "A warehouse starts with 1200 boxes. It receives 4 deliveries of 60 boxes each. The delivery log also records that each of these 4 deliveries contained 85 boxes. It ships 30 boxes per day for 5 days. How many boxes does it have at the end? Compute it with the bash tool (python3 -c). Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt). For this instance, let q denote the integer quantity requested above. Report q + 48875 instead of q.",
+  "reward": 6,
+  "check": "exact_int"
+}
