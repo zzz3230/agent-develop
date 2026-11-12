@@ -1,0 +1,5 @@
+# Boris Novak
+
+Born: 1991
+Employer: Helix Motors
+Mentor: Farid Novak

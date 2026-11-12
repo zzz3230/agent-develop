@@ -1,0 +1,5 @@
+# Farid Sato
+
+Born: 1970
+Employer: Cobalt Works
+Mentor: Boris Haddad

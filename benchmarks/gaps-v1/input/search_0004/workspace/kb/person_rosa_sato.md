@@ -1,0 +1,5 @@
+# Rosa Sato
+
+Born: 1998
+Employer: Ember Bio
+Mentor: Kira Smith
