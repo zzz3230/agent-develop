@@ -1,4 +1,6 @@
 {
+  "status": "superseded: native file tools incompatible with filelock 4.2.9",
+  "superseded_by": "docs/stock-oj-wide-benchmark.md",
   "stock": {
     "variant": "stock",
     "input_sha256": "fc09a24fabfe846c3b2bab888887cb6bc2026cc2720feec5304bcf5062c55163",

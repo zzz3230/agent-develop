@@ -9,13 +9,19 @@ import json
 from pathlib import Path
 
 
+def _lines(console: Path):
+    with console.open('rb') as stream:
+        prefix = stream.read(2)
+    encoding = 'utf-16' if prefix in (b'\xff\xfe', b'\xfe\xff') else 'utf-8'
+    with console.open(encoding=encoding) as stream:
+        yield from stream
+
+
 def audit(console: Path):
-    data = console.read_bytes()
-    text = data.decode('utf-16' if data[:2] in (b'\xff\xfe', b'\xfe\xff') else 'utf-8')
     responses = 0
     overestimates = []
     nonzero_reasoning = 0
-    for line in text.splitlines():
+    for line in _lines(console):
         start = line.find('{"event_id":')
         if start < 0:
             continue
@@ -50,9 +56,11 @@ def audit(console: Path):
             responses += 1
             estimate = len(produced)//4 + 1
             if estimate > reported:
-                overestimates.append(estimate-reported)
+                overestimates.append(dict(call=responses, reported=reported,
+                    estimated=estimate, extra=estimate-reported))
     return dict(responses=responses, overestimated_calls=len(overestimates),
-                extra_cost=sum(overestimates), nonzero_reasoning_calls=nonzero_reasoning)
+                extra_cost=sum(x['extra'] for x in overestimates),
+                overestimates=overestimates, nonzero_reasoning_calls=nonzero_reasoning)
 
 
 if __name__ == '__main__':

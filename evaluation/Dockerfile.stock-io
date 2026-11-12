@@ -3,4 +3,5 @@ FROM agent-develop:stock-wide
 # async lock ownership; verify compatibility with the native I/O probe.
 ARG FILELOCK_VERSION=3.25.0
 RUN pip install --no-deps filelock==${FILELOCK_VERSION}
-COPY evaluation/check_stock_io.py /app/evaluation/check_stock_io.py
+COPY evaluation/check_stock_io.py evaluation/compare_stock.py evaluation/grade_stock.py /app/evaluation/
+COPY requirements.lock /app/requirements.lock

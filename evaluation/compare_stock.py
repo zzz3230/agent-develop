@@ -92,9 +92,9 @@ async def run(root, output, variant, *, stock_steps=STOCK_STEPS, stock_output=ST
         run_seconds=run_seconds, global_budget_authority='proxy',
         dependencies=dict(openjiuwen=version('openjiuwen'), filelock=version('filelock')))
     config_path = output/'config.json'
-    if config_path.exists() and json.loads(config_path.read_text()) != configuration:
+    if config_path.exists() and json.loads(config_path.read_text(encoding='utf-8')) != configuration:
         raise ValueError('Cannot resume a run with different settings; use a new output directory')
-    config_path.write_text(json.dumps(configuration, indent=2)+'\n')
+    config_path.write_text(json.dumps(configuration, indent=2)+'\n', encoding='utf-8')
     connection = Connection(os.environ['LLM_BASE_URL'], os.environ.pop('LLM_API_KEY'))
     journal = Journal(output/'usage.jsonl')
     budget = Budget(100000, journal)  # informational; actual global cutoff belongs to proxy
@@ -109,7 +109,7 @@ async def run(root, output, variant, *, stock_steps=STOCK_STEPS, stock_output=ST
             original(self, messages, tools, message)
     MeteredModel._charge = exact_charge
     result_path = output/'results.jsonl'
-    previous = [json.loads(x) for x in result_path.read_text().splitlines()] if result_path.exists() else []
+    previous = [json.loads(x) for x in result_path.read_text(encoding='utf-8').splitlines()] if result_path.exists() else []
     completed = {x['id'] for x in previous}
     budget.spent = sum(x['cost'] for x in previous)
     started = time.monotonic()
@@ -127,7 +127,7 @@ async def run(root, output, variant, *, stock_steps=STOCK_STEPS, stock_output=ST
             raise RuntimeError('Partial task directory exists: '+str(work))
         shutil.copytree(source, work)
         task = load_task(work)
-        assert 'expected' not in json.loads((work/'task.json').read_text())
+        assert 'expected' not in json.loads((work/'task.json').read_text(encoding='utf-8'))
         before = budget.spent
         task_start = time.monotonic()
         attempts = []
@@ -166,7 +166,7 @@ async def run(root, output, variant, *, stock_steps=STOCK_STEPS, stock_output=ST
         if row['status'] == 'solved':
             save_answer(task, row['answer'])
         row.update(cost=round(budget.spent-before, 2), seconds=round(time.monotonic()-task_start, 2), attempts=attempts)
-        with result_path.open('a') as stream:
+        with result_path.open('a', encoding='utf-8') as stream:
             stream.write(json.dumps(row, ensure_ascii=False)+'\n')
         print('BENCH', json.dumps(row, ensure_ascii=False), flush=True)
         errors = errors+1 if row['error'] and transient else 0

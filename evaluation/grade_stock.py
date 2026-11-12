@@ -10,11 +10,11 @@ import tempfile
 
 
 def grade(root, variant, image, run_directory=None):
-    manifest = json.loads((root/'manifest.json').read_text())
+    manifest = json.loads((root/'manifest.json').read_text(encoding='utf-8'))
     run = run_directory or root/variant
-    rows = [json.loads(x) for x in (run/'results.jsonl').read_text().splitlines()]
+    rows = [json.loads(x) for x in (run/'results.jsonl').read_text(encoding='utf-8').splitlines()]
     refs = {r['id']: r for r in manifest['tasks']}
-    events = [json.loads(x) for x in (run/'usage.jsonl').read_text().splitlines()]
+    events = [json.loads(x) for x in (run/'usage.jsonl').read_text(encoding='utf-8').splitlines()]
     withdrawn = [r for r in rows if r['id'] not in refs]
     rows = [r for r in rows if r['id'] in refs]
     graded = []
@@ -59,6 +59,8 @@ def grade(root, variant, image, run_directory=None):
         graded.append(row)
     def stats(selected):
         return dict(attempted=len(selected), solved=sum(r['correct'] for r in selected),
+            solvable_attempted=sum(r['solvable'] for r in selected),
+            impossible_attempted=sum(not r['solvable'] for r in selected),
             points=sum(r['reward'] for r in selected if r['correct']),
             cost=round(sum(r['cost'] for r in selected),1), input=sum(r['input'] for r in selected),
             output=sum(r['output'] for r in selected), calls=sum(r['calls'] for r in selected),
@@ -74,7 +76,7 @@ def grade(root, variant, image, run_directory=None):
             break
         prefix.append(row)
     report = dict(variant=variant, input_sha256=manifest['input_sha256'], total=stats(graded),
-        configuration=json.loads((run/'config.json').read_text()) if (run/'config.json').exists() else None,
+        configuration=json.loads((run/'config.json').read_text(encoding='utf-8')) if (run/'config.json').exists() else None,
         requested=len(refs), unattempted=sorted(set(refs)-{r['id'] for r in rows}),
         finish=next((e for e in reversed(events) if e.get('event')=='benchmark_finish'),None),
         withdrawn_attempts=len(withdrawn), withdrawn_cost=round(sum(r['cost'] for r in withdrawn),1),

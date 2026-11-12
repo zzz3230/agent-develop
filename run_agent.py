@@ -32,8 +32,8 @@ TOOLS = {
     "math": ("bash",),
     "data_analysis": ("bash",),
     "search": ("bash",),
-    # OJ 0.1.19 read_file can fail releasing its file lock in this runtime;
-    # edit_file then cannot satisfy its prerequisite. Use the stock shell.
+    # Keep one compact shell card to reduce repeated tool descriptions.
+    # Native file tools work with pinned filelock and are checked separately.
     "coding": ("bash",),
 }
 _TEST_COMMAND = re.compile(r"`python3? ([\w./-]+\.py)`")
