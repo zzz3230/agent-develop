@@ -3,6 +3,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -25,6 +26,9 @@ def validate(root,coding=False):
             assert reference==dict(raw,expected=r['expected']),r['id']
             assert not list(p.rglob('test_private*')) and not (p/'answer.txt').exists()
             if r['solvable'] and r['check']=='exact_int':int(r['expected'])
+            if r['transformation']=='integer target offset':
+                visible=re.sub(r'\s*When you are done, write ONLY.*$','',raw['instruction'],flags=re.S)
+                assert 'For this instance, let q denote' in visible,r['id']+' target hidden by harness tail stripping'
     assert len(rows)==500 and len({r['content_sha256'] for r in rows})==500
     assert Counter(r['type'] for r in rows)==dict.fromkeys(['math','data_analysis','search','coding'],125)
     assert sum(not r['solvable'] for r in rows)==100

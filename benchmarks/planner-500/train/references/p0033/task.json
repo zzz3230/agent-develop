@@ -1,7 +1,7 @@
 {
   "task_id": "p0033",
   "task_type": "math",
-  "instruction": "A loan starts at 1000.00 dollars. Each month multiply the current balance by 1.0065, subtract 37.25 dollars, then round to cents using nearest with ties away from zero. Perform exactly 17 months. Return remaining balance in integer cents. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory. For this instance, let q denote the integer quantity requested above. Report q + 74155 instead of q.",
+  "instruction": "A loan starts at 1000.00 dollars. Each month multiply the current balance by 1.0065, subtract 37.25 dollars, then round to cents using nearest with ties away from zero. Perform exactly 17 months. Return remaining balance in integer cents. Work only inside the current directory. For this instance, let q denote the integer quantity requested above. Report q + 74155 instead of q. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
   "reward": 1,
   "check": "exact_int",
   "expected": "119070"

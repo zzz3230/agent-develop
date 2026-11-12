@@ -1,7 +1,7 @@
 {
   "task_id": "p0030",
   "task_type": "math",
-  "instruction": "Find the smallest positive integer n such that n modulo 7 is 3, n modulo 11 is 8, and n modulo 13 is 5. Return n. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory. For this instance, let q denote the integer quantity requested above. Report q + 70778 instead of q.",
+  "instruction": "Find the smallest positive integer n such that n modulo 7 is 3, n modulo 11 is 8, and n modulo 13 is 5. Return n. Work only inside the current directory. For this instance, let q denote the integer quantity requested above. Report q + 70778 instead of q. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
   "reward": 8,
   "check": "exact_int",
   "expected": "71446"

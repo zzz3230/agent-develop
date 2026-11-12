@@ -58,7 +58,9 @@ def adapt(case,kind,nonce):
     c=dict(case);c['files']=dict(c['files']);rng=random.Random(nonce)
     if kind=='math' and c['check']=='exact_int':
         offset=rng.randint(1,99999)
-        c['prompt']+=f' For this instance, let q denote the integer quantity requested above. Report q + {offset} instead of q.'
+        extra=f'For this instance, let q denote the integer quantity requested above. Report q + {offset} instead of q.'
+        before,marker,after=c['prompt'].partition('When you are done, write ONLY')
+        c['prompt']=before.rstrip()+' '+extra+(' '+marker+after if marker else '')
         if c['solvable']:c['expected']=str(int(c['expected'])+offset)
         c['transform']='integer target offset'
     elif kind=='coding':

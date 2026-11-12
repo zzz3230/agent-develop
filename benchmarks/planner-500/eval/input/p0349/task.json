@@ -1,7 +1,7 @@
 {
   "task_id": "p0349",
   "task_type": "math",
-  "instruction": "A warehouse starts with 950 boxes. It ships 40 boxes per day for 6 days. Every shipped box is loaded onto a pallet of 20 boxes. How many trucks were used? Compute it with the bash tool (python3 -c). Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt). For this instance, let q denote the integer quantity requested above. Report q + 71100 instead of q.",
+  "instruction": "A warehouse starts with 950 boxes. It ships 40 boxes per day for 6 days. Every shipped box is loaded onto a pallet of 20 boxes. How many trucks were used? Compute it with the bash tool (python3 -c). Work only inside the current directory. For this instance, let q denote the integer quantity requested above. Report q + 71100 instead of q. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
   "reward": 7,
   "check": "exact_int"
 }

@@ -1,7 +1,7 @@
 {
   "task_id": "p0023",
   "task_type": "math",
-  "instruction": "Choose integers x>=2, y>=1, z>=1 with 3*x+4*y+5*z<=59. Output the maximum possible value of min(4*x,5*y,7*z). Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory. For this instance, let q denote the integer quantity requested above. Report q + 52573 instead of q.",
+  "instruction": "Choose integers x>=2, y>=1, z>=1 with 3*x+4*y+5*z<=59. Output the maximum possible value of min(4*x,5*y,7*z). Work only inside the current directory. For this instance, let q denote the integer quantity requested above. Report q + 52573 instead of q. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
   "reward": 5,
   "check": "exact_int",
   "expected": "52597"

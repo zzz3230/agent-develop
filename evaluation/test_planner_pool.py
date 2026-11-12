@@ -7,9 +7,19 @@ import tempfile
 import unittest
 
 from evaluation.prepare_planner_pool import prepare
+from evaluation.build_planner_pool import adapt
+from runtime.tasks import Task
 
 
 class PlannerPoolTests(unittest.TestCase):
+    def test_target_change_reaches_actual_agent_query(self):
+        for tail in ('',' When you are done, write ONLY the final answer to answer.txt in the current directory.'):
+            case=adapt(dict(prompt='Compute 2+2.'+tail,files={},check='exact_int',solvable=True,expected='4'),'math',101)
+            task=Task('test','math',case['prompt'],1,Path('.'),'exact_int')
+            self.assertIn('Report q +',task.query)
+            self.assertNotIn('answer.txt',task.query)
+            self.assertEqual(int(case['expected']),4+int(task.query.split('Report q + ')[1].split()[0]))
+
     def test_rewards_and_reproducibility(self):
         pool=Path(__file__).resolve().parents[1]/'benchmarks'/'planner-500'
         with tempfile.TemporaryDirectory() as tmp:

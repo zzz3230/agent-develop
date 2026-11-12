@@ -1,7 +1,7 @@
 {
   "task_id": "p0034",
   "task_type": "math",
-  "instruction": "Count business days from 2026-03-29 to 2026-06-18, both inclusive. A business day is Monday-Friday and not listed in holidays.txt (one ISO date per line; a holiday on a weekend changes nothing). Return the integer. Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory. For this instance, let q denote the integer quantity requested above. Report q + 44654 instead of q.",
+  "instruction": "Count business days from 2026-03-29 to 2026-06-18, both inclusive. A business day is Monday-Friday and not listed in holidays.txt (one ISO date per line; a holiday on a weekend changes nothing). Return the integer. Work only inside the current directory. For this instance, let q denote the integer quantity requested above. Report q + 44654 instead of q. When you are done, write ONLY the final answer to answer.txt in the current directory.",
   "reward": 10,
   "check": "exact_int"
 }

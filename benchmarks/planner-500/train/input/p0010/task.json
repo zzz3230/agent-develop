@@ -1,7 +1,7 @@
 {
   "task_id": "p0010",
   "task_type": "math",
-  "instruction": "A loan of 1277824 cents has a nominal annual rate of 10.7% charged monthly. Each month first add interest equal to balance*10.7/1200 rounded HALF_UP to whole cents, then pay 95485 cents, or the whole remaining balance if it is smaller. Repeat until the balance is zero. Return the total interest charged in cents as an integer. Compute it exactly with Python (decimal). Work only inside the current directory. When you are done, write ONLY the final answer to answer.txt in the current directory. For this instance, let q denote the integer quantity requested above. Report q + 24308 instead of q.",
+  "instruction": "A loan of 1277824 cents has a nominal annual rate of 10.7% charged monthly. Each month first add interest equal to balance*10.7/1200 rounded HALF_UP to whole cents, then pay 95485 cents, or the whole remaining balance if it is smaller. Repeat until the balance is zero. Return the total interest charged in cents as an integer. Compute it exactly with Python (decimal). Work only inside the current directory. For this instance, let q denote the integer quantity requested above. Report q + 24308 instead of q. When you are done, write ONLY the final answer to answer.txt in the current directory.",
   "reward": 6,
   "check": "exact_int"
 }
