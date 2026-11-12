@@ -1,0 +1,798 @@
+{
+  "protocol": {
+    "tasks": 200,
+    "budget": 50000,
+    "image": "agent-develop:predictor-policies",
+    "agent_commit": "f8e23acab8083a1ae7172c05b6033b83c22ee761",
+    "input_sha256": "db800414356f13e7714f99440898dbd05ac858ebbda835f4fe08b500b4504bee",
+    "selection_seed": 101,
+    "reward_seed": 1001,
+    "order": [
+      "structural",
+      "baseline",
+      "bge_structural",
+      "embedding",
+      "bge_keywords",
+      "numeric",
+      "strong_embedding"
+    ],
+    "repeats": 1,
+    "score_alpha": 1,
+    "selection": "Highest strict_points among six trained predictors; lower spend breaks ties; fixed mode order last.",
+    "caveat": "Exploratory selection and final policy comparison share the same known evaluation workload.",
+    "model_hashes": {
+      "numeric": "cedc51b844a86166fcb49ad48da0444e83e83d434cb4c9c2cfdc2c666b1173cf",
+      "embedding": "5f19856d5675d571350252d4eeb9dac7aa8a4ef940827d15baff4bcf8e60ca4d",
+      "structural": "e10152154fb968fcb07f4547be7ef866ba91b254bc7d812932c6ba7554a1dc86",
+      "strong_embedding": "0158bb7ccdae185b76e43c8195c87282c04384970aeb034a6ab109080f75e55b",
+      "bge_structural": "26edd2893f3f21b8ddf44a0c5f66b4409e97fcca15a796804f4a11bcc06054bb",
+      "bge_keywords": "e823ba25af8e24bf3ec13a2ef2fa76f204b45a557031b5fa35160962f4539c0d"
+    }
+  },
+  "selection": {
+    "best": {
+      "mode": "embedding",
+      "policy": "greedy",
+      "points": 459.0,
+      "correct": 65,
+      "strict_points": 459.0,
+      "strict_correct": 65,
+      "possible": 852.0,
+      "completed": 92,
+      "spent": 50229.6,
+      "seconds": 1297.1,
+      "stopped_by": "hard_budget",
+      "finish": {
+        "spent": 50229.6,
+        "seconds": 1294.2,
+        "stop": "budget exhausted"
+      },
+      "exit_code": 137,
+      "calls": 277,
+      "input": 326046,
+      "output": 17625,
+      "estimated_calls": 0
+    },
+    "criterion": "Highest strict_points among six trained predictors; lower spend breaks ties; fixed mode order last."
+  },
+  "results": [
+    {
+      "mode": "structural",
+      "policy": "greedy",
+      "points": 365.0,
+      "correct": 43,
+      "strict_points": 365.0,
+      "strict_correct": 43,
+      "possible": 852.0,
+      "completed": 65,
+      "spent": 50093.4,
+      "seconds": 805.4,
+      "stopped_by": "hard_budget",
+      "finish": {
+        "spent": 50093.4,
+        "seconds": 802.6,
+        "stop": "budget exhausted"
+      },
+      "exit_code": 137,
+      "calls": 238,
+      "input": 314864,
+      "output": 18607,
+      "estimated_calls": 0
+    },
+    {
+      "mode": "bge_structural",
+      "policy": "greedy",
+      "points": 442.0,
+      "correct": 59,
+      "strict_points": 434.0,
+      "strict_correct": 58,
+      "possible": 852.0,
+      "completed": 83,
+      "spent": 50143.1,
+      "seconds": 1090.1,
+      "stopped_by": "hard_budget",
+      "finish": {
+        "spent": 50143.1,
+        "seconds": 1087.3,
+        "stop": "budget exhausted"
+      },
+      "exit_code": 137,
+      "calls": 256,
+      "input": 327501,
+      "output": 17393,
+      "estimated_calls": 0
+    },
+    {
+      "mode": "embedding",
+      "policy": "greedy",
+      "points": 459.0,
+      "correct": 65,
+      "strict_points": 459.0,
+      "strict_correct": 65,
+      "possible": 852.0,
+      "completed": 92,
+      "spent": 50229.6,
+      "seconds": 1297.1,
+      "stopped_by": "hard_budget",
+      "finish": {
+        "spent": 50229.6,
+        "seconds": 1294.2,
+        "stop": "budget exhausted"
+      },
+      "exit_code": 137,
+      "calls": 277,
+      "input": 326046,
+      "output": 17625,
+      "estimated_calls": 0
+    },
+    {
+      "mode": "bge_keywords",
+      "policy": "greedy",
+      "points": 378.0,
+      "correct": 50,
+      "strict_points": 378.0,
+      "strict_correct": 50,
+      "possible": 852.0,
+      "completed": 73,
+      "spent": 50548.1,
+      "seconds": 1453.3,
+      "stopped_by": "hard_budget",
+      "finish": {
+        "spent": null,
+        "seconds": null,
+        "stop": null
+      },
+      "exit_code": 137,
+      "calls": 242,
+      "input": 340561,
+      "output": 16492,
+      "estimated_calls": 0
+    },
+    {
+      "mode": "numeric",
+      "policy": "greedy",
+      "points": 367.0,
+      "correct": 41,
+      "strict_points": 361.0,
+      "strict_correct": 40,
+      "possible": 852.0,
+      "completed": 63,
+      "spent": 50071.1,
+      "seconds": 1031.2,
+      "stopped_by": "hard_budget",
+      "finish": {
+        "spent": 50071.1,
+        "seconds": 1028.9,
+        "stop": "budget exhausted"
+      },
+      "exit_code": 137,
+      "calls": 222,
+      "input": 344521,
+      "output": 15619,
+      "estimated_calls": 0
+    },
+    {
+      "mode": "strong_embedding",
+      "policy": "greedy",
+      "points": 408.0,
+      "correct": 54,
+      "strict_points": 408.0,
+      "strict_correct": 54,
+      "possible": 852.0,
+      "completed": 76,
+      "spent": 50210.2,
+      "seconds": 1105.0,
+      "stopped_by": "hard_budget",
+      "finish": {
+        "spent": 50210.2,
+        "seconds": 1102.4,
+        "stop": "budget exhausted"
+      },
+      "exit_code": 137,
+      "calls": 243,
+      "input": 316212,
+      "output": 18589,
+      "estimated_calls": 0
+    },
+    {
+      "mode": "embedding",
+      "policy": "knapsack",
+      "points": 447.0,
+      "correct": 61,
+      "strict_points": 447.0,
+      "strict_correct": 61,
+      "possible": 852.0,
+      "completed": 87,
+      "spent": 50031.9,
+      "seconds": 1278.6,
+      "stopped_by": "hard_budget",
+      "finish": {
+        "spent": 50031.9,
+        "seconds": 1276.3,
+        "stop": "budget exhausted"
+      },
+      "exit_code": 137,
+      "calls": 268,
+      "input": 293349,
+      "output": 20697,
+      "estimated_calls": 0
+    }
+  ],
+  "details": {
+    "structural-greedy": {
+      "image_id": "sha256:738708ade2b2ff753b3245b971ab2bcf09386e6d30253852341989d69badd196",
+      "started": "2026-11-12T10:14:43+00:00",
+      "env": {
+        "PREDICTOR": "structural",
+        "QUEUE_POLICY": "greedy",
+        "SCORE_ALPHA": "1",
+        "QUEUE": "1",
+        "RETRY": "0",
+        "BUDGET": "50000",
+        "ENFORCE_BUDGET": "1"
+      },
+      "by_type": {
+        "coding": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 8,
+          "points": 74.0,
+          "possible": 212.0,
+          "false_claims": 5,
+          "cost": 13747.9,
+          "journal_solved_but_wrong": 2
+        },
+        "data_analysis": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 8,
+          "points": 76.0,
+          "possible": 218.0,
+          "false_claims": 0,
+          "cost": 15638.8,
+          "journal_solved_but_wrong": 0
+        },
+        "math": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 21,
+          "points": 158.0,
+          "possible": 218.0,
+          "false_claims": 2,
+          "cost": 10067.0,
+          "journal_solved_but_wrong": 0
+        },
+        "search": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 6,
+          "points": 57.0,
+          "possible": 204.0,
+          "false_claims": 0,
+          "cost": 10639.7,
+          "journal_solved_but_wrong": 0
+        }
+      },
+      "false_claims": 7,
+      "predictor_init": {
+        "t": 1794478551.29,
+        "event": "predictor_init",
+        "mode": "structural",
+        "seconds": 51.243,
+        "tasks": 200,
+        "model_sha256": "be370780dd3196a66895d3d06db8ea62837ea197e32c316627088956838d2564"
+      },
+      "predicted_total_cost": 190283.6248621996,
+      "first_plan": null,
+      "planning_seconds": 0,
+      "plan_count": 0,
+      "max_sampled_memory_mib": 266.1,
+      "hard_limits": {
+        "cpus": 8.0,
+        "memory_bytes": 17179869184,
+        "pids_max": 512,
+        "tmp_bytes": 2147483648
+      },
+      "resource_sampling_errors": []
+    },
+    "bge_structural-greedy": {
+      "image_id": "sha256:738708ade2b2ff753b3245b971ab2bcf09386e6d30253852341989d69badd196",
+      "started": "2026-11-12T10:46:08+00:00",
+      "env": {
+        "PREDICTOR": "bge_structural",
+        "QUEUE_POLICY": "greedy",
+        "SCORE_ALPHA": "1",
+        "QUEUE": "1",
+        "RETRY": "0",
+        "BUDGET": "50000",
+        "ENFORCE_BUDGET": "1"
+      },
+      "by_type": {
+        "coding": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 3,
+          "points": 30.0,
+          "possible": 212.0,
+          "false_claims": 4,
+          "cost": 6323.7,
+          "journal_solved_but_wrong": 1
+        },
+        "data_analysis": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 15,
+          "points": 133.0,
+          "possible": 218.0,
+          "false_claims": 3,
+          "cost": 19550.4,
+          "journal_solved_but_wrong": 0
+        },
+        "math": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 31,
+          "points": 191.0,
+          "possible": 218.0,
+          "false_claims": 5,
+          "cost": 13072.8,
+          "journal_solved_but_wrong": 0
+        },
+        "search": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 10,
+          "points": 88.0,
+          "possible": 204.0,
+          "false_claims": 0,
+          "cost": 11196.2,
+          "journal_solved_but_wrong": 0
+        }
+      },
+      "false_claims": 12,
+      "predictor_init": {
+        "t": 1794480474.473,
+        "event": "predictor_init",
+        "mode": "bge_structural",
+        "seconds": 89.55,
+        "tasks": 200,
+        "model_sha256": "be370780dd3196a66895d3d06db8ea62837ea197e32c316627088956838d2564"
+      },
+      "predicted_total_cost": 169584.55696999407,
+      "first_plan": null,
+      "planning_seconds": 0,
+      "plan_count": 0,
+      "max_sampled_memory_mib": 1020.0,
+      "hard_limits": {
+        "cpus": 8.0,
+        "memory_bytes": 17179869184,
+        "pids_max": 512,
+        "tmp_bytes": 2147483648
+      },
+      "resource_sampling_errors": []
+    },
+    "embedding-greedy": {
+      "image_id": "sha256:738708ade2b2ff753b3245b971ab2bcf09386e6d30253852341989d69badd196",
+      "started": "2026-11-12T11:04:44+00:00",
+      "env": {
+        "PREDICTOR": "embedding",
+        "QUEUE_POLICY": "greedy",
+        "SCORE_ALPHA": "1",
+        "QUEUE": "1",
+        "RETRY": "0",
+        "BUDGET": "50000",
+        "ENFORCE_BUDGET": "1"
+      },
+      "by_type": {
+        "coding": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 4,
+          "points": 40.0,
+          "possible": 212.0,
+          "false_claims": 4,
+          "cost": 7058.7,
+          "journal_solved_but_wrong": 1
+        },
+        "data_analysis": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 23,
+          "points": 171.0,
+          "possible": 218.0,
+          "false_claims": 3,
+          "cost": 20513.9,
+          "journal_solved_but_wrong": 0
+        },
+        "math": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 31,
+          "points": 183.0,
+          "possible": 218.0,
+          "false_claims": 6,
+          "cost": 12524.5,
+          "journal_solved_but_wrong": 1
+        },
+        "search": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 7,
+          "points": 65.0,
+          "possible": 204.0,
+          "false_claims": 0,
+          "cost": 10132.5,
+          "journal_solved_but_wrong": 0
+        }
+      },
+      "false_claims": 13,
+      "predictor_init": {
+        "t": 1794481608.017,
+        "event": "predictor_init",
+        "mode": "embedding",
+        "seconds": 109.263,
+        "tasks": 200,
+        "model_sha256": "be370780dd3196a66895d3d06db8ea62837ea197e32c316627088956838d2564"
+      },
+      "predicted_total_cost": 196042.11347378657,
+      "first_plan": null,
+      "planning_seconds": 0,
+      "plan_count": 0,
+      "max_sampled_memory_mib": 420.5,
+      "hard_limits": {
+        "cpus": 8.0,
+        "memory_bytes": 17179869184,
+        "pids_max": 512,
+        "tmp_bytes": 2147483648
+      },
+      "resource_sampling_errors": []
+    },
+    "bge_keywords-greedy": {
+      "image_id": "sha256:738708ade2b2ff753b3245b971ab2bcf09386e6d30253852341989d69badd196",
+      "started": "2026-11-12T11:26:39+00:00",
+      "env": {
+        "PREDICTOR": "bge_keywords",
+        "QUEUE_POLICY": "greedy",
+        "SCORE_ALPHA": "1",
+        "QUEUE": "1",
+        "RETRY": "0",
+        "BUDGET": "50000",
+        "ENFORCE_BUDGET": "1"
+      },
+      "by_type": {
+        "coding": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 2,
+          "points": 20.0,
+          "possible": 212.0,
+          "false_claims": 2,
+          "cost": 4579.6,
+          "journal_solved_but_wrong": 1
+        },
+        "data_analysis": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 13,
+          "points": 113.0,
+          "possible": 218.0,
+          "false_claims": 3,
+          "cost": 23668.0,
+          "journal_solved_but_wrong": 0
+        },
+        "math": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 28,
+          "points": 180.0,
+          "possible": 218.0,
+          "false_claims": 3,
+          "cost": 10408.8,
+          "journal_solved_but_wrong": 0
+        },
+        "search": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 7,
+          "points": 65.0,
+          "possible": 204.0,
+          "false_claims": 0,
+          "cost": 11891.7,
+          "journal_solved_but_wrong": 0
+        }
+      },
+      "false_claims": 8,
+      "predictor_init": {
+        "t": 1794482917.296,
+        "event": "predictor_init",
+        "mode": "bge_keywords",
+        "seconds": 107.158,
+        "tasks": 200,
+        "model_sha256": "be370780dd3196a66895d3d06db8ea62837ea197e32c316627088956838d2564"
+      },
+      "predicted_total_cost": 168147.99384132522,
+      "first_plan": null,
+      "planning_seconds": 0,
+      "plan_count": 0,
+      "max_sampled_memory_mib": 991.9,
+      "hard_limits": {
+        "cpus": 8.0,
+        "memory_bytes": 17179869184,
+        "pids_max": 512,
+        "tmp_bytes": 2147483648
+      },
+      "resource_sampling_errors": []
+    },
+    "numeric-greedy": {
+      "image_id": "sha256:738708ade2b2ff753b3245b971ab2bcf09386e6d30253852341989d69badd196",
+      "started": "2026-11-12T11:51:10+00:00",
+      "env": {
+        "PREDICTOR": "numeric",
+        "QUEUE_POLICY": "greedy",
+        "SCORE_ALPHA": "1",
+        "QUEUE": "1",
+        "RETRY": "0",
+        "BUDGET": "50000",
+        "ENFORCE_BUDGET": "1"
+      },
+      "by_type": {
+        "coding": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 6,
+          "points": 58.0,
+          "possible": 212.0,
+          "false_claims": 5,
+          "cost": 12969.6,
+          "journal_solved_but_wrong": 1
+        },
+        "data_analysis": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 12,
+          "points": 109.0,
+          "possible": 218.0,
+          "false_claims": 2,
+          "cost": 17253.1,
+          "journal_solved_but_wrong": 0
+        },
+        "math": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 14,
+          "points": 118.0,
+          "possible": 218.0,
+          "false_claims": 2,
+          "cost": 5372.8,
+          "journal_solved_but_wrong": 1
+        },
+        "search": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 9,
+          "points": 82.0,
+          "possible": 204.0,
+          "false_claims": 0,
+          "cost": 14475.6,
+          "journal_solved_but_wrong": 1
+        }
+      },
+      "false_claims": 9,
+      "predictor_init": {
+        "t": 1794484360.467,
+        "event": "predictor_init",
+        "mode": "numeric",
+        "seconds": 79.484,
+        "tasks": 200,
+        "model_sha256": "be370780dd3196a66895d3d06db8ea62837ea197e32c316627088956838d2564"
+      },
+      "predicted_total_cost": 203337.02636445145,
+      "first_plan": null,
+      "planning_seconds": 0,
+      "plan_count": 0,
+      "max_sampled_memory_mib": 339.8,
+      "hard_limits": {
+        "cpus": 8.0,
+        "memory_bytes": 17179869184,
+        "pids_max": 512,
+        "tmp_bytes": 2147483648
+      },
+      "resource_sampling_errors": []
+    },
+    "strong_embedding-greedy": {
+      "image_id": "sha256:738708ade2b2ff753b3245b971ab2bcf09386e6d30253852341989d69badd196",
+      "started": "2026-11-12T12:08:42+00:00",
+      "env": {
+        "PREDICTOR": "strong_embedding",
+        "QUEUE_POLICY": "greedy",
+        "SCORE_ALPHA": "1",
+        "QUEUE": "1",
+        "RETRY": "0",
+        "BUDGET": "50000",
+        "ENFORCE_BUDGET": "1"
+      },
+      "by_type": {
+        "coding": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 2,
+          "points": 20.0,
+          "possible": 212.0,
+          "false_claims": 2,
+          "cost": 4428.0,
+          "journal_solved_but_wrong": 0
+        },
+        "data_analysis": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 15,
+          "points": 133.0,
+          "possible": 218.0,
+          "false_claims": 2,
+          "cost": 21369.9,
+          "journal_solved_but_wrong": 0
+        },
+        "math": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 28,
+          "points": 177.0,
+          "possible": 218.0,
+          "false_claims": 1,
+          "cost": 13756.4,
+          "journal_solved_but_wrong": 1
+        },
+        "search": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 9,
+          "points": 78.0,
+          "possible": 204.0,
+          "false_claims": 0,
+          "cost": 10655.9,
+          "journal_solved_but_wrong": 0
+        }
+      },
+      "false_claims": 5,
+      "predictor_init": {
+        "t": 1794485387.442,
+        "event": "predictor_init",
+        "mode": "strong_embedding",
+        "seconds": 50.597,
+        "tasks": 200,
+        "model_sha256": "be370780dd3196a66895d3d06db8ea62837ea197e32c316627088956838d2564"
+      },
+      "predicted_total_cost": 166026.62029273034,
+      "first_plan": null,
+      "planning_seconds": 0,
+      "plan_count": 0,
+      "max_sampled_memory_mib": 992.7,
+      "hard_limits": {
+        "cpus": 8.0,
+        "memory_bytes": 17179869184,
+        "pids_max": 512,
+        "tmp_bytes": 2147483648
+      },
+      "resource_sampling_errors": []
+    },
+    "embedding-knapsack": {
+      "image_id": "sha256:738708ade2b2ff753b3245b971ab2bcf09386e6d30253852341989d69badd196",
+      "started": "2026-11-12T12:27:23+00:00",
+      "env": {
+        "PREDICTOR": "embedding",
+        "QUEUE_POLICY": "knapsack",
+        "SCORE_ALPHA": "1",
+        "QUEUE": "1",
+        "RETRY": "0",
+        "BUDGET": "50000",
+        "ENFORCE_BUDGET": "1"
+      },
+      "by_type": {
+        "coding": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 4,
+          "points": 40.0,
+          "possible": 212.0,
+          "false_claims": 1,
+          "cost": 7311.0,
+          "journal_solved_but_wrong": 1
+        },
+        "data_analysis": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 19,
+          "points": 151.0,
+          "possible": 218.0,
+          "false_claims": 5,
+          "cost": 16848.0,
+          "journal_solved_but_wrong": 0
+        },
+        "math": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 31,
+          "points": 191.0,
+          "possible": 218.0,
+          "false_claims": 3,
+          "cost": 18018.5,
+          "journal_solved_but_wrong": 1
+        },
+        "search": {
+          "tasks": 50,
+          "solvable": 40,
+          "correct": 7,
+          "points": 65.0,
+          "possible": 204.0,
+          "false_claims": 0,
+          "cost": 7854.4,
+          "journal_solved_but_wrong": 0
+        }
+      },
+      "false_claims": 9,
+      "predictor_init": {
+        "t": 1794486527.891,
+        "event": "predictor_init",
+        "mode": "embedding",
+        "seconds": 74.296,
+        "tasks": 200,
+        "model_sha256": "be370780dd3196a66895d3d06db8ea62837ea197e32c316627088956838d2564"
+      },
+      "predicted_total_cost": 196042.11347378657,
+      "first_plan": {
+        "selected": 81,
+        "remaining": 50000.0,
+        "seconds": 0.119009
+      },
+      "planning_seconds": 6.782932000000002,
+      "plan_count": 87,
+      "max_sampled_memory_mib": 694.0,
+      "hard_limits": {
+        "cpus": 8.0,
+        "memory_bytes": 17179869184,
+        "pids_max": 512,
+        "tmp_bytes": 2147483648
+      },
+      "resource_sampling_errors": []
+    }
+  },
+  "policy_order": {
+    "common_prefix": 73,
+    "common_tasks": 87,
+    "greedy_only": [
+      "p0337",
+      "p0372",
+      "p0385",
+      "p0443",
+      "p0493"
+    ],
+    "knapsack_only": [],
+    "predictions_equal": true,
+    "score_breakdown": {
+      "greedy": {
+        "common_points": 450.0,
+        "exclusive_points": 9.0
+      },
+      "knapsack": {
+        "common_points": 447.0,
+        "exclusive_points": 0
+      }
+    }
+  },
+  "excluded_runs": [
+    {
+      "name": "baseline-greedy",
+      "spent": 30692.2,
+      "excluded": true,
+      "reason": "Docker/WSL unexpected EOF; incomplete trial"
+    },
+    {
+      "name": "strong_embedding-greedy",
+      "spent": 0.0,
+      "excluded": true,
+      "reason": "Docker/WSL unexpected EOF; incomplete trial"
+    }
+  ],
+  "charged_completed_trials": 351327.4,
+  "charged_including_failed_trials": 382019.6
+}

@@ -76,7 +76,13 @@ def experiment(suite,out):
         rows.append(row);dump(out/'comparison.json',rows)
         return row
 
-    for mode in order:trial(mode,'greedy')
+    exclusions=out/'excluded-modes.json'
+    excluded=json.loads(exclusions.read_text(encoding='utf-8')) if exclusions.exists() else {}
+    if set(excluded)-{'baseline'}:raise ValueError('Only the optional baseline may be excluded')
+    for mode in order:
+        if mode in excluded:
+            print('EXCLUDED '+mode+' '+excluded[mode],flush=True)
+        else:trial(mode,'greedy')
     trained=[r for r in rows if r['mode'] in MODES]
     best=max(trained,key=lambda r:(r['strict_points'],-r['spent'],-MODES.index(r['mode'])))
     dump(out/'selection.json',dict(best=best,criterion=protocol['selection']))
