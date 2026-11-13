@@ -27,6 +27,10 @@ ENV PROGRESS_STRICT=1 CODING_PRECHECK=1 SHELL_EXTRA=1
 # as does SHELL_FIX (covered by SHELL_EXTRA). See docs/impossible-combined-2026-11-13.md.
 ENV PRECHECK=1 IMPOSSIBLE_NUDGE=1
 
+# One-shot attempts before the regular agent for tables, search, and coding.
+# Math stays on the regular agent because its one-shot answers need stronger verification.
+ENV DIRECT_CSV_SQL=1 DIRECT_SEARCH=1 DIRECT_CODING=1 DIRECT_MATH=0
+
 # Frozen CatBoost models and the MiniLM fallback encoder are stored in the repository.
 # The build verifies their feature count and encoder hashes.
 COPY predictors/*.json predictors/

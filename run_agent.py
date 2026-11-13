@@ -110,7 +110,8 @@ async def attempt(task: Task, budget: Budget, connection, react_agent,
     query = task.query
     system_prompt = system_for_task(task.type)
     use_sql = task.type == 'data_analysis' and os.environ.get('CSV_SQL') == '1'
-    use_schema = use_sql or (task.type == 'data_analysis' and os.environ.get('CSV_SCHEMA', '1') == '1')
+    direct_sql = task.type == 'data_analysis' and os.environ.get('DIRECT_CSV_SQL') == '1'
+    use_schema = use_sql or direct_sql or (task.type == 'data_analysis' and os.environ.get('CSV_SCHEMA', '1') == '1')
     if use_schema:
         import sqlite3
         from runtime.sql_tables import describe
@@ -136,6 +137,47 @@ async def attempt(task: Task, budget: Budget, connection, react_agent,
         if note:
             query += '\n' + note
             budget.journal.write('precheck', task=task.id, note=note[:500])
+    if direct_sql and use_schema:
+        from runtime.direct_csv_sql import solve as direct_csv_solve
+        try:
+            direct_answer = await direct_csv_solve(task.cwd, query, task.check, connection, budget, MODEL)
+        except (BudgetExhausted, TaskLimitExceeded):
+            raise
+        except Exception as exc:
+            budget.journal.write('direct_csv_sql', task=task.id, status='error',
+                                 error=f'{type(exc).__name__}: {exc}'[:200])
+            direct_answer = None
+        if direct_answer and direct_answer != 'IMPOSSIBLE' and valid(task, direct_answer):
+            budget.journal.write('direct_csv_sql', task=task.id, status='accepted')
+            return 'solved', direct_answer
+        if direct_answer is not None:
+            budget.journal.write('direct_csv_sql', task=task.id, status='invalid_format')
+        # An unsuccessful fast attempt should not consume the regular agent's initial allowance.
+        budget.extend_task_limit(min(limits.cost, limits.initial_cost + budget.task_spent))
+    direct_switch = {'math': 'DIRECT_MATH', 'search': 'DIRECT_SEARCH', 'coding': 'DIRECT_CODING'}.get(task.type)
+    if direct_switch and os.environ.get(direct_switch) == '1':
+        from runtime import direct_tasks
+        try:
+            if task.type == 'math':
+                short_answer = await direct_tasks.math(task.cwd, task.query, task.check,
+                                                       connection, budget, MODEL)
+            elif task.type == 'search':
+                short_answer = await direct_tasks.search(task.cwd, task.query,
+                                                         connection, budget, MODEL)
+            else:
+                short_answer = await direct_tasks.coding(task.cwd, task.query, lambda: tests_pass(task),
+                                                         connection, budget, MODEL)
+        except (BudgetExhausted, TaskLimitExceeded):
+            raise
+        except Exception as exc:
+            budget.journal.write('direct_task', task=task.id, status='error',
+                                 error=f'{type(exc).__name__}: {exc}'[:200])
+            short_answer = None
+        if short_answer and (task.type == 'coding' or valid(task, short_answer)):
+            budget.journal.write('direct_task', task=task.id, status='accepted')
+            return 'solved', short_answer
+        budget.journal.write('direct_task', task=task.id, status='fallback')
+        budget.extend_task_limit(min(limits.cost, limits.initial_cost + budget.task_spent))
     agent = react_agent(
         budget, connection, MODEL, str(task.cwd), TOOLS.get(task.type, ("bash",)), max_steps=limits.steps,
         max_output=limits.output_tokens, system_prompt=system_prompt,
