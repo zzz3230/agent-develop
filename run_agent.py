@@ -135,7 +135,8 @@ async def attempt(task: Task, budget: Budget, connection, react_agent,
         max_output=limits.output_tokens, system_prompt=system_prompt,
     )
     from runtime.attempt_rail import AttemptRail
-    await agent.register_rail(AttemptRail(task.cwd, limits, budget.journal, budget, task.type, task.query))
+    await agent.register_rail(AttemptRail(task.cwd, limits, budget.journal, budget, task.type, task.query,
+                                          tests_pass=lambda: tests_pass(task)))
     if use_sql:
         await agent.register_rail(SqlCompletionRail())
     invocation_error = None

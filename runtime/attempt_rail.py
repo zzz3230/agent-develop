@@ -36,6 +36,19 @@ _LOOKUP = {'cat', 'cd', 'du', 'find', 'grep', 'head', 'less', 'ls', 'rg', 'stat'
 _START = re.compile(r'(?:^|[;&|]\s*)(?:sudo\s+)?([a-z]+)\b([^;&|]*)')
 
 
+# PROGRESS_STRICT=1: what must not earn a table or math task a larger limit.
+_MISSING = re.compile(r'No such file or directory|Refused: |outside sandbox|not allowed by allowlist')
+_LAST_NUMBER = re.compile(r'(?<![\w.])[+-]?\d+(?:\.\d+)?\s*$')
+_COMMAND_NAME = re.compile(r'(?:^|[;&|\n])\s*([\w./-]+)')
+_TESTS_OK = re.compile(r'Ran \d+ tests? in .*?\n\s*OK\b')
+
+
+def lookup_only(command: str) -> bool:
+    """True when the command only lists or prints files: `ls -la`, `cat t.csv`, `head a; find .`."""
+    names = _COMMAND_NAME.findall(command)  # every command of the line, `python3` included
+    return bool(names) and all(name in _LOOKUP or name in ('echo', 'pwd') for name in names)
+
+
 def question_keys(question: str) -> set[str]:
     """Names, identifiers and quoted strings from the question, lower-cased."""
     keys = {m.group(0) for m in _NAME.finditer(question)} | {m.group(0) for m in _ID.finditer(question)}
@@ -59,11 +72,15 @@ def outside_target(command: str, root: Path) -> str | None:
 
 
 class AttemptRail(AgentRail):
-    def __init__(self, root: Path, limits: AttemptLimits, journal=None, budget=None, task_type='', question=''):
+    def __init__(self, root: Path, limits: AttemptLimits, journal=None, budget=None, task_type='', question='',
+                 tests_pass=None):
         self.root, self.limits, self.journal = root, limits, journal
         # SEARCH_PROGRESS=entity: new search lines count as progress only if they mention the question's subject
         self.keys = question_keys(question) if os.environ.get('SEARCH_PROGRESS') == 'entity' else set()
         self.stay_inside = os.environ.get('STAY_INSIDE') == '1'
+        self.strict = os.environ.get('PROGRESS_STRICT') == '1'
+        self.tests_pass = tests_pass  # coding, strict: the harness's own run of the task's test command
+        self.seen_numbers = set()
         self.state = source_state(root)
         self.errors = {}
         self.budget, self.task_type = budget, task_type
@@ -108,7 +125,8 @@ class AttemptRail(AgentRail):
 
     def observe_progress(self, text: str, args: dict, success: bool) -> None:
         if self.task_type == 'coding':
-            if re.search(r'Ran \d+ tests? in .*?\n\s*OK\b', text):
+            # Strict: green tests end the attempt (after_tool_call); they are no reason to spend more.
+            if not self.strict and _TESTS_OK.search(text):
                 self.fresh_progress.add('tests_passed')
             failed = re.search(r'FAILED \(([^)]+)\)', text)
             if failed:
@@ -131,6 +149,23 @@ class AttemptRail(AgentRail):
         lines = {l.strip() for l in payload.splitlines() if l.strip()}
         new_lines = lines - self.seen_lines
         self.seen_lines |= lines
+        if self.strict and self.task_type in ('math', 'data_analysis'):
+            # Listing or printing a file, a failed lookup, or the same number again is not a result.
+            if _MISSING.search(text):
+                return
+            if lookup_only(str(args.get('command', ''))):
+                # Seeing the data is worth one larger limit; looking again and again is not.
+                if self.extensions == 0:
+                    self.fresh_progress.add('first_look')
+                return
+            number = _LAST_NUMBER.search(payload)
+            if number:
+                if number[0].strip() in self.seen_numbers:
+                    return
+                self.seen_numbers.add(number[0].strip())
+            payload = re.sub(r'(?m)^total \d+$', '', payload).strip()  # the header of `ls -l`
+            if not payload:
+                return
         if re.fullmatch(r'[+-]?\d+(?:\.\d+)?', payload):
             self.fresh_progress.add('computed_scalar')
         elif self.task_type in ('math', 'data_analysis') and re.search(r'(?<![\w.])[+-]?\d+(?:\.\d+)?\s*$', payload):
@@ -140,6 +175,12 @@ class AttemptRail(AgentRail):
                 self.fresh_progress.add('new_source_excerpt')
         elif self.task_type == 'data_analysis' and re.search(r'\b(rows|matched|total|sum|count|result|revenue)\b[^\n]*\d', payload, re.I):
             self.fresh_progress.add('intermediate_computation')
+
+    def _tests_really_pass(self) -> bool:
+        try:
+            return bool(self.tests_pass())
+        except Exception:  # a hanging or broken test run is simply not a pass
+            return False
 
     async def before_tool_call(self, ctx):
         if ctx.inputs.tool_name != 'bash':
@@ -155,6 +196,9 @@ class AttemptRail(AgentRail):
             requested = self.limits.command_seconds
         args['timeout'] = max(1, min(requested, self.limits.command_seconds))
         args['run_in_background'] = False
+        if os.environ.get('SHELL_EXTRA') == '1' and isinstance(args.get('command'), str):
+            # The stock allowlist compares the first word: `ls; head a.csv` is refused as "ls;".
+            args['command'] = re.sub(r'^(\s*[\w./-]+);', r'\1 ;', args['command'])
         target = outside_target(str(args.get('command', '')), self.root) if self.stay_inside else None
         if target:
             if self.journal:
@@ -179,6 +223,14 @@ class AttemptRail(AgentRail):
             self.journal.write('tool', task=self.budget.task_id if self.budget else None,
                                command=str((args or {}).get('command', ''))[:400],
                                ok=getattr(result, 'success', None), output=text[-400:])
+        if (self.strict and self.task_type == 'coding' and self.tests_pass is not None
+                and _TESTS_OK.search(text) and self._tests_really_pass()):
+            # The passing test run is the answer; one more model call would only repeat DONE.
+            if self.journal:
+                self.journal.write('attempt_stop', task=self.budget.task_id if self.budget else None,
+                                   reason='tests_pass')
+            ctx.request_force_finish({'output': 'DONE', 'result_type': 'answer'})
+            return
         if getattr(result, 'success', None) is not False:
             return
         text = re.sub(r'(Ran \d+ tests? in )[\d.]+s', r'\1<TIME>s', text)

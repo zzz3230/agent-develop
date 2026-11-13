@@ -17,6 +17,9 @@ ENV OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 TOKENIZERS_PARALLELISM=false
 # Final config (night run 2026-11-13, budget covers ~30% of tasks): MiniLM queue predictor plus
 # the guards against expensive impossible tasks. Any of these can be overridden with -e.
 ENV QUEUE=1 QUEUE_POLICY=greedy PREDICTOR=embedding TIGHT_CAPS=1 SEARCH_PROGRESS=entity STAY_INSIDE=1
+# Measured on pool200 at 50k, 3 runs each: 519 [479..541] points against 442 [430..450] without them.
+# IMPOSSIBLE_PROMPT=1 was measured too (482) and stays off.
+ENV PROGRESS_STRICT=1 CODING_PRECHECK=1 SHELL_EXTRA=1
 
 # Predictor coefficients and the MiniLM encoder are stored in the repository: nothing is
 # downloaded at build or run time. The build fails if the encoder does not match its hashes.

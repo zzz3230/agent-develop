@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+import os
 import uuid
 from dataclasses import dataclass
 from typing import Any
@@ -49,6 +50,10 @@ def _real_paths_only() -> None:
 
 _real_paths_only()
 SHELL_ALLOWLIST = ["python3", "python", "ls", "cat", "grep", "head", "tail", "wc", "sort", "cut", "find", "echo", "pwd"]
+# SHELL_EXTRA=1: harmless text tools the model reaches for anyway. In the night runs every refusal
+# ("command not allowed by allowlist", 118 in 8 runs) cost one model call and one step of the limit.
+if os.environ.get("SHELL_EXTRA") == "1":
+    SHELL_ALLOWLIST += ["sed", "awk", "cd", "printf", "stat", "uniq", "tr", "diff", "test", "true"]
 STOCK_TOOLS = {
     "read": ReadFileTool, "write": WriteFileTool, "edit": EditFileTool,
     "list": ListDirTool, "grep": GrepTool, "bash": BashTool,
