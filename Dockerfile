@@ -20,6 +20,8 @@ ENV QUEUE=1 QUEUE_POLICY=greedy PREDICTOR=embedding TIGHT_CAPS=1 SEARCH_PROGRESS
 # Measured on pool200 at 50k, 3 runs each: 519 [479..541] points against 442 [430..450] without them.
 # IMPOSSIBLE_PROMPT=1 was measured too (482) and stays off.
 ENV PROGRESS_STRICT=1 CODING_PRECHECK=1 SHELL_EXTRA=1
+# The teammate's measures are in the code but off: IMPOSSIBLE_RULES, IMPOSSIBLE_NUDGE, PRECHECK (and SHELL_FIX,
+# which SHELL_EXTRA already covers). Not yet measured together with the flags above; enable with -e.
 
 # Predictor coefficients and the MiniLM encoder are stored in the repository: nothing is
 # downloaded at build or run time. The build fails if the encoder does not match its hashes.
