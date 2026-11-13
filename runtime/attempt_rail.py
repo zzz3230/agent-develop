@@ -52,7 +52,7 @@ CODING_NUDGE = ("\n[Harness note: if the tests demand incompatible results, so n
 
 
 # PROGRESS_STRICT=1: what must not earn a table or math task a larger limit.
-_MISSING = re.compile(r'No such file or directory|Refused: |outside sandbox|not allowed by allowlist')
+_UNREACHABLE = re.compile(r'No such file or directory|Refused: |outside sandbox|not allowed by allowlist')
 _LAST_NUMBER = re.compile(r'(?<![\w.])[+-]?\d+(?:\.\d+)?\s*$')
 _COMMAND_NAME = re.compile(r'(?:^|[;&|\n])\s*([\w./-]+)')
 _TESTS_OK = re.compile(r'Ran \d+ tests? in .*?\n\s*OK\b')
@@ -191,7 +191,7 @@ class AttemptRail(AgentRail):
         self.seen_lines |= lines
         if self.strict and self.task_type in ('math', 'data_analysis'):
             # Listing or printing a file, a failed lookup, or the same number again is not a result.
-            if _MISSING.search(text):
+            if _UNREACHABLE.search(text):
                 return
             if lookup_only(str(args.get('command', ''))):
                 # Seeing the data is worth one larger limit; looking again and again is not.
