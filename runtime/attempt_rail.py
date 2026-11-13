@@ -1,6 +1,7 @@
 """Native OJ hooks: bounded commands and repeated errors without file progress."""
 import hashlib
 import json
+import os
 import re
 import time
 from pathlib import Path
@@ -28,9 +29,41 @@ def source_state(root: Path) -> str:
     return digest.hexdigest()
 
 
+_NAME = re.compile(r"\b[A-Z][a-z]+(?:[ -][A-Z][a-z]+)+\b")          # Irina Smith, Fjord Data
+_ID = re.compile(r"\b[A-Z]{2,}-\d+\b|\b\d+\.\d+(?:\.\d+)?\b")        # AI-27, SKU-663, 3.0.0
+_QUOTED = re.compile(r"'([^']{3,60})'|\"([^\"]{3,60})\"")
+_LOOKUP = {'cat', 'cd', 'du', 'find', 'grep', 'head', 'less', 'ls', 'rg', 'stat', 'tail', 'tree', 'wc'}
+_START = re.compile(r'(?:^|[;&|]\s*)(?:sudo\s+)?([a-z]+)\b([^;&|]*)')
+
+
+def question_keys(question: str) -> set[str]:
+    """Names, identifiers and quoted strings from the question, lower-cased."""
+    keys = {m.group(0) for m in _NAME.finditer(question)} | {m.group(0) for m in _ID.finditer(question)}
+    keys |= {a or b for a, b in _QUOTED.findall(question)}
+    words = {'The', 'In', 'What', 'Which', 'Who', 'How', 'Use', 'Work', 'When', 'Return', 'Put'}
+    return {k.lower() for k in keys if k.split()[0] not in words}
+
+
+def outside_target(command: str, root: Path) -> str | None:
+    """A lookup command aimed above the task directory: `find /`, `ls ../..`, `cat /etc/x`."""
+    root_text = str(root)
+    for name, rest in _START.findall(command):
+        if name not in _LOOKUP:
+            continue
+        for arg in rest.split():
+            arg = arg.strip('\'"')
+            if arg.startswith('..') or (arg.startswith('/') and arg != '/dev/null'
+                                        and not arg.startswith(root_text) and not arg.startswith('/tmp')):
+                return arg
+    return None
+
+
 class AttemptRail(AgentRail):
-    def __init__(self, root: Path, limits: AttemptLimits, journal=None, budget=None, task_type=''):
+    def __init__(self, root: Path, limits: AttemptLimits, journal=None, budget=None, task_type='', question=''):
         self.root, self.limits, self.journal = root, limits, journal
+        # SEARCH_PROGRESS=entity: new search lines count as progress only if they mention the question's subject
+        self.keys = question_keys(question) if os.environ.get('SEARCH_PROGRESS') == 'entity' else set()
+        self.stay_inside = os.environ.get('STAY_INSIDE') == '1'
         self.state = source_state(root)
         self.errors = {}
         self.budget, self.task_type = budget, task_type
@@ -103,7 +136,8 @@ class AttemptRail(AgentRail):
         elif self.task_type in ('math', 'data_analysis') and re.search(r'(?<![\w.])[+-]?\d+(?:\.\d+)?\s*$', payload):
             self.fresh_progress.add('computed_result')  # e.g. "57 412": count and value on the last line
         elif self.task_type == 'search' and len(new_lines) >= 3 and len(payload) >= 40 and re.search(r'\b(cat|grep|head|tail|read_text)\b', args.get('command','')):
-            self.fresh_progress.add('new_source_excerpt')
+            if not self.keys or any(k in line.lower() for line in new_lines for k in self.keys):
+                self.fresh_progress.add('new_source_excerpt')
         elif self.task_type == 'data_analysis' and re.search(r'\b(rows|matched|total|sum|count|result|revenue)\b[^\n]*\d', payload, re.I):
             self.fresh_progress.add('intermediate_computation')
 
@@ -121,6 +155,13 @@ class AttemptRail(AgentRail):
             requested = self.limits.command_seconds
         args['timeout'] = max(1, min(requested, self.limits.command_seconds))
         args['run_in_background'] = False
+        target = outside_target(str(args.get('command', '')), self.root) if self.stay_inside else None
+        if target:
+            if self.journal:
+                self.journal.write('outside_refused', task=self.budget.task_id if self.budget else None,
+                                   command=str(args.get('command', ''))[:300])
+            args['command'] = (f"echo 'Refused: {target} is outside the task directory. "
+                               "All data for this task is in the current directory.'")
         ctx.inputs.tool_args = json.dumps(args) if was_json else args
 
     async def after_tool_call(self, ctx):

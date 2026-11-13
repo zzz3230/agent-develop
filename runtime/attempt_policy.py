@@ -38,6 +38,15 @@ def fixed(limits: AttemptLimits) -> AttemptLimits:
                    initial_seconds=limits.seconds, max_extensions=0)
 
 
+# Lower ceilings measured on gaps-v1/tricks-v1: no solved math cost more than 300, no solved
+# table task more than 1605, no solved search more than 1726. Impossible tasks used to run
+# into the old ceilings (2500/4500/3500). Coding keeps its ceiling: hard repairs need it.
+TIGHT_COST = {'math': 1200, 'data_analysis': 2000, 'search': 2000}
+
+
 def limits_for_task(task_type: str) -> AttemptLimits:
     limits = DEFAULTS.get(task_type, AttemptLimits())
+    if os.environ.get('TIGHT_CAPS', '0') == '1' and task_type in TIGHT_COST:
+        cost = TIGHT_COST[task_type]
+        limits = replace(limits, cost=cost, initial_cost=min(limits.initial_cost, cost))
     return limits if os.environ.get('ADAPTIVE_LIMITS', '1') == '1' else fixed(limits)
