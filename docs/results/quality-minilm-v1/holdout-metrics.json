@@ -1,0 +1,36 @@
+{
+  "tasks": 44,
+  "correct": 31,
+  "metrics": {
+    "quality_minilm_keywords": {
+      "brier": 0.22670483867314076,
+      "log_loss": 0.6650344601585375,
+      "cost_mae": 470.4290913135453,
+      "probability_min": 0.8340839658031441,
+      "probability_max": 0.8473667193201455,
+      "probability_std": 0.003613643473806189,
+      "predicted_cost_min": 530.5531885103242,
+      "predicted_cost_max": 757.7648674504774
+    },
+    "quality_minilm_structural": {
+      "brier": 0.22675179670521037,
+      "log_loss": 0.6652106196337395,
+      "cost_mae": 470.6153945723864,
+      "probability_min": 0.8342608388012777,
+      "probability_max": 0.8469273456541315,
+      "probability_std": 0.0035040970966822792,
+      "predicted_cost_min": 532.8961153713703,
+      "predicted_cost_max": 757.1066068838126
+    },
+    "constant_training_mean": {
+      "brier": 0.2267561983471075,
+      "log_loss": 0.6652058332434878,
+      "cost_mae": 493.8252066115702
+    }
+  },
+  "model_hashes": {
+    "quality_minilm_keywords": "51e896ebb58ce7f4c5f654c34228b4b54407dbd5d6c88a45f8d31c50eeb1e45e",
+    "quality_minilm_structural": "eab317a88440ca7c4b34dd421c8c6ce3256f66ddda2c76dd4a651bd95b2e4115"
+  },
+  "note": "Only prediction evaluation; no fitting, calibration or hyperparameter selection on these labels."
+}

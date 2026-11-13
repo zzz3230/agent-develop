@@ -1,0 +1,144 @@
+{
+  "training_rows": 88,
+  "holdout_rows": 44,
+  "results": {
+    "structural": {
+      "candidates": [
+        {
+          "config": {
+            "depth": 2,
+            "iterations": 100,
+            "l2_leaf_reg": 10
+          },
+          "oof_brier": 0.14676088456271535,
+          "oof_cost_mae": 426.7837037850068
+        },
+        {
+          "config": {
+            "depth": 3,
+            "iterations": 150,
+            "l2_leaf_reg": 10
+          },
+          "oof_brier": 0.14641475686851957,
+          "oof_cost_mae": 418.78939721345364
+        },
+        {
+          "config": {
+            "depth": 4,
+            "iterations": 150,
+            "l2_leaf_reg": 20
+          },
+          "oof_brier": 0.16226267270264103,
+          "oof_cost_mae": 425.9216312061192
+        }
+      ],
+      "selected": {
+        "config": {
+          "depth": 3,
+          "iterations": 150,
+          "l2_leaf_reg": 10
+        },
+        "oof_brier": 0.14641475686851957,
+        "oof_cost_mae": 418.78939721345364
+      },
+      "holdout_brier": 0.22174626543527698,
+      "holdout_cost_mae": 457.1589178141077,
+      "holdout_p_min": 0.6887222303421336,
+      "holdout_p_max": 0.8392045803994729,
+      "holdout_p_std": 0.04053454201520864,
+      "feature_count": 18
+    },
+    "keywords": {
+      "candidates": [
+        {
+          "config": {
+            "depth": 2,
+            "iterations": 100,
+            "l2_leaf_reg": 10
+          },
+          "oof_brier": 0.14320273403528297,
+          "oof_cost_mae": 430.9232443204106
+        },
+        {
+          "config": {
+            "depth": 3,
+            "iterations": 150,
+            "l2_leaf_reg": 10
+          },
+          "oof_brier": 0.15305685669065328,
+          "oof_cost_mae": 422.8231973876171
+        },
+        {
+          "config": {
+            "depth": 4,
+            "iterations": 150,
+            "l2_leaf_reg": 20
+          },
+          "oof_brier": 0.1523520388972983,
+          "oof_cost_mae": 424.4586289149835
+        }
+      ],
+      "selected": {
+        "config": {
+          "depth": 2,
+          "iterations": 100,
+          "l2_leaf_reg": 10
+        },
+        "oof_brier": 0.14320273403528297,
+        "oof_cost_mae": 430.9232443204106
+      },
+      "holdout_brier": 0.2282033101082849,
+      "holdout_cost_mae": 457.1690012261624,
+      "holdout_p_min": 0.7589723588137491,
+      "holdout_p_max": 0.908054739645183,
+      "holdout_p_std": 0.04592964322535378,
+      "feature_count": 45
+    },
+    "structural_minilm": {
+      "candidates": [
+        {
+          "config": {
+            "depth": 2,
+            "iterations": 100,
+            "l2_leaf_reg": 10
+          },
+          "oof_brier": 0.1453359579536097,
+          "oof_cost_mae": 474.7721402206715
+        },
+        {
+          "config": {
+            "depth": 3,
+            "iterations": 150,
+            "l2_leaf_reg": 10
+          },
+          "oof_brier": 0.15203549700583863,
+          "oof_cost_mae": 474.3112140949042
+        },
+        {
+          "config": {
+            "depth": 4,
+            "iterations": 150,
+            "l2_leaf_reg": 20
+          },
+          "oof_brier": 0.1490436605792656,
+          "oof_cost_mae": 453.45769661031187
+        }
+      ],
+      "selected": {
+        "config": {
+          "depth": 4,
+          "iterations": 150,
+          "l2_leaf_reg": 20
+        },
+        "oof_brier": 0.1490436605792656,
+        "oof_cost_mae": 453.45769661031187
+      },
+      "holdout_brier": 0.2258385977991393,
+      "holdout_cost_mae": 465.906637812507,
+      "holdout_p_min": 0.7190418754186741,
+      "holdout_p_max": 0.9061150623076778,
+      "holdout_p_std": 0.04919829884584531,
+      "feature_count": 402
+    }
+  }
+}

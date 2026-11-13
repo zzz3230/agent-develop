@@ -72,7 +72,7 @@ class TaskQueue:
                     self._log('precheck_suspect', task=t.id, reason=reason)
         mode=os.environ.get('PREDICTOR','baseline')
         if enabled and mode != 'baseline':
-            if mode not in ('numeric','embedding','structural','strong_embedding','bge_structural','bge_keywords'): raise ValueError('Unknown predictor: '+mode)
+            if mode not in ('numeric','embedding','structural','strong_embedding','bge_structural','bge_keywords','quality_minilm_structural','quality_minilm_keywords','catboost_structural','catboost_large','catboost_large_mae','catboost_large_huber','catboost_instruction'): raise ValueError('Unknown predictor: '+mode)
             from runtime.predictor import Predictor
             self.predictor=Predictor(self.fresh,mode,os.environ.get('PREDICTOR_DIR','/app/predictors'),journal)
 
@@ -97,6 +97,7 @@ class TaskQueue:
     def _score(self, task, retry: bool = False) -> float:
         if self.predictor and not retry:
             p,c=self.predictor.predictions[task.id]
+            if os.environ.get('QUEUE_USE_SUCCESS','1')=='0':p=1.0
             return (task.reward**self.alpha if task.reward>0 else 0)*p/c
         p = self.success(task.type) * (RETRY_DISCOUNT if retry else 1.0)
         c = self.limits(task.type).cost if retry else self.cost(task.type)
@@ -112,7 +113,11 @@ class TaskQueue:
             from runtime.planning import knapsack
             started=time.monotonic()
             estimates=[self.predictor.predictions[t.id] if self.predictor else (self.success(t.type),self.cost(t.type)) for t in self.fresh]
-            indices=knapsack([(t.reward*p,c) for t,(p,c) in zip(self.fresh,estimates)],remaining)
+            use_success=os.environ.get('QUEUE_USE_SUCCESS','1')!='0'
+            values=[((t.reward**self.alpha if t.reward>0 else 0)*(p if use_success else 1.0)*
+                     (SUSPECT_FACTOR if t.id in self.suspects else 1.0),c)
+                    for t,(p,c) in zip(self.fresh,estimates)]
+            indices=knapsack(values,remaining)
             self._log('knapsack_plan',remaining=remaining,selected=[self.fresh[i].id for i in indices],
                 seconds=round(time.monotonic()-started,6))
             if indices:return max((self.fresh[i] for i in indices),key=self.score)

@@ -1,0 +1,5 @@
+FROM agent-develop:predictor-policies
+RUN pip install --no-cache-dir catboost==1.2.10
+COPY runtime/predictor.py /app/runtime/predictor.py
+COPY predictors/catboost_large_success.cbm predictors/catboost_large_cost.cbm /app/predictors/
+RUN python -c "from pathlib import Path;p=Path('/app/runtime/task_queue.py');s=p.read_text();old=\"('numeric','embedding','structural','strong_embedding','bge_structural','bge_keywords')\";assert s.count(old)==1;s=s.replace(old,\"('numeric','embedding','structural','strong_embedding','bge_structural','bge_keywords','catboost_large')\");p.write_text(s)"

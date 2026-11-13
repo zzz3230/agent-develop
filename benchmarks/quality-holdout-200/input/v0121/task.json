@@ -1,0 +1,7 @@
+{
+  "task_id": "v0121",
+  "task_type": "search",
+  "instruction": "Using kb/, which station did cargo C8 visit immediately before its first arrival at North? Order by event time, not file name or reporting time. Return only the station name. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 1,
+  "check": "exact_str"
+}

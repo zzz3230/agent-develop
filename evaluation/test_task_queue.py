@@ -1,4 +1,5 @@
 import unittest
+import os
 from types import SimpleNamespace
 
 from runtime.attempt_policy import AttemptLimits
@@ -10,6 +11,16 @@ def task(i, kind, reward):
 
 
 class TaskQueueTests(unittest.TestCase):
+    def setUp(self):
+        self._predictor = os.environ.get('PREDICTOR')
+        os.environ['PREDICTOR'] = 'baseline'
+
+    def tearDown(self):
+        if self._predictor is None:
+            os.environ.pop('PREDICTOR', None)
+        else:
+            os.environ['PREDICTOR'] = self._predictor
+
     def drain(self, queue, outcomes=None, remaining=None):
         order = []
         while (pick := queue.next(remaining)) is not None:

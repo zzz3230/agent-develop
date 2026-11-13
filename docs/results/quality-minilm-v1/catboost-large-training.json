@@ -1,0 +1,68 @@
+{
+  "rows": 301,
+  "groups": 108,
+  "successes": 224,
+  "sources": {
+    "quality": 88,
+    "planner_train": 213
+  },
+  "candidates": [
+    {
+      "config": {
+        "depth": 2,
+        "iterations": 100,
+        "l2_leaf_reg": 10
+      },
+      "brier": 0.201668436018121,
+      "cost_mae": 283.6950643181832,
+      "cost_spearman": 0.4519318852446422
+    },
+    {
+      "config": {
+        "depth": 3,
+        "iterations": 150,
+        "l2_leaf_reg": 10
+      },
+      "brier": 0.2001231626852987,
+      "cost_mae": 282.60007010828747,
+      "cost_spearman": 0.4640337103892796
+    },
+    {
+      "config": {
+        "depth": 4,
+        "iterations": 150,
+        "l2_leaf_reg": 20
+      },
+      "brier": 0.2018454828353118,
+      "cost_mae": 279.3355666459909,
+      "cost_spearman": 0.4733932542494979
+    }
+  ],
+  "selected": {
+    "config": {
+      "depth": 3,
+      "iterations": 150,
+      "l2_leaf_reg": 10
+    },
+    "brier": 0.2001231626852987,
+    "cost_mae": 282.60007010828747,
+    "cost_spearman": 0.4640337103892796
+  },
+  "mean_cost": 552.6607973421927,
+  "median_cost": 424.8,
+  "constant_mean_mae": 310.8558581031115,
+  "holdout": {
+    "rows": 44,
+    "large": {
+      "brier": 0.2203088916147653,
+      "cost_mae": 439.1455462906029,
+      "cost_spearman": 0.27386447742433223
+    },
+    "old_structural": {
+      "brier": 0.22174626543527698,
+      "cost_mae": 457.1589178141077,
+      "cost_spearman": 0.2879797034805501
+    }
+  },
+  "note": "All 213 additional labels are measured agent attempts. Group CV excludes known holdout groups; planner instances repeat source families and are not 213 independent algorithms."
+}

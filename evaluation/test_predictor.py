@@ -11,6 +11,50 @@ from runtime.task_queue import TaskQueue
 
 
 class Predictors(unittest.TestCase):
+    def test_extended_features_are_bounded_and_input_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp)
+            (p/'task.json').write_text(json.dumps(dict(task_id='a',task_type='data_analysis',
+                instruction='Use missing.csv and records.csv for AC-123 on 2026-11-13.',reward=9)))
+            (p/'records.csv').write_text('id,value\n1,\n2,7\n')
+            (p/'checks.py').write_text('def test_value():\n    assert 2 == 2\n')
+            task=load_task(p)
+            basic=features(task,keywords=False)
+            extended=features(task,keywords=False,extended=True)
+            self.assertEqual(len(basic),18)
+            self.assertEqual(len(extended),29)
+            self.assertEqual(extended[:18],basic)
+            self.assertEqual(features(task,keywords=False,extended='instruction'),extended[:22])
+            self.assertGreater(extended[21],0)  # missing.csv is named but absent
+            self.assertGreater(extended[24],0)  # visible assertion
+            self.assertGreater(extended[28],0)  # empty CSV cell
+            (p/'answer.txt').write_text('secret')
+            (p/'test_private.py').write_text('secret')
+            self.assertEqual(features(task,keywords=False,extended=True),extended)
+
+    def test_quality_minilm_keyword_ablation(self):
+        class Vector:
+            def tolist(self):return [0.0]*384
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp);d=p/'task';d.mkdir()
+            raw=dict(task_id='a',task_type='math',instruction='round',reward=1)
+            (d/'task.json').write_text(json.dumps(raw));a=load_task(d)
+            raw['instruction']='abcde';(d/'task.json').write_text(json.dumps(raw));b=load_task(d)
+            for mode,n in [('quality_minilm_keywords',429),('quality_minilm_structural',402)]:
+                coef=[0.0]*n
+                if mode.endswith('keywords'):coef[6]=1
+                model=dict(mean=[0.0]*n,scale=[1.0]*n,success=dict(coef=coef,intercept=0),
+                    cost=dict(coef=[0.0]*n,intercept=100),cost_transform='identity')
+                (p/(mode+'.json')).write_text(json.dumps(model))
+                with patch('runtime.predictor.Encoder') as encoder:
+                    encoder.return_value.encode.return_value=[Vector(),Vector()]
+                    pred=Predictor([a,b],mode,p)
+                    encoder.assert_called_with(p/'encoder')
+                    pa=pred.predict(features(a,keywords=mode.endswith('keywords'))+[0.0]*384)[0]
+                    pb=pred.predict(features(b,keywords=mode.endswith('keywords'))+[0.0]*384)[0]
+                    if mode.endswith('keywords'):self.assertNotEqual(pa,pb)
+                    else:self.assertEqual(pa,pb)
+
     def test_structural_features_ignore_keywords(self):
         with tempfile.TemporaryDirectory() as tmp:
             p=Path(tmp);raw=dict(task_id='a',task_type='math',instruction='round',reward=1)

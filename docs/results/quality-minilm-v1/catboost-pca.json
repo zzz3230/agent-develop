@@ -1,0 +1,66 @@
+{
+  "training_rows": 88,
+  "holdout_rows": 44,
+  "candidates": [
+    {
+      "pca_components": 0,
+      "oof_brier": 0.14641475686851957,
+      "oof_cost_mae": 418.78939721345364
+    },
+    {
+      "pca_components": 8,
+      "oof_brier": 0.15196760851006105,
+      "oof_cost_mae": 417.8087368114191
+    },
+    {
+      "pca_components": 16,
+      "oof_brier": 0.15229919807337977,
+      "oof_cost_mae": 432.31276622975133
+    },
+    {
+      "pca_components": 32,
+      "oof_brier": 0.14912241772230422,
+      "oof_cost_mae": 436.5631585974707
+    }
+  ],
+  "selected": {
+    "pca_components": 0,
+    "oof_brier": 0.14641475686851957,
+    "oof_cost_mae": 418.78939721345364
+  },
+  "holdout_diagnostic": [
+    {
+      "pca_components": 0,
+      "brier": 0.22174626543527698,
+      "cost_mae": 457.1589178141077,
+      "p_min": 0.6887222303421336,
+      "p_max": 0.8392045803994729,
+      "p_std": 0.04053454201520864
+    },
+    {
+      "pca_components": 8,
+      "brier": 0.2397178960737554,
+      "cost_mae": 453.3244723202564,
+      "p_min": 0.6277253962657057,
+      "p_max": 0.9459440860551042,
+      "p_std": 0.07893845354012989
+    },
+    {
+      "pca_components": 16,
+      "brier": 0.23901546992837827,
+      "cost_mae": 467.20912924424977,
+      "p_min": 0.5563463940369964,
+      "p_max": 0.9512464601670892,
+      "p_std": 0.08512051811006896
+    },
+    {
+      "pca_components": 32,
+      "brier": 0.23520483253437988,
+      "cost_mae": 492.1875430149152,
+      "p_min": 0.5221662684116567,
+      "p_max": 0.9415845272328485,
+      "p_std": 0.08403956558951559
+    }
+  ],
+  "note": "PCA fitted inside each training fold; size selected by training OOF Brier only. Holdout diagnostics for all sizes are exploratory and not used for model selection. Zero components is the no-encoder control."
+}

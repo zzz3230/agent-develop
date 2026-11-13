@@ -1,6 +1,7 @@
 """Unit checks for the opt-in guards against expensive impossible tasks."""
 import os
 import unittest
+from unittest import mock
 from pathlib import Path
 
 from runtime.attempt_policy import limits_for_task
@@ -44,13 +45,14 @@ class Caps(unittest.TestCase):
         os.environ.pop('TIGHT_CAPS', None)
 
     def test_tight_caps_only_when_enabled(self):
-        self.assertEqual(limits_for_task('search').cost, 3500)
-        os.environ['TIGHT_CAPS'] = '1'
-        self.assertEqual(limits_for_task('search').cost, 2000)
-        self.assertEqual(limits_for_task('data_analysis').cost, 2000)
-        self.assertEqual(limits_for_task('math').cost, 1200)
-        self.assertEqual(limits_for_task('coding').cost, 6000)
-        self.assertLessEqual(limits_for_task('math').initial_cost, 1200)
+        with mock.patch.dict(os.environ, {'TIGHT_CAPS': '0'}):
+            self.assertEqual(limits_for_task('search').cost, 3500)
+        with mock.patch.dict(os.environ, {'TIGHT_CAPS': '1'}):
+            self.assertEqual(limits_for_task('search').cost, 2000)
+            self.assertEqual(limits_for_task('data_analysis').cost, 2000)
+            self.assertEqual(limits_for_task('math').cost, 1200)
+            self.assertEqual(limits_for_task('coding').cost, 6000)
+            self.assertLessEqual(limits_for_task('math').initial_cost, 1200)
 
 
 class GapRules(unittest.TestCase):

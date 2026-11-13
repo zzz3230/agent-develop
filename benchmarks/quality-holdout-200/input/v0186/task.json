@@ -1,0 +1,7 @@
+{
+  "task_id": "v0186",
+  "task_type": "coding",
+  "instruction": "Fix lib_42fbf32e.py. calculate(text) evaluates decimal integer literals, +, -, *, parentheses, repeated unary +/- and surrounding/inter-token whitespace with normal arithmetic precedence. Return an ordinary int. Reject all other syntax (names, calls, booleans, division, powers, lists and non-decimal literals) with ValueError. Do not use eval or exec. Keep the implementation in lib_42fbf32e.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 7,
+  "check": "unittest"
+}

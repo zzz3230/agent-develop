@@ -1,0 +1,38 @@
+{
+  "unique_tasks": 107,
+  "attempts": 538,
+  "source_runs": [
+    "bge_keywords-greedy",
+    "bge_structural-greedy",
+    "embedding-greedy",
+    "embedding-knapsack",
+    "numeric-greedy",
+    "strong_embedding-greedy",
+    "structural-greedy"
+  ],
+  "models": {
+    "catboost_structural": {
+      "mean_outcome_brier": 0.19737161192541122,
+      "cost_mae": 321.73404450363194,
+      "p_min": 0.6887222303421336,
+      "p_max": 0.8105392321000663,
+      "p_std": 0.022412681070210983
+    },
+    "quality_minilm_structural": {
+      "mean_outcome_brier": 0.21180124333926714,
+      "cost_mae": 379.39694859819036,
+      "p_min": 0.83441686518487,
+      "p_max": 0.8442046434568942,
+      "p_std": 0.002623132477074679
+    },
+    "embedding": {
+      "mean_outcome_brier": 0.20472997443635824,
+      "cost_mae": 498.5218975642991,
+      "p_min": 0.701850254143598,
+      "p_max": 0.896296109075793,
+      "p_std": 0.05224512916888372
+    }
+  },
+  "constant_training_mean_brier": 0.21269974159432825,
+  "constant_training_mean_cost_mae": 416.9909503580531
+}

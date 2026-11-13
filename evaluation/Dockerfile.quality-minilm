@@ -1,0 +1,4 @@
+FROM agent-develop:predictor-policies
+COPY runtime/predictor.py runtime/task_queue.py /app/runtime/
+COPY predictors/quality_minilm_*.json /app/predictors/
+RUN python -c "import json;from pathlib import Path;p=Path('/app/predictors');a=json.loads((p/'quality_minilm_structural.json').read_text());b=json.loads((p/'quality_minilm_keywords.json').read_text());assert len(a['mean'])==402 and len(b['mean'])==429;assert a['training_sha256']==b['training_sha256']"

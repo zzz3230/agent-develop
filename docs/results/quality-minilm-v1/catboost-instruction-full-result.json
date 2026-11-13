@@ -1,0 +1,55 @@
+{
+  "result": {
+    "mode": "catboost_instruction",
+    "policy": "greedy",
+    "points": 650.0,
+    "correct": 89,
+    "strict_points": 646.0,
+    "strict_correct": 88,
+    "possible": 852.0,
+    "completed": 114,
+    "spent": 50030.1,
+    "seconds": 1407.6,
+    "stopped_by": "hard_budget",
+    "finish": {
+      "spent": 50030.1,
+      "seconds": 1404.7,
+      "stop": "budget exhausted"
+    },
+    "exit_code": 137,
+    "calls": 283,
+    "input": 314001,
+    "output": 18630,
+    "estimated_calls": 0
+  },
+  "protocol": {
+    "image": "agent-develop:catboost-instruction",
+    "image_id": "sha256:6d4b1abcc0e0ff617fcf9b7ad981b4bdf66cce5092979994f9c8281a8bac2f79",
+    "input_sha256": "3bea0193ac8e5d6764769256f90223914f738dbffea4edabe181ca5172dbde30",
+    "budget": 50000,
+    "env": {
+      "QUEUE_POLICY": "greedy",
+      "SCORE_ALPHA": "1",
+      "RETRY": "0",
+      "BUDGET": "50000",
+      "ENFORCE_BUDGET": "1",
+      "QUEUE_USE_SUCCESS": "0",
+      "TIGHT_CAPS": "1",
+      "SEARCH_PROGRESS": "entity",
+      "STAY_INSIDE": "1",
+      "PROGRESS_STRICT": "1",
+      "CODING_PRECHECK": "1",
+      "SHELL_EXTRA": "1",
+      "PRECHECK": "1",
+      "IMPOSSIBLE_NUDGE": "1",
+      "PREDICTOR": "catboost_instruction",
+      "QUEUE": "1"
+    },
+    "model_hashes": {
+      "success": "ae77fd2d02e959e450d48761ca8d837f99ceb66b48b559b1784f833154cbdb6d",
+      "cost": "84bfae4b93d0e15eb8f408c88332820e1128d56719c88e8536188fc6285ab307"
+    },
+    "training_report": "docs/results/quality-minilm-v1/catboost-instruction-training.json",
+    "note": "One real proxy run, same latest agent and workload as CatBoost-large greedy and reward-only. Local weighted-token limit may differ from proxy billing."
+  }
+}

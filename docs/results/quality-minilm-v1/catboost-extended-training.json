@@ -1,0 +1,98 @@
+{
+  "rows": 301,
+  "groups": 108,
+  "features": 29,
+  "selected_loss": "MAE",
+  "group_cv_brier": 0.20221604266206386,
+  "holdout_brier": 0.2221366390633129,
+  "results": {
+    "MAE": {
+      "group_cv": {
+        "mae": 248.7747410230285,
+        "median_ae": 129.0254192629177,
+        "p90_ae": 572.1086239715414,
+        "spearman": 0.4774246672564852,
+        "severe_underestimate": 0.15282392026578073
+      },
+      "holdout_diagnostic": {
+        "mae": 401.2910216493984,
+        "median_ae": 161.4251877282171,
+        "p90_ae": 1386.1730670105733,
+        "spearman": 0.37534796880133653,
+        "severe_underestimate": 0.20454545454545456
+      },
+      "selected_cohort_diagnostic": {
+        "mae": 248.21909500196,
+        "median_ae": 136.2417908250911,
+        "p90_ae": 645.1987012031046,
+        "spearman": 0.10015412064629164,
+        "severe_underestimate": 0.19387755102040816
+      },
+      "selected_cohort_replay_25k": {
+        "points": 288.0,
+        "correct": 33,
+        "completed": 48,
+        "spent": 24837.7
+      }
+    },
+    "Huber": {
+      "group_cv": {
+        "mae": 251.59369220998678,
+        "median_ae": 136.90567552082882,
+        "p90_ae": 544.9737950926035,
+        "spearman": 0.4799509818836061,
+        "severe_underestimate": 0.1461794019933555
+      },
+      "holdout_diagnostic": {
+        "mae": 401.76326929387045,
+        "median_ae": 167.32822425639526,
+        "p90_ae": 1334.3368469056625,
+        "spearman": 0.4051587443933315,
+        "severe_underestimate": 0.20454545454545456
+      },
+      "selected_cohort_diagnostic": {
+        "mae": 248.09843731926802,
+        "median_ae": 132.19766915611802,
+        "p90_ae": 620.3479726275541,
+        "spearman": 0.05776335280643334,
+        "severe_underestimate": 0.19387755102040816
+      },
+      "selected_cohort_replay_25k": {
+        "points": 309.0,
+        "correct": 36,
+        "completed": 51,
+        "spent": 24634.4
+      }
+    },
+    "RMSE": {
+      "group_cv": {
+        "mae": 280.6404938427028,
+        "median_ae": 188.00121337886856,
+        "p90_ae": 559.1955278533197,
+        "spearman": 0.46311114901710426,
+        "severe_underestimate": 0.08637873754152824
+      },
+      "holdout_diagnostic": {
+        "mae": 431.13879416221243,
+        "median_ae": 216.26222292355064,
+        "p90_ae": 1255.5395434017537,
+        "spearman": 0.3151515151515151,
+        "severe_underestimate": 0.1590909090909091
+      },
+      "selected_cohort_diagnostic": {
+        "mae": 280.1109626044476,
+        "median_ae": 179.3519349514026,
+        "p90_ae": 642.932715700884,
+        "spearman": 0.03997601704772502,
+        "severe_underestimate": 0.1326530612244898
+      },
+      "selected_cohort_replay_25k": {
+        "points": 277.0,
+        "correct": 33,
+        "completed": 49,
+        "spent": 24773.9
+      }
+    }
+  },
+  "note": "Selection uses grouped CV only. Holdout and 98-task cohort are previously inspected diagnostics. Training uses stored attempts, with no LLM calls. Proxy billing may differ."
+}

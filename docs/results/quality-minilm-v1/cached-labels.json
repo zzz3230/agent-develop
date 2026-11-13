@@ -1,0 +1,758 @@
+[
+  {
+    "id": "q0001",
+    "correct": 1,
+    "cost": 183.2,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0002",
+    "correct": 1,
+    "cost": 380.2,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0003",
+    "correct": 1,
+    "cost": 549.3,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0004",
+    "correct": 1,
+    "cost": 162.7,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0005",
+    "correct": 1,
+    "cost": 239.1,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0006",
+    "correct": 1,
+    "cost": 417.9,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0007",
+    "correct": 1,
+    "cost": 194.0,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0008",
+    "correct": 1,
+    "cost": 400.8,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0013",
+    "correct": 1,
+    "cost": 407.1,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0014",
+    "correct": 1,
+    "cost": 175.4,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0015",
+    "correct": 1,
+    "cost": 2544.1,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0016",
+    "correct": 1,
+    "cost": 193.6,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0017",
+    "correct": 1,
+    "cost": 161.0,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0018",
+    "correct": 1,
+    "cost": 180.6,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0019",
+    "correct": 1,
+    "cost": 401.3,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0020",
+    "correct": 1,
+    "cost": 719.4,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0025",
+    "correct": 1,
+    "cost": 464.0,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0026",
+    "correct": 1,
+    "cost": 961.2,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0027",
+    "correct": 1,
+    "cost": 171.1,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0028",
+    "correct": 1,
+    "cost": 235.7,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0029",
+    "correct": 1,
+    "cost": 486.7,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0030",
+    "correct": 1,
+    "cost": 371.9,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0031",
+    "correct": 1,
+    "cost": 445.2,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0032",
+    "correct": 1,
+    "cost": 191.1,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0037",
+    "correct": 1,
+    "cost": 646.0,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0038",
+    "correct": 1,
+    "cost": 557.5,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0039",
+    "correct": 1,
+    "cost": 421.0,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0040",
+    "correct": 0,
+    "cost": 68.7,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0041",
+    "correct": 1,
+    "cost": 1222.2,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0042",
+    "correct": 1,
+    "cost": 170.1,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0043",
+    "correct": 1,
+    "cost": 280.0,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0044",
+    "correct": 1,
+    "cost": 656.3,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0049",
+    "correct": 1,
+    "cost": 378.5,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0050",
+    "correct": 1,
+    "cost": 1029.7,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0051",
+    "correct": 1,
+    "cost": 246.6,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0052",
+    "correct": 1,
+    "cost": 1224.2,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0057",
+    "correct": 1,
+    "cost": 228.5,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0058",
+    "correct": 1,
+    "cost": 427.6,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0059",
+    "correct": 1,
+    "cost": 881.7,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0060",
+    "correct": 0,
+    "cost": 1429.1,
+    "provenance": "benchmark-runs\\predictors-v1\\train-dev\\graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0065",
+    "correct": 0,
+    "cost": 180.7,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0066",
+    "correct": 0,
+    "cost": 190.9,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0067",
+    "correct": 0,
+    "cost": 152.7,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0068",
+    "correct": 1,
+    "cost": 152.4,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0069",
+    "correct": 1,
+    "cost": 154.4,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0070",
+    "correct": 1,
+    "cost": 165.4,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0071",
+    "correct": 1,
+    "cost": 187.2,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0072",
+    "correct": 1,
+    "cost": 239.8,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0073",
+    "correct": 1,
+    "cost": 280.9,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0074",
+    "correct": 1,
+    "cost": 194.1,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0075",
+    "correct": 0,
+    "cost": 4584.4,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0076",
+    "correct": 0,
+    "cost": 424.0,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0077",
+    "correct": 0,
+    "cost": 214.3,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0078",
+    "correct": 1,
+    "cost": 1354.6,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0079",
+    "correct": 1,
+    "cost": 241.4,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0080",
+    "correct": 1,
+    "cost": 242.8,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0081",
+    "correct": 1,
+    "cost": 255.6,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0082",
+    "correct": 1,
+    "cost": 250.6,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0083",
+    "correct": 1,
+    "cost": 247.7,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0084",
+    "correct": 1,
+    "cost": 286.0,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0085",
+    "correct": 0,
+    "cost": 3731.7,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0086",
+    "correct": 1,
+    "cost": 463.9,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0087",
+    "correct": 0,
+    "cost": 2655.7,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0088",
+    "correct": 0,
+    "cost": 791.8,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0089",
+    "correct": 1,
+    "cost": 459.1,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0090",
+    "correct": 1,
+    "cost": 512.7,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0091",
+    "correct": 1,
+    "cost": 455.0,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0092",
+    "correct": 1,
+    "cost": 216.9,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0093",
+    "correct": 1,
+    "cost": 468.9,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0094",
+    "correct": 0,
+    "cost": 3554.0,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0095",
+    "correct": 0,
+    "cost": 898.4,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0096",
+    "correct": 1,
+    "cost": 544.9,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0097",
+    "correct": 1,
+    "cost": 822.6,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0098",
+    "correct": 0,
+    "cost": 1886.2,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0099",
+    "correct": 0,
+    "cost": 1128.6,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0100",
+    "correct": 1,
+    "cost": 681.3,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0101",
+    "correct": 1,
+    "cost": 983.8,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0102",
+    "correct": 1,
+    "cost": 826.0,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0103",
+    "correct": 1,
+    "cost": 794.1,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0104",
+    "correct": 1,
+    "cost": 556.6,
+    "provenance": "docs\\results\\2026-11-12\\gaps-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0105",
+    "correct": 1,
+    "cost": 265.8,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0106",
+    "correct": 0,
+    "cost": 800.9,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0107",
+    "correct": 0,
+    "cost": 2055.2,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0108",
+    "correct": 0,
+    "cost": 1966.5,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0109",
+    "correct": 1,
+    "cost": 298.2,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0110",
+    "correct": 1,
+    "cost": 236.7,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0111",
+    "correct": 1,
+    "cost": 158.1,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0112",
+    "correct": 0,
+    "cost": 475.9,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0113",
+    "correct": 1,
+    "cost": 252.5,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0114",
+    "correct": 1,
+    "cost": 247.8,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0115",
+    "correct": 1,
+    "cost": 252.6,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0116",
+    "correct": 1,
+    "cost": 242.3,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0117",
+    "correct": 1,
+    "cost": 234.0,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0118",
+    "correct": 1,
+    "cost": 1605.1,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0119",
+    "correct": 1,
+    "cost": 758.0,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0120",
+    "correct": 0,
+    "cost": 1078.0,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0121",
+    "correct": 1,
+    "cost": 1123.9,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0122",
+    "correct": 1,
+    "cost": 469.2,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0123",
+    "correct": 1,
+    "cost": 459.6,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0124",
+    "correct": 1,
+    "cost": 459.4,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0125",
+    "correct": 1,
+    "cost": 1726.4,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0126",
+    "correct": 1,
+    "cost": 849.6,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0127",
+    "correct": 1,
+    "cost": 990.4,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0128",
+    "correct": 1,
+    "cost": 1028.4,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0129",
+    "correct": 1,
+    "cost": 919.6,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0130",
+    "correct": 0,
+    "cost": 933.7,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0131",
+    "correct": 1,
+    "cost": 844.6,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  },
+  {
+    "id": "q0132",
+    "correct": 1,
+    "cost": 854.7,
+    "provenance": "docs\\results\\2026-11-12\\tricks-v1-graded.json",
+    "source_agent_commit": "945ecb7"
+  }
+]

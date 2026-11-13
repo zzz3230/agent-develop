@@ -1,0 +1,2 @@
+FROM agent-develop:catboost-large
+COPY runtime/task_queue.py /app/runtime/task_queue.py

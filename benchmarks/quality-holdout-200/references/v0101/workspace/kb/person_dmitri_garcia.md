@@ -1,0 +1,5 @@
+# Dmitri Garcia
+
+Born: 1978
+Employer: Arktika Labs
+Mentor: Kira Lund

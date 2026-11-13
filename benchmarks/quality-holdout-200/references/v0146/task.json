@@ -1,0 +1,8 @@
+{
+  "task_id": "v0146",
+  "task_type": "search",
+  "instruction": "Using only kb/, where was botanist Lena Rook born? Return only the city. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 10,
+  "check": "exact_str",
+  "expected": "IMPOSSIBLE"
+}

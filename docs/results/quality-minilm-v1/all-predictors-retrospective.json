@@ -1,0 +1,432 @@
+{
+  "quality_holdout": {
+    "tasks": 44,
+    "mean_cost": 722.940909090909,
+    "successes": 31,
+    "budget": 15000,
+    "models": {
+      "numeric": {
+        "brier": 0.2077230827618468,
+        "cost_mae": 645.2708137818775,
+        "cost_spearman": 0.28188865398167723,
+        "p_std": 0.0017694591279189269,
+        "init_seconds": 0.089,
+        "reward_over_cost": {
+          "points": 56.0,
+          "correct": 12,
+          "completed": 17,
+          "spent": 14419.8
+        },
+        "reward_p_over_cost": {
+          "points": 56.0,
+          "correct": 12,
+          "completed": 17,
+          "spent": 14419.8
+        }
+      },
+      "embedding": {
+        "brier": 0.2177158894085496,
+        "cost_mae": 557.732435944089,
+        "cost_spearman": 0.3956157393585739,
+        "p_std": 0.04773813180210989,
+        "init_seconds": 2.6,
+        "reward_over_cost": {
+          "points": 56.0,
+          "correct": 14,
+          "completed": 22,
+          "spent": 14979.5
+        },
+        "reward_p_over_cost": {
+          "points": 56.0,
+          "correct": 14,
+          "completed": 22,
+          "spent": 14979.5
+        }
+      },
+      "structural": {
+        "brier": 0.2080695053555214,
+        "cost_mae": 620.9835935598201,
+        "cost_spearman": 0.20380549682875262,
+        "p_std": 0.0010070626019950681,
+        "init_seconds": 0.084,
+        "reward_over_cost": {
+          "points": 46.0,
+          "correct": 11,
+          "completed": 17,
+          "spent": 12960.3
+        },
+        "reward_p_over_cost": {
+          "points": 46.0,
+          "correct": 11,
+          "completed": 17,
+          "spent": 12960.3
+        }
+      },
+      "strong_embedding": {
+        "brier": 0.21707576293666395,
+        "cost_mae": 502.5225990476379,
+        "cost_spearman": 0.432158076433695,
+        "p_std": 0.06204529344631236,
+        "init_seconds": 6.605,
+        "reward_over_cost": {
+          "points": 36.0,
+          "correct": 9,
+          "completed": 17,
+          "spent": 14719.2
+        },
+        "reward_p_over_cost": {
+          "points": 41.0,
+          "correct": 10,
+          "completed": 17,
+          "spent": 14485.4
+        }
+      },
+      "bge_structural": {
+        "brier": 0.21748776427613728,
+        "cost_mae": 501.9756209144741,
+        "cost_spearman": 0.4400281888653982,
+        "p_std": 0.06260137690116248,
+        "init_seconds": 6.141,
+        "reward_over_cost": {
+          "points": 36.0,
+          "correct": 8,
+          "completed": 16,
+          "spent": 14978.5
+        },
+        "reward_p_over_cost": {
+          "points": 41.0,
+          "correct": 10,
+          "completed": 18,
+          "spent": 14800.4
+        }
+      },
+      "bge_keywords": {
+        "brier": 0.21634728517911056,
+        "cost_mae": 502.09539649985203,
+        "cost_spearman": 0.4298801973220578,
+        "p_std": 0.06319317782701803,
+        "init_seconds": 5.917,
+        "reward_over_cost": {
+          "points": 36.0,
+          "correct": 9,
+          "completed": 17,
+          "spent": 14719.2
+        },
+        "reward_p_over_cost": {
+          "points": 41.0,
+          "correct": 10,
+          "completed": 18,
+          "spent": 14800.4
+        }
+      },
+      "quality_minilm_structural": {
+        "brier": 0.22675179670521037,
+        "cost_mae": 470.6153945723864,
+        "cost_spearman": 0.3836504580690627,
+        "p_std": 0.0035040970966822792,
+        "init_seconds": 2.394,
+        "reward_over_cost": {
+          "points": 59.0,
+          "correct": 12,
+          "completed": 16,
+          "spent": 13828.7
+        },
+        "reward_p_over_cost": {
+          "points": 55.0,
+          "correct": 11,
+          "completed": 16,
+          "spent": 14729.6
+        }
+      },
+      "quality_minilm_keywords": {
+        "brier": 0.22670483867314076,
+        "cost_mae": 470.4290913135453,
+        "cost_spearman": 0.3732205778717406,
+        "p_std": 0.003613643473806189,
+        "init_seconds": 2.542,
+        "reward_over_cost": {
+          "points": 55.0,
+          "correct": 11,
+          "completed": 16,
+          "spent": 14729.6
+        },
+        "reward_p_over_cost": {
+          "points": 55.0,
+          "correct": 11,
+          "completed": 16,
+          "spent": 14729.6
+        }
+      },
+      "catboost_structural": {
+        "brier": 0.22174626543527698,
+        "cost_mae": 457.1589178141077,
+        "cost_spearman": 0.28797970348055013,
+        "p_std": 0.04053454201520864,
+        "init_seconds": 0.81,
+        "reward_over_cost": {
+          "points": 55.0,
+          "correct": 12,
+          "completed": 17,
+          "spent": 13426.5
+        },
+        "reward_p_over_cost": {
+          "points": 58.0,
+          "correct": 13,
+          "completed": 18,
+          "spent": 13598.8
+        }
+      },
+      "catboost_large": {
+        "brier": 0.2203088916147653,
+        "cost_mae": 439.1455462906029,
+        "cost_spearman": 0.27386447742433223,
+        "p_std": 0.09552315457169071,
+        "init_seconds": 0.075,
+        "reward_over_cost": {
+          "points": 69.0,
+          "correct": 16,
+          "completed": 21,
+          "spent": 12662.3
+        },
+        "reward_p_over_cost": {
+          "points": 63.0,
+          "correct": 16,
+          "completed": 22,
+          "spent": 14636.1
+        }
+      }
+    },
+    "baseline": {
+      "dynamic_type": {
+        "points": 37.0,
+        "correct": 9,
+        "completed": 15,
+        "spent": 14768.9
+      },
+      "directory_order": {
+        "points": 66.0,
+        "correct": 18,
+        "completed": 24,
+        "spent": 14796.8
+      }
+    }
+  },
+  "catboost_selected": {
+    "tasks": 98,
+    "mean_cost": 510.4163265306122,
+    "successes": 71,
+    "budget": 25000,
+    "models": {
+      "numeric": {
+        "brier": 0.19992937296444804,
+        "cost_mae": 541.5880713618751,
+        "cost_spearman": 0.0005740949593829341,
+        "p_std": 0.0018089956620304863,
+        "init_seconds": 2.285,
+        "reward_over_cost": {
+          "points": 300.0,
+          "correct": 33,
+          "completed": 48,
+          "spent": 24033.0
+        },
+        "reward_p_over_cost": {
+          "points": 300.0,
+          "correct": 33,
+          "completed": 48,
+          "spent": 24033.0
+        }
+      },
+      "embedding": {
+        "brier": 0.2053363016016117,
+        "cost_mae": 517.132185540263,
+        "cost_spearman": 0.009506537206583648,
+        "p_std": 0.04699324585507562,
+        "init_seconds": 5.806,
+        "reward_over_cost": {
+          "points": 244.0,
+          "correct": 30,
+          "completed": 44,
+          "spent": 24855.0
+        },
+        "reward_p_over_cost": {
+          "points": 276.0,
+          "correct": 34,
+          "completed": 48,
+          "spent": 24691.7
+        }
+      },
+      "structural": {
+        "brier": 0.2002330057102764,
+        "cost_mae": 446.59483356669034,
+        "cost_spearman": 0.06820248117469258,
+        "p_std": 0.0010255757045700173,
+        "init_seconds": 0.178,
+        "reward_over_cost": {
+          "points": 295.0,
+          "correct": 35,
+          "completed": 50,
+          "spent": 24522.4
+        },
+        "reward_p_over_cost": {
+          "points": 295.0,
+          "correct": 35,
+          "completed": 50,
+          "spent": 24522.4
+        }
+      },
+      "strong_embedding": {
+        "brier": 0.2078418571106717,
+        "cost_mae": 398.6476033494396,
+        "cost_spearman": 0.10932244192736185,
+        "p_std": 0.06793222909288121,
+        "init_seconds": 12.538,
+        "reward_over_cost": {
+          "points": 294.0,
+          "correct": 35,
+          "completed": 49,
+          "spent": 24805.8
+        },
+        "reward_p_over_cost": {
+          "points": 270.0,
+          "correct": 32,
+          "completed": 46,
+          "spent": 24581.9
+        }
+      },
+      "bge_structural": {
+        "brier": 0.20833554220271575,
+        "cost_mae": 397.27312255492967,
+        "cost_spearman": 0.11847407517654666,
+        "p_std": 0.06852342612729283,
+        "init_seconds": 12.398,
+        "reward_over_cost": {
+          "points": 299.0,
+          "correct": 36,
+          "completed": 50,
+          "spent": 24922.4
+        },
+        "reward_p_over_cost": {
+          "points": 270.0,
+          "correct": 32,
+          "completed": 47,
+          "spent": 24621.0
+        }
+      },
+      "bge_keywords": {
+        "brier": 0.20738513598740857,
+        "cost_mae": 398.0129708486031,
+        "cost_spearman": 0.11787472298524397,
+        "p_std": 0.06895600416620466,
+        "init_seconds": 13.314,
+        "reward_over_cost": {
+          "points": 270.0,
+          "correct": 32,
+          "completed": 48,
+          "spent": 24570.3
+        },
+        "reward_p_over_cost": {
+          "points": 276.0,
+          "correct": 33,
+          "completed": 48,
+          "spent": 24907.7
+        }
+      },
+      "quality_minilm_structural": {
+        "brier": 0.21351789592824605,
+        "cost_mae": 318.81413716322504,
+        "cost_spearman": -0.03183580309759956,
+        "p_std": 0.0030839127220330426,
+        "init_seconds": 5.549,
+        "reward_over_cost": {
+          "points": 344.0,
+          "correct": 37,
+          "completed": 48,
+          "spent": 24701.9
+        },
+        "reward_p_over_cost": {
+          "points": 344.0,
+          "correct": 37,
+          "completed": 48,
+          "spent": 24701.9
+        }
+      },
+      "quality_minilm_keywords": {
+        "brier": 0.21346810322934787,
+        "cost_mae": 318.3735114737031,
+        "cost_spearman": -0.0393085772274587,
+        "p_std": 0.0031818655441749606,
+        "init_seconds": 5.465,
+        "reward_over_cost": {
+          "points": 346.0,
+          "correct": 37,
+          "completed": 48,
+          "spent": 24771.0
+        },
+        "reward_p_over_cost": {
+          "points": 346.0,
+          "correct": 37,
+          "completed": 48,
+          "spent": 24771.0
+        }
+      },
+      "catboost_structural": {
+        "brier": 0.20223414197622314,
+        "cost_mae": 325.2436843489865,
+        "cost_spearman": -0.03659634217599308,
+        "p_std": 0.02927006508401845,
+        "init_seconds": 0.15,
+        "reward_over_cost": {
+          "points": 216.0,
+          "correct": 25,
+          "completed": 43,
+          "spent": 23854.8
+        },
+        "reward_p_over_cost": {
+          "points": 256.0,
+          "correct": 30,
+          "completed": 47,
+          "spent": 24522.8
+        }
+      },
+      "catboost_large": {
+        "brier": 0.20248772209489574,
+        "cost_mae": 281.5159402544623,
+        "cost_spearman": 0.0461349944927019,
+        "p_std": 0.08817204854217044,
+        "init_seconds": 0.149,
+        "reward_over_cost": {
+          "points": 277.0,
+          "correct": 33,
+          "completed": 49,
+          "spent": 24773.9
+        },
+        "reward_p_over_cost": {
+          "points": 298.0,
+          "correct": 35,
+          "completed": 49,
+          "spent": 24616.6
+        }
+      }
+    },
+    "baseline": {
+      "dynamic_type": {
+        "points": 283.0,
+        "correct": 33,
+        "completed": 47,
+        "spent": 24052.5
+      },
+      "directory_order": {
+        "points": 225.0,
+        "correct": 30,
+        "completed": 44,
+        "spent": 24918.1
+      }
+    }
+  },
+  "notes": [
+    "Replay assumes each task has the same outcome and cost in any order.",
+    "CatBoost-selected cohort has selection bias and omits unattempted tasks.",
+    "Quality holdout was reused for previous model analysis; older models may have seen related families.",
+    "Replay scores are not real proxy scores. No references are used as predictor inputs."
+  ]
+}

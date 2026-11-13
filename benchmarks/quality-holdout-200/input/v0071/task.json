@@ -1,0 +1,7 @@
+{
+  "task_id": "v0071",
+  "task_type": "data_analysis",
+  "instruction": "For each order in table_40bfdc9a.csv use the price for its product with the greatest effective date not later than the order date, including equal dates, from prices.csv. Multiply by quantity and sum all orders. Prices are integer cents. Return total integer cents. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 1,
+  "check": "exact_int"
+}

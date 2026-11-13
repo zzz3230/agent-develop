@@ -9,5 +9,9 @@ evaluation/build_suite.py
 evaluation/build_planner_pool.py
 evaluation/validate_planner_pool.py
 evaluation/prepare_planner_pool.py
+evaluation/quality_dataset.py
+evaluation/train_quality_minilm.py
+evaluation/quality_experiment.py
+evaluation/validate_quality_holdout.py
 benchmarks/
 benchmark-runs/

@@ -1,0 +1,8 @@
+{
+  "task_id": "v0169",
+  "task_type": "coding",
+  "instruction": "Fix lib_af4e8ec9.py. to_cents(text) takes a valid finite decimal string with optional sign and decimal point (no exponent, at most 20 digits). Return integer cents rounded to nearest, with ties away from zero. Keep the implementation in lib_af4e8ec9.py and use only the Python standard library. Run `python3 test_solution.py` to check the examples. Do not edit the tests. The implementation must satisfy the specification for other inputs too. After fixing the implementation, the final answer is DONE. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory.",
+  "reward": 3,
+  "check": "unittest",
+  "expected": "tests_pass"
+}

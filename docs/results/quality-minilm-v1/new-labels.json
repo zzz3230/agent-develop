@@ -1,0 +1,170 @@
+[
+  {
+    "id": "q0009",
+    "correct": 1,
+    "cost": 182.9,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0010",
+    "correct": 1,
+    "cost": 767.4,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0011",
+    "correct": 1,
+    "cost": 486.9,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0012",
+    "correct": 1,
+    "cost": 260.3,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0021",
+    "correct": 1,
+    "cost": 172.9,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0022",
+    "correct": 1,
+    "cost": 228.6,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0023",
+    "correct": 1,
+    "cost": 432.9,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0024",
+    "correct": 1,
+    "cost": 897.8,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0033",
+    "correct": 1,
+    "cost": 406.2,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0034",
+    "correct": 1,
+    "cost": 761.4,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0035",
+    "correct": 1,
+    "cost": 329.1,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0036",
+    "correct": 0,
+    "cost": 225.6,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0045",
+    "correct": 1,
+    "cost": 172.3,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0046",
+    "correct": 1,
+    "cost": 356.3,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0047",
+    "correct": 0,
+    "cost": 1894.3,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0048",
+    "correct": 0,
+    "cost": 1355.9,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0053",
+    "correct": 1,
+    "cost": 844.2,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0054",
+    "correct": 1,
+    "cost": 392.5,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0055",
+    "correct": 1,
+    "cost": 176.8,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0056",
+    "correct": 1,
+    "cost": 791.3,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0061",
+    "correct": 0,
+    "cost": 177.5,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0062",
+    "correct": 0,
+    "cost": 315.0,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0063",
+    "correct": 0,
+    "cost": 2788.5,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  },
+  {
+    "id": "q0064",
+    "correct": 1,
+    "cost": 424.7,
+    "provenance": "benchmark-runs/quality-minilm-v1/collection-run",
+    "source_agent_commit": "f8e23ac"
+  }
+]

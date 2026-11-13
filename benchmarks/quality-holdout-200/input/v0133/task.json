@@ -1,0 +1,7 @@
+{
+  "task_id": "v0133",
+  "task_type": "search",
+  "instruction": "The directory kn/ contains a small knowledge base of markdown files. In which year was Jonas Novak born? Use the file tools or bash (ls, grep, cat) to find it. Work only inside the current directory. When you are done, write ONLY the final answer to the file answer.txt in the current directory (for example with bash: echo 42 > answer.txt).",
+  "reward": 7,
+  "check": "exact_str"
+}

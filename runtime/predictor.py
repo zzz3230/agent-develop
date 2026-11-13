@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 import re
 import time
+import csv
 
 KINDS=('math','data_analysis','search','coding')
 WORDS=('round','date','latest','before','after','distinct','duplicate','missing','except',
@@ -13,19 +14,26 @@ WORDS=('round','date','latest','before','after','distinct','duplicate','missing'
 SUFFIXES=('.csv','.tsv','.json','.jsonl','.md','.txt','.py')
 
 
-def features(task,keywords=True):
+def features(task,keywords=True,extended=False):
+    full_extended=extended is True
     text=task.instruction.lower()
     values=[float(task.type==k) for k in KINDS]
     values += [math.log1p(len(text)),math.log1p(len(text.split()))]
     if keywords:
         values += [math.log1p(len(re.findall(r'\b'+w+r'\w*',text))) for w in WORDS]
     counts={s:0 for s in SUFFIXES}; size=files=lines=code_lines=tests=columns=0
+    max_size=py_definitions=visible_tests=csv_rows=csv_columns=csv_cells=csv_empty=0
+    names=set(); searchable=[]
     sample_budget=262144
     for path in sorted(task.cwd.rglob('*')):
         if files>=512: break
         if not path.is_file() or path.is_symlink() or '__pycache__' in path.parts: continue
         if path.name in ('task.json','answer.txt','.answer.tmp') or path.name.startswith('test_private'): continue
-        files+=1; size+=path.stat().st_size
+        file_size=path.stat().st_size
+        files+=1; size+=file_size
+        if extended:
+            if full_extended:max_size=max(max_size,file_size)
+            names.add(path.name.lower())
         suffix=path.suffix.lower()
         if suffix in counts: counts[suffix]+=1
         if suffix in SUFFIXES and sample_budget>0:
@@ -35,10 +43,40 @@ def features(task,keywords=True):
             if suffix=='.py':
                 code_lines+=content.count('\n')
                 if keywords: tests+=len(re.findall(r'\bassert\w*|def test_',content))
+                if full_extended:
+                    py_definitions+=len(re.findall(r'^\s*(?:async\s+)?(?:def|class)\s+\w+',content,re.M))
+                    visible_tests+=len(re.findall(r'^\s*(?:assert\b|def test_\w*)',content,re.M))
             if suffix in ('.csv','.tsv'):
                 first=content.splitlines()[0] if content.splitlines() else ''
                 columns=max(columns,first.count('\t' if suffix=='.tsv' else ',')+1)
+                if full_extended:
+                    try:
+                        rows=list(csv.reader(content.splitlines()[:101],delimiter='\t' if suffix=='.tsv' else ','))
+                        csv_rows+=max(0,len(rows)-1)
+                        csv_columns+=len(rows[0]) if rows else 0
+                        for row in rows[1:]:
+                            csv_cells+=len(row)
+                            csv_empty+=sum(not cell.strip() for cell in row)
+                    except csv.Error:
+                        pass
+            if full_extended and suffix in ('.md','.txt','.json','.jsonl','.csv','.tsv'):
+                searchable.append(content.lower())
     values += [math.log1p(v) for v in (files,size,lines,code_lines,*([tests] if keywords else []),columns,*counts.values())]
+    if extended:
+        file_refs={m.group(0).lower() for m in re.finditer(r'\b[\w./-]+\.(?:csv|tsv|json|jsonl|md|txt|py)\b',text)}
+        file_refs-={'task.json','answer.txt'}
+        missing=sum(ref.rsplit('/',1)[-1] not in names for ref in file_refs)
+        extra=(len(re.findall(r'\b\d+(?:\.\d+)?\b',text)),
+               len(re.findall(r'\b\d{4}-\d{1,2}-\d{1,2}\b',text)),
+               len(file_refs),missing)
+        values += [math.log1p(v) for v in extra]
+        if full_extended:
+            ids={m.group(0).lower() for m in re.finditer(r'\b[A-Z]{1,4}-\d+\b',task.instruction)}
+            corpus='\n'.join(searchable)
+            missing_ids=sum(identifier not in corpus for identifier in ids) if corpus else 0
+            values += [math.log1p(v) for v in (max_size,py_definitions,visible_tests,
+                                                 csv_rows,csv_columns,missing_ids)]
+            values.append(csv_empty/max(csv_cells,1))
     return values
 
 
@@ -79,13 +117,32 @@ class Encoder:
 class Predictor:
     def __init__(self,tasks,mode,directory,journal=None):
         started=time.monotonic();directory=Path(directory)
+        if mode in ('catboost_structural','catboost_large','catboost_large_mae','catboost_large_huber',
+                    'catboost_instruction'):
+            from catboost import CatBoostClassifier,CatBoostRegressor
+            success_mode='catboost_large' if mode in ('catboost_large_mae','catboost_large_huber') else mode
+            classifier=CatBoostClassifier();classifier.load_model(str(directory/(success_mode+'_success.cbm')))
+            regressor=CatBoostRegressor();regressor.load_model(str(directory/(mode+'_cost.cbm')))
+            import numpy as np
+            matrix=np.asarray([features(t,keywords=False,extended='instruction' if mode=='catboost_instruction' else False)
+                               for t in tasks],dtype=np.float32)
+            probabilities=classifier.predict_proba(matrix)[:,1]
+            costs=regressor.predict(matrix)
+            self.predictions={t.id:(max(.02,min(.98,float(p))),max(50,min(20000,float(c))))
+                              for t,p,c in zip(tasks,probabilities,costs)}
+            if journal:
+                journal.write('predictor_init',mode=mode,seconds=round(time.monotonic()-started,3),tasks=len(tasks))
+                for t in tasks:
+                    p,c=self.predictions[t.id];journal.write('prediction',task=t.id,p=p,cost=c)
+            return
         self.model=json.loads((directory/(mode+'.json')).read_text(encoding='utf-8'))
         if mode=='strong_embedding':
             vectors=Encoder(directory/'encoder-strong').encode([t.instruction for t in tasks]).tolist()
         else:
-            vectors=[features(t,keywords=mode not in ('structural','bge_structural')) for t in tasks]
-        if mode in ('embedding','bge_structural','bge_keywords'):
-            embeddings=Encoder(directory/('encoder' if mode=='embedding' else 'encoder-strong')).encode([t.instruction for t in tasks])
+            vectors=[features(t,keywords=mode not in ('structural','bge_structural','quality_minilm_structural')) for t in tasks]
+        if mode in ('embedding','bge_structural','bge_keywords','quality_minilm_structural','quality_minilm_keywords'):
+            mini=mode in ('embedding','quality_minilm_structural','quality_minilm_keywords')
+            embeddings=Encoder(directory/('encoder' if mini else 'encoder-strong')).encode([t.instruction for t in tasks])
             vectors=[x+e.tolist() for x,e in zip(vectors,embeddings)]
         self.predictions={t.id:self.predict(x) for t,x in zip(tasks,vectors)}
         if journal:
