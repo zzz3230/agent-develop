@@ -69,6 +69,7 @@ class Contradictions(Flags):
             self.assertIsNone(contradictory_tests(Path(tmp, 'absent')))
 
             def queue():
+                os.environ['PREDICTOR'] = 'baseline'   # stub tasks have no text for the embedding predictor
                 return TaskQueue([SimpleNamespace(id='bad', type='coding', reward=10, cwd=bad),
                                   SimpleNamespace(id='good', type='coding', reward=1, cwd=good),
                                   SimpleNamespace(id='math', type='math', reward=1, cwd=good)])
