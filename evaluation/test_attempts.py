@@ -28,7 +28,7 @@ class AttemptTests(unittest.IsolatedAsyncioTestCase):
     def context(self, result, args=None):
         return SimpleNamespace(inputs=SimpleNamespace(tool_name='bash', tool_args=args or {'command':'python3 test.py'},
             tool_result=SimpleNamespace(success=result), tool_msg=SimpleNamespace(content='same error')),
-            request_force_finish=self.finished.append)
+            extra={},request_force_finish=self.finished.append)
 
     async def test_repeated_errors_stop_but_source_progress_resets(self):
         self.finished=[]
