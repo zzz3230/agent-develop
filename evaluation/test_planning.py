@@ -23,6 +23,29 @@ class Planning(unittest.TestCase):
         chosen=knapsack(items,1234.5,max_states=32)
         self.assertLessEqual(sum(items[i][1] for i in chosen),1234.5)
 
+    def test_knapsack_uses_the_selected_score_policy(self):
+        tasks=[SimpleNamespace(id='a',type='math',reward=10),
+               SimpleNamespace(id='b',type='math',reward=8)]
+        predictions={'a':(.1,10),'b':(.9,10)}
+        with patch.dict('os.environ',{'QUEUE_POLICY':'knapsack','QUEUE_USE_SUCCESS':'0','SCORE_ALPHA':'1'}):
+            queue=TaskQueue(tasks)
+            queue.predictor=SimpleNamespace(predictions=predictions)
+            self.assertEqual(queue.next(10)[0].id,'a')
+        tasks=[SimpleNamespace(id='a',type='math',reward=5),
+               SimpleNamespace(id='b',type='math',reward=10)]
+        predictions={'a':(.9,10),'b':(.3,10)}
+        with patch.dict('os.environ',{'QUEUE_POLICY':'knapsack','QUEUE_USE_SUCCESS':'1','SCORE_ALPHA':'2'}):
+            queue=TaskQueue(tasks)
+            queue.predictor=SimpleNamespace(predictions=predictions)
+            self.assertEqual(queue.next(10)[0].id,'b')
+        tasks=[SimpleNamespace(id='a',type='coding',reward=10),
+               SimpleNamespace(id='b',type='coding',reward=8)]
+        with patch.dict('os.environ',{'QUEUE_POLICY':'knapsack','QUEUE_USE_SUCCESS':'1','SCORE_ALPHA':'1'}):
+            queue=TaskQueue(tasks)
+            queue.predictor=SimpleNamespace(predictions={'a':(1,10),'b':(1,10)})
+            queue.suspects['a']='contradictory visible tests'
+            self.assertEqual(queue.next(10)[0].id,'b')
+
     def test_score_alpha_and_knapsack_are_separate(self):
         ts=[SimpleNamespace(id=str(i),type='math',reward=v) for i,v in enumerate([60,100,120])]
         fake=SimpleNamespace(predictions={t.id:(1,c) for t,c in zip(ts,[10,20,30])})

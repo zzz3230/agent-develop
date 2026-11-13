@@ -11,6 +11,27 @@ from runtime.task_queue import TaskQueue
 
 
 class Predictors(unittest.TestCase):
+    def test_extended_features_are_bounded_and_input_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp)
+            (p/'task.json').write_text(json.dumps(dict(task_id='a',task_type='data_analysis',
+                instruction='Use missing.csv and records.csv for AC-123 on 2026-11-13.',reward=9)))
+            (p/'records.csv').write_text('id,value\n1,\n2,7\n')
+            (p/'checks.py').write_text('def test_value():\n    assert 2 == 2\n')
+            task=load_task(p)
+            basic=features(task,keywords=False)
+            extended=features(task,keywords=False,extended=True)
+            self.assertEqual(len(basic),18)
+            self.assertEqual(len(extended),29)
+            self.assertEqual(extended[:18],basic)
+            self.assertEqual(features(task,keywords=False,extended='instruction'),extended[:22])
+            self.assertGreater(extended[21],0)  # missing.csv is named but absent
+            self.assertGreater(extended[24],0)  # visible assertion
+            self.assertGreater(extended[28],0)  # empty CSV cell
+            (p/'answer.txt').write_text('secret')
+            (p/'test_private.py').write_text('secret')
+            self.assertEqual(features(task,keywords=False,extended=True),extended)
+
     def test_quality_minilm_keyword_ablation(self):
         class Vector:
             def tolist(self):return [0.0]*384

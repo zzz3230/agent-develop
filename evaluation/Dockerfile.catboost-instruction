@@ -1,0 +1,4 @@
+FROM agent-develop:catboost-large
+COPY runtime/predictor.py runtime/task_queue.py /app/runtime/
+COPY predictors/catboost_instruction_success.cbm predictors/catboost_instruction_cost.cbm /app/predictors/
+RUN python -c "from catboost import CatBoostClassifier,CatBoostRegressor;from pathlib import Path;p=Path('/app/predictors');a=CatBoostClassifier();a.load_model(str(p/'catboost_instruction_success.cbm'));b=CatBoostRegressor();b.load_model(str(p/'catboost_instruction_cost.cbm'));assert len(a.feature_names_)==len(b.feature_names_)==22"

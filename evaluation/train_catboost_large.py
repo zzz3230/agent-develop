@@ -26,7 +26,7 @@ def models(config, x, success, cost):
             CatBoostRegressor(**common, loss_function='RMSE').fit(x, cost))
 
 
-def main():
+def load_training_rows():
     quality = json.loads((META / 'manifest.json').read_text(encoding='utf-8'))['tasks']
     labels = {r['id']: r for path in (REPORT / 'cached-labels.json', REPORT / 'new-labels.json')
               for r in json.loads(path.read_text(encoding='utf-8'))}
@@ -64,6 +64,11 @@ def main():
                              task=load_task(SOURCE / 'input' / identifier),
                              correct=int(entry['correct']), cost=entry['cost']))
     assert len(rows) == 301
+    return rows, quality, labels, held_groups
+
+
+def main():
+    rows, quality, labels, held_groups = load_training_rows()
     x = np.asarray([features(r['task'], keywords=False) for r in rows], dtype=np.float32)
     y = np.asarray([r['correct'] for r in rows])
     cost = np.asarray([r['cost'] for r in rows])

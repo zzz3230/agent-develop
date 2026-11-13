@@ -1,0 +1,42 @@
+{
+  "rows": 301,
+  "groups": 108,
+  "features": 22,
+  "feature_names": "18 existing structural + numbers, dates, file references, missing file references",
+  "group_cv": {
+    "brier": 0.2061532797080013,
+    "cost": {
+      "mae": 241.99093833585655,
+      "median_ae": 124.29113767822531,
+      "p90_ae": 554.9961750120592,
+      "spearman": 0.499346316436884,
+      "severe_underestimate": 0.1461794019933555
+    }
+  },
+  "holdout_diagnostic": {
+    "brier": 0.2314709940176258,
+    "cost": {
+      "mae": 401.3242155297563,
+      "median_ae": 168.31333359673584,
+      "p90_ae": 1380.965559286091,
+      "spearman": 0.3680890801820091,
+      "severe_underestimate": 0.20454545454545456
+    }
+  },
+  "selected_cohort_diagnostic": {
+    "cost": {
+      "mae": 252.12673892324355,
+      "median_ae": 140.3214406793984,
+      "p90_ae": 646.2027994951945,
+      "spearman": 0.11450569218709579,
+      "severe_underestimate": 0.1836734693877551
+    },
+    "replay_25k": {
+      "points": 290.0,
+      "correct": 34,
+      "completed": 49,
+      "spent": 24871.9
+    }
+  },
+  "note": "Training uses stored attempts only. Four additional features selected on the same group-CV folds, so CV is exploratory. Holdout and selected cohort are previously inspected and diagnostic. Proxy billing may differ from local weighted tokens."
+}

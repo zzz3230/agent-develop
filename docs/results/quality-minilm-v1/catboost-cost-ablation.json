@@ -1,0 +1,124 @@
+{
+  "rows": 301,
+  "groups": 108,
+  "variants": {
+    "rmse": {
+      "group_cv": {
+        "mae": 282.60007010828747,
+        "median_ae": 190.72345887724424,
+        "p90_ae": 586.0180804596888,
+        "spearman": 0.4640337103892796,
+        "severe_underestimate": 0.08637873754152824
+      },
+      "holdout_diagnostic": {
+        "mae": 439.1455462906029,
+        "median_ae": 227.2261387501134,
+        "p90_ae": 1253.2483247241685,
+        "spearman": 0.27386447742433223,
+        "severe_underestimate": 0.1590909090909091
+      },
+      "selected_cohort_diagnostic": {
+        "mae": 281.5159402544623,
+        "median_ae": 195.63255034713723,
+        "p90_ae": 626.0877639234112,
+        "spearman": 0.04613499449270189,
+        "severe_underestimate": 0.1326530612244898
+      },
+      "selected_cohort_replay_25k": {
+        "points": 277.0,
+        "correct": 33,
+        "completed": 49,
+        "spent": 24773.9
+      }
+    },
+    "mae": {
+      "group_cv": {
+        "mae": 248.28269000489666,
+        "median_ae": 138.43927381159483,
+        "p90_ae": 562.6529924445861,
+        "spearman": 0.4820327943348822,
+        "severe_underestimate": 0.14950166112956811
+      },
+      "holdout_diagnostic": {
+        "mae": 395.5432055053727,
+        "median_ae": 139.34733782336457,
+        "p90_ae": 1389.42806143181,
+        "spearman": 0.37892511601506135,
+        "severe_underestimate": 0.18181818181818182
+      },
+      "selected_cohort_diagnostic": {
+        "mae": 249.5312162074395,
+        "median_ae": 122.4887734748697,
+        "p90_ae": 650.2739869304262,
+        "spearman": 0.10612442683447805,
+        "severe_underestimate": 0.17346938775510204
+      },
+      "selected_cohort_replay_25k": {
+        "points": 286.0,
+        "correct": 33,
+        "completed": 48,
+        "spent": 24899.2
+      }
+    },
+    "huber_200": {
+      "group_cv": {
+        "mae": 249.70494131093753,
+        "median_ae": 133.56343351865922,
+        "p90_ae": 534.8681273864623,
+        "spearman": 0.49676440590229,
+        "severe_underestimate": 0.12956810631229235
+      },
+      "holdout_diagnostic": {
+        "mae": 409.84470144919743,
+        "median_ae": 170.7071044069209,
+        "p90_ae": 1350.2773156185074,
+        "spearman": 0.38789245592988286,
+        "severe_underestimate": 0.1590909090909091
+      },
+      "selected_cohort_diagnostic": {
+        "mae": 248.69431834002378,
+        "median_ae": 131.35817536539278,
+        "p90_ae": 618.8765554093679,
+        "spearman": 0.15056058734317682,
+        "severe_underestimate": 0.1836734693877551
+      },
+      "selected_cohort_replay_25k": {
+        "points": 307.0,
+        "correct": 36,
+        "completed": 51,
+        "spent": 24931.1
+      }
+    },
+    "log_rmse": {
+      "group_cv": {
+        "mae": 254.37630934463812,
+        "median_ae": 142.375663701406,
+        "p90_ae": 535.0933737654549,
+        "spearman": 0.4850547743069207,
+        "severe_underestimate": 0.14285714285714285
+      },
+      "holdout_diagnostic": {
+        "mae": 412.4858074676715,
+        "median_ae": 207.32658515391176,
+        "p90_ae": 1335.499273362451,
+        "spearman": 0.3566017127553065,
+        "severe_underestimate": 0.1590909090909091
+      },
+      "selected_cohort_diagnostic": {
+        "mae": 262.97799243921855,
+        "median_ae": 164.39021922922652,
+        "p90_ae": 632.8854130498554,
+        "spearman": 0.05926076130462248,
+        "severe_underestimate": 0.1836734693877551
+      },
+      "selected_cohort_replay_25k": {
+        "points": 253.0,
+        "correct": 30,
+        "completed": 46,
+        "spent": 24608.2
+      }
+    }
+  },
+  "selected_by_group_cv_mae": "mae",
+  "note": "All labels are stored real agent attempts. The 44-task holdout has been inspected in previous experiments and is only diagnostic. The 98-task cohort is selected by an older CatBoost queue and is also diagnostic. No model is deployed by this script; proxy billing may differ from local weighted tokens."
+}

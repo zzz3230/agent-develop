@@ -1,0 +1,138 @@
+{
+  "assumption": "A common multiplier on every task; local cutoffs are approximations to proxy budget, not proxy measurements.",
+  "cutoffs": [
+    10000,
+    14285.7,
+    20000,
+    30000,
+    50000
+  ],
+  "best_predictor": {
+    "10000": {
+      "points": 221.0,
+      "correct": 27,
+      "completed": 30,
+      "last_completed_cost": 9457.600000000002
+    },
+    "14285.7": {
+      "points": 271.0,
+      "correct": 34,
+      "completed": 40,
+      "last_completed_cost": 14132.300000000001
+    },
+    "20000": {
+      "points": 336.0,
+      "correct": 42,
+      "completed": 51,
+      "last_completed_cost": 19769.8
+    },
+    "30000": {
+      "points": 462.0,
+      "correct": 58,
+      "completed": 73,
+      "last_completed_cost": 29632.600000000017
+    },
+    "50000": {
+      "points": 641.0,
+      "correct": 89,
+      "completed": 114,
+      "last_completed_cost": 49592.00000000002
+    }
+  },
+  "reward_descending": {
+    "10000": {
+      "points": 140.0,
+      "correct": 14,
+      "completed": 20,
+      "last_completed_cost": 9530.800000000001
+    },
+    "14285.7": {
+      "points": 203.0,
+      "correct": 21,
+      "completed": 30,
+      "last_completed_cost": 13966.300000000003
+    },
+    "20000": {
+      "points": 284.0,
+      "correct": 30,
+      "completed": 44,
+      "last_completed_cost": 19195.3
+    },
+    "30000": {
+      "points": 389.0,
+      "correct": 43,
+      "completed": 61,
+      "last_completed_cost": 29851.199999999997
+    },
+    "50000": {
+      "points": 587.0,
+      "correct": 74,
+      "completed": 103,
+      "last_completed_cost": 49549.09999999998
+    }
+  },
+  "knapsack": {
+    "10000": {
+      "points": 206.0,
+      "correct": 25,
+      "completed": 29,
+      "last_completed_cost": 9887.600000000006
+    },
+    "14285.7": {
+      "points": 271.0,
+      "correct": 34,
+      "completed": 39,
+      "last_completed_cost": 14029.000000000004
+    },
+    "20000": {
+      "points": 323.0,
+      "correct": 40,
+      "completed": 47,
+      "last_completed_cost": 19560.000000000007
+    },
+    "30000": {
+      "points": 440.0,
+      "correct": 54,
+      "completed": 66,
+      "last_completed_cost": 29619.400000000016
+    },
+    "50000": {
+      "points": 605.0,
+      "correct": 79,
+      "completed": 102,
+      "last_completed_cost": 49796.000000000015
+    }
+  },
+  "catboost_instruction": {
+    "10000": {
+      "points": 178.0,
+      "correct": 21,
+      "completed": 26,
+      "last_completed_cost": 9742.400000000003
+    },
+    "14285.7": {
+      "points": 231.0,
+      "correct": 29,
+      "completed": 38,
+      "last_completed_cost": 14197.800000000005
+    },
+    "20000": {
+      "points": 326.0,
+      "correct": 40,
+      "completed": 51,
+      "last_completed_cost": 19907.400000000005
+    },
+    "30000": {
+      "points": 453.0,
+      "correct": 57,
+      "completed": 73,
+      "last_completed_cost": 29911.0
+    },
+    "50000": {
+      "points": 646.0,
+      "correct": 88,
+      "completed": 112,
+      "last_completed_cost": 49775.899999999994
+    }
+  }
+}

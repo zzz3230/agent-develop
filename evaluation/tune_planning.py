@@ -25,7 +25,7 @@ def replay(tasks,budget,alpha=1,policy='greedy'):
         if policy=='knapsack':
             # DP ties follow original directory order, matching the live queue.
             original=sorted(remaining)
-            chosen=knapsack([(tasks[i]['reward']*tasks[i]['p'],tasks[i]['predicted_cost']) for i in original],left)
+            chosen=knapsack([(tasks[i]['reward']**alpha*tasks[i]['p'],tasks[i]['predicted_cost']) for i in original],left)
             selected={original[i] for i in chosen}
             candidates=[i for i in remaining if i in selected]
         else:candidates=[]

@@ -1,0 +1,39 @@
+{
+  "rows": 301,
+  "groups": 108,
+  "variants": {
+    "mlp_16": {
+      "group_cv": {
+        "mae": 286.23338284322404,
+        "median_ae": 195.3392508764524,
+        "p90_ae": 556.4442585456097,
+        "spearman": 0.4278720154748155,
+        "severe_underestimate": 0.09634551495016612
+      },
+      "holdout_diagnostic": {
+        "mae": 424.09888718931984,
+        "median_ae": 211.14922804995766,
+        "p90_ae": 1225.7754220042536,
+        "spearman": 0.31867512332628617,
+        "severe_underestimate": 0.1590909090909091
+      }
+    },
+    "mlp_32_16": {
+      "group_cv": {
+        "mae": 284.91772823749983,
+        "median_ae": 192.90191276704047,
+        "p90_ae": 565.737488454163,
+        "spearman": 0.42138426703408977,
+        "severe_underestimate": 0.09302325581395349
+      },
+      "holdout_diagnostic": {
+        "mae": 415.6448668514741,
+        "median_ae": 210.06657305283218,
+        "p90_ae": 1226.422760046371,
+        "spearman": 0.37928118393234667,
+        "severe_underestimate": 0.1590909090909091
+      }
+    }
+  },
+  "note": "Offline only. Held-out 44 tasks were previously inspected; no neural model deployed."
+}
