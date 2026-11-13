@@ -1,0 +1,5 @@
+FROM agent-develop:main-candidate
+RUN pip install --no-cache-dir catboost==1.2.10
+COPY runtime/predictor.py runtime/task_queue.py /app/runtime/
+COPY predictors/catboost_structural_success.cbm predictors/catboost_structural_cost.cbm predictors/catboost_large_success.cbm predictors/catboost_large_cost.cbm /app/predictors/
+RUN python -c "from catboost import CatBoostClassifier,CatBoostRegressor;from pathlib import Path;p=Path('/app/predictors');a=CatBoostClassifier();a.load_model(str(p/'catboost_structural_success.cbm'));b=CatBoostRegressor();b.load_model(str(p/'catboost_structural_cost.cbm'));c=CatBoostClassifier();c.load_model(str(p/'catboost_large_success.cbm'));d=CatBoostRegressor();d.load_model(str(p/'catboost_large_cost.cbm'));assert len(a.feature_names_)==len(b.feature_names_)==len(c.feature_names_)==len(d.feature_names_)==18"

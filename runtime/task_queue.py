@@ -72,7 +72,7 @@ class TaskQueue:
                     self._log('precheck_suspect', task=t.id, reason=reason)
         mode=os.environ.get('PREDICTOR','baseline')
         if enabled and mode != 'baseline':
-            if mode not in ('numeric','embedding','structural','strong_embedding','bge_structural','bge_keywords','quality_minilm_structural','quality_minilm_keywords'): raise ValueError('Unknown predictor: '+mode)
+            if mode not in ('numeric','embedding','structural','strong_embedding','bge_structural','bge_keywords','quality_minilm_structural','quality_minilm_keywords','catboost_structural','catboost_large'): raise ValueError('Unknown predictor: '+mode)
             from runtime.predictor import Predictor
             self.predictor=Predictor(self.fresh,mode,os.environ.get('PREDICTOR_DIR','/app/predictors'),journal)
 
@@ -97,6 +97,7 @@ class TaskQueue:
     def _score(self, task, retry: bool = False) -> float:
         if self.predictor and not retry:
             p,c=self.predictor.predictions[task.id]
+            if os.environ.get('QUEUE_USE_SUCCESS','1')=='0':p=1.0
             return (task.reward**self.alpha if task.reward>0 else 0)*p/c
         p = self.success(task.type) * (RETRY_DISCOUNT if retry else 1.0)
         c = self.limits(task.type).cost if retry else self.cost(task.type)

@@ -79,6 +79,21 @@ class Encoder:
 class Predictor:
     def __init__(self,tasks,mode,directory,journal=None):
         started=time.monotonic();directory=Path(directory)
+        if mode in ('catboost_structural','catboost_large'):
+            from catboost import CatBoostClassifier,CatBoostRegressor
+            classifier=CatBoostClassifier();classifier.load_model(str(directory/(mode+'_success.cbm')))
+            regressor=CatBoostRegressor();regressor.load_model(str(directory/(mode+'_cost.cbm')))
+            import numpy as np
+            matrix=np.asarray([features(t,keywords=False) for t in tasks],dtype=np.float32)
+            probabilities=classifier.predict_proba(matrix)[:,1]
+            costs=regressor.predict(matrix)
+            self.predictions={t.id:(max(.02,min(.98,float(p))),max(50,min(20000,float(c))))
+                              for t,p,c in zip(tasks,probabilities,costs)}
+            if journal:
+                journal.write('predictor_init',mode=mode,seconds=round(time.monotonic()-started,3),tasks=len(tasks))
+                for t in tasks:
+                    p,c=self.predictions[t.id];journal.write('prediction',task=t.id,p=p,cost=c)
+            return
         self.model=json.loads((directory/(mode+'.json')).read_text(encoding='utf-8'))
         if mode=='strong_embedding':
             vectors=Encoder(directory/'encoder-strong').encode([t.instruction for t in tasks]).tolist()
