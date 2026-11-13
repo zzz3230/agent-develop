@@ -21,7 +21,8 @@ from runtime.attempt_policy import AttemptLimits, fixed, limits_for_task
 PRIOR_SUCCESS = 0.5
 PRIOR_WEIGHT = 2.0      # pseudo-attempts behind the success prior
 COST_WEIGHT = 1.0       # pseudo-attempts behind the cost prior
-RETRY_DISCOUNT = 0.3    # a repeat of a failed attempt is assumed much less likely to succeed
+SUSPECT_FACTOR = 0.001  # below any honest task, still above a zero-reward one: run last, not never
+RETRY_DISCOUNT = 0.3   # a repeat of a failed attempt is assumed much less likely to succeed
 LIMIT_STOPS = ('task_cost_limit', 'no_progress_step_limit', 'no_progress_time_limit', 'step limit',
                'task cost limit', 'task time limit')
 
@@ -60,6 +61,15 @@ class TaskQueue:
         if not math.isfinite(self.alpha) or not 0<=self.alpha<=4:raise ValueError('SCORE_ALPHA must be between 0 and 4')
         self.policy=os.environ.get('QUEUE_POLICY','greedy')
         if self.policy not in ('greedy','knapsack'):raise ValueError('Unknown queue policy')
+        # CODING_PRECHECK=1: coding tasks whose visible tests contradict themselves go last.
+        self.suspects: dict[str, str] = {}
+        if enabled and os.environ.get('CODING_PRECHECK') == '1':
+            from runtime.coding_precheck import contradictory_tests
+            for t in self.fresh:
+                reason = contradictory_tests(t.cwd) if t.type == 'coding' and hasattr(t, 'cwd') else None
+                if reason:
+                    self.suspects[t.id] = reason
+                    self._log('precheck_suspect', task=t.id, reason=reason)
         mode=os.environ.get('PREDICTOR','baseline')
         if enabled and mode != 'baseline':
             if mode not in ('numeric','embedding','structural','strong_embedding','bge_structural','bge_keywords','quality_minilm_structural','quality_minilm_keywords'): raise ValueError('Unknown predictor: '+mode)
@@ -80,6 +90,11 @@ class TaskQueue:
         return (s.cost + self._prior_cost(kind) * COST_WEIGHT) / (s.attempts + COST_WEIGHT)
 
     def score(self, task, retry: bool = False) -> float:
+        if task.id in self.suspects:
+            return self._score(task, retry) * SUSPECT_FACTOR
+        return self._score(task, retry)
+
+    def _score(self, task, retry: bool = False) -> float:
         if self.predictor and not retry:
             p,c=self.predictor.predictions[task.id]
             return (task.reward**self.alpha if task.reward>0 else 0)*p/c

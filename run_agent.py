@@ -130,12 +130,19 @@ async def attempt(task: Task, budget: Budget, connection, react_agent,
         context = search_context(task.cwd, task.query)
         if context:
             query += '\n' + context
+    if os.environ.get('PRECHECK') == '1':
+        from runtime.precheck import precheck
+        note = precheck(task.cwd, task.query, task.type)
+        if note:
+            query += '\n' + note
+            budget.journal.write('precheck', task=task.id, note=note[:500])
     agent = react_agent(
         budget, connection, MODEL, str(task.cwd), TOOLS.get(task.type, ("bash",)), max_steps=limits.steps,
         max_output=limits.output_tokens, system_prompt=system_prompt,
     )
     from runtime.attempt_rail import AttemptRail
-    await agent.register_rail(AttemptRail(task.cwd, limits, budget.journal, budget, task.type))
+    await agent.register_rail(AttemptRail(task.cwd, limits, budget.journal, budget, task.type, task.query,
+                                          tests_pass=lambda: tests_pass(task)))
     if use_sql:
         await agent.register_rail(SqlCompletionRail())
     invocation_error = None

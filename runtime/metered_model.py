@@ -10,9 +10,12 @@ from openjiuwen.core.foundation.llm import Model, ModelClientConfig, ModelReques
 from runtime.budget import Budget
 
 
-TRANSIENT = re.compile(r'\b50[0234]\b|InternalServerError|ServiceUnavailable|Bad Gateway|Timeout|timed out|'
-                       r'Connection(Error| reset| refused)|APIConnectionError', re.I)
-RETRY_DELAYS = (2.0, 5.0, 10.0)  # proxy hiccups; a failed request is not billed, so retrying is free
+# 429 included: the proxy limits concurrent requests per account ("Слишком много одновременных
+# запросов"); without a retry four rate-limited calls in a row ended the whole run.
+TRANSIENT = re.compile(r'\b50[0234]\b|\b429\b|RateLimit|Too Many Requests|Слишком много|InternalServerError|'
+                       r'ServiceUnavailable|Bad Gateway|Timeout|timed out|Connection(Error| reset| refused)|'
+                       r'APIConnectionError', re.I)
+RETRY_DELAYS = (2.0, 5.0, 10.0, 30.0)  # a failed request is not billed, so retrying is free
 
 
 def _estimate_tokens(value: Any) -> int:
