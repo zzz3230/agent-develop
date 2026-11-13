@@ -16,7 +16,8 @@ RUN pip install --no-deps onnxruntime==1.22.1 coloredlogs==15.0.1 humanfriendly=
 ENV OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 TOKENIZERS_PARALLELISM=false
 # Final config (night run 2026-11-13, budget covers ~30% of tasks): MiniLM queue predictor plus
 # the guards against expensive impossible tasks. Any of these can be overridden with -e.
-ENV QUEUE=1 QUEUE_POLICY=greedy PREDICTOR=embedding TIGHT_CAPS=1 SEARCH_PROGRESS=entity STAY_INSIDE=1
+ENV QUEUE=1 QUEUE_POLICY=greedy PREDICTOR=embedding TIGHT_CAPS=1 SEARCH_PROGRESS=entity STAY_INSIDE=1 \
+    IMPOSSIBLE_RULES=1 IMPOSSIBLE_NUDGE=1 SHELL_FIX=1 PRECHECK=1
 
 # Predictor coefficients and the MiniLM encoder are stored in the repository: nothing is
 # downloaded at build or run time. The build fails if the encoder does not match its hashes.

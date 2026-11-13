@@ -1,0 +1,26 @@
+== train60
+label                          points        correct          spent       imp_cost per_impossible   per_solvable      imp_share     recognized   false_claims false_impossib
+base                            259.0             41          46594          13954           1163            680          0.299              2              1              0
+r1                              266.0             43          47098          11667            972            738          0.248              3              0              0
+r2                              281.0             45          36985           7824            652            608          0.212              4              0              0
+r3                              257.0             41          43176           8723            727            718          0.202              7              0              0
+r4                              253.0             41          37761           6417            535            653           0.17              7              0              0
+r5                              275.0             44          39476           7919            660            657          0.201              7              0              0
+== eval60
+label                          points        correct          spent       imp_cost per_impossible   per_solvable      imp_share     recognized   false_claims false_impossib
+base                            224.0             44          40722          13071           1089            576          0.321              4              3              0
+r1                              220.0             42          44830          12959           1080            664          0.289              4              2              0
+r2                              207.0             41          38655           7100            592            657          0.184              7              3              1
+r3                              192.0             41          36026           6573            548            614          0.182              8              4              0
+r4                              203.0             42          39549          10120            843            613          0.256              6              3              1
+r5                              208.0             42          35902           7161            597            599          0.199              8              4              0
+== pool200 @50k ENFORCE_BUDGET=1
+label                          points        correct          spent       imp_cost per_impossible   per_solvable      imp_share     recognized   false_claims false_impossib
+base                            466.0             66          50062          13953            349            226          0.279              2             14              0
+r3                              486.0             69          50321          16576            414            211          0.329             11              7              0
+r4                              481.0             69          50071          15671            392            215          0.313             12              9              0
+r5                              472.0             67          50044          15760            394            214          0.315             11              7              0
+== coding30 (coding from train60+eval60)
+label                          points        correct          spent       imp_cost per_impossible   per_solvable      imp_share     recognized   false_claims false_impossib
+r5                              130.0             23          24836           5531            922            804          0.223              0              2              0
+r6                              130.0             23          24399           3725            621            861          0.153              0              1              0

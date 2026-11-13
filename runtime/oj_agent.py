@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+import os
 import uuid
 from dataclasses import dataclass
 from typing import Any
@@ -49,6 +50,8 @@ def _real_paths_only() -> None:
 
 _real_paths_only()
 SHELL_ALLOWLIST = ["python3", "python", "ls", "cat", "grep", "head", "tail", "wc", "sort", "cut", "find", "echo", "pwd"]
+# SHELL_FIX=1: text tools the model reaches for first; OJ checks only the first word, so these add no new power.
+TEXT_TOOLS = ["cd", "awk", "sed", "uniq", "tr", "comm", "printf"]
 STOCK_TOOLS = {
     "read": ReadFileTool, "write": WriteFileTool, "edit": EditFileTool,
     "list": ListDirTool, "grep": GrepTool, "bash": BashTool,
@@ -92,7 +95,7 @@ def react_agent(budget: Budget, connection: Connection, model: str, cwd: str, to
     operation_id = f"op-{uuid.uuid4().hex}"
     Runner.resource_mgr.add_sys_operation(SysOperationCard(
         id=operation_id, mode=OperationMode.LOCAL,
-        work_config=LocalWorkConfig(sandbox_root=[cwd], restrict_to_sandbox=True, shell_allowlist=SHELL_ALLOWLIST),
+        work_config=LocalWorkConfig(sandbox_root=[cwd], restrict_to_sandbox=True, shell_allowlist=SHELL_ALLOWLIST + (TEXT_TOOLS if os.environ.get("SHELL_FIX") == "1" else [])),
     ))
     operation = Runner.resource_mgr.get_sys_operation(operation_id)
     set_cwd(cwd)
